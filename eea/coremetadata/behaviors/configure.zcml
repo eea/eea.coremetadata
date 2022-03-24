@@ -17,7 +17,6 @@
     marker="eea.coremetadata.interfaces.ICoreMetadata"
     />
 
-
   <utility
       name="organisations_vocabulary"
       component=".vocabulary.organisations_vocabulary"

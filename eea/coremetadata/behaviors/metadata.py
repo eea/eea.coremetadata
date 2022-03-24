@@ -1,9 +1,6 @@
 """ Custom behavior that adds core metadata fields
 """
 # pylint: disable=line-too-long
-from plone.dexterity.interfaces import IDexterityContent
-from zope.component import adapter
-from zope.interface import implementer
 from plone.app.dexterity.behaviors.metadata import (DCFieldProperty,
                                                     MetadataBase)
 from eea.coremetadata.interfaces import ICoreMetadata

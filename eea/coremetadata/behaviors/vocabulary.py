@@ -67,15 +67,18 @@ organisations = {
     "Other": dict(title="Other", website=""),
 }
 
+
 @provider(IVocabularyFactory)
 def dpsir_vocabulary(context):
     """dpsir_vocabulary"""
     return values_to_vocab(dpsir)
 
+
 @provider(IVocabularyFactory)
 def legislative_vocabulary(context):
     """legislative_vocabulary"""
     return values_to_vocab(legislative_reference)
+
 
 @provider(IVocabularyFactory)
 def organisations_vocabulary(context):
