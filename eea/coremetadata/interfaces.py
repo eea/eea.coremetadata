@@ -16,7 +16,7 @@ class IEeaCoremetadataLayer(IDefaultBrowserLayer):
 
 
 @provider(IFormFieldProvider)
-class ICoreMetadata(model.schema):
+class ICoreMetadata(model.Schema):
     """ Core Metadata
 
     """
