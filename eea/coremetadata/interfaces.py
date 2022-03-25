@@ -77,7 +77,7 @@ class ICoreMetadata(model.Schema):
         title="Legislative reference",
         required=False,
         value_type=Choice(
-            title=u"Single legislative reference",
+            title="Single legislative reference",
             vocabulary="legislative_vocabulary",
         ))
 
