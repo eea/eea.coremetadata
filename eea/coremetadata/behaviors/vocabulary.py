@@ -14,26 +14,6 @@ def values_to_vocab(values):
     return vocab
 
 
-dpsir = [
-    "Pressure",
-    "State",
-    "Impact",
-    "Response",
-    "Other",
-]
-
-legislative_reference = [
-    "Water Framework Directive",
-    "Floods Directive",
-    "Bathing Water Directive",
-    "Nitrates Directive",
-    "Urban Waste Water Treatment Directive",
-    "Drinking Water Directive",
-    "Marine Strategy Framework Directive",
-    "Habitats Directive",
-    "Birds Directive",
-]
-
 organisations = {
     "EEA": dict(
         title="European Environment Agency",
@@ -69,18 +49,6 @@ organisations = {
 
 
 @provider(IVocabularyFactory)
-def dpsir_vocabulary(context):
-    """dpsir_vocabulary"""
-    return values_to_vocab(dpsir)
-
-
-@provider(IVocabularyFactory)
-def legislative_vocabulary(context):
-    """legislative_vocabulary"""
-    return values_to_vocab(legislative_reference)
-
-
-@provider(IVocabularyFactory)
 def organisations_vocabulary(context):
     """organisations_vocabulary"""
     terms = [
@@ -98,4 +66,4 @@ class KeywordsVocabulary(BKV):
     def __init__(self, index):
         self.keyword_index = index
 
-CategoryVocabularyFactory = KeywordsVocabulary("category")
+TopicsVocabularyFactory = KeywordsVocabulary("topics")

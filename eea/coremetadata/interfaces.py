@@ -31,28 +31,11 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
-    lineage = Text(
-        title=u"Lineage",
-        required=False,
-    )
+    creation_date = Int(title=u"Publication date", required=True)
+    publication_date = Int(title=u"Creation date", required=True)
+    expiration_date = Int(title=u"Expiration date", required=True)
 
-    original_source = TextLine(
-        title=u"Original source",
-        required=False,
-    )
-
-    embed_url = TextLine(
-        title=u"Tableau URL",
-        required=False,
-    )
-
-    webmap_url = TextLine(
-        title=u"Embed URL",
-        description=u"Webmap URL",
-        required=False,
-    )
-
-    publisher = Choice(
+    organisation = Choice(
         title=u"Organisation",
         description=u"The responsible organisation for this item",
         required=True,
@@ -60,32 +43,14 @@ class ICoreMetadata(model.Schema):
         default="EEA",
     )
 
-    dpsir_type = Choice(
-        title=u"DPSIR", required=False, vocabulary="dpsir_vocabulary"
-    )
-
-    directives.widget("category", vocabulary="category_vocabulary")
-    category = Tuple(
+    directives.widget("topics", vocabulary="topics_vocabulary")
+    topics = Tuple(
         title=u"Topics",
         required=False,
         default=(),
         value_type=TextLine(
             title=u"Single topic",
         ))
-
-    legislative_reference = Tuple(
-        title="Legislative reference",
-        required=False,
-        value_type=Choice(
-            title="Single legislative reference",
-            vocabulary="legislative_vocabulary",
-        ))
-
-    publication_year = Int(title=u"Publication year", required=True)
-
-    license_copyright = TextLine(
-        title=_(u"label_title", default=u"Rights"), required=False
-    )
 
     temporal_coverage = JSONField(
         title=u"Temporal coverage",
@@ -95,16 +60,4 @@ class ICoreMetadata(model.Schema):
     geo_coverage = JSONField(
         title=u"Geographical coverage",
         required=False, widget="geolocation", default={}
-    )
-
-    data_source_info = RichText(
-        title=u"Data source information",
-        description=u"Rich text, double click for toolbar.",
-        required=False,
-    )
-
-    external_links = RichText(
-        title=u"External links",
-        description=u"Rich text, double click for toolbar.",
-        required=False,
     )

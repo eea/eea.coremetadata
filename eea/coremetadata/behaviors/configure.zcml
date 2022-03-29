@@ -11,7 +11,7 @@
     name="eea.coremetadata.behavior"
     title="EEA Core metadata"
     description="Adds EEA Core metadata fields"
-    factory=".metadata.CoreMetadata"
+    factory="eea.coremetadata.behaviors.metadata.CoreMetadata"
     provides="eea.coremetadata.interfaces.ICoreMetadata"
     for="plone.dexterity.interfaces.IDexterityContent"
     marker="eea.coremetadata.interfaces.ICoreMetadata"
@@ -23,18 +23,8 @@
       />
 
   <utility
-      name="legislative_vocabulary"
-      component=".vocabulary.legislative_vocabulary"
-      />
-
-  <utility
-      name="dpsir_vocabulary"
-      component=".vocabulary.dpsir_vocabulary"
-      />
-
-  <utility
-      name="category_vocabulary"
-      component=".vocabulary.CategoryVocabularyFactory"
+      name="topics_vocabulary"
+      component=".vocabulary.TopicsVocabularyFactory"
       />
 
 

@@ -13,33 +13,13 @@ class CoreMetadata(MetadataBase):
 
     description = DCFieldProperty(ICoreMetadata["description"])
 
-    lineage = DCFieldProperty(ICoreMetadata["lineage"])
+    organisation = DCFieldProperty(ICoreMetadata["organisation"])
 
-    original_source = DCFieldProperty(ICoreMetadata["original_source"])
-
-    embed_url = DCFieldProperty(ICoreMetadata["embed_url"])
-
-    webmap_url = DCFieldProperty(ICoreMetadata["webmap_url"])
-
-    publisher = DCFieldProperty(ICoreMetadata["publisher"])
-
-    legislative_reference = DCFieldProperty(
-        ICoreMetadata["legislative_reference"])
-
-    dpsir_type = DCFieldProperty(ICoreMetadata["dpsir_type"])
-
-    category = DCFieldProperty(ICoreMetadata["category"])
+    topics = DCFieldProperty(ICoreMetadata["topics"])
 
     publication_year = DCFieldProperty(ICoreMetadata["publication_year"])
-
-    license_copyright = DCFieldProperty(
-        ICoreMetadata["license_copyright"])
 
     temporal_coverage = DCFieldProperty(
         ICoreMetadata["temporal_coverage"])
 
     geo_coverage = DCFieldProperty(ICoreMetadata["geo_coverage"])
-
-    external_links = DCFieldProperty(ICoreMetadata["external_links"])
-
-    data_source_info = DCFieldProperty(ICoreMetadata["data_source_info"])
