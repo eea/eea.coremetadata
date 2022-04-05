@@ -1,14 +1,13 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plone.app.dexterity import _
-from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.schema import Choice, Int, Text, TextLine, Tuple, Datetime
+from zope.schema import Int, Text, TextLine, Tuple, Datetime
 
 
 class IEeaCoremetadataLayer(IDefaultBrowserLayer):
