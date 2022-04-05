@@ -19,10 +19,6 @@ class EEAFixture(PloneSandboxLayer):
         self.loadZCML(package=collective.taxonomy)
         z2.installProduct(app, 'collective.taxonomy')
 
-        import eea.api.taxonomy
-        self.loadZCML(package=eea.api.taxonomy)
-        z2.installProduct(app, 'eea.api.taxonomy')
-
         import eea.coremetadata
         self.loadZCML(package=eea.coremetadata)
         z2.installProduct(app, 'eea.coremetadata')
