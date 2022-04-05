@@ -48,6 +48,7 @@ setup(
     extras_require={
         'test': [
             'plone.app.testing',
+            'collective.taxonomy',
         ],
     },
     entry_points="""
