@@ -36,17 +36,17 @@ class ICoreMetadata(model.Schema):
 
     creation_date = Datetime(
         title=u"Publication date",
-        required=True,
+        required=False,
     )
 
     publication_date = Datetime(
         title=u"Creation date",
-        required=True,
+        required=False,
     )
 
     expiration_date = Datetime(
         title=u"Expiration date",
-        required=True,
+        required=False,
     )
 
     directives.widget("organisations", vocabulary="organisations_vocabulary")
@@ -90,12 +90,12 @@ class ICoreMetadata(model.Schema):
     #     default="",
     # )
     #
-    # word_count = Int(
-    #     title=u"Word Count",
-    #     description=u"The item's word count",
-    #     required=False,
-    #     default=0,
-    # )
+    word_count = Int(
+        title=u"Word Count",
+        description=u"The item's word count",
+        required=False,
+        default=0,
+    )
 
     rights = TextLine(
         title=_(u"label_title", default=u"Title"),

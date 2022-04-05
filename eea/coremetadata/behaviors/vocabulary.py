@@ -1,3 +1,4 @@
+# pylint: disable=W0702
 """ vocabulary.py """
 from collective.taxonomy.interfaces import ITaxonomy
 from plone.app.vocabularies.catalog import KeywordsVocabulary as BKV
@@ -15,7 +16,7 @@ def organisations_vocabulary(context):
     taxonomy = queryUtility(ITaxonomy, name=utility_name)
 
     try:
-        vocabulary = taxonomy(self)
+        vocabulary = taxonomy(context)
     except:
         vocabulary = taxonomy.makeVocabulary('en')
 
@@ -36,7 +37,7 @@ def publisher_vocabulary(context):
     taxonomy = queryUtility(ITaxonomy, name=utility_name)
 
     try:
-        vocabulary = taxonomy(self)
+        vocabulary = taxonomy(context)
     except:
         vocabulary = taxonomy.makeVocabulary('en')
 

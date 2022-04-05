@@ -28,7 +28,7 @@ class CoreMetadata(MetadataBase):
 
     # content_type = DCFieldProperty(ICoreMetadata["content_type"])
 
-    # word_count = DCFieldProperty(ICoreMetadata["word_count"])
+    word_count = DCFieldProperty(ICoreMetadata["word_count"])
 
     rights = DCFieldProperty(ICoreMetadata["rights"])
 
