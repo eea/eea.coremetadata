@@ -1,3 +1,4 @@
+# pylint: disable=C0412
 """Module where all interfaces, events and exceptions live."""
 
 from plone.autoform import directives
