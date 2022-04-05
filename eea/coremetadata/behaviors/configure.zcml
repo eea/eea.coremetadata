@@ -23,9 +23,13 @@
       />
 
   <utility
+      name="publisher_vocabulary"
+      component=".vocabulary.publisher_vocabulary"
+      />
+
+  <utility
       name="topics_vocabulary"
       component=".vocabulary.TopicsVocabularyFactory"
       />
-
 
 </configure>
