@@ -105,7 +105,6 @@ class ICoreMetadata(model.Schema):
         title=_(u"label_title", default=u"Title"),
         description=u"Fill in copyrights",
         required=True,
-        default="",
     )
 
     directives.widget("publisher", vocabulary="publisher_vocabulary")
