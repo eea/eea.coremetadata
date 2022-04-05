@@ -43,6 +43,7 @@ setup(
         install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
+        'collective.taxonomy'
     ],
     extras_require={
         'test': [
