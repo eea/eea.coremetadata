@@ -1,6 +1,5 @@
 """Module where all interfaces, events and exceptions live."""
 
-from plone.app.dexterity import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
@@ -8,6 +7,11 @@ from plone.supermodel import model
 from zope.interface import provider
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope.schema import Int, Text, TextLine, Tuple, Datetime
+
+try:
+    from plone.app.dexterity import _
+except ImportError:
+    from plone.app.dexterity import PloneMessageFactory as _
 
 
 class IEeaCoremetadataLayer(IDefaultBrowserLayer):
@@ -100,7 +104,7 @@ class ICoreMetadata(model.Schema):
         title=_(u"label_title", default=u"Title"),
         description=u"Fill in copyrights",
         required=True,
-        default="EEA",
+        default="",
     )
 
     directives.widget("publisher", vocabulary="publisher_vocabulary")
