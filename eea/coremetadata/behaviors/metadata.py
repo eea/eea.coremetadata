@@ -17,9 +17,9 @@ class CoreMetadata(MetadataBase):
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
-    publication_date = DCFieldProperty(ICoreMetadata["publication_date"])
     creation_date = DCFieldProperty(ICoreMetadata["creation_date"])
-    expiration_date = DCFieldProperty(ICoreMetadata["expiration_date"])
+    effective_date = DCFieldProperty(ICoreMetadata["effective_date"])
+    expires_date = DCFieldProperty(ICoreMetadata["expires_date"])
 
     temporal_coverage = DCFieldProperty(
         ICoreMetadata["temporal_coverage"])

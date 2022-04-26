@@ -1,6 +1,7 @@
 # pylint: disable=C0412
 """Module where all interfaces, events and exceptions live."""
 
+from plone.app.z3cform.widget import DatetimeFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
@@ -24,6 +25,18 @@ class ICoreMetadata(model.Schema):
     """ Core Metadata
 
     """
+    # ownership fieldset
+    model.fieldset(
+        'default',
+        label=_(
+            'label_schema_default',
+            default=u'Default'
+        ),
+        fields=['title', 'description', 'creation_date', 'effective_date',
+                'expires_date', 'organisations', 'topics', 'temporal_coverage',
+                'geo_coverage', 'word_count', 'rights', 'publisher'],
+    )
+
     title = TextLine(
         title=_(u"label_title", default=u"Title"),
         required=True,
@@ -38,20 +51,49 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
+
     creation_date = Datetime(
-        title=u"Publication date",
-        required=False,
+        title=_(u'label_creation_date', u'Creation Date'),
+        description=_(
+            u'help_creation_date',
+            default=u'The date this item was created on.'),
+        required=False
     )
+    directives.widget('creation_date', DatetimeFieldWidget)
 
-    publication_date = Datetime(
-        title=u"Creation date",
-        required=False,
-    )
+    # creation_date = Datetime(
+    #     title=u"Publication date",
+    #     required=False,
+    # )
+    # publication_date = Datetime(
+    #     title=u"Creation date",
+    #     required=False,
+    # )
+    #
+    # expires_date = Datetime(
+    #     title=u"Expiration date",
+    #     required=False,
+    # )
 
-    expiration_date = Datetime(
-        title=u"Expiration date",
-        required=False,
+    effective_date = Datetime(
+        title=_(u'label_effective_date', u'Publishing Date'),
+        description=_(
+            u'help_effective_date',
+            default=u'If this date is in the future, the content will '
+                    u'not show up in listings and searches until this date.'),
+        required=False
     )
+    directives.widget('effective_date', DatetimeFieldWidget)
+
+    expires_date = Datetime(
+        title=_(u'label_expiration_date', u'Expiration Date'),
+        description=_(
+            u'help_expiration_date',
+            default=u'When this date is reached, the content will no '
+                    u'longer be visible in listings and searches.'),
+        required=False
+    )
+    directives.widget('expires_date', DatetimeFieldWidget)
 
     directives.widget("organisations", vocabulary="organisations_vocabulary")
     organisations = Tuple(
@@ -102,9 +144,16 @@ class ICoreMetadata(model.Schema):
     )
 
     rights = TextLine(
-        title=_(u"label_title", default=u"Title"),
-        description=u"Fill in copyrights",
-        required=True,
+        # title=_(u"label_title", default=u"Title"),
+        # description=u"Fill in copyrights",
+        # required=True,
+        title=_(u'label_copyrights', default=u'Rights'),
+        description=_(
+            u'help_copyrights',
+            default=u'Copyright statement or other rights information on this '
+                    u'item.'
+        ),
+        required=False,
     )
 
     directives.widget("publisher", vocabulary="publisher_vocabulary")
