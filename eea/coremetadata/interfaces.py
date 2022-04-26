@@ -51,7 +51,6 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
-
     creation_date = Datetime(
         title=_(u'label_creation_date', u'Creation Date'),
         description=_(
