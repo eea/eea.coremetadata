@@ -17,7 +17,7 @@ class CoreMetadata(MetadataBase):
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
-    # creation_date = DCFieldProperty(ICoreMetadata["creation_date"])
+    creation_date = DCFieldProperty(ICoreMetadata["creation_date"])
     effective_date = DCFieldProperty(ICoreMetadata["effective_date"])
     expires_date = DCFieldProperty(ICoreMetadata["expires_date"])
 
