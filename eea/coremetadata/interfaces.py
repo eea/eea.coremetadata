@@ -8,7 +8,7 @@ from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider, invariant
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.schema import Int, Text, TextLine, Tuple, Datetime
+from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date
 
 try:
     from plone.app.dexterity import _
@@ -57,7 +57,7 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
-    creation_date = Datetime(
+    creation_date = Date(
         title=_(u'label_creation_date', u'Creation Date'),
         description=_(
             u'help_creation_date',
