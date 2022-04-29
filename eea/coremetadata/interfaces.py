@@ -6,7 +6,7 @@ from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
 from plone.supermodel import model
-from zope.interface import provider
+from zope.interface import provider, invariant
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope.schema import Int, Text, TextLine, Tuple, Datetime
 
@@ -14,6 +14,12 @@ try:
     from plone.app.dexterity import _
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
+
+
+class EffectiveAfterExpires(Invalid):
+    __doc__ = _(
+    "error_invalid_publication", default=u"Invalid effective or expires date"
+    )
 
 
 class IEeaCoremetadataLayer(IDefaultBrowserLayer):
@@ -59,20 +65,6 @@ class ICoreMetadata(model.Schema):
         required=False
     )
     directives.widget('creation_date', DatetimeFieldWidget)
-
-    # creation_date = Datetime(
-    #     title=u"Publication date",
-    #     required=False,
-    # )
-    # publication_date = Datetime(
-    #     title=u"Creation date",
-    #     required=False,
-    # )
-    #
-    # expires_date = Datetime(
-    #     title=u"Expiration date",
-    #     required=False,
-    # )
 
     effective_date = Datetime(
         title=_(u'label_effective_date', u'Publishing Date'),
@@ -126,15 +118,6 @@ class ICoreMetadata(model.Schema):
         default={},
     )
 
-    # content_type = Choice(
-    #     title=u"Content Type",
-    #     description=u"The item's content type",
-    #     required=True,
-    #     # vocabulary="portal_types_vocabulary",
-    #     vocabulary="plone.app.vocabularies.PortalTypes",
-    #     default="",
-    # )
-    #
     word_count = Int(
         title=u"Word Count",
         description=u"The item's word count",
@@ -143,9 +126,6 @@ class ICoreMetadata(model.Schema):
     )
 
     rights = TextLine(
-        # title=_(u"label_title", default=u"Title"),
-        # description=u"Fill in copyrights",
-        # required=True,
         title=_(u'label_copyrights', default=u'Rights'),
         description=_(
             u'help_copyrights',
@@ -162,3 +142,13 @@ class ICoreMetadata(model.Schema):
         required=True,
         default=(),
     )
+
+    @invariant
+    def validate_start_end(data):
+        if data.effective_date and data.expires_date and data.effective_date > data.expires_date:
+            raise EffectiveAfterExpires(
+                _(
+                    "error_expiration_must_be_after_effective_date",
+                    default=u"Expiration date must be after publishing date.",
+                )
+            )
