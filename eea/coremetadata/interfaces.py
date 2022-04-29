@@ -6,7 +6,7 @@ from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
 from plone.supermodel import model
-from zope.interface import provider, invariant
+from zope.interface import provider, invariant, Invalid
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date
 
