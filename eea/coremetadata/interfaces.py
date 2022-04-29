@@ -57,14 +57,14 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
-    creation_date = Date(
-        title=_(u'label_creation_date', u'Creation Date'),
-        description=_(
-            u'help_creation_date',
-            default=u'The date this item was created on.'),
-        required=False
-    )
-    directives.widget('creation_date', DatetimeFieldWidget)
+    # creation_date = Date(
+    #     title=_(u'label_creation_date', u'Creation Date'),
+    #     description=_(
+    #         u'help_creation_date',
+    #         default=u'The date this item was created on.'),
+    #     required=False
+    # )
+    # directives.widget('creation_date', DatetimeFieldWidget)
 
     effective_date = Datetime(
         title=_(u'label_effective_date', u'Publishing Date'),
