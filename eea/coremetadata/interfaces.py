@@ -38,7 +38,7 @@ class ICoreMetadata(model.Schema):
             'label_schema_default',
             default=u'Default'
         ),
-        fields=['title', 'description', 'creation_date', 'effective_date',
+        fields=['title', 'description', 'effective_date',
                 'expires_date', 'organisations', 'topics', 'temporal_coverage',
                 'geo_coverage', 'word_count', 'rights', 'publisher'],
     )
