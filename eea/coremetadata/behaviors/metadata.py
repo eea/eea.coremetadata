@@ -18,8 +18,8 @@ class CoreMetadata(MetadataBase):
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
     creation_date = DCFieldProperty(ICoreMetadata["creation_date"])
-    effective_date = DCFieldProperty(ICoreMetadata["effective_date"])
-    expires_date = DCFieldProperty(ICoreMetadata["expires_date"])
+    effective = DCFieldProperty(ICoreMetadata["effective"], get_name="effective_date")
+    expires = DCFieldProperty(ICoreMetadata["expires"], get_name="expiration_date")
 
     temporal_coverage = DCFieldProperty(
         ICoreMetadata["temporal_coverage"])
@@ -33,3 +33,6 @@ class CoreMetadata(MetadataBase):
     rights = DCFieldProperty(ICoreMetadata["rights"])
 
     publisher = DCFieldProperty(ICoreMetadata["publisher"])
+
+    preview_image = DCFieldProperty(ICoreMetadata["preview_image"])
+    preview_caption = DCFieldProperty(ICoreMetadata["preview_caption"])

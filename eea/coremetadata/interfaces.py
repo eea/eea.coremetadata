@@ -1,9 +1,10 @@
 # pylint: disable=C0412
 """Module where all interfaces, events and exceptions live."""
-
+import os
 from plone.app.z3cform.widget import DatetimeFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.namedfile.field import NamedBlobImage
 from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider, invariant, Invalid
@@ -14,6 +15,10 @@ try:
     from plone.app.dexterity import _
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
+
+
+DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
+DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
 
 
 class EffectiveAfterExpires(Invalid):
@@ -38,9 +43,10 @@ class ICoreMetadata(model.Schema):
             'label_schema_default',
             default=u'Default'
         ),
-        fields=['title', 'description', 'creation_date', 'effective_date',
-                'expires_date', 'organisations', 'topics', 'temporal_coverage',
-                'geo_coverage', 'word_count', 'rights', 'publisher'],
+        fields=['title', 'description', 'creation_date', 'effective',
+                'expires', 'organisations', 'topics', 'temporal_coverage',
+                'geo_coverage', 'word_count', 'rights', 'publisher',
+                'preview_image', 'preview_caption'],
     )
 
     title = TextLine(
@@ -54,7 +60,7 @@ class ICoreMetadata(model.Schema):
             u"help_description",
             default=u"Used in item listings and search results."
         ),
-        required=True,
+        required=False,
     )
 
     creation_date = Date(
@@ -66,7 +72,7 @@ class ICoreMetadata(model.Schema):
     )
     directives.widget('creation_date', DatetimeFieldWidget)
 
-    effective_date = Datetime(
+    effective = Datetime(
         title=_(u'label_effective_date', u'Publishing Date'),
         description=_(
             u'help_effective_date',
@@ -74,9 +80,9 @@ class ICoreMetadata(model.Schema):
                     u'not show up in listings and searches until this date.'),
         required=False
     )
-    directives.widget('effective_date', DatetimeFieldWidget)
+    directives.widget('effective', DatetimeFieldWidget)
 
-    expires_date = Datetime(
+    expires = Datetime(
         title=_(u'label_expiration_date', u'Expiration Date'),
         description=_(
             u'help_expiration_date',
@@ -84,20 +90,20 @@ class ICoreMetadata(model.Schema):
                     u'longer be visible in listings and searches.'),
         required=False
     )
-    directives.widget('expires_date', DatetimeFieldWidget)
+    directives.widget('expires', DatetimeFieldWidget)
 
     directives.widget("organisations", vocabulary="organisations_vocabulary")
     organisations = Tuple(
-        title=u"Organisations",
-        description=u"The responsible organisations for this item",
+        title=_(u"Organisations"),
+        description=_(u"The responsible organisations for this item"),
         required=True,
-        default=(),
+        default=tuple(DEFAULT_ORGANISATIONS),
     )
 
     directives.widget("topics", vocabulary="topics_vocabulary")
     topics = Tuple(
-        title=u"Topics",
-        required=False,
+        title=_(u"Topics"),
+        required=True,
         default=(),
         value_type=TextLine(
             title=u"Single topic",
@@ -105,22 +111,22 @@ class ICoreMetadata(model.Schema):
     )
 
     temporal_coverage = JSONField(
-        title=u"Temporal coverage",
-        required=False,
+        title=_(u"Temporal coverage"),
+        required=True,
         widget="temporal",
         default={},
     )
 
     geo_coverage = JSONField(
-        title=u"Geographical coverage",
-        required=False,
+        title=_(u"Geographical coverage"),
+        required=True,
         widget="geolocation",
         default={},
     )
 
     word_count = Int(
-        title=u"Word Count",
-        description=u"The item's word count",
+        title=_(u"Word Count"),
+        description=_(u"The item's word count"),
         required=False,
         default=0,
     )
@@ -137,15 +143,28 @@ class ICoreMetadata(model.Schema):
 
     directives.widget("publisher", vocabulary="publisher_vocabulary")
     publisher = Tuple(
-        title=u"Publisher",
-        description=u"The responsible publisher for this item",
-        required=True,
-        default=(),
+        title=_(u"Publisher"),
+        description=_(u"The responsible publisher for this item"),
+        required=False,
+        default=tuple(DEFAULT_PUBLISHER),
+    )
+
+    preview_image = NamedBlobImage(
+        title=_("label_previewimage", default="Preview image"),
+        description=_(
+            "help_previewimage",
+            default="Insert an image that will be used in listing and teaser blocks.",
+        ),
+        required=False,
+    )
+
+    preview_caption = TextLine(
+        title=_("Preview image caption"), description="", required=False
     )
 
     @invariant
     def validate_start_end(data):
-        if data.effective_date and data.expires_date and data.effective_date > data.expires_date:
+        if data.effective() and data.expires() and data.effective() > data.expires():
             raise EffectiveAfterExpires(
                 _(
                     "error_expiration_must_be_after_effective_date",
