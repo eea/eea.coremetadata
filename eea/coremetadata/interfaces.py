@@ -46,7 +46,7 @@ class ICoreMetadata(model.Schema):
         fields=['title', 'description', 'creation_date', 'effective',
                 'expires', 'organisations', 'topics', 'temporal_coverage',
                 'geo_coverage', 'word_count', 'rights', 'publisher',
-                'preview_image', 'preview_caption'],
+                'preview_image', 'preview_caption', 'data_provenance'],
     )
 
     title = TextLine(
@@ -162,9 +162,16 @@ class ICoreMetadata(model.Schema):
         title=_("Preview image caption"), description="", required=False
     )
 
+    data_provenance = JSONField(
+        title=_(u"Data provenance"),
+        required=True,
+        widget="object_list_inline",
+        default={},
+    )
+
     @invariant
     def validate_start_end(data):
-        if data.effective() and data.expires() and data.effective() > data.expires():
+        if data.effective_date and data.expiration_date and data.effective_date > data.expiration_date:
             raise EffectiveAfterExpires(
                 _(
                     "error_expiration_must_be_after_effective_date",

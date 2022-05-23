@@ -36,3 +36,5 @@ class CoreMetadata(MetadataBase):
 
     preview_image = DCFieldProperty(ICoreMetadata["preview_image"])
     preview_caption = DCFieldProperty(ICoreMetadata["preview_caption"])
+
+    data_provenance = DCFieldProperty(ICoreMetadata["data_provenance"])
