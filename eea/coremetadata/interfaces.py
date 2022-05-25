@@ -2,6 +2,7 @@
 """Module where all interfaces, events and exceptions live."""
 import os
 from plone.app.z3cform.widget import DatetimeFieldWidget
+from plone.app.z3cform.widget import SelectFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
@@ -9,7 +10,7 @@ from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider, invariant, Invalid
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date
+from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date, Choice
 
 try:
     from plone.app.dexterity import _
@@ -92,11 +93,12 @@ class ICoreMetadata(model.Schema):
     )
     directives.widget('expires', DatetimeFieldWidget)
 
-    directives.widget("organisations", vocabulary="organisations_vocabulary")
+    directives.widget("organisations", SelectFieldWidget)
     organisations = Tuple(
         title=_(u"Organisations"),
         description=_(u"The responsible organisations for this item"),
         required=True,
+        value_type = Choice(vocabulary="organisations_vocabulary"),
         default=tuple(DEFAULT_ORGANISATIONS),
     )
 
@@ -141,10 +143,11 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    directives.widget("publisher", vocabulary="publisher_vocabulary")
+    directives.widget("publisher", SelectFieldWidget)
     publisher = Tuple(
         title=_(u"Publisher"),
         description=_(u"The responsible publisher for this item"),
+        value_type = Choice(vocabulary="publisher_vocabulary"),
         required=False,
         default=tuple(DEFAULT_PUBLISHER),
     )
