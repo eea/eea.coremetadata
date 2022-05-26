@@ -168,7 +168,7 @@ class ICoreMetadata(model.Schema):
     data_provenance = JSONField(
         title=_(u"Data provenance"),
         required=True,
-        widget="object_list_inline",
+        widget="data_provenance",
         default={},
     )
 
