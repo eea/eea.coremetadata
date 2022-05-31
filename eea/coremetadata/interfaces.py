@@ -11,6 +11,8 @@ from plone.supermodel import model
 from zope.interface import provider, invariant, Invalid
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date, Choice
+from z3c.form.interfaces import IAddForm
+from z3c.form.interfaces import IEditForm
 
 try:
     from plone.app.dexterity import _
@@ -64,15 +66,16 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
+    # directives.widget('creation_date', DatetimeFieldWidget)
     creation_date = Date(
         title=_(u'label_creation_date', u'Creation Date'),
         description=_(
             u'help_creation_date',
             default=u'The date this item was created on.'),
-        required=False
+        required=True,
     )
-    directives.widget('creation_date', DatetimeFieldWidget)
 
+    # directives.widget('effective', DatetimeFieldWidget)
     effective = Datetime(
         title=_(u'label_effective_date', u'Publishing Date'),
         description=_(
@@ -81,8 +84,8 @@ class ICoreMetadata(model.Schema):
                     u'not show up in listings and searches until this date.'),
         required=False
     )
-    directives.widget('effective', DatetimeFieldWidget)
 
+    # directives.widget('expires', DatetimeFieldWidget)
     expires = Datetime(
         title=_(u'label_expiration_date', u'Expiration Date'),
         description=_(
@@ -91,7 +94,10 @@ class ICoreMetadata(model.Schema):
                     u'longer be visible in listings and searches.'),
         required=False
     )
-    directives.widget('expires', DatetimeFieldWidget)
+
+    directives.omitted("effective", "expires")
+    directives.no_omit(IEditForm, "effective", "expires")
+    directives.no_omit(IAddForm, "effective", "expires")
 
     directives.widget("organisations", SelectFieldWidget)
     organisations = Tuple(
@@ -174,7 +180,7 @@ class ICoreMetadata(model.Schema):
 
     @invariant
     def validate_start_end(data):
-        if data.effective_date and data.expiration_date and data.effective_date > data.expiration_date:
+        if data.effective and data.expires and data.effective > data.expires:
             raise EffectiveAfterExpires(
                 _(
                     "error_expiration_must_be_after_effective_date",
