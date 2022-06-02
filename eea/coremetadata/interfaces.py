@@ -82,7 +82,8 @@ class ICoreMetadata(model.Schema):
             u'help_effective_date',
             default=u'If this date is in the future, the content will '
                     u'not show up in listings and searches until this date.'),
-        required=False
+        required=False,
+        default=None
     )
 
     # directives.widget('expires', DatetimeFieldWidget)
@@ -92,7 +93,8 @@ class ICoreMetadata(model.Schema):
             u'help_expiration_date',
             default=u'When this date is reached, the content will no '
                     u'longer be visible in listings and searches.'),
-        required=False
+        required=False,
+        default=None
     )
 
     directives.omitted("effective", "expires")
