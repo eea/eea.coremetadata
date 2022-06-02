@@ -182,7 +182,7 @@ class ICoreMetadata(model.Schema):
 
     @invariant
     def validate_start_end(data):
-        if data.effective and data.expires and data.effective > data.expires:
+        if data.effective and data.expires and data.effective() > data.expires():
             raise EffectiveAfterExpires(
                 _(
                     "error_expiration_must_be_after_effective_date",
