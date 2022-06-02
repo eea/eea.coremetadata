@@ -75,7 +75,7 @@ class ICoreMetadata(model.Schema):
         required=True,
     )
 
-    # directives.widget('effective', DatetimeFieldWidget)
+    directives.widget('effective', DatetimeFieldWidget)
     effective = Datetime(
         title=_(u'label_effective_date', u'Publishing Date'),
         description=_(
@@ -86,7 +86,7 @@ class ICoreMetadata(model.Schema):
         default=None
     )
 
-    # directives.widget('expires', DatetimeFieldWidget)
+    directives.widget('expires', DatetimeFieldWidget)
     expires = Datetime(
         title=_(u'label_expiration_date', u'Expiration Date'),
         description=_(
