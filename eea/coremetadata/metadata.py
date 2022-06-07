@@ -236,14 +236,16 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     security = ClassSecurityInfo()
 
-    def __init__(self, title='', subject=(), description='', contributors=(), effective_date=None, expiration_date=None, format='text/html', language='', rights=''
-                 ):
+    def __init__(self, title='', subject=(), description='', contributors=(),
+                 effective_date=None, expiration_date=None, format='text/html',
+                 language='', rights=''):
         now = DateTime()
         self.creation_date = now
         self.modification_date = now
         self.creators = ()
-        self._editMetadata(title, subject, description, contributors, effective_date, expiration_date, format, language, rights
-                           )
+        self._editMetadata(title, subject, description, contributors,
+                           effective_date, expiration_date, format, language,
+                           rights)
 
     #
     #  Set-modification-date-related methods.
@@ -270,7 +272,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
             creator = user and user.getId()
 
         # call self.listCreators() to make sure self.creators exists
-        if creator and not creator in self.listCreators():
+        if creator and creator not in self.listCreators():
             self.creators = self.creators + (creator, )
 
     security.declareProtected(ModifyPortalContent, 'setModificationDate')
@@ -444,10 +446,10 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def isEffective(self, date):
         # Is the date within the resource's effective range?
-        pastEffective = (self.effective_date is None
-                         or self.effective_date <= date)
-        beforeExpiration = (self.expiration_date is None
-                            or self.expiration_date >= date)
+        pastEffective = (self.effective_date is None or
+                         self.effective_date <= date)
+        beforeExpiration = (self.expiration_date is None or
+                            self.expiration_date >= date)
         return pastEffective and beforeExpiration
 
     #
@@ -589,8 +591,11 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     security.declarePrivate('_editMetadata')
 
-    def _editMetadata(self, title=_marker, subject=_marker, description=_marker, contributors=_marker, effective_date=_marker, expiration_date=_marker, format=_marker, language=_marker, rights=_marker
-                      ):
+    def _editMetadata(self, title=_marker, subject=_marker, description=_marker,
+                      contributors=_marker, effective_date=_marker,
+                      expiration_date=_marker, format=_marker, language=_marker,
+                      rights=_marker):
+
         # Update the editable metadata for this resource.
         if title is not _marker:
             self.setTitle(title)
@@ -616,20 +621,23 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     security.declareProtected(ModifyPortalContent, 'manage_editMetadata')
 
-    def manage_editMetadata(self, title, subject, description, contributors, effective_date, expiration_date, format, language, rights, REQUEST
-                            ):
+    def manage_editMetadata(self, title, subject, description, contributors,
+                            effective_date, expiration_date, format, language,
+                            rights, REQUEST):
         """ Update metadata from the ZMI.
         """
-        self._editMetadata(title, subject, description, contributors, effective_date, expiration_date, format, language, rights
-                           )
-        REQUEST['RESPONSE'].redirect(self.absolute_url()
-                                     + '/manage_metadata'
-                                     + '?manage_tabs_message=Metadata+updated.')
+        self._editMetadata(title, subject, description, contributors,
+                           effective_date, expiration_date, format, language,
+                           rights)
+        REQUEST['RESPONSE'].redirect(self.absolute_url() +
+                                     '/manage_metadata'  +
+                                     '?manage_tabs_message=Metadata+updated.')
 
     security.declareProtected(ModifyPortalContent, 'editMetadata')
 
-    def editMetadata(self, title='', subject=(), description='', contributors=(), effective_date=None, expiration_date=None, format='text/html', language='en-US', rights=''
-                     ):
+    def editMetadata(self, title='', subject=(), description='',
+                     contributors=(), effective_date=None, expiration_date=None,
+                     format='text/html', language='en-US', rights=''):
         # Need to add check for webDAV locked resource for TTW methods.
         # As per bug #69, we can't assume they use the webdav
         # locking interface, and fail gracefully if they don't.
