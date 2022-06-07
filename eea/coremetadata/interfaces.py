@@ -1,191 +1,237 @@
-# pylint: disable=C0412
 """Module where all interfaces, events and exceptions live."""
-import os
-from plone.app.z3cform.widget import DatetimeFieldWidget
-from plone.app.z3cform.widget import SelectFieldWidget
-from plone.autoform import directives
-from plone.autoform.interfaces import IFormFieldProvider
-from plone.namedfile.field import NamedBlobImage
-from plone.schema import JSONField
-from plone.supermodel import model
-from zope.interface import provider, invariant, Invalid
+from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date, Choice
-from z3c.form.interfaces import IAddForm
-from z3c.form.interfaces import IEditForm
-
-try:
-    from plone.app.dexterity import _
-except ImportError:
-    from plone.app.dexterity import PloneMessageFactory as _
-
-
-DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
-DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
-
-
-class EffectiveAfterExpires(Invalid):
-    __doc__ = _(
-    "error_invalid_publication", default=u"Invalid effective or expires date"
-    )
 
 
 class IEeaCoremetadataLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-@provider(IFormFieldProvider)
-class ICoreMetadata(model.Schema):
-    """ Core Metadata
+class IMinimalCoreMetadata(Interface):
 
+    """ Minimal set of eea core metadata elements.
     """
-    # ownership fieldset
-    model.fieldset(
-        'default',
-        label=_(
-            'label_schema_default',
-            default=u'Default'
-        ),
-        fields=['title', 'description', 'creation_date', 'effective',
-                'expires', 'organisations', 'topics', 'temporal_coverage',
-                'geo_coverage', 'word_count', 'rights', 'publisher',
-                'preview_image', 'preview_caption', 'data_provenance'],
-    )
+    __module__ = 'eea.coremetadata.interfaces'
 
-    title = TextLine(
-        title=_(u"label_title", default=u"Title"),
-        required=True,
-    )
+    def Title():
+        """ Return a single string, the DCMI Title element (resource name).
+        o Permission:  View
+        """
 
-    description = Text(
-        title=_(u"label_description", default=u"Description"),
-        description=_(
-            u"help_description",
-            default=u"Used in item listings and search results."
-        ),
-        required=False,
-    )
+    def Description():
+        """ Return the DCMI Description element (resource summary).
+        o Result is a natural language description of this object.
+        o Permission:  View
+        """
 
-    # directives.widget('creation_date', DatetimeFieldWidget)
-    creation_date = Date(
-        title=_(u'label_creation_date', u'Creation Date'),
-        description=_(
-            u'help_creation_date',
-            default=u'The date this item was created on.'),
-        required=True,
-    )
+    def Type():
+        """ Return the DCMI Type element (resource type).
+        o Result a human-readable type name for the resource (typically
+          the Title of its type info object).
+        o Permission:  View
+        """
 
-    directives.widget('effective', DatetimeFieldWidget)
-    effective = Datetime(
-        title=_(u'label_effective_date', u'Publishing Date'),
-        description=_(
-            u'help_effective_date',
-            default=u'If this date is in the future, the content will '
-                    u'not show up in listings and searches until this date.'),
-        required=False,
-        default=None
-    )
 
-    directives.widget('expires', DatetimeFieldWidget)
-    expires = Datetime(
-        title=_(u'label_expiration_date', u'Expiration Date'),
-        description=_(
-            u'help_expiration_date',
-            default=u'When this date is reached, the content will no '
-                    u'longer be visible in listings and searches.'),
-        required=False,
-        default=None
-    )
+class ICoreMetadata(IMinimalCoreMetadata):
+    """
+    """
+    __module__ = 'eea.coremetadata.interfaces'
 
-    directives.omitted("effective", "expires")
-    directives.no_omit(IEditForm, "effective", "expires")
-    directives.no_omit(IAddForm, "effective", "expires")
+    def listCreators():
+        """ Return a sequence of DCMI Creator elements (resource authors).
+        o Depending on the implementation, this returns the full name(s) of the
+          author(s) of the content object or their ids.
+        o Permission:  View
+        """
 
-    directives.widget("organisations", SelectFieldWidget)
-    organisations = Tuple(
-        title=_(u"Organisations"),
-        description=_(u"The responsible organisations for this item"),
-        required=True,
-        value_type = Choice(vocabulary="organisations_vocabulary"),
-        default=tuple(DEFAULT_ORGANISATIONS),
-    )
+    def Creator():
+        """ Return the first DCMI Creator element, or an empty string.
+        o Permission:  View
+        """
 
-    directives.widget("topics", vocabulary="topics_vocabulary")
-    topics = Tuple(
-        title=_(u"Topics"),
-        required=True,
-        default=(),
-        value_type=TextLine(
-            title=u"Single topic",
-        )
-    )
+    def Subject():
+        """ Return a sequence of DCMI Subject elements (resource keywords).
+        o Result is zero or more keywords associated with the content object.
+        o Permission:  View
+        """
 
-    temporal_coverage = JSONField(
-        title=_(u"Temporal coverage"),
-        required=True,
-        widget="temporal",
-        default={},
-    )
+    def Publisher():
+        """ Return the DCMI Publisher element (resource publisher).
+        o Result is the full formal name of the entity or person responsible
+          for publishing the resource.
+        o Permission:  View
+        """
 
-    geo_coverage = JSONField(
-        title=_(u"Geographical coverage"),
-        required=True,
-        widget="geolocation",
-        default={},
-    )
+    def listContributors():
+        """ Return a sequence of DCMI Contributor elements (resource
+            collaborators).
+        o Return zero or more collaborators (beyond thos returned by
+          'listCreators').
+        o Permission:  View
+        """
 
-    word_count = Int(
-        title=_(u"Word Count"),
-        description=_(u"The item's word count"),
-        required=False,
-        default=0,
-    )
+    def Contributors():
+        """ Deprecated alias for 'listContributors'.
+        o 'initial caps' names are reserved for strings.
+        """
 
-    rights = TextLine(
-        title=_(u'label_copyrights', default=u'Rights'),
-        description=_(
-            u'help_copyrights',
-            default=u'Copyright statement or other rights information on this '
-                    u'item.'
-        ),
-        required=False,
-    )
+    def Date(zone=None):
+        """ Return the DCMI Date element (default resource date).
+        o Result is a string, formatted 'YYYY-MM-DD H24:MN:SS TZ'.
+        o If 'zone' is 'None', return the time in the system default
+          timezone.
+        o Permission:  View
+        """
 
-    directives.widget("publisher", SelectFieldWidget)
-    publisher = Tuple(
-        title=_(u"Publisher"),
-        description=_(u"The responsible publisher for this item"),
-        value_type = Choice(vocabulary="publisher_vocabulary"),
-        required=False,
-        default=tuple(DEFAULT_PUBLISHER),
-    )
+    def CreationDate(zone=None):
+        """ Return the DCMI Date element (date resource created).
+        o Result is a string, formatted 'YYYY-MM-DD H24:MN:SS TZ'.
+        o If 'zone' is 'None', return the time in the system default
+          timezone.
+        o Permission:  View
+        """
 
-    preview_image = NamedBlobImage(
-        title=_("label_previewimage", default="Preview image"),
-        description=_(
-            "help_previewimage",
-            default="Insert an image that will be used in listing and teaser blocks.",
-        ),
-        required=False,
-    )
+    def EffectiveDate(zone=None):
+        """ Return the DCMI Date element (date resource becomes effective).
+        o Result is a string, formatted 'YYYY-MM-DD H24:MN:SS TZ', or
+          None.
+        o If 'zone' is 'None', return the time in the system default
+          timezone.
+        o Permission:  View
+        """
 
-    preview_caption = TextLine(
-        title=_("Preview image caption"), description="", required=False
-    )
+    def ExpirationDate(zone=None):
+        """ Return the DCMI Date element (date resource expires).
+        o Result is a string, formatted 'YYYY-MM-DD H24:MN:SS TZ', or
+          None.
+        o If 'zone' is 'None', return the time in the system default
+          timezone.
+        o Permission:  View
+        """
 
-    data_provenance = JSONField(
-        title=_(u"Data provenance"),
-        required=True,
-        widget="data_provenance",
-        default={},
-    )
+    def ModificationDate(zone=None):
+        """ DCMI Date element - date resource last modified.
+        o Result is a string, formatted 'YYYY-MM-DD H24:MN:SS TZ'.
+        o If 'zone' is 'None', return the time in the system default
+          timezone.
+        o Permission:  View
+        """
 
-    @invariant
-    def validate_start_end(data):
-        if data.effective and data.expires and data.effective() > data.expires():
-            raise EffectiveAfterExpires(
-                _(
-                    "error_expiration_must_be_after_effective_date",
-                    default=u"Expiration date must be after publishing date.",
-                )
-            )
+    def Format():
+        """ Return the DCMI Format element (resource format).
+        o Result is the resource's MIME type (e.g. 'text/html',
+          'image/png', etc.).
+        o Permission:  View
+        """
+
+    def Identifier():
+        """ Return the DCMI Identifier element (resource ID).
+        o Result is a unique ID (a URL) for the resource.
+        o Permission:  View
+        """
+
+    def Language():
+        """ DCMI Language element (resource language).
+        o Result it the RFC language code (e.g. 'en-US', 'pt-BR') for the
+          resource.
+        o Permission:  View
+        """
+
+    def Rights():
+        """ Return the DCMI Rights element (resource copyright).
+        o Return a string describing the intellectual property status, if
+          any, of the resource.
+        o Permission:  View
+        """
+
+
+class ICatalogCoreMetadata(Interface):
+    """ Provide Zope-internal date attributes for cataloging purposes.
+    """
+
+    __module__ = 'eea.coremetadata.interfaces'
+
+    def created():
+        """ Return the DateTime form of CreationDate.
+        o Permission:  View
+        """
+
+    def effective():
+        """ Return the DateTime form of EffectiveDate.
+        o Permission:  View
+        """
+
+    def expires():
+        """ Return the DateTime form of ExpirationDate.
+        o Permission:  View
+        """
+
+    def modified():
+        """ Return the DateTime form of ModificationDate
+        o Permission:  View
+        """
+
+
+class IMutableMinimalCoreMetadata(IMinimalCoreMetadata):
+
+    """ Update interface for minimal set of mutable metadata.
+    """
+    __module__ = 'eea.coremetadata.interfaces'
+
+    def setTitle(title):
+        """ Set DCMI Title element - resource name.
+        o Permission:  Modify portal content
+        """
+
+    def setDescription(description):
+        """ Set DCMI Description element - resource summary.
+        o Permission:  Modify portal content
+        """
+
+
+class IMutableCoreMetadata(IMutableMinimalCoreMetadata, ICoreMetadata):
+
+    """ Update interface for mutable metadata.
+    """
+
+    __module__ = 'eea.coremetadata.interfaces'
+
+    def setCreators(creators):
+        """ Set DCMI Creator elements - resource authors.
+        o Permission:  Modify portal content
+        """
+
+    def setSubject(subject):
+        """ Set DCMI Subject element - resource keywords.
+        o Permission:  Modify portal content
+        """
+
+    def setContributors(contributors):
+        """ Set DCMI Contributor elements - resource collaborators.
+        o Permission:  Modify portal content
+        """
+
+    def setEffectiveDate(effective_date):
+        """ Set DCMI Date element - date resource becomes effective.
+        o Permission:  Modify portal content
+        """
+
+    def setExpirationDate(expiration_date):
+        """ Set DCMI Date element - date resource expires.
+        o Permission:  Modify portal content
+        """
+
+    def setFormat(format):
+        """ Set DCMI Format element - resource format.
+        o Permission:  Modify portal content
+        """
+
+    def setLanguage(language):
+        """ Set DCMI Language element - resource language.
+        o Permission:  Modify portal content
+        """
+
+    def setRights(rights):
+        """ Set DCMI Rights element - resource copyright.
+        o Permission:  Modify portal content
+        """

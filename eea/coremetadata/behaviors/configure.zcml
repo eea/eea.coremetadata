@@ -12,9 +12,8 @@
     title="EEA Core metadata"
     description="Adds EEA Core metadata fields"
     factory="eea.coremetadata.behaviors.metadata.CoreMetadata"
-    provides="eea.coremetadata.interfaces.ICoreMetadata"
+    provides="eea.coremetadata.metadata.ICoreMetadata"
     for="plone.dexterity.interfaces.IDexterityContent"
-    marker="eea.coremetadata.interfaces.ICoreMetadata"
     />
 
   <utility
