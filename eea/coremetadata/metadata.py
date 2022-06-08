@@ -1,6 +1,7 @@
 # pylint: disable=C0412
 """Metadata schema"""
-import os, six
+import os
+import six
 from AccessControl.class_init import InitializeClass
 from AccessControl.SecurityInfo import ClassSecurityInfo
 from AccessControl.SecurityManagement import getSecurityManager
@@ -143,7 +144,7 @@ class ICoreMetadata(model.Schema):
         title=_(u"Organisations"),
         description=_(u"The responsible organisations for this item"),
         required=True,
-        value_type = Choice(vocabulary="organisations_vocabulary"),
+        value_type=Choice(vocabulary="organisations_vocabulary"),
         default=tuple(DEFAULT_ORGANISATIONS),
     )
 
@@ -192,7 +193,7 @@ class ICoreMetadata(model.Schema):
     publisher = Tuple(
         title=_(u"Publisher"),
         description=_(u"The responsible publisher for this item"),
-        value_type = Choice(vocabulary="publisher_vocabulary"),
+        value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
         default=tuple(DEFAULT_PUBLISHER),
     )
