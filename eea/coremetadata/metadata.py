@@ -1,4 +1,4 @@
-# pylint: disable=C0412
+# pylint: disable=C0412, C0301, C0111, W0622
 """Metadata schema"""
 import os
 import six
@@ -65,7 +65,7 @@ def tuplize(valueName, value, splitter=lambda x: x.split()):
 
 class EffectiveAfterExpires(Invalid):
     __doc__ = _(
-        "error_invalid_publication", default=u"Invalid effective or expires date"
+        "error_invalid_publication", default=u"Invalid effective or expires date" # noqa
     )
 
 
@@ -199,7 +199,7 @@ class ICoreMetadata(model.Schema):
         title=_("label_previewimage", default="Preview image"),
         description=_(
             "help_previewimage",
-            default="Insert an image that will be used in listing and teaser blocks.",
+            default="Insert an image that will be used in listing and teaser blocks.", # noqa
         ),
         required=False,
     )
@@ -589,9 +589,9 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     security.declarePrivate('_editMetadata')
 
-    def _editMetadata(self, title=_marker, subject=_marker, description=_marker,
+    def _editMetadata(self, title=_marker, subject=_marker, description=_marker, # noqa
                       contributors=_marker, effective_date=_marker,
-                      expiration_date=_marker, format=_marker, language=_marker,
+                      expiration_date=_marker, format=_marker, language=_marker, # noqa
                       rights=_marker):
 
         # Update the editable metadata for this resource.
@@ -634,7 +634,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
     security.declareProtected(ModifyPortalContent, 'editMetadata')
 
     def editMetadata(self, title='', subject=(), description='',
-                     contributors=(), effective_date=None, expiration_date=None,
+                     contributors=(), effective_date=None, expiration_date=None, #noqa
                      format='text/html', language='en-US', rights=''):
         # Need to add check for webDAV locked resource for TTW methods.
         # As per bug #69, we can't assume they use the webdav
