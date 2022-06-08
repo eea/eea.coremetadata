@@ -19,7 +19,6 @@ from plone.namedfile.field import NamedBlobImage
 from plone.schema import JSONField
 from plone.supermodel import model
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.permissions import ModifyPortalContent, View
 from Products.CMFPlone.utils import WWW_DIR
 from z3c.form.interfaces import IAddForm, IEditForm
 from zope.interface import Invalid, implementer, invariant, provider
@@ -28,9 +27,11 @@ from zope.schema import Choice, Date, Datetime, Int, Text, TextLine, Tuple
 try:
     from plone.app.dexterity import _
     from plone.app.z3cform.widget import SelectFieldWidget
+    from Products.CMFPlone.permissions import ModifyPortalContent, View
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
     from z3c.form.browser.select import SelectFieldWidget
+    from Products.CMFCore.permissions import ModifyPortalContent, View
 
 
 DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
