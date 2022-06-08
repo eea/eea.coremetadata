@@ -8,25 +8,22 @@ from AccessControl.SecurityManagement import getSecurityManager
 from Acquisition import aq_base
 from App.special_dtml import DTMLFile
 from DateTime.DateTime import DateTime
+from eea.coremetadata.interfaces import ICatalogCoreMetadata
 from eea.coremetadata.interfaces import ICoreMetadata as ICM
-from eea.coremetadata.interfaces import ICatalogCoreMetadata, IMutableCoreMetadata
+from eea.coremetadata.interfaces import IMutableCoreMetadata
 from OFS.PropertyManager import PropertyManager
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import WWW_DIR
-from Products.CMFPlone.permissions import ModifyPortalContent
-from Products.CMFPlone.permissions import View
-from plone.app.z3cform.widget import DatetimeFieldWidget
-from plone.app.z3cform.widget import SelectFieldWidget
+from plone.app.z3cform.widget import DatetimeFieldWidget, SelectFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
 from plone.schema import JSONField
 from plone.supermodel import model
-from zope.interface import provider, invariant, Invalid, implementer
-from zope.schema import Int, Text, TextLine, Tuple, Datetime, Date, Choice
-from z3c.form.interfaces import IAddForm
-from z3c.form.interfaces import IEditForm
-
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.permissions import ModifyPortalContent, View
+from Products.CMFPlone.utils import WWW_DIR
+from z3c.form.interfaces import IAddForm, IEditForm
+from zope.interface import Invalid, implementer, invariant, provider
+from zope.schema import Choice, Date, Datetime, Int, Text, TextLine, Tuple
 
 try:
     from plone.app.dexterity import _
@@ -68,7 +65,7 @@ def tuplize(valueName, value, splitter=lambda x: x.split()):
 
 class EffectiveAfterExpires(Invalid):
     __doc__ = _(
-    "error_invalid_publication", default=u"Invalid effective or expires date"
+        "error_invalid_publication", default=u"Invalid effective or expires date"
     )
 
 
@@ -553,7 +550,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def setContributors(self, contributors):
         # Set Core Contributor elements - resource collaborators.
-        semi_split = lambda s: map(lambda x: x.strip(), s.split(';'))
+        def semi_split(s): return map(lambda x: x.strip(), s.split(';'))
         self.contributors = tuplize('contributors', contributors, semi_split)
 
     security.declareProtected(ModifyPortalContent, 'setEffectiveDate')
@@ -631,7 +628,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
                            effective_date, expiration_date, format, language,
                            rights)
         REQUEST['RESPONSE'].redirect(self.absolute_url() +
-                                     '/manage_metadata'  +
+                                     '/manage_metadata' +
                                      '?manage_tabs_message=Metadata+updated.')
 
     security.declareProtected(ModifyPortalContent, 'editMetadata')
@@ -645,8 +642,12 @@ class DefaultCoreMetadataImpl(PropertyManager):
         if hasattr(self, 'failIfLocked'):
             self.failIfLocked()
 
-        self._editMetadata(title=title, subject=subject, description=description, contributors=contributors, effective_date=effective_date, expiration_date=expiration_date, format=format, language=language, rights=rights
-                           )
+        self._editMetadata(title=title, subject=subject,
+                           description=description, contributors=contributors,
+                           effective_date=effective_date,
+                           expiration_date=expiration_date, format=format,
+                           language=language, rights=rights)
         self.reindexObject()
+
 
 InitializeClass(DefaultCoreMetadataImpl)
