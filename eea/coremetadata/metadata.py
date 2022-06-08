@@ -205,7 +205,7 @@ class ICoreMetadata(model.Schema):
     )
 
     preview_caption = TextLine(
-        title=_("Preview image caption"), description="", required=False
+        title=_("Preview image caption"), description=_(""), required=False
     )
 
     data_provenance = JSONField(
