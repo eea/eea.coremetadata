@@ -4,7 +4,6 @@
 from plone.app.dexterity.behaviors.metadata import (DCFieldProperty,
                                                     MetadataBase)
 from eea.coremetadata.metadata import ICoreMetadata
-from zope.schema.fieldproperty import FieldProperty
 
 
 class CoreMetadata(MetadataBase):

@@ -1,4 +1,4 @@
-# pylint: disable=C0412, C0301, C0111, W0622
+# pylint: disable=C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
 """Metadata schema"""
 import os
 import six
@@ -368,8 +368,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
         # return unknown if never set properly
         if self.creation_date:
             return self.creation_date.toZone(zone).ISO()
-        else:
-            return 'Unknown'
+        return 'Unknown'
 
     security.declareProtected(View, 'EffectiveDate')
 
@@ -414,8 +413,6 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def Identifier(self):
         # Core Identifier element - resource ID.
-        # XXX: fixme using 'portal_metadata' (we need to prepend the
-        #      right prefix to self.getPhysicalPath().
         return self.absolute_url()
 
     security.declareProtected(View, 'Language')
