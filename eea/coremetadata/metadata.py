@@ -12,7 +12,7 @@ from eea.coremetadata.interfaces import ICatalogCoreMetadata
 from eea.coremetadata.interfaces import ICoreMetadata as ICM
 from eea.coremetadata.interfaces import IMutableCoreMetadata
 from OFS.PropertyManager import PropertyManager
-from plone.app.z3cform.widget import DatetimeFieldWidget, SelectFieldWidget
+from plone.app.z3cform.widget import DatetimeFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
@@ -27,8 +27,10 @@ from zope.schema import Choice, Date, Datetime, Int, Text, TextLine, Tuple
 
 try:
     from plone.app.dexterity import _
+    from plone.app.z3cform.widget import SelectFieldWidget
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
+    from z3c.form.browser.select import SelectFieldWidget
 
 
 DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
