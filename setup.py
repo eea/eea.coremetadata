@@ -43,10 +43,11 @@ setup(
         install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
+        'collective.taxonomy'
     ],
     extras_require={
         'test': [
-            'plone.app.testing',
+            'plone.app.testing'
         ],
     },
     entry_points="""

@@ -15,6 +15,10 @@ class EEAFixture(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """ Setup Zope
         """
+        import collective.taxonomy
+        self.loadZCML(package=collective.taxonomy)
+        z2.installProduct(app, 'collective.taxonomy')
+
         import eea.coremetadata
         self.loadZCML(package=eea.coremetadata)
         z2.installProduct(app, 'eea.coremetadata')

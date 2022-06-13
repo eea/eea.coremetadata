@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="en">
+  <vocabName>
+    <langstring language="en">Organisations</langstring>
+  </vocabName>
+  <vocabIdentifier>eea.organisations.taxonomy</vocabIdentifier>
+  <term>
+    <termIdentifier>EEA</termIdentifier>
+    <caption>
+      <langstring language="en">European Environment Agency</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>EC</termIdentifier>
+    <caption>
+      <langstring language="en">European Commission</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>WHO-Europe</termIdentifier>
+    <caption>
+      <langstring language="en">World Health Organization-Europe</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>WHO</termIdentifier>
+    <caption>
+      <langstring language="en">World Health Organization</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ECDC</termIdentifier>
+    <caption>
+      <langstring language="en">European Centre for Disease Prevention and Control</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>EFSA</termIdentifier>
+    <caption>
+      <langstring language="en">European Food Safety Authority</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ECHA</termIdentifier>
+    <caption>
+      <langstring language="en">European Chemical Agency</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>C3S</termIdentifier>
+    <caption>
+      <langstring language="en">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/ICM</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Inland, Coastal and Marine waters</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/BD</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Biological Diversity</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/DI</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Data integration and digitalisation</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/CE</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Circular economy and resource use</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/CA</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Climate change adaptation and LULUCF</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/CM</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Climate change mitigation</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/HE</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Human health and the environment</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>ETC/ST</termIdentifier>
+    <caption>
+      <langstring language="en">ETC Sustainability Transitions</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>OSPAR</termIdentifier>
+    <caption>
+      <langstring language="en">OSPAR Commission Secretariat</langstring>
+    </caption>
+  </term>
+
+
+  <term>
+    <termIdentifier>UNEP/MAP</termIdentifier>
+    <caption>
+      <langstring language="en">UN Environment Programme / Mediterranean Action Plan</langstring>
+    </caption>
+  </term>
+
+</vdex>
