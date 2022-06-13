@@ -1,12 +1,14 @@
 Changelog
 =========
 
-1.0 - (2022-04-05)
+1.1 - (2022-06-13)
 ---------------------------
-* Change: Merge #142720  [Petchesi-Iulian]
+* Change: Fix history.txt
+  [iulianpetchesi]
 
 1.0 - (2022-04-05)
 -----------------------
 
 * Initial release.
   [eea]
+
