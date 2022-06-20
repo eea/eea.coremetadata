@@ -151,7 +151,7 @@ class ICoreMetadata(model.Schema):
     directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
         title=_(u"Topics"),
-        description=_(u"Select from the official EEA topics")
+        description=_(u"Select from the official EEA topics"),
         required=False,
         value_type=Choice(vocabulary="topics_vocabulary"),
         default=(),
@@ -159,7 +159,7 @@ class ICoreMetadata(model.Schema):
 
     temporal_coverage = JSONField(
         title=_(u"Temporal coverage"),
-        description=_(u"Add years or period, e.g. 2018-2022")
+        description=_(u"Add years or period, e.g. 2018-2022"),
         required=False,
         widget="temporal",
         default={},
@@ -167,7 +167,7 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_(u"Geographical coverage"),
-        description=_(u"Defines the coverage")
+        description=_(u"Defines the coverage"),
         required=False,
         widget="geolocation",
         default={},
