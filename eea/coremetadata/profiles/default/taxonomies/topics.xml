@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="en">
+  <vocabName>
+    <langstring language="en">Topics</langstring>
+  </vocabName>
+  <vocabIdentifier>eea.topics.taxonomy</vocabIdentifier>
+
+  <term>
+    <termIdentifier>TEXT</termIdentifier>
+    <caption>
+      <langstring language="en">Area</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Biomass</termIdentifier>
+    <caption>
+      <langstring language="en">Biomass</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Damage</termIdentifier>
+    <caption>
+      <langstring language="en">Damage</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Deadwood</termIdentifier>
+    <caption>
+      <langstring language="en">Deadwood</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Felling</termIdentifier>
+    <caption>
+      <langstring language="en">Felling</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Growing stock</termIdentifier>
+    <caption>
+      <langstring language="en">Growing stock</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Land-Cover</termIdentifier>
+    <caption>
+      <langstring language="en">Land-Cover</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Protection</termIdentifier>
+    <caption>
+      <langstring language="en">Protection</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>All</termIdentifier>
+    <caption>
+      <langstring language="en">All</langstring>
+    </caption>
+  </term>
+
+</vdex>

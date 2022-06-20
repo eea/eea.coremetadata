@@ -92,7 +92,7 @@ class ICoreMetadata(model.Schema):
 
     title = TextLine(
         title=_(u"label_title", default=u"Title"),
-        required=True,
+        required=False,
     )
 
     description = Text(
@@ -104,13 +104,12 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    # directives.widget('creation_date', DatetimeFieldWidget)
     creation_date = Date(
         title=_(u'label_creation_date', u'Creation Date'),
         description=_(
             u'help_creation_date',
             default=u'The date this item was created on.'),
-        required=True,
+        required=False,
     )
 
     directives.widget('effective', DatetimeFieldWidget)
@@ -135,39 +134,41 @@ class ICoreMetadata(model.Schema):
         default=None
     )
 
+    directives.omitted("creation_date")
     directives.omitted("effective", "expires")
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
     directives.widget("organisations", SelectFieldWidget)
     organisations = Tuple(
-        title=_(u"Organisations"),
-        description=_(u"The responsible organisations for this item"),
-        required=True,
+        title=_(u"Other organisations involved"),
+        description=_(u"Select other organisations involved in the production of this item"),
+        required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
         default=tuple(DEFAULT_ORGANISATIONS),
     )
 
-    directives.widget("topics", vocabulary="topics_vocabulary")
+    directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
         title=_(u"Topics"),
-        required=True,
+        description=_(u"Select from the official EEA topics")
+        required=False,
+        value_type=Choice(vocabulary="topics_vocabulary"),
         default=(),
-        value_type=TextLine(
-            title=u"Single topic",
-        )
     )
 
     temporal_coverage = JSONField(
         title=_(u"Temporal coverage"),
-        required=True,
+        description=_(u"Add years or period, e.g. 2018-2022")
+        required=False,
         widget="temporal",
         default={},
     )
 
     geo_coverage = JSONField(
         title=_(u"Geographical coverage"),
-        required=True,
+        description=_(u"Defines the coverage")
+        required=False,
         widget="geolocation",
         default={},
     )
@@ -192,7 +193,7 @@ class ICoreMetadata(model.Schema):
     directives.widget("publisher", SelectFieldWidget)
     publisher = Tuple(
         title=_(u"Publisher"),
-        description=_(u"The responsible publisher for this item"),
+        description=_(u"The publisher of this item. Change only if needed"),
         value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
         default=tuple(DEFAULT_PUBLISHER),
@@ -212,8 +213,8 @@ class ICoreMetadata(model.Schema):
     )
 
     data_provenance = JSONField(
-        title=_(u"Data provenance"),
-        required=True,
+        title=_(u"Add sources for the data used"),
+        required=False,
         widget="data_provenance",
         default={},
     )

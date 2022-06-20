@@ -50,10 +50,30 @@ def publisher_vocabulary(context):
     return SimpleVocabulary(terms)
 
 
-@implementer(IVocabularyFactory)
-class KeywordsVocabulary(BKV):
-    """KeywordsVocabulary"""
-    def __init__(self, index):
-        self.keyword_index = index
+@provider(IVocabularyFactory)
+def topics_vocabulary(context):
+    """topics_vocabulary"""
 
-TopicsVocabularyFactory = KeywordsVocabulary("topics")
+    utility_name = "collective.taxonomy.eeatopicstaxonomy"
+    taxonomy = queryUtility(ITaxonomy, name=utility_name)
+
+    try:
+        vocabulary = taxonomy(context)
+    except:
+        vocabulary = taxonomy.makeVocabulary('en')
+
+    terms = [
+        SimpleTerm(key, key, val.encode('ascii', 'ignore').decode('ascii'))
+        for val, key in vocabulary.iterEntries()
+    ]
+    terms.sort(key=lambda t: t.title)
+
+    return SimpleVocabulary(terms)
+
+# @implementer(IVocabularyFactory)
+# class KeywordsVocabulary(BKV):
+#     """KeywordsVocabulary"""
+#     def __init__(self, index):
+#         self.keyword_index = index
+#
+# TopicsVocabularyFactory = KeywordsVocabulary("topics")
