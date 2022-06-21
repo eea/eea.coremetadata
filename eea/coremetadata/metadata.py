@@ -104,7 +104,7 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    creation_date = Date(
+    creation_date = Datetime(
         title=_(u'label_creation_date', u'Creation Date'),
         description=_(
             u'help_creation_date',
@@ -142,7 +142,7 @@ class ICoreMetadata(model.Schema):
     directives.widget("organisations", SelectFieldWidget)
     organisations = Tuple(
         title=_(u"Other organisations involved"),
-        description=_(u"Select other organisations involved in the production of this item"),
+        description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
         default=tuple(DEFAULT_ORGANISATIONS),
@@ -179,6 +179,8 @@ class ICoreMetadata(model.Schema):
         required=False,
         default=0,
     )
+
+    directives.omitted("word_count")
 
     rights = TextLine(
         title=_(u'label_copyrights', default=u'Rights'),
@@ -240,14 +242,14 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def __init__(self, title='', subject=(), description='', contributors=(),
                  effective_date=None, expiration_date=None, format='text/html',
-                 language='', rights=''):
+                 language='', rights='', word_count=0):
         now = DateTime()
         self.creation_date = now
         self.modification_date = now
         self.creators = ()
         self._editMetadata(title, subject, description, contributors,
                            effective_date, expiration_date, format, language,
-                           rights)
+                           rights, word_count)
 
     #
     #  Set-modification-date-related methods.
@@ -431,6 +433,14 @@ class DefaultCoreMetadataImpl(PropertyManager):
         # Core Rights element - resource copyright.
         return self.rights
 
+    security.declareProtected(View, 'WordCount')
+
+    def WordCount(self):
+        # Core Rights element - resource copyright.
+        # import pdb; pdb.set_trace()
+        return self.word_count
+
+
     #
     #  Core utility methods
     #
@@ -508,6 +518,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
         hdrlist.append(('Format', self.Format()))
         hdrlist.append(('Language', self.Language()))
         hdrlist.append(('Rights', self.Rights()))
+        hdrlist.append(('WordCount', self.WordCount()))
         return hdrlist
 
     #
@@ -584,6 +595,13 @@ class DefaultCoreMetadataImpl(PropertyManager):
         # Set Core Rights element - resource copyright.
         self.rights = rights
 
+    security.declareProtected(ModifyPortalContent, 'setWordCount')
+
+    def setWordCount(self, word_count):
+        # Set Core word_count element
+        # import pdb; pdb.set_trace()
+        self.word_count = word_count
+
     #
     #  Management tab methods
     #
@@ -593,7 +611,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
     def _editMetadata(self, title=_marker, subject=_marker, description=_marker,  # noqa
                       contributors=_marker, effective_date=_marker,
                       expiration_date=_marker, format=_marker, language=_marker,  # noqa
-                      rights=_marker):
+                      rights=_marker, word_count=_marker):
 
         # Update the editable metadata for this resource.
         if title is not _marker:
@@ -614,6 +632,8 @@ class DefaultCoreMetadataImpl(PropertyManager):
             self.setLanguage(language)
         if rights is not _marker:
             self.setRights(rights)
+        if word_count is not _marker:
+            self.setWordCount(word_count)
 
     security.declareProtected(ModifyPortalContent, 'manage_metadata')
     manage_metadata = DTMLFile('zmi_metadata', WWW_DIR)
@@ -622,7 +642,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def manage_editMetadata(self, title, subject, description, contributors,
                             effective_date, expiration_date, format, language,
-                            rights, REQUEST):
+                            rights, word_count, REQUEST):
         """ Update metadata from the ZMI.
         """
         self._editMetadata(title, subject, description, contributors,
@@ -636,7 +656,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def editMetadata(self, title='', subject=(), description='',
                      contributors=(), effective_date=None, expiration_date=None,   # noqa
-                     format='text/html', language='en-US', rights=''):
+                     format='text/html', language='en-US', rights='', word_count=0):   # noqa
         # Need to add check for webDAV locked resource for TTW methods.
         # As per bug #69, we can't assume they use the webdav
         # locking interface, and fail gracefully if they don't.
@@ -647,7 +667,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
                            description=description, contributors=contributors,
                            effective_date=effective_date,
                            expiration_date=expiration_date, format=format,
-                           language=language, rights=rights)
+                           language=language, rights=rights, word_count=word_count)   # noqa
         self.reindexObject()
 
 
