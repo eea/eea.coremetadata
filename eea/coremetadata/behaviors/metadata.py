@@ -17,7 +17,6 @@ class CoreMetadata(MetadataBase):
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
-    creation_date = DCFieldProperty(ICoreMetadata["creation_date"])
     effective = DCFieldProperty(ICoreMetadata["effective"],
                                 get_name="effective_date")
     expires = DCFieldProperty(ICoreMetadata["expires"],
@@ -27,10 +26,6 @@ class CoreMetadata(MetadataBase):
         ICoreMetadata["temporal_coverage"])
 
     geo_coverage = DCFieldProperty(ICoreMetadata["geo_coverage"])
-
-    # content_type = DCFieldProperty(ICoreMetadata["content_type"])
-
-    word_count = DCFieldProperty(ICoreMetadata["word_count"])
 
     rights = DCFieldProperty(ICoreMetadata["rights"])
 
