@@ -28,7 +28,7 @@
 
   <utility
       name="topics_vocabulary"
-      component=".vocabulary.TopicsVocabularyFactory"
+      component=".vocabulary.topics_vocabulary"
       />
 
 </configure>

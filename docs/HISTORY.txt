@@ -1,14 +1,19 @@
 Changelog
 =========
 
+1.2 - (2022-06-21)
+---------------------------
+* Change: Added topics taxonomy, updated descriptions and changed fields
+  requirements
+  [iulianpetchesi refs #142720]
+
 1.1 - (2022-06-13)
 ---------------------------
 * Change: Fix history.txt
-  [iulianpetchesi]
+  [iulianpetchesi refs #142720]
 
 1.0 - (2022-04-05)
 -----------------------
 
 * Initial release.
   [eea]
-
