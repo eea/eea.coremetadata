@@ -22,7 +22,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import WWW_DIR
 from z3c.form.interfaces import IAddForm, IEditForm
 from zope.interface import Invalid, implementer, invariant, provider
-from zope.schema import Choice, Date, Datetime, Int, Text, TextLine, Tuple
+from zope.schema import Choice, Datetime, Int, Text, TextLine, Tuple
 
 try:
     from plone.app.dexterity import _
@@ -439,7 +439,6 @@ class DefaultCoreMetadataImpl(PropertyManager):
         # Core Rights element - resource copyright.
         # import pdb; pdb.set_trace()
         return self.word_count
-
 
     #
     #  Core utility methods

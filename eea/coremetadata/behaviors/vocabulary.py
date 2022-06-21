@@ -1,8 +1,7 @@
 # pylint: disable=W0702
 """ vocabulary.py """
 from collective.taxonomy.interfaces import ITaxonomy
-from plone.app.vocabularies.catalog import KeywordsVocabulary as BKV
-from zope.interface import implementer, provider  # alsoProvides,
+from zope.interface import provider  # alsoProvides,
 from zope.component import queryUtility
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
