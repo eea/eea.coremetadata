@@ -3,6 +3,8 @@ Changelog
 
 1.3-dev0 - (unreleased)
 ---------------------------
+* Change: Removed creation_date and word count
+  [iulianpetchesi refs #142720]
 
 1.2 - (2022-06-21)
 ---------------------------
