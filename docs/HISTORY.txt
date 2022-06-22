@@ -3,6 +3,8 @@ Changelog
 
 1.4 - (2022-06-22)
 ---------------------------
+* Change: Updated topics taxonomy with new values
+  [iulianpetchesi refs #142720]
 * Change: Release
   [nileshgulia1]
 
