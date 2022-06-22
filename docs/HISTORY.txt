@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5 - (2022-06-22)
+---------------------------
+* Change: Renamed contributors to other_organisations
+  [iulianpetchesi refs #142720]
+
 1.4 - (2022-06-22)
 ---------------------------
 * Change: Updated topics taxonomy with new values
