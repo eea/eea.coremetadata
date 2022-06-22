@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.6 - (2022-06-22)
+---------------------------
+* Change: Release: remove python 2.7
+  [nileshgulia1]
+
 1.5 - (2022-06-22)
 ---------------------------
 * Change: Renamed contributors to other_organisations
