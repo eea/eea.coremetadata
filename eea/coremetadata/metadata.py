@@ -158,7 +158,8 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_(u"Geographical coverage"),
-        description=_(u"Defines the coverage"),
+        description=_(
+            u"Use the search to add more granular geographic coverage tags"),
         required=False,
         widget="geolocation",
         default={},
@@ -167,9 +168,8 @@ class ICoreMetadata(model.Schema):
     rights = TextLine(
         title=_(u'label_copyrights', default=u'Rights'),
         description=_(
-            u'help_copyrights',
-            default=u'Copyright statement or other rights information on this '
-                    u'item.'
+            u'Copyright statement or other rights information on this item.'
+            u'Only use if needed. Default will be EEA copyright policy'
         ),
         required=False,
     )
