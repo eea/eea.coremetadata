@@ -85,7 +85,7 @@ class ICoreMetadata(model.Schema):
             default=u'Default'
         ),
         fields=['title', 'description', 'effective',
-                'expires', 'contributors', 'topics', 'temporal_coverage',
+                'expires', 'other_organisations', 'topics', 'temporal_coverage',
                 'geo_coverage', 'rights', 'publisher',
                 'preview_image', 'preview_caption', 'data_provenance'],
     )
@@ -130,8 +130,8 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("contributors", SelectFieldWidget)
-    contributors = Tuple(
+    directives.widget("other_organisations", SelectFieldWidget)
+    other_organisations = Tuple(
         title=_(u"Other organisations involved"),
         description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,

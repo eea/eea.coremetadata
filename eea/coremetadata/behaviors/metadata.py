@@ -13,7 +13,7 @@ class CoreMetadata(MetadataBase):
 
     description = DCFieldProperty(ICoreMetadata["description"])
 
-    contributors = DCFieldProperty(ICoreMetadata["contributors"])
+    other_organisations = DCFieldProperty(ICoreMetadata["other_organisations"])
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 

@@ -3,6 +3,8 @@ Changelog
 
 1.5-dev0 - (unreleased)
 ---------------------------
+* Change: Renamed contributors to other_organisations
+  [iulianpetchesi refs #142720]
 
 1.4 - (2022-06-22)
 ---------------------------
