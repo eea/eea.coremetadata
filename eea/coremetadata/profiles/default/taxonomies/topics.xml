@@ -6,65 +6,142 @@
   <vocabIdentifier>eea.topics.taxonomy</vocabIdentifier>
 
   <term>
-    <termIdentifier>TEXT</termIdentifier>
+    <termIdentifier>Agriculture</termIdentifier>
     <caption>
-      <langstring language="en">Area</langstring>
+      <langstring language="en">Agriculture</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Biomass</termIdentifier>
+    <termIdentifier>Air pollution</termIdentifier>
     <caption>
-      <langstring language="en">Biomass</langstring>
+      <langstring language="en">Air pollution</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Damage</termIdentifier>
+    <termIdentifier>Biodiversity - Ecosystems</termIdentifier>
     <caption>
-      <langstring language="en">Damage</langstring>
+      <langstring language="en">Biodiversity - Ecosystems</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Deadwood</termIdentifier>
+    <termIdentifier>Chemicals</termIdentifier>
     <caption>
-      <langstring language="en">Deadwood</langstring>
+      <langstring language="en">Chemicals</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Felling</termIdentifier>
+    <termIdentifier>Climate change adaptation</termIdentifier>
     <caption>
-      <langstring language="en">Felling</langstring>
+      <langstring language="en">Climate change adaptation</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Growing stock</termIdentifier>
+    <termIdentifier>Climate change mitigation</termIdentifier>
     <caption>
-      <langstring language="en">Growing stock</langstring>
+      <langstring language="en">Climate change mitigation</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Land-Cover</termIdentifier>
+    <termIdentifier>Energy</termIdentifier>
     <caption>
-      <langstring language="en">Land-Cover</langstring>
+      <langstring language="en">Energy</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>Protection</termIdentifier>
+    <termIdentifier>Environment and health</termIdentifier>
     <caption>
-      <langstring language="en">Protection</langstring>
+      <langstring language="en">Environment and health</langstring>
     </caption>
   </term>
 
   <term>
-    <termIdentifier>All</termIdentifier>
+    <termIdentifier>Land use</termIdentifier>
     <caption>
-      <langstring language="en">All</langstring>
+      <langstring language="en">Land use</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Marine</termIdentifier>
+    <caption>
+      <langstring language="en">Marine</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Policy instruments</termIdentifier>
+    <caption>
+      <langstring language="en">Policy instruments</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Resource efficiency and waste</termIdentifier>
+    <caption>
+      <langstring language="en">Resource efficiency and waste</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Soil</termIdentifier>
+    <caption>
+      <langstring language="en">Soil</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Sustainability transitions</termIdentifier>
+    <caption>
+      <langstring language="en">Sustainability transitions</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Transport</termIdentifier>
+    <caption>
+      <langstring language="en">Transport</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Various other issues</termIdentifier>
+    <caption>
+      <langstring language="en">Various other issues</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Water and marine environment</termIdentifier>
+    <caption>
+      <langstring language="en">Water and marine environment</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Industry</termIdentifier>
+    <caption>
+      <langstring language="en">Industry</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Specific regions</termIdentifier>
+    <caption>
+      <langstring language="en">Specific regions</langstring>
+    </caption>
+  </term>
+
+  <term>
+    <termIdentifier>Environmental technology</termIdentifier>
+    <caption>
+      <langstring language="en">Environmental technology</langstring>
     </caption>
   </term>
 

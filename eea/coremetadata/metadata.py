@@ -85,7 +85,7 @@ class ICoreMetadata(model.Schema):
             default=u'Default'
         ),
         fields=['title', 'description', 'effective',
-                'expires', 'organisations', 'topics', 'temporal_coverage',
+                'expires', 'contributors', 'topics', 'temporal_coverage',
                 'geo_coverage', 'rights', 'publisher',
                 'preview_image', 'preview_caption', 'data_provenance'],
     )
@@ -130,8 +130,8 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("organisations", SelectFieldWidget)
-    organisations = Tuple(
+    directives.widget("contributors", SelectFieldWidget)
+    contributors = Tuple(
         title=_(u"Other organisations involved"),
         description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
@@ -158,7 +158,8 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_(u"Geographical coverage"),
-        description=_(u"Defines the coverage"),
+        description=_(
+            u"Use the search to add more granular geographic coverage tags"),
         required=False,
         widget="geolocation",
         default={},
@@ -167,9 +168,8 @@ class ICoreMetadata(model.Schema):
     rights = TextLine(
         title=_(u'label_copyrights', default=u'Rights'),
         description=_(
-            u'help_copyrights',
-            default=u'Copyright statement or other rights information on this '
-                    u'item.'
+            u'Copyright statement or other rights information on this item.'
+            u'Only use if needed. Default will be EEA copyright policy'
         ),
         required=False,
     )
