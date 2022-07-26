@@ -22,6 +22,8 @@ def post_install(context):
     """
     # Do something at the end of the installation of this package.
 
+    import pdb; pdb.set_trace()
+
 
 def uninstall(context):
     """ Uninstall script
