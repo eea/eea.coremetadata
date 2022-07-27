@@ -15,4 +15,13 @@
 
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeStep
+    title="Migrate block jsons"
+    description=""
+    profile="eea.coremetadata:default"
+    source="1.0"
+    destination="1.6"
+    handler=".to11.run_upgrade"
+    />
+
 </configure>
