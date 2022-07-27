@@ -9,8 +9,6 @@ from plone import api
 
 logger = logging.getLogger('eea.coremetadata.migration')
 
-chart_block_types = ['filteredConnectedPlotlyChart', 'connected_plotly_chart']
-
 
 def iterate_children(value):
     """iterate_children.
@@ -25,6 +23,31 @@ def iterate_children(value):
             queue.extend(child["children"] or [])
 
 
+def fix_geographic_coverage(geo_cov):
+    import pdb; pdb.set_trace()
+
+
+    return geo_cov
+
+
+def fix_temporal_coverage(temp_cov):
+    temp_values = [temp['value'] for temp in temp_cov]
+    new_values = []
+
+    for val in temp_values:
+        if '-' in val:
+            start, end = val.split('-')
+            new_values.extend(list(range(int(start), int(end) + 1)))
+        else:
+            new_values.append(int(val))
+
+    # remove duplicates and sort list
+    new_values = list(set(new_values))
+    new_values.sort()
+
+    return new_values
+
+
 class TemporalBlockTransformer(object):
     """TemporalBlockTransformer."""
 
@@ -32,20 +55,39 @@ class TemporalBlockTransformer(object):
         self.context = context
 
     def __call__(self, block):
-        print(block)
         if 'temporal' in block:
-            import pdb;pdb.set_trace()
+            block['temporal'] = fix_temporal_coverage(block['temporal'])
+            return True
 
-        if 'value' not in block:        # avoid empty blocks
-            return None
-        value = block['value']
-        children = iterate_children(value or [])
-        status = []
+        if (block or {}).get('@type') == 'temporal':
+            if 'value' not in block:        # avoid empty blocks
+                return None
 
-        for child in children:
-            node_type = child.get("type")
+            block['value'] = fix_temporal_coverage(block['value'])
+            return True
 
-        return any(status)
+        return None
+
+
+class GeoBlockTransformer(object):
+    """GeoBlockTransformer."""
+
+    def __init__(self, context):
+        self.context = context
+
+    def __call__(self, block):
+        if 'geolocation' in block:
+            block['geolocation'] = fix_geographic_coverage(block['geolocation'])
+            return True
+
+        if (block or {}).get('@type') == 'geolocation':
+            if 'value' not in block:        # avoid empty blocks
+                return None
+
+            block['value'] = fix_geographic_coverage(block['value'])
+            return True
+
+        return None
 
 
 def get_blocks(obj):
@@ -92,6 +134,7 @@ class BlocksTraverser(object):
         for (_, block_value) in get_blocks(self.context):
 
             if visitor(block_value):
+                import pdb;pdb.set_trace()
                 self.context._p_changed = True
 
             self.handle_subblocks(block_value, visitor)
@@ -113,27 +156,6 @@ class BlocksTraverser(object):
                     self.context._p_changed = True
 
                 self.handle_subblocks(block, visitor)
-
-        if block_value.get('@type') in chart_block_types:
-            visitor(block_value.get('chartData', {}))
-
-
-def fix_temporal_coverage(temp_cov):
-    temp_values = [temp['value'] for temp in temp_cov]
-    new_values = []
-
-    for val in temp_values:
-        if '-' in val:
-            start, end = val.split('-')
-            new_values.extend(list(range(int(start), int(end) + 1)))
-        else:
-            new_values.append(int(val))
-
-    # remove duplicates and sort list
-    new_values = list(set(new_values))
-    new_values.sort()
-
-    return new_values
 
 
 def run_upgrade(setup_context):
@@ -165,23 +187,28 @@ def run_upgrade(setup_context):
             traverser = BlocksTraverser(obj)
 
             temporal_fixer = TemporalBlockTransformer(obj)
-            traverser(temporal_fixer)
-            # import pdb; pdb.set_trace()
-            changed = True
+            geolocation_fixer = GeoBlockTransformer(obj)
 
-        # if hasattr(obj, 'temporal_coverage'):
-        #     temp_cov = obj.temporal_coverage['temporal']
-        #
-        #     obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
-        #     changed = True
-        #
-        #     # vals = fix_temporal_coverage(water_temporal['temporal'])
-        #     # water_temporal['temporal'] = vals
-        #     # vals = fix_temporal_coverage(eea_temporal['temporal'])
-        #     # eea_temporal['temporal'] = vals
-        # if changed:
-        #     obj._p_changed = True
-        #     obj.reindexObject()
+            traverser(temporal_fixer)
+            traverser(geolocation_fixer)
+
+        if hasattr(obj, 'temporal_coverage'):
+            changed = True
+            temp_cov = obj.temporal_coverage['temporal']
+
+            obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
+
+        if hasattr(obj, 'temporal_coverage'):
+            changed = True
+            temp_cov = obj.temporal_coverage['temporal']
+
+            obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
+
+        if changed:
+            obj._p_changed = True
+            obj.reindexObject()
+
+
     logger.info("Finished upgrade")
     import pdb;pdb.set_trace()
     return 'xxx'
