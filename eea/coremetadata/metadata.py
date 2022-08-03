@@ -79,15 +79,15 @@ class ICoreMetadata(model.Schema):
     """
     # ownership fieldset
     model.fieldset(
-        'default',
+        'eea.coremetadata',
         label=_(
             'label_schema_default',
-            default=u'Default'
+            default=u'EEA core metadata'
         ),
         fields=['title', 'description', 'effective', 'expires',
-                'other_organisations', 'topics', 'temporal_coverage',
+                'topics', 'temporal_coverage',
                 'geo_coverage', 'rights', 'publisher',
-                'preview_image', 'preview_caption', 'data_provenance'],
+                'other_organisations','data_provenance'],
     )
 
     title = TextLine(
