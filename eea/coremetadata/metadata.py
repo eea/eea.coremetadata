@@ -85,9 +85,9 @@ class ICoreMetadata(model.Schema):
             default=u'EEA core metadata'
         ),
         fields=['title', 'description', 'effective', 'expires',
-                'other_organisations', 'topics', 'temporal_coverage',
+                'topics', 'temporal_coverage',
                 'geo_coverage', 'rights', 'publisher',
-                'data_provenance'],
+                'other_organisations','data_provenance'],
     )
 
     title = TextLine(
