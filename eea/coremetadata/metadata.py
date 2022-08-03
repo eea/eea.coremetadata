@@ -79,7 +79,7 @@ class ICoreMetadata(model.Schema):
     """
     # ownership fieldset
     model.fieldset(
-        'eea.core.metadata',
+        'eea.coremetadata',
         label=_(
             'label_schema_default',
             default=u'EEA core metadata'
