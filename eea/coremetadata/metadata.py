@@ -41,7 +41,8 @@ _zone = DateTime().timezone()
 
 
 def seq_strip(seq, stripper=lambda x: x.strip()):
-    """Strip a sequence of strings."""
+    """ Strip a sequence of strings.
+    """
     if isinstance(seq, list):
         return map(stripper, seq)
 
@@ -67,68 +68,62 @@ def tuplize(valueName, value, splitter=lambda x: x.split()):
 
 class EffectiveAfterExpires(Invalid):
     __doc__ = _(
-        "error_invalid_publication", default="Invalid effective or expires date"  # noqa
+        "error_invalid_publication", default=u"Invalid effective or expires date"  # noqa
     )
 
 
 @provider(IFormFieldProvider)
 class ICoreMetadata(model.Schema):
-    """Core Metadata"""
-
+    """ Core Metadata
+    """
     # ownership fieldset
     model.fieldset(
-        "eea.coremetadata",
-        label=_("label_schema_default", default="EEA core metadata"),
-        fields=[
-            "title",
-            "description",
-            "effective",
-            "expires",
-            "topics",
-            "temporal_coverage",
-            "geo_coverage",
-            "rights",
-            "publisher",
-            "other_organisations",
-            "data_provenance",
-        ],
+        'eea.coremetadata',
+        label=_(
+            'label_schema_default',
+            default=u'EEA core metadata'
+        ),
+       fields=['title', 'description', 'effective', 'expires',
+               'topics', 'temporal_coverage',
+               'geo_coverage', 'rights', 'publisher',
+               'other_organisations', 'data_provenance'],
+                
     )
 
     title = TextLine(
-        title=_("label_title", default="Title"),
+        title=_(u"label_title", default=u"Title"),
         required=False,
     )
 
     description = Text(
-        title=_("label_description", default="Description"),
+        title=_(u"label_description", default=u"Description"),
         description=_(
-            "help_description", default="Used in item listings and search results."
+            u"help_description",
+            default=u"Used in item listings and search results."
         ),
         required=False,
     )
 
-    directives.widget("effective", DatetimeFieldWidget)
+    directives.widget('effective', DatetimeFieldWidget)
     effective = Datetime(
-        title=_("label_effective_date", "Publishing Date"),
+        title=_(u'label_effective_date', u'Publishing Date'),
         description=_(
-            "help_effective_date",
-            default="If this date is in the future, the content will "
-            "not show up in listings and searches until this date.",
-        ),
+            u'help_effective_date',
+            default=u'If this date is in the future, the content will '
+                    u'not show up in listings and searches until this date.'),
         required=False,
-        default=None,
+        default=None
     )
 
-    directives.widget("expires", DatetimeFieldWidget)
+    directives.widget('expires', DatetimeFieldWidget)
     expires = Datetime(
-        title=_("label_expiration_date", "Expiration Date"),
+        title=_(u'label_expiration_date', u'Expiration Date'),
         description=_(
-            "help_expiration_date",
-            default="When this date is reached, the content will no "
-            "longer be visible in listings and searches.",
-        ),
+            u'help_expiration_date',
+            default=u'When this date is reached, the content will no '
+                    u'longer be visible in listings and searches.'),
         required=False,
-        default=None,
+        default=None
     )
 
     directives.omitted("effective", "expires")
@@ -137,10 +132,8 @@ class ICoreMetadata(model.Schema):
 
     directives.widget("other_organisations", SelectFieldWidget)
     other_organisations = Tuple(
-        title=_("Other organisations involved"),
-        description=_(
-            "Select other organisations involved in the production of this item"
-        ),  # noqa
+        title=_(u"Other organisations involved"),
+        description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
         default=tuple(DEFAULT_ORGANISATIONS),
@@ -148,42 +141,43 @@ class ICoreMetadata(model.Schema):
 
     directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
-        title=_("Topics"),
-        description=_("Select from the official EEA topics"),
+        title=_(u"Topics"),
+        description=_(u"Select from the official EEA topics"),
         required=False,
         value_type=Choice(vocabulary="topics_vocabulary"),
         default=(),
     )
 
     temporal_coverage = JSONField(
-        title=_("Temporal coverage"),
-        description=_("Add years or period, e.g. 2018-2022"),
+        title=_(u"Temporal coverage"),
+        description=_(u"Add years or period, e.g. 2018-2022"),
         required=False,
         widget="temporal",
         default={},
     )
 
     geo_coverage = JSONField(
-        title=_("Geographical coverage"),
-        description=_("Use the search to add more granular geographic coverage tags"),
+        title=_(u"Geographical coverage"),
+        description=_(
+            u"Use the search to add more granular geographic coverage tags"),
         required=False,
         widget="geolocation",
         default={},
     )
 
     rights = TextLine(
-        title=_("label_copyrights", default="Rights"),
+        title=_(u'label_copyrights', default=u'Rights'),
         description=_(
-            "Copyright statement or other rights information on this item."
-            "Only use if needed. Default will be EEA copyright policy"
+            u'Copyright statement or other rights information on this item.'
+            u'Only use if needed. Default will be EEA copyright policy'
         ),
         required=False,
     )
 
     directives.widget("publisher", SelectFieldWidget)
     publisher = Tuple(
-        title=_("Publisher"),
-        description=_("The publisher of this item. Change only if needed"),
+        title=_(u"Publisher"),
+        description=_(u"The publisher of this item. Change only if needed"),
         value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
         default=tuple(DEFAULT_PUBLISHER),
@@ -203,7 +197,7 @@ class ICoreMetadata(model.Schema):
     )
 
     data_provenance = JSONField(
-        title=_("Add sources for the data used"),
+        title=_(u"Add sources for the data used"),
         required=False,
         widget="data_provenance",
         default={},
@@ -215,7 +209,7 @@ class ICoreMetadata(model.Schema):
             raise EffectiveAfterExpires(
                 _(
                     "error_expiration_must_be_after_effective_date",
-                    default="Expiration date must be after publishing date.",
+                    default=u"Expiration date must be after publishing date.",
                 )
             )
 
@@ -223,37 +217,21 @@ class ICoreMetadata(model.Schema):
 @implementer(ICM, ICatalogCoreMetadata, IMutableCoreMetadata)
 class DefaultCoreMetadataImpl(PropertyManager):
 
-    """Mix-in class which provides eea core metadata methods."""
+    """ Mix-in class which provides eea core metadata methods.
+    """
 
     security = ClassSecurityInfo()
 
-    def __init__(
-        self,
-        title="",
-        subject=(),
-        description="",
-        contributors=(),
-        effective_date=None,
-        expiration_date=None,
-        format="text/html",
-        language="",
-        rights="",
-    ):
+    def __init__(self, title='', subject=(), description='', contributors=(),
+                 effective_date=None, expiration_date=None, format='text/html',
+                 language='', rights=''):
         now = DateTime()
         self.creation_date = now
         self.modification_date = now
         self.creators = ()
-        self._editMetadata(
-            title,
-            subject,
-            description,
-            contributors,
-            effective_date,
-            expiration_date,
-            format,
-            language,
-            rights,
-        )
+        self._editMetadata(title, subject, description, contributors,
+                           effective_date, expiration_date, format, language,
+                           rights)
 
     #
     #  Set-modification-date-related methods.
@@ -263,7 +241,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
     # Class variable default for an upgrade.
     modification_date = None
 
-    security.declarePrivate("notifyModified")
+    security.declarePrivate('notifyModified')
 
     def notifyModified(self):
         # Take appropriate action after the resource has been modified.
@@ -271,7 +249,7 @@ class DefaultCoreMetadataImpl(PropertyManager):
         self.addCreator()
         self.setModificationDate()
 
-    security.declareProtected(ModifyPortalContent, "addCreator")
+    security.declareProtected(ModifyPortalContent, 'addCreator')
 
     def addCreator(self, creator=None):
         # Add creator to core creators.
@@ -281,9 +259,9 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
         # call self.listCreators() to make sure self.creators exists
         if creator and creator not in self.listCreators():
-            self.creators = self.creators + (creator,)
+            self.creators = self.creators + (creator, )
 
-    security.declareProtected(ModifyPortalContent, "setModificationDate")
+    security.declareProtected(ModifyPortalContent, 'setModificationDate')
 
     def setModificationDate(self, modification_date=None):
         # Set the date when the resource was last modified.
@@ -296,17 +274,17 @@ class DefaultCoreMetadataImpl(PropertyManager):
     #
     #  Core interface query methods
     #
-    security.declareProtected(View, "Title")
+    security.declareProtected(View, 'Title')
 
     def Title(self):
         # Core Title element - resource name.
         return self.title
 
-    security.declareProtected(View, "listCreators")
+    security.declareProtected(View, 'listCreators')
 
     def listCreators(self):
         # List Core Creator elements - resource authors.
-        if not hasattr(aq_base(self), "creators"):
+        if not hasattr(aq_base(self), 'creators'):
             # for content created with CMF versions before 1.5
             owner_tuple = self.getOwnerTuple()
             if owner_tuple:
@@ -315,61 +293,61 @@ class DefaultCoreMetadataImpl(PropertyManager):
                 self.creators = ()
         return self.creators
 
-    security.declareProtected(View, "Creator")
+    security.declareProtected(View, 'Creator')
 
     def Creator(self):
         # Core Creator element - resource author.
         creators = self.listCreators()
-        return creators and creators[0] or ""
+        return creators and creators[0] or ''
 
-    security.declareProtected(View, "Subject")
+    security.declareProtected(View, 'Subject')
 
     def Subject(self):
         # Core Subject element - resource keywords.
-        return getattr(self, "subject", ())  # compensate for *old* content
+        return getattr(self, 'subject', ())  # compensate for *old* content
 
-    security.declareProtected(View, "Description")
+    security.declareProtected(View, 'Description')
 
     def Description(self):
         # Core Description element - resource summary.
         return self.description
 
-    security.declareProtected(View, "Publisher")
+    security.declareProtected(View, 'Publisher')
 
     def Publisher(self):
         # Core Publisher element - resource publisher.
-        tool = getToolByName(self, "portal_metadata", None)
+        tool = getToolByName(self, 'portal_metadata', None)
 
         if tool is not None:
             return tool.getPublisher()
 
-        return "No publisher"
+        return 'No publisher'
 
-    security.declareProtected(View, "listContributors")
+    security.declareProtected(View, 'listContributors')
 
     def listContributors(self):
         # Core Contributor elements - resource collaborators.
         return self.contributors
 
-    security.declareProtected(View, "Contributors")
+    security.declareProtected(View, 'Contributors')
 
     def Contributors(self):
         # Deprecated alias of listContributors.
         return self.listContributors()
 
-    security.declareProtected(View, "Date")
+    security.declareProtected(View, 'Date')
 
     def Date(self, zone=None):
         # Core Date element - default date.
         if zone is None:
             zone = _zone
         # Return effective_date if set, modification date otherwise
-        date = getattr(self, "effective_date", None)
+        date = getattr(self, 'effective_date', None)
         if date is None:
             date = self.modified()
         return date.toZone(zone).ISO()
 
-    security.declareProtected(View, "CreationDate")
+    security.declareProtected(View, 'CreationDate')
 
     def CreationDate(self, zone=None):
         # Core Date element - date resource created.
@@ -378,27 +356,27 @@ class DefaultCoreMetadataImpl(PropertyManager):
         # return unknown if never set properly
         if self.creation_date:
             return self.creation_date.toZone(zone).ISO()
-        return "Unknown"
+        return 'Unknown'
 
-    security.declareProtected(View, "EffectiveDate")
+    security.declareProtected(View, 'EffectiveDate')
 
     def EffectiveDate(self, zone=None):
         # Core Date element - date resource becomes effective.
         if zone is None:
             zone = _zone
-        ed = getattr(self, "effective_date", None)
-        return ed and ed.toZone(zone).ISO() or "None"
+        ed = getattr(self, 'effective_date', None)
+        return ed and ed.toZone(zone).ISO() or 'None'
 
-    security.declareProtected(View, "ExpirationDate")
+    security.declareProtected(View, 'ExpirationDate')
 
     def ExpirationDate(self, zone=None):
         # Core Date element - date resource expires.
         if zone is None:
             zone = _zone
-        ed = getattr(self, "expiration_date", None)
-        return ed and ed.toZone(zone).ISO() or "None"
+        ed = getattr(self, 'expiration_date', None)
+        return ed and ed.toZone(zone).ISO() or 'None'
 
-    security.declareProtected(View, "ModificationDate")
+    security.declareProtected(View, 'ModificationDate')
 
     def ModificationDate(self, zone=None):
         # Core Date element - date resource last modified.
@@ -406,87 +384,90 @@ class DefaultCoreMetadataImpl(PropertyManager):
             zone = _zone
         return self.modified().toZone(zone).ISO()
 
-    security.declareProtected(View, "Type")
+    security.declareProtected(View, 'Type')
 
     def Type(self):
         # Core Type element - resource type.
         ti = self.getTypeInfo()
-        return ti is not None and ti.Title() or "Unknown"
+        return ti is not None and ti.Title() or 'Unknown'
 
-    security.declareProtected(View, "Format")
+    security.declareProtected(View, 'Format')
 
     def Format(self):
         # Core Format element - resource format.
         return self.format
 
-    security.declareProtected(View, "Identifier")
+    security.declareProtected(View, 'Identifier')
 
     def Identifier(self):
         # Core Identifier element - resource ID.
         return self.absolute_url()
 
-    security.declareProtected(View, "Language")
+    security.declareProtected(View, 'Language')
 
     def Language(self):
         # Core Language element - resource language.
         return self.language
 
-    security.declareProtected(View, "Rights")
+    security.declareProtected(View, 'Rights')
 
     def Rights(self):
         # Core Rights element - resource copyright.
         return self.rights
 
-    security.declareProtected(View, "WordCount")
+    security.declareProtected(View, 'WordCount')
 
     #
     #  Core utility methods
     #
     def content_type(self):
-        """WebDAV needs this to do the Right Thing (TM)."""
+        """ WebDAV needs this to do the Right Thing (TM).
+        """
         return self.Format()
 
     __FLOOR_DATE = DateTime(1970, 0)  # always effective
 
-    security.declareProtected(View, "isEffective")
+    security.declareProtected(View, 'isEffective')
 
     def isEffective(self, date):
         # Is the date within the resource's effective range?
-        pastEffective = self.effective_date is None or self.effective_date <= date
-        beforeExpiration = self.expiration_date is None or self.expiration_date >= date
+        pastEffective = (self.effective_date is None or
+                         self.effective_date <= date)
+        beforeExpiration = (self.expiration_date is None or
+                            self.expiration_date >= date)
         return pastEffective and beforeExpiration
 
     #
     #  CatalogableCore methods
     #
-    security.declareProtected(View, "created")
+    security.declareProtected(View, 'created')
 
     def created(self):
         # Core Date element - date resource created.
         # allow for non-existent creation_date, existed always
-        date = getattr(self, "creation_date", None)
+        date = getattr(self, 'creation_date', None)
         return date is None and self.__FLOOR_DATE or date
 
-    security.declareProtected(View, "effective")
+    security.declareProtected(View, 'effective')
 
     def effective(self):
         # Core Date element - date resource becomes effective.
         marker = []
-        date = getattr(self, "effective_date", marker)
+        date = getattr(self, 'effective_date', marker)
         if date is marker:
-            date = getattr(self, "creation_date", None)
+            date = getattr(self, 'creation_date', None)
         return date is None and self.__FLOOR_DATE or date
 
     __CEILING_DATE = DateTime(2500, 0)  # never expires
 
-    security.declareProtected(View, "expires")
+    security.declareProtected(View, 'expires')
 
     def expires(self):
         # Core Date element - date resource expires.
-        date = getattr(self, "expiration_date", None)
+        date = getattr(self, 'expiration_date', None)
         return date is None and self.__CEILING_DATE or date
 
-    security.declareProtected(View, "modified")
+    security.declareProtected(View, 'modified')
 
     def modified(self):
         # Core Date element - date resource last modified.
@@ -497,121 +478,111 @@ class DefaultCoreMetadataImpl(PropertyManager):
             self.modification_date = date
         return date
 
-    security.declareProtected(View, "getMetadataHeaders")
+    security.declareProtected(View, 'getMetadataHeaders')
 
     def getMetadataHeaders(self):
         # Return RFC-822-style headers.
         hdrlist = []
-        hdrlist.append(("Title", self.Title()))
-        hdrlist.append(("Subject", ", ".join(self.Subject())))
-        hdrlist.append(("Publisher", self.Publisher()))
-        hdrlist.append(("Description", self.Description()))
-        hdrlist.append(("Contributors", "; ".join(self.Contributors())))
-        hdrlist.append(("Effective_date", self.EffectiveDate()))
-        hdrlist.append(("Expiration_date", self.ExpirationDate()))
-        hdrlist.append(("Type", self.Type()))
-        hdrlist.append(("Format", self.Format()))
-        hdrlist.append(("Language", self.Language()))
-        hdrlist.append(("Rights", self.Rights()))
-        hdrlist.append(("WordCount", self.WordCount()))
+        hdrlist.append(('Title', self.Title()))
+        hdrlist.append(('Subject', ', '.join(self.Subject())))
+        hdrlist.append(('Publisher', self.Publisher()))
+        hdrlist.append(('Description', self.Description()))
+        hdrlist.append(('Contributors', '; '.join(self.Contributors())))
+        hdrlist.append(('Effective_date', self.EffectiveDate()))
+        hdrlist.append(('Expiration_date', self.ExpirationDate()))
+        hdrlist.append(('Type', self.Type()))
+        hdrlist.append(('Format', self.Format()))
+        hdrlist.append(('Language', self.Language()))
+        hdrlist.append(('Rights', self.Rights()))
+        hdrlist.append(('WordCount', self.WordCount()))
         return hdrlist
 
     #
     #  MutableCore methods
     #
-    security.declarePrivate("_datify")
+    security.declarePrivate('_datify')
 
     def _datify(self, attrib):
-        if attrib == "None":
+        if attrib == 'None':
             attrib = None
         elif not isinstance(attrib, DateTime):
             if attrib is not None:
                 attrib = DateTime(attrib)
         return attrib
 
-    security.declareProtected(ModifyPortalContent, "setTitle")
+    security.declareProtected(ModifyPortalContent, 'setTitle')
 
     def setTitle(self, title):
         # Set Core Title element - resource name.
         self.title = title
 
-    security.declareProtected(ModifyPortalContent, "setCreators")
+    security.declareProtected(ModifyPortalContent, 'setCreators')
 
     def setCreators(self, creators):
         # Set Core Creator elements - resource authors.
-        self.creators = tuplize("creators", creators)
+        self.creators = tuplize('creators', creators)
 
-    security.declareProtected(ModifyPortalContent, "setSubject")
+    security.declareProtected(ModifyPortalContent, 'setSubject')
 
     def setSubject(self, subject):
         # Set Core Subject element - resource keywords.
-        self.subject = tuplize("subject", subject)
+        self.subject = tuplize('subject', subject)
 
-    security.declareProtected(ModifyPortalContent, "setDescription")
+    security.declareProtected(ModifyPortalContent, 'setDescription')
 
     def setDescription(self, description):
         # Set Core Description element - resource summary.
         self.description = description
 
-    security.declareProtected(ModifyPortalContent, "setContributors")
+    security.declareProtected(ModifyPortalContent, 'setContributors')
 
     def setContributors(self, contributors):
         # Set Core Contributor elements - resource collaborators.
-        def semi_split(s):
-            return map(lambda x: x.strip(), s.split(";"))
+        def semi_split(s): return map(lambda x: x.strip(), s.split(';'))
+        self.contributors = tuplize('contributors', contributors, semi_split)
 
-        self.contributors = tuplize("contributors", contributors, semi_split)
-
-    security.declareProtected(ModifyPortalContent, "setEffectiveDate")
+    security.declareProtected(ModifyPortalContent, 'setEffectiveDate')
 
     def setEffectiveDate(self, effective_date):
         # Set Core Date element - date resource becomes effective.
         self.effective_date = self._datify(effective_date)
 
-    security.declareProtected(ModifyPortalContent, "setExpirationDate")
+    security.declareProtected(ModifyPortalContent, 'setExpirationDate')
 
     def setExpirationDate(self, expiration_date):
         # Set Core Date element - date resource expires.
         self.expiration_date = self._datify(expiration_date)
 
-    security.declareProtected(ModifyPortalContent, "setFormat")
+    security.declareProtected(ModifyPortalContent, 'setFormat')
 
     def setFormat(self, format):
         # Set Core Format element - resource format.
         self.format = format
 
-    security.declareProtected(ModifyPortalContent, "setLanguage")
+    security.declareProtected(ModifyPortalContent, 'setLanguage')
 
     def setLanguage(self, language):
         # Set Core Language element - resource language.
         self.language = language
 
-    security.declareProtected(ModifyPortalContent, "setRights")
+    security.declareProtected(ModifyPortalContent, 'setRights')
 
     def setRights(self, rights):
         # Set Core Rights element - resource copyright.
         self.rights = rights
 
-    security.declareProtected(ModifyPortalContent, "setWordCount")
+    security.declareProtected(ModifyPortalContent, 'setWordCount')
 
     #
     #  Management tab methods
     #
 
-    security.declarePrivate("_editMetadata")
+    security.declarePrivate('_editMetadata')
 
-    def _editMetadata(
-        self,
-        title=_marker,
-        subject=_marker,
-        description=_marker,  # noqa
-        contributors=_marker,
-        effective_date=_marker,
-        expiration_date=_marker,
-        format=_marker,
-        language=_marker,  # noqa
-        rights=_marker,
-    ):
+    def _editMetadata(self, title=_marker, subject=_marker, description=_marker,  # noqa
+                      contributors=_marker, effective_date=_marker,
+                      expiration_date=_marker, format=_marker, language=_marker,  # noqa
+                      rights=_marker):
 
         # Update the editable metadata for this resource.
         if title is not _marker:
@@ -633,73 +604,39 @@ class DefaultCoreMetadataImpl(PropertyManager):
         if rights is not _marker:
             self.setRights(rights)
 
-    security.declareProtected(ModifyPortalContent, "manage_metadata")
-    manage_metadata = DTMLFile("zmi_metadata", WWW_DIR)
+    security.declareProtected(ModifyPortalContent, 'manage_metadata')
+    manage_metadata = DTMLFile('zmi_metadata', WWW_DIR)
 
-    security.declareProtected(ModifyPortalContent, "manage_editMetadata")
+    security.declareProtected(ModifyPortalContent, 'manage_editMetadata')
 
-    def manage_editMetadata(
-        self,
-        title,
-        subject,
-        description,
-        contributors,
-        effective_date,
-        expiration_date,
-        format,
-        language,
-        rights,
-        REQUEST,
-    ):
-        """Update metadata from the ZMI."""
-        self._editMetadata(
-            title,
-            subject,
-            description,
-            contributors,
-            effective_date,
-            expiration_date,
-            format,
-            language,
-            rights,
-        )
-        REQUEST["RESPONSE"].redirect(
-            self.absolute_url()
-            + "/manage_metadata"
-            + "?manage_tabs_message=Metadata+updated."
-        )
+    def manage_editMetadata(self, title, subject, description, contributors,
+                            effective_date, expiration_date, format, language,
+                            rights, REQUEST):
+        """ Update metadata from the ZMI.
+        """
+        self._editMetadata(title, subject, description, contributors,
+                           effective_date, expiration_date, format, language,
+                           rights)
+        REQUEST['RESPONSE'].redirect(self.absolute_url() +
+                                     '/manage_metadata' +
+                                     '?manage_tabs_message=Metadata+updated.')
 
-    security.declareProtected(ModifyPortalContent, "editMetadata")
+    security.declareProtected(ModifyPortalContent, 'editMetadata')
 
-    def editMetadata(
-        self,
-        title="",
-        subject=(),
-        description="",
-        contributors=(),
-        effective_date=None,
-        expiration_date=None,  # noqa
-        format="text/html",
-        language="en-US",
-        rights="",
-    ):
+    def editMetadata(self, title='', subject=(), description='',
+                     contributors=(), effective_date=None, expiration_date=None,   # noqa
+                     format='text/html', language='en-US', rights=''):
         # Need to add check for webDAV locked resource for TTW methods.
         # As per bug #69, we can't assume they use the webdav
         # locking interface, and fail gracefully if they don't.
-        if hasattr(self, "failIfLocked"):
+        if hasattr(self, 'failIfLocked'):
             self.failIfLocked()
 
-        self._editMetadata(
-            title=title,
-            subject=subject,
-            description=description,
-            contributors=contributors,
-            effective_date=effective_date,
-            expiration_date=expiration_date,
-            format=format,
-            language=language,
-            rights=rights,
-        )
+        self._editMetadata(title=title, subject=subject,
+                           description=description, contributors=contributors,
+                           effective_date=effective_date,
+                           expiration_date=expiration_date, format=format,
+                           language=language, rights=rights)
         self.reindexObject()
 
 
