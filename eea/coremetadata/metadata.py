@@ -83,7 +83,7 @@ class ICoreMetadata(model.Schema):
             'label_schema_default',
             default=u'EEA core metadata'
         ),
-        fields=['title', 'description', 'effective', 'expires',
+        fields=['effective', 'expires',
                 'topics', 'temporal_coverage',
                 'geo_coverage', 'rights', 'publisher',
                 'other_organisations', 'data_provenance'],
