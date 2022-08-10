@@ -24,10 +24,17 @@ def iterate_children(value):
 
 
 def fix_geographic_coverage(geo_cov):
+    new_geo_cov = []
+    for coverage in geo_cov:
+        # add other fields present in geo_cov
+        updated_coverage = {
+            "title": coverage['label'],
+            "geonamesID": int(coverage['value'].split('-')[-1])
+        }
+        new_geo_cov.append(updated_coverage)
+
     import pdb; pdb.set_trace()
-
-
-    return geo_cov
+    return new_geo_cov
 
 
 def fix_temporal_coverage(temp_cov):
@@ -134,7 +141,6 @@ class BlocksTraverser(object):
         for (_, block_value) in get_blocks(self.context):
 
             if visitor(block_value):
-                import pdb;pdb.set_trace()
                 self.context._p_changed = True
 
             self.handle_subblocks(block_value, visitor)
@@ -176,33 +182,38 @@ def run_upgrade(setup_context):
                                   {"group": ["EEA32", "EEA33", "EEA39", "EU27", "EU28", "Pan-Europe"], "value": "geo-732800", "label": "Bulgaria"}]}
 
     correct_temporal = {"temporal": [2000,2001,2002]}
+    correct_geo = {"geoCoverage": [{"title": "Bulgaria", "geonamesID": 732800}]}
 
     for brain in brains:
         obj = brain.getObject()
         changed = False
 
-        if hasattr(obj.aq_inner.aq_self, 'blocks') and \
-                hasattr(obj.aq_inner.aq_self, 'blocks_layout'):
-
-            traverser = BlocksTraverser(obj)
-
-            temporal_fixer = TemporalBlockTransformer(obj)
-            geolocation_fixer = GeoBlockTransformer(obj)
-
-            traverser(temporal_fixer)
-            traverser(geolocation_fixer)
-
-        if hasattr(obj, 'temporal_coverage'):
-            changed = True
-            temp_cov = obj.temporal_coverage['temporal']
-
-            obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
+        # if hasattr(obj.aq_inner.aq_self, 'blocks') and \
+        #         hasattr(obj.aq_inner.aq_self, 'blocks_layout'):
+        #
+        #     traverser = BlocksTraverser(obj)
+        #
+        #     temporal_fixer = TemporalBlockTransformer(obj)
+        #     geolocation_fixer = GeoBlockTransformer(obj)
+        #
+        #     traverser(temporal_fixer)
+        #     traverser(geolocation_fixer)
 
         if hasattr(obj, 'temporal_coverage'):
             changed = True
             temp_cov = obj.temporal_coverage['temporal']
 
             obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
+
+        if hasattr(obj, 'geo_coverage'):
+            changed = True
+            geo_cov = obj.geo_coverage['geolocation']
+
+            vals = fix_geographic_coverage(geo_cov)
+            vals = fix_geographic_coverage(water_geo)
+            vals = fix_geographic_coverage(eea_geo)
+
+            obj.geo_coverage = {"geoCoverage": fix_geographic_coverage(geo_cov)}
 
         if changed:
             obj._p_changed = True
