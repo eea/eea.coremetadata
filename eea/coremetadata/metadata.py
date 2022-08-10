@@ -39,6 +39,12 @@ DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
 _marker = []
 _zone = DateTime().timezone()
 
+if isinstance(DEFAULT_PUBLISHER, str):
+    DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
+
+if isinstance(DEFAULT_ORGANISATIONS, str):
+    DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
+
 
 def seq_strip(seq, stripper=lambda x: x.strip()):
     """ Strip a sequence of strings.
@@ -134,7 +140,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
-        default=tuple([DEFAULT_ORGANISATIONS]),
+        default=tuple(DEFAULT_ORGANISATIONS),
     )
 
     directives.widget("topics", SelectFieldWidget)
@@ -178,7 +184,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"The publisher of this item. Change only if needed"),
         value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
-        default=tuple([DEFAULT_PUBLISHER]),
+        default=tuple(DEFAULT_PUBLISHER),
     )
 
     preview_image = NamedBlobImage(
