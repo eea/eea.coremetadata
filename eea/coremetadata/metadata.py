@@ -134,7 +134,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
-        default=tuple(DEFAULT_ORGANISATIONS),
+        default=tuple([DEFAULT_ORGANISATIONS]),
     )
 
     directives.widget("topics", SelectFieldWidget)
@@ -178,7 +178,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"The publisher of this item. Change only if needed"),
         value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
-        default=tuple(DEFAULT_PUBLISHER),
+        default=tuple([DEFAULT_PUBLISHER]),
     )
 
     preview_image = NamedBlobImage(
