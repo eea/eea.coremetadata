@@ -39,6 +39,12 @@ DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
 _marker = []
 _zone = DateTime().timezone()
 
+if isinstance(DEFAULT_PUBLISHER, str):
+    DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
+
+if isinstance(DEFAULT_ORGANISATIONS, str):
+    DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
+
 
 def seq_strip(seq, stripper=lambda x: x.strip()):
     """ Strip a sequence of strings.
@@ -75,19 +81,17 @@ class EffectiveAfterExpires(Invalid):
 @provider(IFormFieldProvider)
 class ICoreMetadata(model.Schema):
     """ Core Metadata
-
     """
     # ownership fieldset
     model.fieldset(
-        'default',
+        'eea.coremetadata',
         label=_(
             'label_schema_default',
-            default=u'Default'
+            default=u'EEA core metadata'
         ),
-        fields=['title', 'description', 'effective', 'expires',
-                'other_organisations', 'topics', 'temporal_coverage',
-                'geo_coverage', 'rights', 'publisher',
-                'preview_image', 'preview_caption', 'data_provenance'],
+        fields=['topics', 'temporal_coverage',
+                'geo_coverage', 'publisher',
+                'other_organisations', 'data_provenance'],
     )
 
     title = TextLine(
