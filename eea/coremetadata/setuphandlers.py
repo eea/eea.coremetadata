@@ -1,7 +1,7 @@
+# pylint: disable=C0301,W1201,C1801
 """ Custom setup
 """
 import logging
-from plone import api
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 from eea.coremetadata.utils import BlocksTraverser, \

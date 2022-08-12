@@ -1,3 +1,4 @@
+# pylint: disable=C0301,W1201,C1801
 ''' upgrade to 16 '''
 import logging
 from plone import api

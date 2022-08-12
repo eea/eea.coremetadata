@@ -1,6 +1,11 @@
+# pylint: disable=C0301
 ''' utils '''
-from collections import deque
 import json
+import logging
+from collections import deque
+
+
+logger = logging.getLogger('eea.coremetadata.utils')
 
 
 def iterate_children(value):
@@ -17,6 +22,8 @@ def iterate_children(value):
 
 
 def fix_geographic_coverage(geo_cov):
+    """ Migrates geo data, see #151691 for more info
+    """
     new_geo_cov = []
     for coverage in geo_cov:
         if 'geonamesID' and 'title' in coverage:
@@ -39,6 +46,8 @@ def fix_geographic_coverage(geo_cov):
 
 
 def fix_temporal_coverage(temp_cov):
+    """ Migrates temporal data, see #151691 for more info
+    """
     if all([isinstance(temp, int) for temp in temp_cov]):
         return temp_cov
 
