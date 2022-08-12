@@ -7,6 +7,17 @@ from collections import deque
 
 logger = logging.getLogger('eea.coremetadata.utils')
 
+data_map = {
+    'title': 'title',
+    'link': 'dataUrl'
+}
+
+provider_map = {
+    'organisation': 'name',
+    'homepage': 'homepage',
+    'logo': 'logo'
+}
+
 
 def iterate_children(value):
     """iterate_children.
@@ -19,6 +30,25 @@ def iterate_children(value):
         yield child
         if child.get("children"):
             queue.extend(child["children"] or [])
+
+
+def fix_data_provenance(data_prov):
+    new_data_prov = {}
+
+    for data in data_prov:
+        temp_data = {"provider": {}}
+        for key in data_map:
+            temp_data.update({data_map[key]: data[key]})
+
+        for key in provider_map:
+            if key not in data:
+                continue
+
+            temp_data["provider"].update({provider_map[key]:data[key]})
+
+        new_data_prov.update({data['@id']: temp_data})
+
+    return new_data_prov
 
 
 def fix_geographic_coverage(geo_cov):
@@ -36,7 +66,7 @@ def fix_geographic_coverage(geo_cov):
         }
 
         # add other fields present in geo_cov
-        for key in coverage.keys():
+        for key in coverage:
             if key not in updated_coverage and key not in ['label', 'value']:
                 updated_coverage.update({key: coverage[key]})
 

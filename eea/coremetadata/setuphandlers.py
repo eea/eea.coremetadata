@@ -6,7 +6,7 @@ from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 from eea.coremetadata.utils import BlocksTraverser, \
     TemporalBlockTransformer, GeoBlockTransformer, \
-    fix_temporal_coverage, fix_geographic_coverage
+    fix_temporal_coverage, fix_geographic_coverage, fix_data_provenance
 
 
 logger = logging.getLogger('eea.coremetadata.installation')
@@ -60,6 +60,14 @@ def post_install(context):
             if len(obj.geo_coverage) > 0:
                 geo_cov = obj.geo_coverage['geolocation']
                 obj.geo_coverage['geolocation'] = fix_geographic_coverage(geo_cov)  # noqa
+                changed = True
+
+        if hasattr(obj, 'data_provenance'):
+            if len(obj.data_provenance) > 0:
+                data_prov = obj.data_provenance['data']
+                new_provenance = {"dataProvenance": fix_data_provenance(data_prov)}  # noqa
+
+                obj.data_provenance = new_provenance
                 changed = True
 
         if changed:
