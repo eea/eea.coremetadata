@@ -21,7 +21,7 @@
     profile="eea.coremetadata:default"
     source="1.0"
     destination="1.6"
-    handler=".to11.run_upgrade"
+    handler=".to16.run_upgrade"
     />
 
 </configure>

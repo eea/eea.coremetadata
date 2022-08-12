@@ -1,14 +1,6 @@
-''' upgrade to 11 '''
-# import transaction
-
+''' utils '''
 from collections import deque
 import json
-import logging
-from plone import api
-
-
-logger = logging.getLogger('eea.coremetadata.migration')
-
 
 def iterate_children(value):
     """iterate_children.
@@ -26,18 +18,30 @@ def iterate_children(value):
 def fix_geographic_coverage(geo_cov):
     new_geo_cov = []
     for coverage in geo_cov:
-        # add other fields present in geo_cov
+        if 'geonamesID' and 'title' in coverage:
+            new_geo_cov.append(coverage)
+            continue
+
         updated_coverage = {
             "title": coverage['label'],
             "geonamesID": int(coverage['value'].split('-')[-1])
         }
+
+        # add other fields present in geo_cov
+        for key in coverage.keys():
+            if key not in updated_coverage and key not in ['label', 'value']:
+                import pdb; pdb.set_trace()
+                updated_coverage.update({key: coverage[key]})
+
         new_geo_cov.append(updated_coverage)
 
-    import pdb; pdb.set_trace()
     return new_geo_cov
 
 
 def fix_temporal_coverage(temp_cov):
+    if all([isinstance(temp, int) for temp in temp_cov]):
+        return temp_cov
+
     temp_values = [temp['value'] for temp in temp_cov]
     new_values = []
 
@@ -90,7 +94,7 @@ class GeoBlockTransformer(object):
         if (block or {}).get('@type') == 'geolocation':
             if 'value' not in block:        # avoid empty blocks
                 return None
-
+            import pdb;pdb.set_trace
             block['value'] = fix_geographic_coverage(block['value'])
             return True
 
@@ -162,64 +166,3 @@ class BlocksTraverser(object):
                     self.context._p_changed = True
 
                 self.handle_subblocks(block, visitor)
-
-
-def run_upgrade(setup_context):
-    """ run upgrade to 1003
-    """
-    catalog = api.portal.get_tool("portal_catalog")
-    brains = catalog(_nonsense=True)
-
-    water_geo = {"geolocation":[{"label": "Cyprus", "value": "geo-146669"},{"label": "Portugal", "value": "geo-2264397"},]}
-    water_temporal = {"temporal":[{"__isNew__": True, "label": "2010-2019", "value": "2010-2019"}, {"value": "2006", "label": "2006"}, {"value": "2011", "label": "2011"}]}
-
-    eea_geo = {"geolocation": [{"value": "geo-732800", "label": "Bulgaria"}, {"value": "geo-3202326", "label": "Croatia"}], "readOnly": True}
-    eea_temporal = {"readOnly": True, "temporal": [{"value": "2005", "label": "2005"}, {"value": "2006", "label": "2006"}]}
-
-    blocks_temporal = {"temporal": [{"value": "2016", "label": "2016"}, {"value": "2017", "label": "2017"}]}
-    blocks_geo = {"geolocation": [{"group": ["EEA32", "EEA33", "EEA39", "EU15", "EU25", "EU27", "EU28", "Pan-Europe"], "value": "geo-2782113", "label": "Austria"},
-                                  {"group": ["EEA32", "EEA33", "EEA39", "EU15", "EU25", "EU27", "EU28", "Pan-Europe"], "value": "geo-2802361", "label": "Belgium"},
-                                  {"group": ["EEA32", "EEA33", "EEA39", "EU27", "EU28", "Pan-Europe"], "value": "geo-732800", "label": "Bulgaria"}]}
-
-    correct_temporal = {"temporal": [2000,2001,2002]}
-    correct_geo = {"geoCoverage": [{"title": "Bulgaria", "geonamesID": 732800}]}
-
-    for brain in brains:
-        obj = brain.getObject()
-        changed = False
-
-        # if hasattr(obj.aq_inner.aq_self, 'blocks') and \
-        #         hasattr(obj.aq_inner.aq_self, 'blocks_layout'):
-        #
-        #     traverser = BlocksTraverser(obj)
-        #
-        #     temporal_fixer = TemporalBlockTransformer(obj)
-        #     geolocation_fixer = GeoBlockTransformer(obj)
-        #
-        #     traverser(temporal_fixer)
-        #     traverser(geolocation_fixer)
-
-        if hasattr(obj, 'temporal_coverage'):
-            changed = True
-            temp_cov = obj.temporal_coverage['temporal']
-
-            obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
-
-        if hasattr(obj, 'geo_coverage'):
-            changed = True
-            geo_cov = obj.geo_coverage['geolocation']
-
-            vals = fix_geographic_coverage(geo_cov)
-            vals = fix_geographic_coverage(water_geo)
-            vals = fix_geographic_coverage(eea_geo)
-
-            obj.geo_coverage = {"geoCoverage": fix_geographic_coverage(geo_cov)}
-
-        if changed:
-            obj._p_changed = True
-            obj.reindexObject()
-
-
-    logger.info("Finished upgrade")
-    import pdb;pdb.set_trace()
-    return 'xxx'
