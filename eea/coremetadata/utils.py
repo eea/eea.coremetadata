@@ -88,7 +88,7 @@ class GeoBlockTransformer(object):
 
     def __call__(self, block):
         if 'geolocation' in block:
-            block['geolocation'] = fix_geographic_coverage(block['geolocation']) # noqa
+            block['geolocation'] = fix_geographic_coverage(block['geolocation'])  # noqa
             return True
 
         if (block or {}).get('@type') == 'geolocation':
