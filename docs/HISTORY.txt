@@ -3,6 +3,8 @@ Changelog
 
 1.7-dev0 - (unreleased)
 ---------------------------
+* Change: Added dataprovenance/geo/temporal migration
+  [iulianpetchesi refs #151691]
 
 1.6 - (2022-06-22)
 ---------------------------
