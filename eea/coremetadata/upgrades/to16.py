@@ -1,5 +1,4 @@
 ''' upgrade to 16 '''
-# import transaction
 import logging
 from plone import api
 from eea.coremetadata.utils import BlocksTraverser, \
@@ -11,7 +10,7 @@ logger = logging.getLogger('eea.coremetadata.migration')
 
 
 def run_upgrade(setup_context):
-    """ run upgrade to 1003
+    """ run upgrade to 16
     """
     catalog = api.portal.get_tool("portal_catalog")
     brains = catalog(_nonsense=True)
@@ -43,7 +42,6 @@ def run_upgrade(setup_context):
         if hasattr(obj, 'geo_coverage'):
             if len(obj.geo_coverage) > 0:
                 geo_cov = obj.geo_coverage['geolocation']
-                geo_cov[0]['cevatest'] = 'test'
                 obj.geo_coverage['geolocation'] = fix_geographic_coverage(geo_cov) # noqa
                 changed = True
 
