@@ -33,6 +33,8 @@ def iterate_children(value):
 
 
 def fix_data_provenance(data_prov):
+    """ Migrates dataprovenance, see #142720 for more info
+    """
     new_data_prov = {}
 
     for data in data_prov:
@@ -44,7 +46,7 @@ def fix_data_provenance(data_prov):
             if key not in data:
                 continue
 
-            temp_data["provider"].update({provider_map[key]:data[key]})
+            temp_data["provider"].update({provider_map[key]: data[key]})
 
         new_data_prov.update({data['@id']: temp_data})
 
