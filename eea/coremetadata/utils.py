@@ -2,6 +2,7 @@
 from collections import deque
 import json
 
+
 def iterate_children(value):
     """iterate_children.
     :param value:
@@ -30,7 +31,6 @@ def fix_geographic_coverage(geo_cov):
         # add other fields present in geo_cov
         for key in coverage.keys():
             if key not in updated_coverage and key not in ['label', 'value']:
-                import pdb; pdb.set_trace()
                 updated_coverage.update({key: coverage[key]})
 
         new_geo_cov.append(updated_coverage)
@@ -88,13 +88,13 @@ class GeoBlockTransformer(object):
 
     def __call__(self, block):
         if 'geolocation' in block:
-            block['geolocation'] = fix_geographic_coverage(block['geolocation'])
+            block['geolocation'] = fix_geographic_coverage(block['geolocation']) # noqa
             return True
 
         if (block or {}).get('@type') == 'geolocation':
             if 'value' not in block:        # avoid empty blocks
                 return None
-            import pdb;pdb.set_trace
+
             block['value'] = fix_geographic_coverage(block['value'])
             return True
 

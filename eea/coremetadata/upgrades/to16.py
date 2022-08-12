@@ -37,14 +37,14 @@ def run_upgrade(setup_context):
             if len(obj.temporal_coverage) > 0:
                 temp_cov = obj.temporal_coverage['temporal']
 
-                obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov)
+                obj.temporal_coverage['temporal'] = fix_temporal_coverage(temp_cov) # noqa
                 changed = True
 
         if hasattr(obj, 'geo_coverage'):
             if len(obj.geo_coverage) > 0:
                 geo_cov = obj.geo_coverage['geolocation']
                 geo_cov[0]['cevatest'] = 'test'
-                obj.geo_coverage['geolocation'] = fix_geographic_coverage(geo_cov)
+                obj.geo_coverage['geolocation'] = fix_geographic_coverage(geo_cov) # noqa
                 changed = True
 
         if changed:
@@ -54,7 +54,6 @@ def run_upgrade(setup_context):
         count += 1
         if count % 100 == 0:
             logger.info("Went through %s objects" % count)
-
 
     logger.info("Finished upgrade")
     return "Finished upgrade"
