@@ -1,6 +1,6 @@
 """ Custom behavior that adds core metadata fields
 """
-# pylint: disable=line-too-long
+# pylint: disable=line-too-long, E0102, C0111
 import os
 from plone.app.dexterity.behaviors.metadata import (DCFieldProperty,
                                                     MetadataBase)
@@ -38,10 +38,9 @@ class CoreMetadata(MetadataBase):
 
     data_provenance = DCFieldProperty(ICoreMetadata["data_provenance"])
 
-
     @property
     def publisher(self):
-        import pdb; pdb.set_trace()
+        """ publisher getter """
         if not getattr(self.context, 'publisher', None):
             SITE_STRING = getSite().getId()
             publisher_env = "DEFAULT_PUBLISHER_" + SITE_STRING
@@ -55,13 +54,12 @@ class CoreMetadata(MetadataBase):
 
     @publisher.setter
     def publisher(self, value):
-        import pdb; pdb.set_trace()
+        """ publisher setter """
         setattr(self.context, 'publisher', value)
-
 
     @property
     def other_organisations(self):
-        import pdb; pdb.set_trace()
+        """ other_organisations getter """
         if not getattr(self.context, 'other_organisations', None):
             SITE_STRING = getSite().getId()
             organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
@@ -75,5 +73,5 @@ class CoreMetadata(MetadataBase):
 
     @other_organisations.setter
     def other_organisations(self, value):
-        import pdb; pdb.set_trace()
+        """ other_organisations setter """
         setattr(self.context, 'other_organisations', value)
