@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.8 - (2022-08-29)
+---------------------------
+* Change: Enhanced the way env variables are retrieved and used
+  [iulianpetchesi refs #153089]
+
 1.7 - (2022-08-18)
 ---------------------------
 * Change: Release
