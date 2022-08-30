@@ -21,8 +21,11 @@ from plone.supermodel import model
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import WWW_DIR
 from z3c.form.interfaces import IAddForm, IEditForm
+from zope.component.hooks import getSite
 from zope.interface import Invalid, implementer, invariant, provider
 from zope.schema import Choice, Datetime, Text, TextLine, Tuple
+from zope.schema.interfaces import IContextAwareDefaultFactory
+
 
 try:
     from plone.app.dexterity import _
@@ -34,16 +37,8 @@ except ImportError:
     from Products.CMFCore.permissions import ModifyPortalContent, View
 
 
-DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
-DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
 _marker = []
 _zone = DateTime().timezone()
-
-if isinstance(DEFAULT_PUBLISHER, str):
-    DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
-
-if isinstance(DEFAULT_ORGANISATIONS, str):
-    DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
 
 
 def seq_strip(seq, stripper=lambda x: x.strip()):
@@ -70,6 +65,37 @@ def tuplize(valueName, value, splitter=lambda x: x.split()):
         return seq_strip(tuple(splitter(value)))
 
     raise ValueError("%s of unsupported type" % valueName)
+
+
+@provider(IContextAwareDefaultFactory)
+def defaultPublisher(context):
+    SITE_STRING = getSite().getId()
+    publisher_env = "DEFAULT_PUBLISHER_" + SITE_STRING
+    DEFAULT_PUBLISHER = os.environ.get(publisher_env, [])
+
+
+    if isinstance(DEFAULT_PUBLISHER, str):
+        if ',' in DEFAULT_PUBLISHER:
+            DEFAULT_PUBLISHER = DEFAULT_PUBLISHER.split(',')
+        else:
+            DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
+
+    if len(DEFAULT_PUBLISHER) < 1:
+        DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
+
+    return tuple(DEFAULT_PUBLISHER)
+
+
+@provider(IContextAwareDefaultFactory)
+def defaultOrganisations(context):
+    SITE_STRING = getSite().getId()
+    organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
+
+    DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
+    if len(DEFAULT_ORGANISATIONS) < 1:
+        DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
+
+    return tuple(DEFAULT_ORGANISATIONS)
 
 
 class EffectiveAfterExpires(Invalid):
@@ -140,7 +166,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"Select other organisations involved in the production of this item"),   # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
-        default=tuple(DEFAULT_ORGANISATIONS),
+        defaultFactory=defaultOrganisations,
     )
 
     directives.widget("topics", SelectFieldWidget)
@@ -184,7 +210,7 @@ class ICoreMetadata(model.Schema):
         description=_(u"The publisher of this item. Change only if needed"),
         value_type=Choice(vocabulary="publisher_vocabulary"),
         required=False,
-        default=tuple(DEFAULT_PUBLISHER),
+        defaultFactory=defaultPublisher,
     )
 
     preview_image = NamedBlobImage(
