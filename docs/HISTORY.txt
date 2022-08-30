@@ -3,6 +3,8 @@ Changelog
 
 1.9-dev0 - (unreleased)
 ---------------------------
+* Change: Convert env vars to list from string
+  [iulianpetchesi refs #153089]
 
 1.8 - (2022-08-29)
 ---------------------------
