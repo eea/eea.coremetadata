@@ -73,7 +73,6 @@ def defaultPublisher(context):
     publisher_env = "DEFAULT_PUBLISHER_" + SITE_STRING
     DEFAULT_PUBLISHER = os.environ.get(publisher_env, [])
 
-
     if isinstance(DEFAULT_PUBLISHER, str):
         if ',' in DEFAULT_PUBLISHER:
             DEFAULT_PUBLISHER = DEFAULT_PUBLISHER.split(',')
