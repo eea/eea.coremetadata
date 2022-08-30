@@ -71,8 +71,14 @@ def tuplize(valueName, value, splitter=lambda x: x.split()):
 def defaultPublisher(context):
     SITE_STRING = getSite().getId()
     publisher_env = "DEFAULT_PUBLISHER_" + SITE_STRING
-
     DEFAULT_PUBLISHER = os.environ.get(publisher_env, [])
+
+    if isinstance(DEFAULT_PUBLISHER, str):
+        if ',' in DEFAULT_PUBLISHER:
+            DEFAULT_PUBLISHER = DEFAULT_PUBLISHER.split(',')
+        else:
+            DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
+
     if len(DEFAULT_PUBLISHER) < 1:
         DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
 
@@ -83,8 +89,14 @@ def defaultPublisher(context):
 def defaultOrganisations(context):
     SITE_STRING = getSite().getId()
     organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
-
     DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
+
+    if isinstance(DEFAULT_ORGANISATIONS, str):
+        if ',' in DEFAULT_ORGANISATIONS:
+            DEFAULT_ORGANISATIONS = DEFAULT_ORGANISATIONS.split(',')
+        else:
+            DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
+
     if len(DEFAULT_ORGANISATIONS) < 1:
         DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
 
