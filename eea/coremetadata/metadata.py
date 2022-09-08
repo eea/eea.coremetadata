@@ -73,14 +73,17 @@ def defaultPublisher(context):
     publisher_env = "DEFAULT_PUBLISHER_" + SITE_STRING
     DEFAULT_PUBLISHER = os.environ.get(publisher_env, [])
 
+    if len(DEFAULT_PUBLISHER) < 1:
+        DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
+
     if isinstance(DEFAULT_PUBLISHER, str):
         if ',' in DEFAULT_PUBLISHER:
             DEFAULT_PUBLISHER = DEFAULT_PUBLISHER.split(',')
         else:
-            DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
+            if DEFAULT_PUBLISHER == "":
+                return ()
 
-    if len(DEFAULT_PUBLISHER) < 1:
-        DEFAULT_PUBLISHER = os.environ.get("DEFAULT_PUBLISHER", [])
+            DEFAULT_PUBLISHER = [DEFAULT_PUBLISHER]
 
     return tuple(DEFAULT_PUBLISHER)
 
@@ -91,14 +94,17 @@ def defaultOrganisations(context):
     organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
     DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
 
+    if len(DEFAULT_ORGANISATIONS) < 1:
+        DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
+
     if isinstance(DEFAULT_ORGANISATIONS, str):
         if ',' in DEFAULT_ORGANISATIONS:
             DEFAULT_ORGANISATIONS = DEFAULT_ORGANISATIONS.split(',')
         else:
-            DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
+            if DEFAULT_ORGANISATIONS == "":
+                return ()
 
-    if len(DEFAULT_ORGANISATIONS) < 1:
-        DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])
+            DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
 
     return tuple(DEFAULT_ORGANISATIONS)
 

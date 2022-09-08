@@ -3,6 +3,8 @@ Changelog
 
 2.0-dev0 - (unreleased)
 ---------------------------
+* Change: Fix constraint bug on env vars when empty string
+  [iulianpetchesi refs #153089]
 
 1.9 - (2022-08-30)
 ---------------------------
