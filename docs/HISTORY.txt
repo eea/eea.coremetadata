@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.1 - (2022-10-05)
+---------------------------
+* Change: Update topics taxonomy with new info + upgrade step
+  [iulianpetchesi refs #154859]
+
 2.0 - (2022-09-08)
 ---------------------------
 * Change: Fix constraint bug on env vars when empty string

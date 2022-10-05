@@ -15,4 +15,25 @@
 
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeStep
+    title="Remove topics taxonomy"
+    description=""
+    source="*"
+    destination="2.0"
+    handler=".to_20.to_20"
+    profile="eea.coremetadata:default"
+    />
+
+  <genericsetup:upgradeSteps
+    source="2.0"
+    destination="2.1"
+    profile="eea.coremetadata:default">
+
+    <genericsetup:upgradeDepends
+       title="Update topics taxonomy values"
+       import_profile="eea.coremetadata:default"
+      />
+
+  </genericsetup:upgradeSteps>
+
 </configure>
