@@ -1,6 +1,9 @@
 Changelog
 =========
 
+2.2-dev0 - (unreleased)
+---------------------------
+
 2.1 - (2022-10-05)
 ---------------------------
 * Change: Update topics taxonomy with new info + upgrade step
