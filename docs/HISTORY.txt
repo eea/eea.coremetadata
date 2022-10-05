@@ -3,6 +3,8 @@ Changelog
 
 2.1-dev0 - (unreleased)
 ---------------------------
+* Change: Update topics taxonomy with new info + upgrade step
+  [iulianpetchesi refs #154859]
 
 2.0 - (2022-09-08)
 ---------------------------
