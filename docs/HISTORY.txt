@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.2 - (2022-10-07)
+---------------------------
+* Change: Added the field rights back
+  [dobri1408]
+
 2.1 - (2022-10-05)
 ---------------------------
 * Change: Update topics taxonomy with new info + upgrade step
