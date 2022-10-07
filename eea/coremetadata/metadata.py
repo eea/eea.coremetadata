@@ -127,7 +127,7 @@ class ICoreMetadata(model.Schema):
             default=u'EEA core metadata'
         ),
         fields=['topics', 'temporal_coverage',
-                'geo_coverage', 'publisher',
+                'geo_coverage', 'publisher', 'rights',
                 'other_organisations', 'data_provenance'],
     )
 
