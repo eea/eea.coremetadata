@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.3 - (2022-10-21)
+---------------------------
+* Change: Develop #155903
+  [alecghica]
+
 2.2 - (2022-10-07)
 ---------------------------
 * Change: Added the field rights back
