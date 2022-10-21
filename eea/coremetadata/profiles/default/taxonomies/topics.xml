@@ -62,13 +62,6 @@
   </term>
 
   <term>
-    <termIdentifier>term9</termIdentifier>
-    <caption>
-      <langstring language="en">Climate</langstring>
-    </caption>
-  </term>
-
-  <term>
     <termIdentifier>term10</termIdentifier>
     <caption>
       <langstring language="en">Climate adaptation</langstring>
@@ -79,13 +72,6 @@
     <termIdentifier>term11</termIdentifier>
     <caption>
       <langstring language="en">Climate mitigation</langstring>
-    </caption>
-  </term>
-
-  <term>
-    <termIdentifier>term12</termIdentifier>
-    <caption>
-      <langstring language="en">Economy and resources</langstring>
     </caption>
   </term>
 
@@ -146,13 +132,6 @@
   </term>
 
   <term>
-    <termIdentifier>term21</termIdentifier>
-    <caption>
-      <langstring language="en">Health</langstring>
-    </caption>
-  </term>
-
-  <term>
     <termIdentifier>term22</termIdentifier>
     <caption>
       <langstring language="en">Industry</langstring>
@@ -163,13 +142,6 @@
     <termIdentifier>term23</termIdentifier>
     <caption>
       <langstring language="en">Land use</langstring>
-    </caption>
-  </term>
-
-  <term>
-    <termIdentifier>term24</termIdentifier>
-    <caption>
-      <langstring language="en">Nature</langstring>
     </caption>
   </term>
 
@@ -247,20 +219,6 @@
     <termIdentifier>term35</termIdentifier>
     <caption>
       <langstring language="en">Soil</langstring>
-    </caption>
-  </term>
-
-  <term>
-    <termIdentifier>term36</termIdentifier>
-    <caption>
-      <langstring language="en">State of Europe's environment</langstring>
-    </caption>
-  </term>
-
-  <term>
-    <termIdentifier>term37</termIdentifier>
-    <caption>
-      <langstring language="en">Sustainability</langstring>
     </caption>
   </term>
 
