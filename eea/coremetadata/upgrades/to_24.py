@@ -2,51 +2,9 @@
 # -*- coding: utf-8 -*-
 """ Upgrade to 2.4 """
 import logging
-from zope.i18n.interfaces import ITranslationDomain
-from zope.schema.interfaces import IVocabularyFactory
-from collective.taxonomy.interfaces import ITaxonomy
+from zope.component import getUtility
 from collective.taxonomy.behavior import TaxonomyBehavior
-from plone.behavior.interfaces import IBehavior
-from Products.CMFCore.utils import getToolByName
-logger = logging.getLogger("eea.coremetadata.upgrade")
-
-
-# def to_24(context):
-#     """ Add behaviors for core metadata taxonomies """
-#     item = "collective.taxonomy.eeatopicstaxonomy"
-#     # logger.info("Deleting taxonomy: %s" % item)
-#
-#     sm = context.aq_parent.getSiteManager()
-#     utility = sm.queryUtility(ITaxonomy, name=item)
-#     utility.unregisterBehavior()
-#
-#     catalog = getToolByName(context, "portal_catalog")
-#     # catalog.delIndex("taxonomy_eeatopicstaxonomy")
-#     # catalog.delColumn("taxonomy_eeatopicstaxonomy")
-#
-#     new_args = {}
-#     # new_args["name"] = utility.getGeneratedName()
-#     # new_args["name"] = "collective.taxonomy.eeatopics"
-#     new_args["name"] = "topics"
-#     new_args["title"] = "TopicsCOREMETADATA"
-#     new_args["field_title"] = "TopicsCOREMETADATA"
-#     # new_args["field_prefix"] = "taxonomy_"
-#     new_args["field_prefix"] = ""
-#     new_args["description"] = "Topic selected from a predefined list"
-#     new_args["field_description"] = new_args["description"]
-#     new_args["taxonomy_fieldset"] = "default"
-#     new_args["default_language"] = "en"
-#     import pdb; pdb.set_trace()
-#
-#     behavior = TaxonomyBehavior(**new_args)
-#
-#     sm.registerUtility(behavior, IBehavior, name=new_args["name"])
-#     behavior.addIndex()
-#     behavior.addMetadata()
-#     behavior.activateSearchable()
-#
-#     logger.info("Deleted taxonomy: %s" % item)
-
+from collective.taxonomy.indexer import TaxonomyIndexer
 from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer.interfaces import IIndexer
@@ -57,21 +15,18 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.PluginIndexes.KeywordIndex.KeywordIndex import KeywordIndex
 from Products.ZCatalog.Catalog import CatalogError
 from Products.ZCatalog.interfaces import IZCatalog
-from zope import schema
-from zope.component import getUtility
-from collective.taxonomy import generated
-from collective.taxonomy.i18n import CollectiveTaxonomyMessageFactory as _
-from collective.taxonomy.indexer import TaxonomyIndexer
+from eea.coremetadata import EEAMessageFactory as _
+logger = logging.getLogger("eea.coremetadata.upgrade")
 
 
 def to_24(context):
-    """ add index, add metadata, add searchable"""
+    """ Add behaviors for core metadata taxonomies """
     new_args = {}
     new_args["name"] = "topics"
-    new_args["title"] = "TopicsCOREMETADATANOU"
+    new_args["title"] = "EEA Coremetadata Topics taxonomy"
     new_args["field_title"] = "Topics"
     new_args["field_prefix"] = ""
-    new_args["description"] = "Topic selected from a predefined list for coremetadata"
+    new_args["description"] = "Topic selected from a predefined list for eea.coremetadata"
     new_args["field_description"] = new_args["description"]
     new_args["taxonomy_fieldset"] = "default"
     new_args["default_language"] = "en"
