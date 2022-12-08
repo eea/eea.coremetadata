@@ -1,4 +1,4 @@
-# pylint: disable=W1201, C0301, C0111, W0640
+# pylint: disable=W1201, C0301, C0111, W0640, W1202
 # -*- coding: utf-8 -*-
 """ Upgrade to 2.4 """
 import logging
@@ -75,7 +75,7 @@ def to_24(context):
 
     for new_args in taxonomy_args:
         sm.registerAdapter(
-            TaxonomyIndexer(new_args['field_name'], new_args['vocabulary_name']),
+            TaxonomyIndexer(new_args['field_name'], new_args['vocabulary_name']),  # noqa: E501
             (IDexterityContent, IZCatalog),
             IIndexer,
             name=new_args['field_name'],
