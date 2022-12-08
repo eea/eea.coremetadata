@@ -1,4 +1,4 @@
-# pylint: disable=W1201
+# pylint: disable=W1201, C0301, C0111, W0640
 # -*- coding: utf-8 -*-
 """ Upgrade to 2.4 """
 import logging
@@ -15,7 +15,6 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.PluginIndexes.KeywordIndex.KeywordIndex import KeywordIndex
 from Products.ZCatalog.Catalog import CatalogError
 from Products.ZCatalog.interfaces import IZCatalog
-from eea.coremetadata import EEAMessageFactory as _
 logger = logging.getLogger("eea.coremetadata.upgrade")
 
 
@@ -25,7 +24,7 @@ taxonomy_args = [
         "title": "EEA Coremetadata Topics taxonomy",
         "field_title": "Topics",
         "field_prefix": "",
-        "description": "Topic selected from a predefined list for eea.coremetadata",
+        "description": "Topic selected from a predefined list for eea.coremetadata",  # noqa: E501
         "field_description": "Topics selected from a predefined list",
         "taxonomy_fieldset": "default",
         "default_language": "en"
@@ -35,7 +34,7 @@ taxonomy_args = [
         "title": "EEA Coremetadata Publisher taxonomy",
         "field_title": "Publisher",
         "field_prefix": "",
-        "description": "Publishers selected from a predefined list for eea.coremetadata",
+        "description": "Publishers selected from a predefined list for eea.coremetadata",  # noqa: E501
         "field_description": "Publishers selected from a predefined list",
         "taxonomy_fieldset": "ownership",
         "default_language": "en"
@@ -45,7 +44,7 @@ taxonomy_args = [
         "title": "EEA Coremetadata Organisations taxonomy",
         "field_title": "Organisations",
         "field_prefix": "",
-        "description": "Organisations selected from a predefined list for eea.coremetadata",
+        "description": "Organisations selected from a predefined list for eea.coremetadata",  # noqa: E501
         "field_description": "Organisations selected from a predefined list",
         "taxonomy_fieldset": "ownership",
         "default_language": "en"
@@ -62,17 +61,17 @@ def to_24(context):
 
         sm.registerUtility(behavior, IBehavior, name=new_args["name"])
 
-    taxonomy_args[0]["vocabulary_name"] = 'collective.taxonomy.eeatopicstaxonomy'
+    taxonomy_args[0]["vocabulary_name"] = 'collective.taxonomy.eeatopicstaxonomy'  # noqa: E501
     taxonomy_args[0]["short_name"] = "topics"
-    taxonomy_args[0]["field_name"] = (taxonomy_args[0]['field_prefix'] or "") + taxonomy_args[0]['short_name']
+    taxonomy_args[0]["field_name"] = (taxonomy_args[0]['field_prefix'] or "") + taxonomy_args[0]['short_name']  # noqa: E501
 
-    taxonomy_args[1]["vocabulary_name"] = 'collective.taxonomy.eeapublishertaxonomy'
+    taxonomy_args[1]["vocabulary_name"] = 'collective.taxonomy.eeapublishertaxonomy'  # noqa: E501
     taxonomy_args[1]["short_name"] = "publisher"
-    taxonomy_args[1]["field_name"] = (taxonomy_args[1]['field_prefix'] or "") + taxonomy_args[1]['short_name']
+    taxonomy_args[1]["field_name"] = (taxonomy_args[1]['field_prefix'] or "") + taxonomy_args[1]['short_name']  # noqa: E501
 
-    taxonomy_args[2]["vocabulary_name"] = 'collective.taxonomy.eeaorganisationstaxonomy'
+    taxonomy_args[2]["vocabulary_name"] = 'collective.taxonomy.eeaorganisationstaxonomy'  # noqa: E501
     taxonomy_args[2]["short_name"] = "other_organisations"
-    taxonomy_args[2]["field_name"] = (taxonomy_args[2]['field_prefix'] or "") + taxonomy_args[2]['short_name']
+    taxonomy_args[2]["field_name"] = (taxonomy_args[2]['field_prefix'] or "") + taxonomy_args[2]['short_name']  # noqa: E501
 
     for new_args in taxonomy_args:
         sm.registerAdapter(
@@ -97,7 +96,7 @@ def to_24(context):
             catalog.addIndex(new_args['field_name'], idx_object)
         except CatalogError:
             logging.info(
-                "Index {0} already exists, we hope it is proper configured".format(
+                "Index {0} already exists, we hope it is proper configured".format(  # noqa: E501
                     new_args['field_name']
                 )  # noqa: E501
             )
@@ -115,7 +114,7 @@ def to_24(context):
         def add(name, value):
             registry.records[prefix + "." + name] = value
 
-        add("title", Record(field.TextLine(), safe_unicode(new_args['field_title'])))
+        add("title", Record(field.TextLine(), safe_unicode(new_args['field_title'])))  # noqa: E501
         add("enabled", Record(field.Bool(), True))
         add("group", Record(field.TextLine(), safe_unicode("Taxonomy")))
         add(
@@ -126,66 +125,8 @@ def to_24(context):
             ),
         )
         add(
-            "vocabulary", Record(field.TextLine(), safe_unicode(new_args['vocabulary_name']))
+            "vocabulary", Record(field.TextLine(), safe_unicode(new_args['vocabulary_name']))  # noqa: E501
         )  # noqa: E501
         add("fetch_vocabulary", Record(field.Bool(), True))
         add("sortable", Record(field.Bool(), False))
         add("description", Record(field.Text(), safe_unicode("")))
-
-
-# (Pdb) pp vars(self)
-# {'default_language': 'en',
-#  'description': '',
-#  'factory': None,
-#  'field_description': '',
-#  'field_prefix': 'taxonomy_',
-#  'field_title': 'Organisations',
-#  'is_required': False,
-#  'is_single_select': False,
-#  'name': 'collective.taxonomy.generated.eeaorganisationstaxonomy',
-#  'taxonomy_fieldset': 'ownership',
-#  'title': 'Organisations',
-#  'write_permission': ''}
-# (Pdb) self.vocabulary_name
-# 'collective.taxonomy.eeaorganisationstaxonomy'
-# (Pdb) self.field_name
-# 'taxonomy_eeaorganisationstaxonomy'
-
-
-
-# (Pdb) pp vars(self)
-# {'default_language': 'en',
-#  'description': '',
-#  'factory': None,
-#  'field_description': '',
-#  'field_prefix': 'taxonomy_',
-#  'field_title': 'Publisher',
-#  'is_required': False,
-#  'is_single_select': False,
-#  'name': 'collective.taxonomy.generated.eeapublishertaxonomy',
-#  'taxonomy_fieldset': 'ownership',
-#  'title': 'Publisher',
-#  'write_permission': ''}
-# (Pdb) self.vocabulary_name
-# 'collective.taxonomy.eeapublishertaxonomy'
-# (Pdb) self.field_name
-# 'taxonomy_eeapublishertaxonomy'
-
-
-# (Pdb) pp vars(self)
-# {'default_language': 'en',
-#  'description': 'Topic selected from a predefined list',
-#  'factory': None,
-#  'field_description': 'Topic selected from a predefined list',
-#  'field_prefix': 'taxonomy_',
-#  'field_title': 'Topics',
-#  'is_required': False,
-#  'is_single_select': False,
-#  'name': 'collective.taxonomy.generated.eeatopicstaxonomy',
-#  'taxonomy_fieldset': 'default',
-#  'title': 'Topics',
-#  'write_permission': ''}
-# (Pdb) self.vocabulary_name
-# 'collective.taxonomy.eeatopicstaxonomy'
-# (Pdb) self.field_name
-# 'taxonomy_eeatopicstaxonomy'
