@@ -1,6 +1,9 @@
 Changelog
 =========
 
+2.5-dev0 - (unreleased)
+---------------------------
+
 2.4 - (2022-12-08)
 ---------------------------
 * Change: Added upgrade step that enables behavior indexer for topics taxonomy
