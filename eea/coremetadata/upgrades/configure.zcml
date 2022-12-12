@@ -36,4 +36,13 @@
 
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeStep
+    title="Add behavior indexers for taxonomies"
+    description=""
+    source="2.1"
+    destination="2.4"
+    handler=".to_24.to_24"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
