@@ -1,6 +1,9 @@
 Changelog
 =========
 
+2.6-dev0 - (unreleased)
+---------------------------
+
 2.5 - (2022-12-16)
 ---------------------------
 * Change: Distinct title for taxonomies to differentiate in search criteria
