@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.5 - (2022-12-16)
+---------------------------
+* Change: Distinct title for taxonomies to differentiate in search criteria
+  [avoinea]
+
 2.4 - (2022-12-08)
 ---------------------------
 * Change: Added upgrade step that enables behavior indexer for topics taxonomy

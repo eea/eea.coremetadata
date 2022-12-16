@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="en">
   <vocabName>
-    <langstring language="en">Organisations</langstring>
+    <langstring language="en">EEA Organisations Taxonomy</langstring>
   </vocabName>
   <vocabIdentifier>eea.organisations.taxonomy</vocabIdentifier>
   <term>
