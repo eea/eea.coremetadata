@@ -1,8 +1,10 @@
 Changelog
 =========
 
-2.6-dev0 - (unreleased)
+3.0-dev0 - (unreleased)
 ---------------------------
+* Change: Register indexes in portal_catalog and add indexer for temporal _coverage index
+  [razvanMiu]
 
 2.5 - (2022-12-16)
 ---------------------------
