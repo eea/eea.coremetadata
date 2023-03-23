@@ -23,7 +23,7 @@ from Products.CMFPlone.utils import WWW_DIR
 from z3c.form.interfaces import IAddForm, IEditForm
 from zope.component.hooks import getSite
 from zope.interface import Invalid, implementer, invariant, provider
-from zope.schema import Choice, Datetime, Text, TextLine, Tuple, List
+from zope.schema import Choice, Datetime, Text, TextLine, Tuple
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
