@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.0 - (2023-03-23)
+---------------------------
+* Change: Register indexes in portal_catalog and add indexer for temporal _coverage index
+  [razvanMiu]
+
 2.5 - (2022-12-16)
 ---------------------------
 * Change: Distinct title for taxonomies to differentiate in search criteria
