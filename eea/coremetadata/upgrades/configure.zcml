@@ -45,4 +45,15 @@
     profile="eea.coremetadata:default"
     />
 
+  <genericsetup:upgradeSteps
+    source="2.4"
+    destination="3.0"
+    profile="eea.coremetadata:default"
+  >
+    <genericsetup:upgradeDepends
+      title="Register indexes in portal_catalog and add indexer for temporal_coverage index"
+      import_steps="plone.app.registry catalog"
+    />
+  </genericsetup:upgradeSteps>
+
 </configure>

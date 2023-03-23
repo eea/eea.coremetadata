@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+
+    <index name="taxonomy_eeaorganisationstaxonomy" meta_type="KeywordIndex">
+        <indexed_attr value="other_organisations"/>
+    </index>
+
+    <index name="taxonomy_eeapublishertaxonomy" meta_type="KeywordIndex">
+        <indexed_attr value="publisher"/>
+    </index>
+
+    <index name="taxonomy_eeatopicstaxonomy" meta_type="KeywordIndex">
+        <indexed_attr value="topics"/>
+    </index>
+
+    <index name="temporal_coverage" meta_type="KeywordIndex">
+        <indexed_attr value="temporal_coverage"/>
+    </index>
+
+    <column value="taxonomy_eeaorganisationstaxonomy" />
+    <column value="taxonomy_eeapublishertaxonomy" />
+    <column value="taxonomy_eeatopicstaxonomy" />
+    <column value="temporal_coverage" />
+
+</object>
