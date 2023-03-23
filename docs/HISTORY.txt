@@ -1,6 +1,9 @@
 Changelog
 =========
 
+3.1-dev0 - (unreleased)
+---------------------------
+
 3.0 - (2023-03-23)
 ---------------------------
 * Change: Register indexes in portal_catalog and add indexer for temporal _coverage index
