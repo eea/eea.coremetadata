@@ -1,0 +1,56 @@
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="plone">
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+    prefix="plone.app.querystring.field.taxonomy_eeaorganisationstaxonomy">
+    <value key="title" i18n:translate="">Other organisations involved</value>
+    <value key="description" i18n:translate=""></value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.is</element>
+    </value>
+    <value key="group" i18n:translate="">Taxonomy</value>
+    <value key="vocabulary">index_organisations_vocabulary</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+    prefix="plone.app.querystring.field.taxonomy_eeapublishertaxonomy">
+    <value key="title" i18n:translate="">Publisher</value>
+    <value key="description" i18n:translate=""></value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.is</element>
+    </value>
+    <value key="group" i18n:translate="">Taxonomy</value>
+    <value key="vocabulary">index_publisher_vocabulary</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+    prefix="plone.app.querystring.field.taxonomy_eeatopicstaxonomy">
+    <value key="title" i18n:translate="">Topics</value>
+    <value key="description" i18n:translate=""></value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.is</element>
+    </value>
+    <value key="group" i18n:translate="">Taxonomy</value>
+    <value key="vocabulary">index_topics_vocabulary</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+    prefix="plone.app.querystring.field.temporal_coverage">
+    <value key="title" i18n:translate="">Temporal coverage</value>
+    <value key="description" i18n:translate=""></value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.is</element>
+    </value>
+    <value key="group" i18n:translate="">EEA coremetadata</value>
+    <value key="vocabulary">temporal_coverage_vocabulary</value>
+  </records>
+
+</registry>
