@@ -86,7 +86,7 @@ def to_24(context):
         try:
             catalog.delIndex(new_args['field_name'])
             catalog.delColumn(new_args['field_name'])
-        except CatalogError:
+        except (CatalogError, ValueError) as error:
             logging.info(
                 "Index {0} doesn't exists".format(new_args['field_name'])  # noqa: E501
             )
