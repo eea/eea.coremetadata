@@ -13,7 +13,6 @@ from uuid import uuid4
 from plone import api
 
 
-@implementer(IPublishTraverse)
 class PreviewLinkGet(Service):
     """Get Preview link information"""
 
@@ -23,11 +22,6 @@ class PreviewLinkGet(Service):
         self.params = []
         portal = getSite()
         self.portal_membership = getToolByName(portal, "portal_membership")
-
-    def publishTraverse(self, request, name):
-        # Consume any path segments after /@users as parameters
-        self.params.append(name)
-        return self
 
     def get_preview_link(self):
         url = self.request["ACTUAL_URL"]
