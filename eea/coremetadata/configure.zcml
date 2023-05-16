@@ -11,6 +11,7 @@
   <include file="profiles.zcml" />
   <include package=".browser" />
   <include package=".behaviors" />
+  <include package=".restapi" />
   <include package=".upgrades" />
 
   <adapter factory=".indexer.TemporalCoverageIndexer" name="temporal_coverage" />

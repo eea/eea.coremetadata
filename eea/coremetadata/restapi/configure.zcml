@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <include package="plone.restapi"  />
+
+  <plone:service
+    method="GET"
+    name="@preview-link"
+    for="*"
+    factory=".get.PreviewLinkGet"
+    permission="cmf.ModifyPortalContent"
+    />
+
+</configure>
