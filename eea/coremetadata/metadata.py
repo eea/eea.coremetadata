@@ -203,7 +203,8 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_("Geographical coverage"),
-        description=_("Use the search to add more granular geographic coverage tags"),
+        description=_(
+            "Use the search to add more granular geographic coverage tags"),
         required=False,
         widget="geolocation",
         default={},
