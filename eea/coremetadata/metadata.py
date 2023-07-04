@@ -138,10 +138,12 @@ class ICoreMetadata(model.Schema):
     )
 
     description = Text(
-        title=_("label_description", default="Description"),
+        title=_(
+            "label_description",
+            default="Description"),
         description=_(
-            "help_description", default="Used in item listings and search results."
-        ),
+            "help_description",
+            default="Used in item listings and search results."),
         required=False,
     )
 
