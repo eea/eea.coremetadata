@@ -109,7 +109,8 @@ def defaultOrganisations(context):
 
 class EffectiveAfterExpires(Invalid):
     __doc__ = _(
-        "error_invalid_publication", default="Invalid effective or expires date"  # noqa
+        "error_invalid_publication",
+        default="Invalid effective or expires date",  # noqa
     )
 
 
@@ -140,7 +141,8 @@ class ICoreMetadata(model.Schema):
     description = Text(
         title=_("label_description", default="Description"),
         description=_(
-            "help_description", default="Used in item listings and search results."
+            "help_description",
+            default="Used in item listings and search results.",
         ),
         required=False,
     )
@@ -203,7 +205,9 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_("Geographical coverage"),
-        description=_("Use the search to add more granular geographic coverage tags"),
+        description=_(
+            "Use the search to add more granular geographic coverage tags"
+        ),
         required=False,
         widget="geolocation",
         default={},
@@ -490,8 +494,12 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def isEffective(self, date):
         # Is the date within the resource's effective range?
-        pastEffective = self.effective_date is None or self.effective_date <= date
-        beforeExpiration = self.expiration_date is None or self.expiration_date >= date
+        pastEffective = (
+            self.effective_date is None or self.effective_date <= date
+        )
+        beforeExpiration = (
+            self.expiration_date is None or self.expiration_date >= date
+        )
         return pastEffective and beforeExpiration
 
     #

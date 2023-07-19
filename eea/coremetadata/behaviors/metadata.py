@@ -2,7 +2,10 @@
 """
 # pylint: disable=line-too-long, E0102, C0111
 import os
-from plone.app.dexterity.behaviors.metadata import DCFieldProperty, MetadataBase
+from plone.app.dexterity.behaviors.metadata import (
+    DCFieldProperty,
+    MetadataBase,
+)
 from eea.coremetadata.metadata import ICoreMetadata
 from zope.component.hooks import getSite
 
@@ -18,8 +21,12 @@ class CoreMetadata(MetadataBase):
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
-    effective = DCFieldProperty(ICoreMetadata["effective"], get_name="effective_date")
-    expires = DCFieldProperty(ICoreMetadata["expires"], get_name="expiration_date")
+    effective = DCFieldProperty(
+        ICoreMetadata["effective"], get_name="effective_date"
+    )
+    expires = DCFieldProperty(
+        ICoreMetadata["expires"], get_name="expiration_date"
+    )
 
     temporal_coverage = DCFieldProperty(ICoreMetadata["temporal_coverage"])
 
