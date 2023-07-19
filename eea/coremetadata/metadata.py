@@ -1,4 +1,4 @@
-# pylint: disable=line-too-long, C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
+# pylint: disable=C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
 """Metadata schema"""
 import os
 import six
@@ -179,7 +179,8 @@ class ICoreMetadata(model.Schema):
     other_organisations = Tuple(
         title=_("Other organisations involved"),
         description=_(
-            "Select other organisations involved in the production of this item"
+            "Select other organisations involved in the production"
+            "of this item"
         ),  # noqa
         required=False,
         value_type=Choice(vocabulary="organisations_vocabulary"),
@@ -709,9 +710,9 @@ class DefaultCoreMetadataImpl(PropertyManager):
             rights,
         )
         REQUEST["RESPONSE"].redirect(
-            self.absolute_url()
-            + "/manage_metadata"
-            + "?manage_tabs_message=Metadata+updated."
+            self.absolute_url() +
+            "/manage_metadata" +
+            "?manage_tabs_message=Metadata+updated."
         )
 
     security.declareProtected(ModifyPortalContent, "editMetadata")
