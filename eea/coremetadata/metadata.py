@@ -1,4 +1,4 @@
-# pylint: disable=C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706, W503, E501
+# pylint: disable=line-too-long, C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
 """Metadata schema"""
 import os
 import six
