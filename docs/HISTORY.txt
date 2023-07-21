@@ -3,8 +3,8 @@ Changelog
 
 3.2 - (2023-07-19)
 ---------------------------
-* Change: Release
-  [nileshgulia1]
+* Bug fix: Object is of wrong type
+  [nileshgulia1 - refs #254921]
 
 3.1 - (2023-04-26)
 ---------------------------
