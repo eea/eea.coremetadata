@@ -29,11 +29,11 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 
 try:
     from plone.app.dexterity import _
-    from plone.app.z3cform.widget import SelectFieldWidget
+    # from plone.app.z3cform.widget import SelectFieldWidget
     from Products.CMFPlone.permissions import ModifyPortalContent, View
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
-    from z3c.form.browser.select import SelectFieldWidget
+    # from z3c.form.browser.select import SelectFieldWidget
     from Products.CMFCore.permissions import ModifyPortalContent, View
 
 
@@ -175,7 +175,7 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("other_organisations", SelectFieldWidget)
+    # directives.widget("other_organisations", SelectFieldWidget)
     other_organisations = Tuple(
         title=_("Other organisations involved"),
         description=_(
@@ -187,7 +187,7 @@ class ICoreMetadata(model.Schema):
         defaultFactory=defaultOrganisations,
     )
 
-    directives.widget("topics", SelectFieldWidget)
+    # directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
         title=_("Topics"),
         description=_("Select from the official EEA topics"),
@@ -200,7 +200,7 @@ class ICoreMetadata(model.Schema):
         title=_("Temporal coverage"),
         description=_("Add years or period, e.g. 2018-2022"),
         required=False,
-        widget="temporal",
+        # widget="temporal",
         default={},
     )
 
@@ -210,7 +210,7 @@ class ICoreMetadata(model.Schema):
             "Use the search to add more granular geographic coverage tags"
         ),
         required=False,
-        widget="geolocation",
+        # widget="geolocation",
         default={},
     )
 
@@ -223,7 +223,7 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    directives.widget("publisher", SelectFieldWidget)
+    # directives.widget("publisher", SelectFieldWidget)
     publisher = Tuple(
         title=_("Publisher"),
         description=_("The publisher of this item. Change only if needed"),
@@ -248,7 +248,7 @@ class ICoreMetadata(model.Schema):
     data_provenance = JSONField(
         title=_("Add sources for the data used"),
         required=False,
-        widget="data_provenance",
+        # widget="data_provenance",
         default={},
     )
 
