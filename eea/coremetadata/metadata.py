@@ -12,7 +12,7 @@ from eea.coremetadata.interfaces import ICatalogCoreMetadata
 from eea.coremetadata.interfaces import ICoreMetadata as ICM
 from eea.coremetadata.interfaces import IMutableCoreMetadata
 from OFS.PropertyManager import PropertyManager
-from plone.app.z3cform.widget import DatetimeFieldWidget
+# from plone.app.z3cform.widget import DatetimeFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
@@ -147,7 +147,7 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    directives.widget("effective", DatetimeFieldWidget)
+    # directives.widget("effective", DatetimeFieldWidget)
     effective = Datetime(
         title=_("label_effective_date", "Publishing Date"),
         description=_(
@@ -159,7 +159,7 @@ class ICoreMetadata(model.Schema):
         default=None,
     )
 
-    directives.widget("expires", DatetimeFieldWidget)
+    # directives.widget("expires", DatetimeFieldWidget)
     expires = Datetime(
         title=_("label_expiration_date", "Expiration Date"),
         description=_(
