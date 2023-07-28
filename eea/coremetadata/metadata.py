@@ -202,7 +202,7 @@ class ICoreMetadata(model.Schema):
         title=_("Temporal coverage"),
         description=_("Add years or period, e.g. 2018-2022"),
         required=False,
-        # widget="temporal",
+        widget="temporal",
         default={},
     )
 
@@ -212,7 +212,7 @@ class ICoreMetadata(model.Schema):
             "Use the search to add more granular geographic coverage tags"
         ),
         required=False,
-        # widget="geolocation",
+        widget="geolocation",
         default={},
     )
 
@@ -250,7 +250,7 @@ class ICoreMetadata(model.Schema):
     data_provenance = JSONField(
         title=_("Add sources for the data used"),
         required=False,
-        # widget="data_provenance",
+        widget="data_provenance",
         default={},
     )
 
