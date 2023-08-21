@@ -1,11 +1,11 @@
 # pylint: disable=W0702
 """ vocabulary.py """
 from collective.taxonomy.interfaces import ITaxonomy
-from zope.interface import provider  # alsoProvides,
+from Products.CMFCore.utils import getToolByName
 from zope.component import queryUtility
+from zope.interface import provider  # alsoProvides,
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
-from Products.CMFCore.utils import getToolByName
 
 
 @provider(IVocabularyFactory)
@@ -19,7 +19,7 @@ def get_vocabulary(context, vocabulary_name):
 
     try:
         vocabulary = taxonomy(context)
-    except:
+    except Exception:
         vocabulary = taxonomy.makeVocabulary("en")
 
     return vocabulary.iterEntries()
@@ -140,12 +140,11 @@ def topics_vocabulary(context):
     utility_name = "collective.taxonomy.eeatopicstaxonomy"
     taxonomy = queryUtility(ITaxonomy, name=utility_name)
 
+    terms = []
     try:
         vocabulary = taxonomy(context)
-    except:
-        if taxonomy is None:
-            terms = []
-        else:
+    except Exception:
+        if taxonomy is not None:
             vocabulary = taxonomy.makeVocabulary("en")
 
             terms = [
