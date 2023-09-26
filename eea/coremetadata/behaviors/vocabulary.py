@@ -173,6 +173,21 @@ def temporal_coverage_vocabulary(context):
 
     return SimpleVocabulary(terms)
 
+@provider(IVocabularyFactory)
+def data_source_vocabulary(context):
+    """data_source_vocabulary"""
+
+    catalog = getToolByName(context, "portal_catalog")
+
+    terms = []
+
+    for datasource in catalog.uniqueValuesFor("data_source"):
+        terms.append(SimpleTerm(datasource.organization))
+
+    terms.sort(key=lambda t: t)
+
+    return SimpleVocabulary(terms)
+
 
 # @implementer(IVocabularyFactory)
 # class KeywordsVocabulary(BKV):

@@ -17,3 +17,18 @@ def TemporalCoverageIndexer(obj):
         data[val["value"]] = val["label"]
 
     return data
+
+@indexer(IContentish)
+def DataSourceIndexer(obj):
+    """Data Source indexer"""
+
+    data_source = getattr(obj, "data_source", None)
+
+    if not data_source not in obj.data_source:
+        return None
+
+    data = {}
+    for val in obj.data_source["organization"]:
+        data[val["value"]] = val["label"]
+
+    return data
