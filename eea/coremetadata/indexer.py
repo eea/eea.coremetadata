@@ -18,6 +18,7 @@ def TemporalCoverageIndexer(obj):
 
     return data
 
+
 @indexer(IContentish)
 def DataProvenanceIdexer(obj):
     """Data Provenance indexer"""

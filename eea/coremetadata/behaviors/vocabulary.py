@@ -173,6 +173,7 @@ def temporal_coverage_vocabulary(context):
 
     return SimpleVocabulary(terms)
 
+
 @provider(IVocabularyFactory)
 def data_provenance_vocabulary(context):
     """data_provenance_vocabulary"""
@@ -181,8 +182,8 @@ def data_provenance_vocabulary(context):
 
     terms = []
     for dataprovenance in catalog.uniqueValuesFor("data_provenance"):
-        terms.append(SimpleTerm(dataprovenance,dataprovenance,dataprovenance))
-   
+        terms.append(SimpleTerm(dataprovenance, dataprovenance, dataprovenance))
+
     terms.sort(key=lambda t: t.title)
 
     return SimpleVocabulary(terms)
