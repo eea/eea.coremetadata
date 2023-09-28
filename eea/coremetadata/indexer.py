@@ -15,7 +15,6 @@ def TemporalCoverageIndexer(obj):
     data = {}
     for val in obj.temporal_coverage["temporal"]:
         data[val["value"]] = val["label"]
-        print ([val["value"],val["label"]])
 
     return data
 
@@ -26,14 +25,9 @@ def DataProvenanceIdexer(obj):
     data_provenance = getattr(obj, "data_provenance", None)
     if not data_provenance or "data" not in obj.data_provenance:
         return None
-    print(data_provenance)
-    print("paiho")
+
     data = {}
     for val in obj.data_provenance['data']:
-            print("val",val)
-            print(val["organisation"])
-            data[val["organisation"]] = val["organisation"]
-            print ("ha")
-     
+        data[val["organisation"]] = val["organisation"]
 
     return data
