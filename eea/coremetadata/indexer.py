@@ -24,6 +24,8 @@ def DataProvenancenIdexer(obj):
     """Data Provenance indexer"""
 
     data_provenance = getattr(obj, "data_provenance", None)
+    if not data_provenance or "data" not in obj.data_provenance:
+        return None
     print(data_provenance)
     print("paiho")
     data = {}

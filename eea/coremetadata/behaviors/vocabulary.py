@@ -181,7 +181,7 @@ def data_provenance_vocabulary(context):
 
     terms = []
     for dataprovenance in catalog.uniqueValuesFor("data_provenance"):
-        terms.append(SimpleTerm((dataprovenance,dataprovenance,dataprovenance)))
+        terms.append(SimpleTerm(dataprovenance,dataprovenance,dataprovenance))
    
     terms.sort(key=lambda t: t.title)
 
