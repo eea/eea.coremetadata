@@ -181,8 +181,8 @@ def data_provenance_vocabulary(context):
     catalog = getToolByName(context, "portal_catalog")
 
     terms = []
-    for dataprovenance in catalog.uniqueValuesFor("data_provenance"):
-        terms.append(SimpleTerm(dataprovenance, dataprovenance, dataprovenance))
+    for org in catalog.uniqueValuesFor("data_provenance"):
+        terms.append(SimpleTerm(org, org, org))
 
     terms.sort(key=lambda t: t.title)
 
