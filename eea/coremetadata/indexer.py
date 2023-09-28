@@ -15,20 +15,23 @@ def TemporalCoverageIndexer(obj):
     data = {}
     for val in obj.temporal_coverage["temporal"]:
         data[val["value"]] = val["label"]
+        print ([val["value"],val["label"]])
 
     return data
 
 @indexer(IContentish)
-def DataSourceIndexer(obj):
-    """Data Source indexer"""
+def DataProvenancenIdexer(obj):
+    """Data Provenance indexer"""
 
-    data_source = getattr(obj, "data_source", None)
-
-    if not data_source not in obj.data_source:
-        return None
-
+    data_provenance = getattr(obj, "data_provenance", None)
+    print(data_provenance)
+    print("paiho")
     data = {}
-    for val in obj.data_source["organization"]:
-        data[val["value"]] = val["label"]
+    for val in obj.data_provenance['data']:
+            print("val",val)
+            print(val["organisation"])
+            data[val["organisation"]] = val["organisation"]
+            print ("ha")
+     
 
     return data

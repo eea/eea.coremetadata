@@ -17,14 +17,14 @@
         <indexed_attr value="temporal_coverage"/>
     </index>
 
-    <index name="data_source" meta_type="KeywordIndex">
-        <indexed_attr value="data_source"/>
+    <index name="data_provenance" meta_type="KeywordIndex">
+        <indexed_attr value="data_provenance"/>
     </index>
 
     <column value="taxonomy_eeaorganisationstaxonomy" />
     <column value="taxonomy_eeapublishertaxonomy" />
     <column value="taxonomy_eeatopicstaxonomy" />
     <column value="temporal_coverage" />
-    <column value="data_source" />
+    <column value="data_provenance" />
 
 </object>

@@ -174,17 +174,16 @@ def temporal_coverage_vocabulary(context):
     return SimpleVocabulary(terms)
 
 @provider(IVocabularyFactory)
-def data_source_vocabulary(context):
-    """data_source_vocabulary"""
+def data_provenance_vocabulary(context):
+    """data_provenance_vocabulary"""
 
     catalog = getToolByName(context, "portal_catalog")
 
     terms = []
-
-    for datasource in catalog.uniqueValuesFor("data_source"):
-        terms.append(SimpleTerm(datasource.organization))
-
-    terms.sort(key=lambda t: t)
+    for dataprovenance in catalog.uniqueValuesFor("data_provenance"):
+        terms.append(SimpleTerm((dataprovenance,dataprovenance,dataprovenance)))
+   
+    terms.sort(key=lambda t: t.title)
 
     return SimpleVocabulary(terms)
 

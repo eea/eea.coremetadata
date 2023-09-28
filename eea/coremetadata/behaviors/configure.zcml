@@ -51,7 +51,7 @@
         component=".vocabulary.temporal_coverage_vocabulary"
     />
     <utility
-        name="data_source_vocabulary"
-        component=".vocabulary.data_source_vocabulary"
+        name="data_provenance_vocabulary"
+        component=".vocabulary.data_provenance_vocabulary"
     />
 </configure>

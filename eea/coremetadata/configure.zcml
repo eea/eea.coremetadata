@@ -14,5 +14,5 @@
   <include package=".upgrades" />
 
   <adapter factory=".indexer.TemporalCoverageIndexer" name="temporal_coverage" />
-  <adapter factory=".indexer.DataSourceIndexer" name="data_source_organization" />
+  <adapter factory=".indexer.DataProvenancenIdexer" name="data_provenance" />
 </configure>
