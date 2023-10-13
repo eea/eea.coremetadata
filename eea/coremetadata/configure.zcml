@@ -13,6 +13,6 @@
   <include package=".behaviors" />
   <include package=".upgrades" />
 
-  <adapter factory=".indexer.TemporalCoverageIndexer" name="temporal_coverage" />
-  <adapter factory=".indexer.DataProvenanceIdexer" name="data_provenance" />
+  <adapter factory=".indexer.temporal_coverage_indexer" name="temporal_coverage" />
+  <adapter factory=".indexer.data_provenance_indexer" name="data_provenance" />
 </configure>

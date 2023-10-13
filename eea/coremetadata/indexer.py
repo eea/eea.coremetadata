@@ -4,7 +4,7 @@ from Products.CMFCore.interfaces import IContentish
 
 
 @indexer(IContentish)
-def TemporalCoverageIndexer(obj):
+def temporal_coverage_indexer(obj):
     """Temporal coverage indexer"""
 
     temporal_coverage = getattr(obj, "temporal_coverage", None)
@@ -20,7 +20,7 @@ def TemporalCoverageIndexer(obj):
 
 
 @indexer(IContentish)
-def DataProvenanceIdexer(obj):
+def data_provenance_indexer(obj):
     """Data Provenance indexer"""
 
     data_provenance = getattr(obj, "data_provenance", None)
