@@ -56,4 +56,15 @@
     />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+    source="3.0"
+    destination="3.1"
+    profile="eea.coremetadata:default"
+  >
+    <genericsetup:upgradeDepends
+      title="Register data_provenance index in portal_catalog and add indexer for data_provenance organisation"
+      import_steps="plone.app.registry catalog"
+    />
+  </genericsetup:upgradeSteps>
+
 </configure>

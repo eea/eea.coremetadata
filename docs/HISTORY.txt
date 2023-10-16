@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.3 - (2023-10-16)
+---------------------------
+* Change: Release
+  [avoinea]
+
 3.2 - (2023-07-19)
 ---------------------------
 * Bug fix: Object is of wrong type
