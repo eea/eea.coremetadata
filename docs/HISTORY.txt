@@ -1,10 +1,15 @@
 Changelog
 =========
 
+3.4 - (2023-10-16)
+---------------------------
+* Fix: Fix data_provenance indexer
+  [avoinea - refs #258077]
+
 3.3 - (2023-10-16)
 ---------------------------
-* Change: Release
-  [avoinea]
+* Feature: Add data_provenance indexer
+  [dobri1408 - refs #258077]
 
 3.2 - (2023-07-19)
 ---------------------------

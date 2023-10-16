@@ -23,12 +23,13 @@ def temporal_coverage_indexer(obj):
 def data_provenance_indexer(obj):
     """Data Provenance indexer"""
 
-    data_provenance = getattr(obj, "data_provenance", None)
-    if not data_provenance or "data" not in obj.data_provenance:
+    data_provenance = getattr(obj, "data_provenance", {})
+    if not data_provenance or "data" not in data_provenance:
         return None
 
     data = {}
-    for val in obj.data_provenance['data']:
-        data[val["organisation"]] = val["organisation"]
-
+    for val in data_provenance.get('data', []):
+        organisation = val.get("organisation", "")
+        if organisation:
+            data[organisation] = organisation
     return data
