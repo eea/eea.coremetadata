@@ -74,6 +74,7 @@
   >
     <genericsetup:upgradeDepends
       title="Register rights as metadata in portal_catalog"
+      import_steps="catalog"
     />
   </genericsetup:upgradeSteps>
 
