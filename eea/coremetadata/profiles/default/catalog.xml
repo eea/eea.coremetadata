@@ -26,5 +26,6 @@
     <column value="taxonomy_eeatopicstaxonomy" />
     <column value="temporal_coverage" />
     <column value="data_provenance" />
+    <column value="rights" />
 
 </object>

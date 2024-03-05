@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.5 - (2024-03-05)
+---------------------------
+* Feature: Expose rights field as metadata
+  [dobri1408 - refs #159551]
+
 3.4 - (2023-10-16)
 ---------------------------
 * Fix: Fix data_provenance indexer
