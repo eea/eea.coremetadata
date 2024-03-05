@@ -1,6 +1,9 @@
 Changelog
 =========
 
+3.6-dev0 - (unreleased)
+---------------------------
+
 3.5 - (2024-03-05)
 ---------------------------
 * Feature: Expose rights field as metadata
