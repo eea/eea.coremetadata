@@ -1,8 +1,10 @@
 Changelog
 =========
 
-3.5-dev0 - (unreleased)
+3.5 - (2024-03-05)
 ---------------------------
+* Change: Feature: Expose rights field as metadata - refs #159551
+  [avoinea]
 
 3.4 - (2023-10-16)
 ---------------------------
