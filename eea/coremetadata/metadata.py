@@ -1,6 +1,7 @@
 # pylint: disable=C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
 """Metadata schema"""
 import os
+
 import six
 from AccessControl.class_init import InitializeClass
 from AccessControl.SecurityInfo import ClassSecurityInfo
@@ -8,13 +9,11 @@ from AccessControl.SecurityManagement import getSecurityManager
 from Acquisition import aq_base
 from App.special_dtml import DTMLFile
 from DateTime.DateTime import DateTime
-from eea.coremetadata.interfaces import ICatalogCoreMetadata
-from eea.coremetadata.interfaces import ICoreMetadata as ICM
-from eea.coremetadata.interfaces import IMutableCoreMetadata
 from OFS.PropertyManager import PropertyManager
 from plone.app.z3cform.widget import DatetimeFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.directives import form
 from plone.namedfile.field import NamedBlobImage
 from plone.schema import JSONField
 from plone.supermodel import model
@@ -26,6 +25,9 @@ from zope.interface import Invalid, implementer, invariant, provider
 from zope.schema import Choice, Datetime, Text, TextLine, Tuple
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
+from eea.coremetadata.interfaces import ICatalogCoreMetadata
+from eea.coremetadata.interfaces import ICoreMetadata as ICM
+from eea.coremetadata.interfaces import IMutableCoreMetadata
 
 try:
     from plone.app.dexterity import _
@@ -33,8 +35,8 @@ try:
     from Products.CMFPlone.permissions import ModifyPortalContent, View
 except ImportError:
     from plone.app.dexterity import PloneMessageFactory as _
-    from z3c.form.browser.select import SelectFieldWidget
     from Products.CMFCore.permissions import ModifyPortalContent, View
+    from z3c.form.browser.select import SelectFieldWidget
 
 
 _marker = []
@@ -147,7 +149,7 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    directives.widget("effective", DatetimeFieldWidget)
+    # form.widget("effective", DatetimeFieldWidget)
     effective = Datetime(
         title=_("label_effective_date", "Publishing Date"),
         description=_(
@@ -159,7 +161,7 @@ class ICoreMetadata(model.Schema):
         default=None,
     )
 
-    directives.widget("expires", DatetimeFieldWidget)
+    # form.widget("expires", DatetimeFieldWidget)
     expires = Datetime(
         title=_("label_expiration_date", "Expiration Date"),
         description=_(
@@ -175,7 +177,7 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("other_organisations", SelectFieldWidget)
+    form.widget("other_organisations", SelectFieldWidget)
     other_organisations = Tuple(
         title=_("Other organisations involved"),
         description=_(
@@ -187,7 +189,7 @@ class ICoreMetadata(model.Schema):
         defaultFactory=defaultOrganisations,
     )
 
-    directives.widget("topics", SelectFieldWidget)
+    form.widget("topics", SelectFieldWidget)
     topics = Tuple(
         title=_("Topics"),
         description=_("Select from the official EEA topics"),
@@ -223,7 +225,7 @@ class ICoreMetadata(model.Schema):
         required=False,
     )
 
-    directives.widget("publisher", SelectFieldWidget)
+    form.widget("publisher", SelectFieldWidget)
     publisher = Tuple(
         title=_("Publisher"),
         description=_("The publisher of this item. Change only if needed"),
