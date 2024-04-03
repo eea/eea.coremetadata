@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.6 - (2024-04-03)
+---------------------------
+* Change: Develop
+  [alecghica]
+
 3.5 - (2024-03-05)
 ---------------------------
 * Feature: Expose rights field as metadata
