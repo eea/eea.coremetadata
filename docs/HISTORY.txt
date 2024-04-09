@@ -1,9 +1,14 @@
 Changelog
 =========
 
+3.7 - (2024-04-09)
+---------------------------
+* Change: updated Organizations taxonomy, added EMA.
+  [alecghica refs #268171]
+
 3.6 - (2024-04-03)
 ---------------------------
-* Change: Develop
+* Change: updated Organizations taxonomy, fixed typo for ECHA.
   [alecghica]
 
 3.5 - (2024-03-05)
