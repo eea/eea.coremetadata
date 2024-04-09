@@ -1,7 +1,7 @@
 Changelog
 =========
 
-3.7-dev0 - (unreleased)
+3.7 - (2024-04-09)
 ---------------------------
 * Change: updated Organizations taxonomy, added EMA.
   [alecghica refs #268171]
