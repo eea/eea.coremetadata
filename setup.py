@@ -2,7 +2,8 @@
 """
 import os
 from os.path import join
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 NAME = 'eea.coremetadata'
 PATH = NAME.split('.') + ['version.txt']
@@ -42,7 +43,8 @@ setup(
     install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
-        'collective.taxonomy'
+        'collective.taxonomy',
+        'plone.schema>=1.4.0'
     ],
     extras_require={
         'test': [

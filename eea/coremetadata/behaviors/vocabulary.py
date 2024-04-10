@@ -1,11 +1,11 @@
 # pylint: disable=W0702
 """ vocabulary.py """
 from collective.taxonomy.interfaces import ITaxonomy
-from zope.interface import provider  # alsoProvides,
+from Products.CMFCore.utils import getToolByName
 from zope.component import queryUtility
+from zope.interface import provider  # alsoProvides,
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
-from Products.CMFCore.utils import getToolByName
 
 
 @provider(IVocabularyFactory)
@@ -14,9 +14,12 @@ def get_vocabulary(context, vocabulary_name):
 
     taxonomy = queryUtility(ITaxonomy, name=vocabulary_name)
 
+    if taxonomy is None:
+        return None
+
     try:
         vocabulary = taxonomy(context)
-    except:
+    except Exception:
         vocabulary = taxonomy.makeVocabulary("en")
 
     return vocabulary.iterEntries()
@@ -34,9 +37,15 @@ def get_catalog_values(context, index):
 def organisations_vocabulary(context):
     """organisations_vocabulary"""
 
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeaorganisationstaxonomy"
-    )
+    try:
+        vocabulary = get_vocabulary(
+            context, "collective.taxonomy.eeaorganisationstaxonomy"
+        )
+    except Exception:
+        vocabulary = None
+
+    if vocabulary is None:
+        return SimpleVocabulary([])
 
     terms = [
         SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
@@ -76,9 +85,15 @@ def index_organisations_vocabulary(context):
 def publisher_vocabulary(context):
     """publisher_vocabulary"""
 
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeapublishertaxonomy"
-    )
+    try:
+        vocabulary = get_vocabulary(
+            context, "collective.taxonomy.eeapublishertaxonomy"
+        )
+    except Exception:
+        vocabulary = None
+
+    if vocabulary is None:
+        return SimpleVocabulary([])
 
     terms = [
         SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
@@ -96,9 +111,13 @@ def index_publisher_vocabulary(context):
     catalog_values = get_catalog_values(
         context, "taxonomy_eeapublishertaxonomy"
     )
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeapublishertaxonomy"
-    )
+    try:
+        vocabulary = get_vocabulary(
+            context, "collective.taxonomy.eeapublishertaxonomy"
+        )
+    except Exception:
+        vocabulary = []
+
     terms = []
 
     for val, key in vocabulary:
@@ -121,16 +140,19 @@ def topics_vocabulary(context):
     utility_name = "collective.taxonomy.eeatopicstaxonomy"
     taxonomy = queryUtility(ITaxonomy, name=utility_name)
 
+    terms = []
     try:
         vocabulary = taxonomy(context)
-    except:
-        vocabulary = taxonomy.makeVocabulary("en")
+    except Exception:
+        if taxonomy is not None:
+            vocabulary = taxonomy.makeVocabulary("en")
 
-    terms = [
-        SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
-        for val, key in vocabulary.iterEntries()
-    ]
-    terms.sort(key=lambda t: t.title)
+            terms = [
+                SimpleTerm(key, key, val.encode(
+                    "ascii", "ignore").decode("ascii"))
+                for val, key in vocabulary.iterEntries()
+            ]
+            terms.sort(key=lambda t: t.title)
 
     return SimpleVocabulary(terms)
 
@@ -140,9 +162,13 @@ def index_topics_vocabulary(context):
     """index_topics_vocabulary"""
 
     catalog_values = get_catalog_values(context, "taxonomy_eeatopicstaxonomy")
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeatopicstaxonomy"
-    )
+    try:
+        vocabulary = get_vocabulary(
+            context, "collective.taxonomy.eeatopicstaxonomy"
+        )
+    except Exception:
+        vocabulary = []
+
     terms = []
 
     for val, key in vocabulary:
