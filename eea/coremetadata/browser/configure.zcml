@@ -3,4 +3,11 @@
   xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="eea">
 
+  <browser:page
+      name="migrate-eeacoremetadata-otherorganisation"
+      for="*"
+      permission="zope2.View"
+      class=".migrate.OtherOrganisation"
+      />
+
 </configure>
