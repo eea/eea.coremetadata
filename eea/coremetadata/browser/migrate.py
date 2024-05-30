@@ -1,56 +1,61 @@
-from Products.Five.browser import BrowserView
-from plone import api
-from eea.coremetadata.behaviors.vocabulary import get_vocabulary
+from plone.dexterity.utils import iterSchemataForType
 import logging
 
-
+from Acquisition import aq_self
 from Products.CMFCore.utils import getToolByName
-from zope.component import getUtility
-from plone.behavior.interfaces import IBehavior
-from plone.dexterity.interfaces import IDexterityFTI
+from Products.Five.browser import BrowserView
+from eea.coremetadata.behaviors.vocabulary import get_vocabulary
+from plone import api
+from eea.coremetadata.metadata import ICoreMetadata
+
+# from plone.behavior.interfaces import IBehavior
+# from plone.dexterity.interfaces import IDexterityFTI
+# from zope.component import getUtility
+
+
+logger = logging.getLogger("eea.coremetadata")
+
+
+VOCAB_NAME = "collective.taxonomy.eeaorganisationstaxonomy"
+
 
 class OtherOrganisation(BrowserView):
     """ see #261751 """
 
     def __call__(self):
-        logger = logging.getLogger("export")
-        typeList = getToolByName(self.context, 'portal_types').listTypeInfo()
-        for aType in typeList:
-            logger.info(aType.__name__+"-------------------")
-            logger.info(getattr(aType, 'ICoreMetadata', None))
-            logger.info(getattr(aType, 'CoreMetadata', None))
-            self.get_fields(aType)
+        types = getToolByName(self.context, 'portal_types').listTypeInfo()
+        migrated_types = []
 
-        vocabulary = get_vocabulary(self.context, "collective.taxonomy.eeaorganisationstaxonomy")
-        dict_other_organisations = {key:val  for val, key in vocabulary}
-        self.migrate_portal_type('my_data')
+        for _type in types:
+            portal_type = _type.getId()
+            for schemata in iterSchemataForType(portal_type):
+                if schemata is ICoreMetadata:
+                    migrated_types.append(portal_type)
 
-        # brains = api.content.find(context=self.context, portal_type='mydata')
-        # for brain in brains:
-        #     object = brain.getObject()
-        #     pdb.set_trace()
-        #     object.other_organisations2 = [dict_other_organisations[key] for key in object.other_organisations if key in dict_other_organisations]
-        #     # object._p_changed = True
+        vocabulary = get_vocabulary(self.context, VOCAB_NAME)
+
+        org_translated = {key: val for val, key in vocabulary}
+        self.migrate_portal_type(migrated_types, org_translated)
 
         return "Done"
 
-    def migrate_portal_type(self, portal_type_name):
-        brains = api.content.find(context=self.context, portal_type=portal_type_name)
+    def migrate_portal_type(self, portal_types, org_translated):
+        brains = api.content.find(context=self.context,
+                                  portal_type=portal_types)
+
         for brain in brains:
-            object = brain.getObject()
-            import pdb; pdb.set_trace()
-            pdb.set_trace()
-            object.other_organisations2 = [dict_other_organisations[key] for key in object.other_organisations if key in dict_other_organisations]
+            obj = brain.getObject()
+            obj = aq_self(obj)
+            orgs = getattr(obj, 'other_organisations', None)
 
-    #### DELETE BELOW
-    def get_fields(self, portal_type):
-        fti = getUtility(IDexterityFTI, name=portal_type.__name__)
-        schema = fti.lookupSchema()
-        fields = schema.names()
-        for bname in fti.behaviors:
-            factory = getUtility(IBehavior, bname)
-            behavior = factory.interface
-            fields += behavior.names()
-        import pdb; pdb.set_trace()
-
-        return fields    
+            if orgs:
+                translated = tuple([
+                    org_translated[key].replace('\u241F', '')
+                    for key in orgs
+                    if key in org_translated
+                ])
+                obj.other_organisations = translated
+                obj._p_changed = True
+                obj.reindexObject()
+                logger.info("Migrated organisations for obj (%s) - %s -> %s",
+                            brain.getURL(), orgs, obj.other_organisations)
