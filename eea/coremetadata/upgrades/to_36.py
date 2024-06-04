@@ -3,15 +3,13 @@
 """ Upgrade to 3.6 """
 import logging
 
+from Products.CMFCore.utils import getToolByName
 from Products.PluginIndexes.KeywordIndex.KeywordIndex import KeywordIndex
 from Products.ZCatalog.Catalog import CatalogError
 from plone.dexterity.utils import iterSchemataForType
-# from collective.taxonomy.interfaces import ITaxonomy
-
-from Acquisition import aq_self
-from Products.CMFCore.utils import getToolByName
-from eea.coremetadata.behaviors.vocabulary import get_vocabulary
 from plone import api
+from Acquisition import aq_self
+from eea.coremetadata.behaviors.vocabulary import get_vocabulary
 from eea.coremetadata.metadata import ICoreMetadata
 
 logger = logging.getLogger("eea.coremetadata.upgrade")
