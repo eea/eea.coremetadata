@@ -25,7 +25,7 @@ from zope.component.hooks import getSite
 from zope.interface import Invalid, implementer, invariant, provider
 from zope.schema import Choice, Datetime, Text, TextLine, Tuple
 from zope.schema.interfaces import IContextAwareDefaultFactory
-
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
 
 try:
     from plone.app.dexterity import _
@@ -183,8 +183,11 @@ class ICoreMetadata(model.Schema):
             "of this item"
         ),  # noqa
         required=False,
-        value_type=Choice(vocabulary="organisations_vocabulary"),
-        defaultFactory=defaultOrganisations,
+        value_type=TextLine(),
+        missing_value=(),
+    )
+    directives.widget(
+        "other_organisations", AjaxSelectFieldWidget, vocabulary="eea.coremetadata.other_organisations"
     )
 
     directives.widget("topics", SelectFieldWidget)
