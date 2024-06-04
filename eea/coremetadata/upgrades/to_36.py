@@ -19,6 +19,7 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 VOCAB_NAME = "collective.taxonomy.eeaorganisationstaxonomy"
 INDEX_NAME = "other_organisations"
 
+
 def to_36(context):
     catalog = getToolByName(context.aq_parent, "portal_catalog")
 
@@ -31,7 +32,7 @@ def to_36(context):
             "Index {0} already exists, we hope it is proper configured".format(  # noqa: E501
                 INDEX_NAME
             )  # noqa: E501
-        )        
+        )
 
     types = getToolByName(context, 'portal_types').listTypeInfo()
     migrated_types = []

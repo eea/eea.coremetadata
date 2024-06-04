@@ -10,4 +10,5 @@ class KeywordsVocabulary(BKV):
     def __init__(self, index):
         self.keyword_index = index
 
+
 OtherOrganisationsVocabularyFactory = KeywordsVocabulary("other_organisations")

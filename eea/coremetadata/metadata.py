@@ -187,7 +187,9 @@ class ICoreMetadata(model.Schema):
         missing_value=(),
     )
     directives.widget(
-        "other_organisations", AjaxSelectFieldWidget, vocabulary="eea.coremetadata.other_organisations"
+        "other_organisations",
+        AjaxSelectFieldWidget,
+        vocabulary="eea.coremetadata.other_organisations"
     )
 
     directives.widget("topics", SelectFieldWidget)
