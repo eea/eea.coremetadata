@@ -43,7 +43,8 @@ def to_36(context):
 
     vocabulary = get_vocabulary(context, VOCAB_NAME)
 
-    org_translated = {key: val for val, key in vocabulary}
+    org_translated = {key: val if ord(
+        val[0]) < 255 else val[1:] for val, key in vocabulary}
     brains = api.content.find(portal_type=migrated_types)
 
     for brain in brains:
@@ -55,7 +56,7 @@ def to_36(context):
 
         if orgs:
             translated = tuple([
-                org_translated[key].replace('\u241F', '')
+                org_translated[key]
                 for key in orgs
                 if key in org_translated
             ])
