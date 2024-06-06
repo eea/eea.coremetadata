@@ -16,6 +16,7 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 
 VOCAB_NAME = "collective.taxonomy.eeaorganisationstaxonomy"
 INDEX_NAME = "other_organisations"
+OLD_INDEX_NAME = "taxonomy_eeaorganisationstaxonomy"
 
 
 def to_36(context):
@@ -67,5 +68,6 @@ def to_36(context):
                         brain.getURL(), orgs, obj.other_organisations)
 
     catalog.reindexIndex(INDEX_NAME, idx_object)
+    catalog.delIndex(OLD_INDEX_NAME)
 
     logger.info("Upgraded to 3.6")
