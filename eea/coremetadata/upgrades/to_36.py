@@ -68,6 +68,10 @@ def to_36(context):
                         brain.getURL(), orgs, obj.other_organisations)
 
     catalog.reindexIndex(INDEX_NAME, idx_object)
-    catalog.delIndex(OLD_INDEX_NAME)
+    try:
+        catalog.delIndex(OLD_INDEX_NAME)
+        logging.info("Old index {0} was deleted".format(INDEX_NAME))
+    except CatalogError:
+        logging.info("Old index {0} was not found".format(INDEX_NAME))
 
     logger.info("Upgraded to 3.6")
