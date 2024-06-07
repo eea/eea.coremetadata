@@ -57,9 +57,8 @@ def to_36(context):
 
         if orgs:
             translated = tuple([
-                org_translated[key]
+                org_translated[key] if key in org_translated else key
                 for key in orgs
-                if key in org_translated
             ])
             obj.other_organisations = translated
             obj._p_changed = True
