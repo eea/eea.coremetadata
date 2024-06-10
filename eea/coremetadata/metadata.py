@@ -26,7 +26,6 @@ from zope.interface import Invalid, implementer, invariant, provider
 from zope.schema import Choice, Datetime, Text, TextLine, Tuple
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
-
 try:
     from plone.app.dexterity import _
     from plone.app.z3cform.widget import SelectFieldWidget
@@ -36,6 +35,12 @@ except ImportError:
     from z3c.form.browser.select import SelectFieldWidget
     from Products.CMFCore.permissions import ModifyPortalContent, View
 
+has_ajax_widget = True
+AjaxSelectFieldWidget = None
+try:
+    from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
+except ImportError:
+    has_ajax_widget = False
 
 _marker = []
 _zone = DateTime().timezone()
@@ -183,9 +188,16 @@ class ICoreMetadata(model.Schema):
             "of this item"
         ),  # noqa
         required=False,
-        value_type=Choice(vocabulary="organisations_vocabulary"),
-        defaultFactory=defaultOrganisations,
+        value_type=TextLine(),
+        missing_value=(),
     )
+
+    if has_ajax_widget:
+        directives.widget(
+            "other_organisations",
+            AjaxSelectFieldWidget,
+            vocabulary="eea.coremetadata.other_organisations"
+        )
 
     directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
