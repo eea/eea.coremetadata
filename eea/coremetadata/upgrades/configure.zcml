@@ -78,4 +78,13 @@
     />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeStep
+    title="Register index other_organisations in portal_catalog"
+    description=""
+    source="3.5"
+    destination="3.6"
+    handler=".to_36.to_36"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
