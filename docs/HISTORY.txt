@@ -1,8 +1,10 @@
 Changelog
 =========
 
-3.9-dev0 - (unreleased)
+3.9 - (2024-06-21)
 ---------------------------
+* Change: fix(upgrade-script): add try except for KeyError brain.getObjects()
+  [ichim-david]
 
 3.8 - (2024-06-19)
 ---------------------------
