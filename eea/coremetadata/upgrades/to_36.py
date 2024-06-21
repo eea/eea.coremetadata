@@ -54,7 +54,6 @@ def to_36(context):
         except KeyError:
             logging.info("{0} was not found".format(brain.getURL(1)))
             continue
-            
         obj = aq_self(obj)
         orgs = getattr(obj, 'other_organisations', None)
         logger.info("Check for (%s) - %s",
