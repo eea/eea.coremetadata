@@ -45,15 +45,15 @@ def to_37(context):
             obj.other_organisations = tuple()
             obj._p_changed = True
             obj.reindexObject()
-            logger.info("Updated other organisations for obj (%s) - empty",
+            logger.info("Updated other organisations (%s) - empty",
                         brain.getURL())
-        elif type(orgs) is tuple:
-            orgs_clean = tuple(filter(lambda key: len(key.strip()), orgs))
+        elif isinstance(orgs, tuple):
+            orgs_clean = tuple([term for term in orgs if len(term.strip())])
             if orgs_clean and orgs != orgs_clean:
                 obj.other_organisations = orgs_clean
                 obj._p_changed = True
                 obj.reindexObject()
-                logger.info("Updated other organisations for obj (%s) - %s -> %s",
+                logger.info("Updated other organisations (%s) - %s -> %s",
                             brain.getURL(), orgs, obj.other_organisations)
 
     catalog.reindexIndex(INDEX_NAME, idx_object)
