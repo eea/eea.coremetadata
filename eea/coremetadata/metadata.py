@@ -190,6 +190,7 @@ class ICoreMetadata(model.Schema):
         required=False,
         value_type=TextLine(),
         missing_value=(),
+        default=tuple()
     )
 
     if has_ajax_widget:
