@@ -69,25 +69,26 @@ class CoreMetadata(MetadataBase):
     @property
     def other_organisations(self):
         """other_organisations getter"""
+
         if not getattr(self.context, "other_organisations", None):
-            return tuple()
-        # if not getattr(self.context, "other_organisations", None):
-        #     SITE_STRING = getSite().getId()
-        #     organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
-        #     DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
+            SITE_STRING = getSite().getId()
+            organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
+            DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
 
-        #     if len(DEFAULT_ORGANISATIONS) < 1:
-        #         DEFAULT_ORGANISATIONS = os.environ.get(
-        #             "DEFAULT_ORGANISATIONS", []
-        #         )  # noqa
+            if len(DEFAULT_ORGANISATIONS) < 1:
+                DEFAULT_ORGANISATIONS = os.environ.get(
+                    "DEFAULT_ORGANISATIONS", []
+                )  # noqa
 
-        #     if isinstance(DEFAULT_ORGANISATIONS, str):
-        #         if "," in DEFAULT_ORGANISATIONS:
-        #             DEFAULT_ORGANISATIONS = DEFAULT_ORGANISATIONS.split(",")
-        #         else:
-        #             DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
+            if isinstance(DEFAULT_ORGANISATIONS, str):
+                if "," in DEFAULT_ORGANISATIONS:
+                    DEFAULT_ORGANISATIONS = DEFAULT_ORGANISATIONS.split(",")
+                elif not DEFAULT_ORGANISATIONS.strip():
+                    DEFAULT_ORGANISATIONS = []
+                else:
+                    DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
 
-        #     return tuple(DEFAULT_ORGANISATIONS)
+            return tuple(DEFAULT_ORGANISATIONS)
         return self.context.other_organisations
 
     @other_organisations.setter
