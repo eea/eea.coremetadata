@@ -87,4 +87,13 @@
     profile="eea.coremetadata:default"
     />
 
+  <genericsetup:upgradeStep
+    title="Fix other_organisations default values"
+    description=""
+    source="3.6"
+    destination="3.7"
+    handler=".to_37.to_37"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
