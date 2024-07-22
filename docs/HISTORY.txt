@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.1-dev0 - (unreleased)
+---------------------------
+
 4.0 - (2024-06-21)
 ---------------------------
 * Change: fix(upgrade-script): add try except for KeyError brain.getObjects()
