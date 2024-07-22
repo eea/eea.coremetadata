@@ -1,6 +1,6 @@
 # pylint: disable=W1201, C0301, C0111, W0640, W1202
 # -*- coding: utf-8 -*-
-""" Upgrade to 3.7 """
+""" Upgrade to 4.0 """
 import logging
 
 from Products.CMFCore.utils import getToolByName
@@ -14,7 +14,7 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 INDEX_NAME = "other_organisations"
 
 
-def to_37(context):
+def to_40(context):
     catalog = getToolByName(context.aq_parent, "portal_catalog")
 
     idx_object = catalog.Indexes[INDEX_NAME]
@@ -58,4 +58,4 @@ def to_37(context):
 
     catalog.reindexIndex(INDEX_NAME, idx_object)
 
-    logger.info("Upgraded to 3.7")
+    logger.info("Upgraded to 4.0")

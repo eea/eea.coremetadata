@@ -91,8 +91,8 @@
     title="Fix other_organisations default values"
     description=""
     source="3.6"
-    destination="3.7"
-    handler=".to_37.to_37"
+    destination="4.0"
+    handler=".to_40.to_40"
     profile="eea.coremetadata:default"
     />
 

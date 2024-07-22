@@ -1,10 +1,12 @@
 Changelog
 =========
 
-3.9 - (2024-06-21)
+4.0 - (2024-06-21)
 ---------------------------
 * Change: fix(upgrade-script): add try except for KeyError brain.getObjects()
   [ichim-david]
+* Fix: Other organisations default value
+  [iugin]
 
 3.8 - (2024-06-19)
 ---------------------------
