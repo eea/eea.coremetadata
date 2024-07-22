@@ -69,6 +69,7 @@ class CoreMetadata(MetadataBase):
     @property
     def other_organisations(self):
         """other_organisations getter"""
+
         if not getattr(self.context, "other_organisations", None):
             SITE_STRING = getSite().getId()
             organisations_env = "DEFAULT_ORGANISATIONS_" + SITE_STRING
@@ -82,6 +83,8 @@ class CoreMetadata(MetadataBase):
             if isinstance(DEFAULT_ORGANISATIONS, str):
                 if "," in DEFAULT_ORGANISATIONS:
                     DEFAULT_ORGANISATIONS = DEFAULT_ORGANISATIONS.split(",")
+                elif not DEFAULT_ORGANISATIONS.strip():
+                    DEFAULT_ORGANISATIONS = []
                 else:
                     DEFAULT_ORGANISATIONS = [DEFAULT_ORGANISATIONS]
 

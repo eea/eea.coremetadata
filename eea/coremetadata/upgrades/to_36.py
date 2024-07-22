@@ -49,7 +49,11 @@ def to_36(context):
     brains = api.content.find(portal_type=migrated_types)
 
     for brain in brains:
-        obj = brain.getObject()
+        try:
+            obj = brain.getObject()
+        except KeyError:
+            logging.info("{0} was not found".format(brain.getURL(1)))
+            continue
         obj = aq_self(obj)
         orgs = getattr(obj, 'other_organisations', None)
         logger.info("Check for (%s) - %s",
