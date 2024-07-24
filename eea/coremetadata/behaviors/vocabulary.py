@@ -30,10 +30,21 @@ def get_catalog_values(context, index):
     return catalog.uniqueValuesFor(index)
 
 
+def eea_other_organisations(context):
+    catalog = getToolByName(context, "portal_catalog")
+    idx_object = catalog.Indexes['other_organisations']
+    terms = [SimpleTerm(item[0], item[0], item[0])
+             for item in idx_object.items()]
+    return SimpleVocabulary(terms)
+
+
 @provider(IVocabularyFactory)
 def organisations_vocabulary(context):
     """organisations_vocabulary"""
 
+    # import pdb
+    # pdb.set_trace()
+    return eea_other_organisations(context)
     vocabulary = get_vocabulary(
         context, "collective.taxonomy.eeaorganisationstaxonomy"
     )
@@ -42,6 +53,8 @@ def organisations_vocabulary(context):
         SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
         for val, key in vocabulary
     ]
+    # import pdb
+    # pdb.set_trace()
     terms.sort(key=lambda t: t.title)
 
     return SimpleVocabulary(terms)
@@ -51,6 +64,10 @@ def organisations_vocabulary(context):
 def index_organisations_vocabulary(context):
     """index_organisations_vocabulary"""
 
+    # import pdb
+    # pdb.set_trace()
+    return eea_other_organisations(context)
+
     catalog_values = get_catalog_values(
         context, "taxonomy_eeaorganisationstaxonomy"
     )
@@ -59,6 +76,8 @@ def index_organisations_vocabulary(context):
     )
     terms = []
 
+    # import pdb
+    # pdb.set_trace()
     for val, key in vocabulary:
         if key in catalog_values:
             terms.append(
