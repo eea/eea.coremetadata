@@ -45,17 +45,17 @@ def organisations_vocabulary(context):
     # import pdb
     # pdb.set_trace()
     return eea_other_organisations(context)
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeaorganisationstaxonomy"
-    )
+    # vocabulary = get_vocabulary(
+    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
+    # )
 
-    terms = [
-        SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
-        for val, key in vocabulary
-    ]
-    # import pdb
-    # pdb.set_trace()
-    terms.sort(key=lambda t: t.title)
+    # terms = [
+    #     SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
+    #     for val, key in vocabulary
+    # ]
+    # # import pdb
+    # # pdb.set_trace()
+    # terms.sort(key=lambda t: t.title)
 
     return SimpleVocabulary(terms)
 
@@ -68,27 +68,27 @@ def index_organisations_vocabulary(context):
     # pdb.set_trace()
     return eea_other_organisations(context)
 
-    catalog_values = get_catalog_values(
-        context, "taxonomy_eeaorganisationstaxonomy"
-    )
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeaorganisationstaxonomy"
-    )
-    terms = []
+    # catalog_values = get_catalog_values(
+    #     context, "taxonomy_eeaorganisationstaxonomy"
+    # )
+    # vocabulary = get_vocabulary(
+    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
+    # )
+    # terms = []
 
-    # import pdb
-    # pdb.set_trace()
-    for val, key in vocabulary:
-        if key in catalog_values:
-            terms.append(
-                SimpleTerm(
-                    key, key, val.encode("ascii", "ignore").decode("ascii")
-                )
-            )
+    # # import pdb
+    # # pdb.set_trace()
+    # for val, key in vocabulary:
+    #     if key in catalog_values:
+    #         terms.append(
+    #             SimpleTerm(
+    #                 key, key, val.encode("ascii", "ignore").decode("ascii")
+    #             )
+    #         )
 
-    terms.sort(key=lambda t: t.title)
+    # terms.sort(key=lambda t: t.title)
 
-    return SimpleVocabulary(terms)
+    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
