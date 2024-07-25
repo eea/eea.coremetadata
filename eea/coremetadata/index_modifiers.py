@@ -3,7 +3,7 @@ from zope.interface import implementer
 
 
 @implementer(IParsedQueryIndexModifier)
-class OtherOrganisations:
+class OtherOrganisations(object):
     """
     """
 

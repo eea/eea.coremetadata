@@ -57,7 +57,7 @@ def organisations_vocabulary(context):
     # # pdb.set_trace()
     # terms.sort(key=lambda t: t.title)
 
-    return SimpleVocabulary(terms)
+    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
