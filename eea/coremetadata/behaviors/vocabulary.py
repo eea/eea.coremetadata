@@ -31,6 +31,7 @@ def get_catalog_values(context, index):
 
 
 def eea_other_organisations(context):
+    """other_organisations index data"""
     catalog = getToolByName(context, "portal_catalog")
     idx_object = catalog.Indexes['other_organisations']
     terms = [SimpleTerm(item[0], item[0], item[0])
