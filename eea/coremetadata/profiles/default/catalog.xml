@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_catalog">
 
-    <index name="taxonomy_eeaorganisationstaxonomy" meta_type="KeywordIndex">
+    <index name="other_organisations" meta_type="KeywordIndex">
         <indexed_attr value="other_organisations"/>
     </index>
 

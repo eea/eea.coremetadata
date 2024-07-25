@@ -1,6 +1,11 @@
 Changelog
 =========
 
+4.1 - (2024-07-25)
+---------------------------
+* Change: Fix: Latest eea.coremetadata release has issues - refs #273093
+  [avoinea]
+
 4.0 - (2024-06-21)
 ---------------------------
 * Change: fix(upgrade-script): add try except for KeyError brain.getObjects()

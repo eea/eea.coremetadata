@@ -20,4 +20,9 @@
       name="eea.coremetadata.other_organisations"
       component=".vocabulary.OtherOrganisationsVocabularyFactory"
       />
+  <utility
+      factory=".index_modifiers.OtherOrganisations"
+      provides="plone.app.querystring.interfaces.IParsedQueryIndexModifier"
+      name="taxonomy_eeaorganisationstaxonomy"
+      />
 </configure>
