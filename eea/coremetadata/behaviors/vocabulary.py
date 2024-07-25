@@ -30,46 +30,66 @@ def get_catalog_values(context, index):
     return catalog.uniqueValuesFor(index)
 
 
+def eea_other_organisations(context):
+    """other_organisations index data"""
+    catalog = getToolByName(context, "portal_catalog")
+    idx_object = catalog.Indexes['other_organisations']
+    terms = [SimpleTerm(item[0], item[0], item[0])
+             for item in idx_object.items()]
+    return SimpleVocabulary(terms)
+
+
 @provider(IVocabularyFactory)
 def organisations_vocabulary(context):
     """organisations_vocabulary"""
 
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeaorganisationstaxonomy"
-    )
+    # import pdb
+    # pdb.set_trace()
+    return eea_other_organisations(context)
+    # vocabulary = get_vocabulary(
+    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
+    # )
 
-    terms = [
-        SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
-        for val, key in vocabulary
-    ]
-    terms.sort(key=lambda t: t.title)
+    # terms = [
+    #     SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
+    #     for val, key in vocabulary
+    # ]
+    # # import pdb
+    # # pdb.set_trace()
+    # terms.sort(key=lambda t: t.title)
 
-    return SimpleVocabulary(terms)
+    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
 def index_organisations_vocabulary(context):
     """index_organisations_vocabulary"""
 
-    catalog_values = get_catalog_values(
-        context, "taxonomy_eeaorganisationstaxonomy"
-    )
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeaorganisationstaxonomy"
-    )
-    terms = []
+    # import pdb
+    # pdb.set_trace()
+    return eea_other_organisations(context)
 
-    for val, key in vocabulary:
-        if key in catalog_values:
-            terms.append(
-                SimpleTerm(
-                    key, key, val.encode("ascii", "ignore").decode("ascii")
-                )
-            )
+    # catalog_values = get_catalog_values(
+    #     context, "taxonomy_eeaorganisationstaxonomy"
+    # )
+    # vocabulary = get_vocabulary(
+    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
+    # )
+    # terms = []
 
-    terms.sort(key=lambda t: t.title)
+    # # import pdb
+    # # pdb.set_trace()
+    # for val, key in vocabulary:
+    #     if key in catalog_values:
+    #         terms.append(
+    #             SimpleTerm(
+    #                 key, key, val.encode("ascii", "ignore").decode("ascii")
+    #             )
+    #         )
 
-    return SimpleVocabulary(terms)
+    # terms.sort(key=lambda t: t.title)
+
+    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
