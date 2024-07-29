@@ -3,12 +3,12 @@ Changelog
 
 4.2 - (2024-07-29)
 ---------------------------
-* Change: Develop
+* Change: Cleanup code comments and pdb
   [iugin]
 
 4.1 - (2024-07-25)
 ---------------------------
-* Change: Fix: Latest eea.coremetadata release has issues - refs #273093
+* Fix: Latest eea.coremetadata release has issues - refs #273093
   [avoinea]
 
 4.0 - (2024-06-21)
