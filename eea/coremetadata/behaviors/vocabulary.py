@@ -43,53 +43,14 @@ def eea_other_organisations(context):
 def organisations_vocabulary(context):
     """organisations_vocabulary"""
 
-    # import pdb
-    # pdb.set_trace()
     return eea_other_organisations(context)
-    # vocabulary = get_vocabulary(
-    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
-    # )
-
-    # terms = [
-    #     SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
-    #     for val, key in vocabulary
-    # ]
-    # # import pdb
-    # # pdb.set_trace()
-    # terms.sort(key=lambda t: t.title)
-
-    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
 def index_organisations_vocabulary(context):
     """index_organisations_vocabulary"""
 
-    # import pdb
-    # pdb.set_trace()
     return eea_other_organisations(context)
-
-    # catalog_values = get_catalog_values(
-    #     context, "taxonomy_eeaorganisationstaxonomy"
-    # )
-    # vocabulary = get_vocabulary(
-    #     context, "collective.taxonomy.eeaorganisationstaxonomy"
-    # )
-    # terms = []
-
-    # # import pdb
-    # # pdb.set_trace()
-    # for val, key in vocabulary:
-    #     if key in catalog_values:
-    #         terms.append(
-    #             SimpleTerm(
-    #                 key, key, val.encode("ascii", "ignore").decode("ascii")
-    #             )
-    #         )
-
-    # terms.sort(key=lambda t: t.title)
-
-    # return SimpleVocabulary(terms)
 
 
 @provider(IVocabularyFactory)
