@@ -6,8 +6,10 @@ def install_pac_metadata():
     from plone.app.dexterity.behaviors.metadata import IOwnership
 
     tgv = IOwnership.getTaggedValue(WIDGETS_KEY)
-    tgv["creators"].params = {"vocabulary": "plone.app.vocabularies.Principals"}
-    tgv["contributors"].params = {"vocabulary": "plone.app.vocabularies.Principals"}
+    tgv["creators"].params = {"vocabulary": 
+                              "plone.app.vocabularies.Principals"}
+    tgv["contributors"].params = {"vocabulary": 
+                                  "plone.app.vocabularies.Principals"}
 
 
 log = getLogger(__name__)
