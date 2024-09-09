@@ -1,7 +1,8 @@
 """Main product initializer"""
 
-from .patches import install_patches
 from zope.i18nmessageid.message import MessageFactory
+from .patches import install_patches
+
 
 EEAMessageFactory = MessageFactory("eea")
 
