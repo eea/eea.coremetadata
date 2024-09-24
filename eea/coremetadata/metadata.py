@@ -181,7 +181,7 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IAddForm, "effective", "expires")
 
     directives.widget("other_organisations",
-                    vocabulary="eea.coremetadata.other_organisations")
+                      vocabulary="eea.coremetadata.other_organisations")
 
     other_organisations = Tuple(
         title=_("Other organisations involved"),

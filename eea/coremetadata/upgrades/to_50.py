@@ -4,6 +4,7 @@ from zope.configuration.name import resolve
 
 
 def to_50(context):
+    """ Remove EEA Coremetadata Organisations taxonomy behavior and indexer """
     sm = context.aq_parent.getSiteManager()
 
     # Remove Adapter other_organisations indexer
