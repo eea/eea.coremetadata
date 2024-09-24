@@ -21,7 +21,7 @@
         <indexed_attr value="data_provenance"/>
     </index>
 
-    <column value="taxonomy_eeaorganisationstaxonomy" />
+    <column value="other_organisations" />
     <column value="taxonomy_eeapublishertaxonomy" />
     <column value="taxonomy_eeatopicstaxonomy" />
     <column value="temporal_coverage" />

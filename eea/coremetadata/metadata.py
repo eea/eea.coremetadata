@@ -35,12 +35,12 @@ except ImportError:
     from z3c.form.browser.select import SelectFieldWidget
     from Products.CMFCore.permissions import ModifyPortalContent, View
 
-has_ajax_widget = True
-AjaxSelectFieldWidget = None
-try:
-    from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
-except ImportError:
-    has_ajax_widget = False
+# has_ajax_widget = True
+# AjaxSelectFieldWidget = None
+# try:
+#     from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
+# except ImportError:
+#     has_ajax_widget = False
 
 _marker = []
 _zone = DateTime().timezone()
@@ -180,7 +180,9 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("other_organisations", SelectFieldWidget)
+    directives.widget("other_organisations",
+                    vocabulary="eea.coremetadata.other_organisations")
+
     other_organisations = Tuple(
         title=_("Other organisations involved"),
         description=_(
@@ -192,14 +194,6 @@ class ICoreMetadata(model.Schema):
         missing_value=(),
         default=tuple()
     )
-
-    if has_ajax_widget:
-        directives.widget(
-            "other_organisations",
-            AjaxSelectFieldWidget,
-            vocabulary="eea.coremetadata.other_organisations"
-        )
-
     directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
         title=_("Topics"),
