@@ -35,12 +35,6 @@ except ImportError:
     from z3c.form.browser.select import SelectFieldWidget
     from Products.CMFCore.permissions import ModifyPortalContent, View
 
-# has_ajax_widget = True
-# AjaxSelectFieldWidget = None
-# try:
-#     from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
-# except ImportError:
-#     has_ajax_widget = False
 
 _marker = []
 _zone = DateTime().timezone()
