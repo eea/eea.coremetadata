@@ -96,4 +96,13 @@
     profile="eea.coremetadata:default"
     />
 
+  <genericsetup:upgradeStep
+    title="Remove EEA Coremetadata Organisations taxonomy behavior and indexer"
+    description=""
+    source="4.0"
+    destination="5.0"
+    handler=".to_50.to_50"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
