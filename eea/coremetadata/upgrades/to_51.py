@@ -4,6 +4,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 from zope.component import queryUtility
 
+
 def to_51(context):
     """Disable EEA Coremetadata Organisations behavior on all content types"""
 
