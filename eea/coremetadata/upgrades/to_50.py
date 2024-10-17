@@ -1,9 +1,9 @@
 
-""" Upgrade to 4.3 """
+""" Upgrade to 5.0 """
 from zope.configuration.name import resolve
 
 
-def to_43(context):
+def to_50(context):
     """ Remove EEA Coremetadata Organisations taxonomy behavior and indexer """
     sm = context.aq_parent.getSiteManager()
 
