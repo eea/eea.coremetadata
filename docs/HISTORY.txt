@@ -3,6 +3,8 @@ Changelog
 
 5.1-dev0 - (unreleased)
 ---------------------------
+* Fix: disable other_organisations behavior on all content types
+  [laszlocseh]
 
 4.3 - (2024-10-01)
 ---------------------------
