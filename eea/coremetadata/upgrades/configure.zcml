@@ -100,17 +100,17 @@
     title="Remove EEA Coremetadata Organisations taxonomy behavior and indexer"
     description=""
     source="4.0"
-    destination="5.0"
-    handler=".to_50.to_50"
+    destination="4.3"
+    handler=".to_43.to_43"
     profile="eea.coremetadata:default"
     />
 
   <genericsetup:upgradeStep
     title="Disable EEA Coremetadata Organisations behavior on all content types"
     description=""
-    source="5.0"
-    destination="5.1"
-    handler=".to_51.to_51"
+    source="4.3"
+    destination="4.4"
+    handler=".to_44.to_44"
     profile="eea.coremetadata:default"
     />
 

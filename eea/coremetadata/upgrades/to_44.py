@@ -1,11 +1,11 @@
 
-""" Upgrade to 5.1 """
+""" Upgrade to 4.4 """
 from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 from zope.component import queryUtility
 
 
-def to_51(context):
+def to_44(context):
     """Disable EEA Coremetadata Organisations behavior on all content types"""
 
     portal_types = api.portal.get_tool(name='portal_types')
