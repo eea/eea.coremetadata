@@ -105,4 +105,13 @@
     profile="eea.coremetadata:default"
     />
 
+  <genericsetup:upgradeStep
+    title="Disable EEA Coremetadata Organisations behavior on all content types"
+    description=""
+    source="5.0"
+    destination="5.1"
+    handler=".to_51.to_51"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
