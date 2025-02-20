@@ -3,155 +3,765 @@
   <vocabName>
     <langstring language="en">EEA Organisations Taxonomy</langstring>
   </vocabName>
-  <vocabIdentifier>eea.organisations.taxonomy</vocabIdentifier>
+  <vocabIdentifier>eeaorganisationstaxonomy</vocabIdentifier>
   <term>
     <termIdentifier>EEA</termIdentifier>
     <caption>
+      <langstring language="ar">European Environment Agency</langstring>
+      <langstring language="bg">European Environment Agency</langstring>
+      <langstring language="bs">European Environment Agency</langstring>
+      <langstring language="cs">European Environment Agency</langstring>
+      <langstring language="da">European Environment Agency</langstring>
+      <langstring language="de">European Environment Agency</langstring>
+      <langstring language="el">European Environment Agency</langstring>
       <langstring language="en">European Environment Agency</langstring>
+      <langstring language="es">European Environment Agency</langstring>
+      <langstring language="et">European Environment Agency</langstring>
+      <langstring language="fi">European Environment Agency</langstring>
+      <langstring language="fr">European Environment Agency</langstring>
+      <langstring language="ga">European Environment Agency</langstring>
+      <langstring language="hr">European Environment Agency</langstring>
+      <langstring language="hu">European Environment Agency</langstring>
+      <langstring language="is">European Environment Agency</langstring>
+      <langstring language="it">European Environment Agency</langstring>
+      <langstring language="lt">European Environment Agency</langstring>
+      <langstring language="lv">European Environment Agency</langstring>
+      <langstring language="mk">European Environment Agency</langstring>
+      <langstring language="mt">European Environment Agency</langstring>
+      <langstring language="nl">European Environment Agency</langstring>
+      <langstring language="no">European Environment Agency</langstring>
+      <langstring language="pl">European Environment Agency</langstring>
+      <langstring language="pt">European Environment Agency</langstring>
+      <langstring language="ro">European Environment Agency</langstring>
+      <langstring language="ru">European Environment Agency</langstring>
+      <langstring language="sh">European Environment Agency</langstring>
+      <langstring language="sk">European Environment Agency</langstring>
+      <langstring language="sl">European Environment Agency</langstring>
+      <langstring language="sq">European Environment Agency</langstring>
+      <langstring language="sr">European Environment Agency</langstring>
+      <langstring language="sv">European Environment Agency</langstring>
+      <langstring language="tr">European Environment Agency</langstring>
+      <langstring language="zh">European Environment Agency</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>EC</termIdentifier>
     <caption>
+      <langstring language="ar">European Commission</langstring>
+      <langstring language="bg">European Commission</langstring>
+      <langstring language="bs">European Commission</langstring>
+      <langstring language="cs">European Commission</langstring>
+      <langstring language="da">European Commission</langstring>
+      <langstring language="de">European Commission</langstring>
+      <langstring language="el">European Commission</langstring>
       <langstring language="en">European Commission</langstring>
+      <langstring language="es">European Commission</langstring>
+      <langstring language="et">European Commission</langstring>
+      <langstring language="fi">European Commission</langstring>
+      <langstring language="fr">European Commission</langstring>
+      <langstring language="ga">European Commission</langstring>
+      <langstring language="hr">European Commission</langstring>
+      <langstring language="hu">European Commission</langstring>
+      <langstring language="is">European Commission</langstring>
+      <langstring language="it">European Commission</langstring>
+      <langstring language="lt">European Commission</langstring>
+      <langstring language="lv">European Commission</langstring>
+      <langstring language="mk">European Commission</langstring>
+      <langstring language="mt">European Commission</langstring>
+      <langstring language="nl">European Commission</langstring>
+      <langstring language="no">European Commission</langstring>
+      <langstring language="pl">European Commission</langstring>
+      <langstring language="pt">European Commission</langstring>
+      <langstring language="ro">European Commission</langstring>
+      <langstring language="ru">European Commission</langstring>
+      <langstring language="sh">European Commission</langstring>
+      <langstring language="sk">European Commission</langstring>
+      <langstring language="sl">European Commission</langstring>
+      <langstring language="sq">European Commission</langstring>
+      <langstring language="sr">European Commission</langstring>
+      <langstring language="sv">European Commission</langstring>
+      <langstring language="tr">European Commission</langstring>
+      <langstring language="zh">European Commission</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>WHO-Europe</termIdentifier>
     <caption>
+      <langstring language="ar">World Health Organization-Europe</langstring>
+      <langstring language="bg">World Health Organization-Europe</langstring>
+      <langstring language="bs">World Health Organization-Europe</langstring>
+      <langstring language="cs">World Health Organization-Europe</langstring>
+      <langstring language="da">World Health Organization-Europe</langstring>
+      <langstring language="de">World Health Organization-Europe</langstring>
+      <langstring language="el">World Health Organization-Europe</langstring>
       <langstring language="en">World Health Organization-Europe</langstring>
+      <langstring language="es">World Health Organization-Europe</langstring>
+      <langstring language="et">World Health Organization-Europe</langstring>
+      <langstring language="fi">World Health Organization-Europe</langstring>
+      <langstring language="fr">World Health Organization-Europe</langstring>
+      <langstring language="ga">World Health Organization-Europe</langstring>
+      <langstring language="hr">World Health Organization-Europe</langstring>
+      <langstring language="hu">World Health Organization-Europe</langstring>
+      <langstring language="is">World Health Organization-Europe</langstring>
+      <langstring language="it">World Health Organization-Europe</langstring>
+      <langstring language="lt">World Health Organization-Europe</langstring>
+      <langstring language="lv">World Health Organization-Europe</langstring>
+      <langstring language="mk">World Health Organization-Europe</langstring>
+      <langstring language="mt">World Health Organization-Europe</langstring>
+      <langstring language="nl">World Health Organization-Europe</langstring>
+      <langstring language="no">World Health Organization-Europe</langstring>
+      <langstring language="pl">World Health Organization-Europe</langstring>
+      <langstring language="pt">World Health Organization-Europe</langstring>
+      <langstring language="ro">World Health Organization-Europe</langstring>
+      <langstring language="ru">World Health Organization-Europe</langstring>
+      <langstring language="sh">World Health Organization-Europe</langstring>
+      <langstring language="sk">World Health Organization-Europe</langstring>
+      <langstring language="sl">World Health Organization-Europe</langstring>
+      <langstring language="sq">World Health Organization-Europe</langstring>
+      <langstring language="sr">World Health Organization-Europe</langstring>
+      <langstring language="sv">World Health Organization-Europe</langstring>
+      <langstring language="tr">World Health Organization-Europe</langstring>
+      <langstring language="zh">World Health Organization-Europe</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>WHO</termIdentifier>
     <caption>
+      <langstring language="ar">World Health Organization</langstring>
+      <langstring language="bg">World Health Organization</langstring>
+      <langstring language="bs">World Health Organization</langstring>
+      <langstring language="cs">World Health Organization</langstring>
+      <langstring language="da">World Health Organization</langstring>
+      <langstring language="de">World Health Organization</langstring>
+      <langstring language="el">World Health Organization</langstring>
       <langstring language="en">World Health Organization</langstring>
+      <langstring language="es">World Health Organization</langstring>
+      <langstring language="et">World Health Organization</langstring>
+      <langstring language="fi">World Health Organization</langstring>
+      <langstring language="fr">World Health Organization</langstring>
+      <langstring language="ga">World Health Organization</langstring>
+      <langstring language="hr">World Health Organization</langstring>
+      <langstring language="hu">World Health Organization</langstring>
+      <langstring language="is">World Health Organization</langstring>
+      <langstring language="it">World Health Organization</langstring>
+      <langstring language="lt">World Health Organization</langstring>
+      <langstring language="lv">World Health Organization</langstring>
+      <langstring language="mk">World Health Organization</langstring>
+      <langstring language="mt">World Health Organization</langstring>
+      <langstring language="nl">World Health Organization</langstring>
+      <langstring language="no">World Health Organization</langstring>
+      <langstring language="pl">World Health Organization</langstring>
+      <langstring language="pt">World Health Organization</langstring>
+      <langstring language="ro">World Health Organization</langstring>
+      <langstring language="ru">World Health Organization</langstring>
+      <langstring language="sh">World Health Organization</langstring>
+      <langstring language="sk">World Health Organization</langstring>
+      <langstring language="sl">World Health Organization</langstring>
+      <langstring language="sq">World Health Organization</langstring>
+      <langstring language="sr">World Health Organization</langstring>
+      <langstring language="sv">World Health Organization</langstring>
+      <langstring language="tr">World Health Organization</langstring>
+      <langstring language="zh">World Health Organization</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ECDC</termIdentifier>
     <caption>
+      <langstring language="ar">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="bg">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="bs">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="cs">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="da">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="de">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="el">European Centre for Disease Prevention and Control</langstring>
       <langstring language="en">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="es">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="et">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="fi">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="fr">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="ga">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="hr">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="hu">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="is">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="it">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="lt">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="lv">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="mk">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="mt">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="nl">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="no">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="pl">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="pt">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="ro">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="ru">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sh">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sk">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sl">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sq">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sr">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="sv">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="tr">European Centre for Disease Prevention and Control</langstring>
+      <langstring language="zh">European Centre for Disease Prevention and Control</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>EFSA</termIdentifier>
     <caption>
+      <langstring language="ar">European Food Safety Authority</langstring>
+      <langstring language="bg">European Food Safety Authority</langstring>
+      <langstring language="bs">European Food Safety Authority</langstring>
+      <langstring language="cs">European Food Safety Authority</langstring>
+      <langstring language="da">European Food Safety Authority</langstring>
+      <langstring language="de">European Food Safety Authority</langstring>
+      <langstring language="el">European Food Safety Authority</langstring>
       <langstring language="en">European Food Safety Authority</langstring>
+      <langstring language="es">European Food Safety Authority</langstring>
+      <langstring language="et">European Food Safety Authority</langstring>
+      <langstring language="fi">European Food Safety Authority</langstring>
+      <langstring language="fr">European Food Safety Authority</langstring>
+      <langstring language="ga">European Food Safety Authority</langstring>
+      <langstring language="hr">European Food Safety Authority</langstring>
+      <langstring language="hu">European Food Safety Authority</langstring>
+      <langstring language="is">European Food Safety Authority</langstring>
+      <langstring language="it">European Food Safety Authority</langstring>
+      <langstring language="lt">European Food Safety Authority</langstring>
+      <langstring language="lv">European Food Safety Authority</langstring>
+      <langstring language="mk">European Food Safety Authority</langstring>
+      <langstring language="mt">European Food Safety Authority</langstring>
+      <langstring language="nl">European Food Safety Authority</langstring>
+      <langstring language="no">European Food Safety Authority</langstring>
+      <langstring language="pl">European Food Safety Authority</langstring>
+      <langstring language="pt">European Food Safety Authority</langstring>
+      <langstring language="ro">European Food Safety Authority</langstring>
+      <langstring language="ru">European Food Safety Authority</langstring>
+      <langstring language="sh">European Food Safety Authority</langstring>
+      <langstring language="sk">European Food Safety Authority</langstring>
+      <langstring language="sl">European Food Safety Authority</langstring>
+      <langstring language="sq">European Food Safety Authority</langstring>
+      <langstring language="sr">European Food Safety Authority</langstring>
+      <langstring language="sv">European Food Safety Authority</langstring>
+      <langstring language="tr">European Food Safety Authority</langstring>
+      <langstring language="zh">European Food Safety Authority</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ECHA</termIdentifier>
     <caption>
+      <langstring language="ar">European Chemicals Agency</langstring>
+      <langstring language="bg">European Chemicals Agency</langstring>
+      <langstring language="bs">European Chemicals Agency</langstring>
+      <langstring language="cs">European Chemicals Agency</langstring>
+      <langstring language="da">European Chemicals Agency</langstring>
+      <langstring language="de">European Chemicals Agency</langstring>
+      <langstring language="el">European Chemicals Agency</langstring>
       <langstring language="en">European Chemicals Agency</langstring>
+      <langstring language="es">European Chemicals Agency</langstring>
+      <langstring language="et">European Chemicals Agency</langstring>
+      <langstring language="fi">European Chemicals Agency</langstring>
+      <langstring language="fr">European Chemicals Agency</langstring>
+      <langstring language="ga">European Chemicals Agency</langstring>
+      <langstring language="hr">European Chemicals Agency</langstring>
+      <langstring language="hu">European Chemicals Agency</langstring>
+      <langstring language="is">European Chemicals Agency</langstring>
+      <langstring language="it">European Chemicals Agency</langstring>
+      <langstring language="lt">European Chemicals Agency</langstring>
+      <langstring language="lv">European Chemicals Agency</langstring>
+      <langstring language="mk">European Chemicals Agency</langstring>
+      <langstring language="mt">European Chemicals Agency</langstring>
+      <langstring language="nl">European Chemicals Agency</langstring>
+      <langstring language="no">European Chemicals Agency</langstring>
+      <langstring language="pl">European Chemicals Agency</langstring>
+      <langstring language="pt">European Chemicals Agency</langstring>
+      <langstring language="ro">European Chemicals Agency</langstring>
+      <langstring language="ru">European Chemicals Agency</langstring>
+      <langstring language="sh">European Chemicals Agency</langstring>
+      <langstring language="sk">European Chemicals Agency</langstring>
+      <langstring language="sl">European Chemicals Agency</langstring>
+      <langstring language="sq">European Chemicals Agency</langstring>
+      <langstring language="sr">European Chemicals Agency</langstring>
+      <langstring language="sv">European Chemicals Agency</langstring>
+      <langstring language="tr">European Chemicals Agency</langstring>
+      <langstring language="zh">European Chemicals Agency</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>C3S</termIdentifier>
     <caption>
+      <langstring language="ar">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="bg">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="bs">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="cs">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="da">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="de">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="el">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
       <langstring language="en">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="es">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="et">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="fi">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="fr">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="ga">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="hr">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="hu">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="is">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="it">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="lt">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="lv">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="mk">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="mt">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="nl">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="no">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="pl">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="pt">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="ro">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="ru">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sh">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sk">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sl">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sq">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sr">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="sv">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="tr">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
+      <langstring language="zh">Copernicus Climate Change Service (implemented by ECMWF)</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/ICM</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="bg">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="bs">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="cs">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="da">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="de">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="el">ETC Inland, Coastal and Marine waters</langstring>
       <langstring language="en">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="es">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="et">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="fi">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="fr">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="ga">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="hr">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="hu">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="is">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="it">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="lt">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="lv">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="mk">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="mt">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="nl">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="no">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="pl">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="pt">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="ro">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="ru">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sh">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sk">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sl">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sq">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sr">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="sv">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="tr">ETC Inland, Coastal and Marine waters</langstring>
+      <langstring language="zh">ETC Inland, Coastal and Marine waters</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/BD</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Biological Diversity</langstring>
+      <langstring language="bg">ETC Biological Diversity</langstring>
+      <langstring language="bs">ETC Biological Diversity</langstring>
+      <langstring language="cs">ETC Biological Diversity</langstring>
+      <langstring language="da">ETC Biological Diversity</langstring>
+      <langstring language="de">ETC Biological Diversity</langstring>
+      <langstring language="el">ETC Biological Diversity</langstring>
       <langstring language="en">ETC Biological Diversity</langstring>
+      <langstring language="es">ETC Biological Diversity</langstring>
+      <langstring language="et">ETC Biological Diversity</langstring>
+      <langstring language="fi">ETC Biological Diversity</langstring>
+      <langstring language="fr">ETC Biological Diversity</langstring>
+      <langstring language="ga">ETC Biological Diversity</langstring>
+      <langstring language="hr">ETC Biological Diversity</langstring>
+      <langstring language="hu">ETC Biological Diversity</langstring>
+      <langstring language="is">ETC Biological Diversity</langstring>
+      <langstring language="it">ETC Biological Diversity</langstring>
+      <langstring language="lt">ETC Biological Diversity</langstring>
+      <langstring language="lv">ETC Biological Diversity</langstring>
+      <langstring language="mk">ETC Biological Diversity</langstring>
+      <langstring language="mt">ETC Biological Diversity</langstring>
+      <langstring language="nl">ETC Biological Diversity</langstring>
+      <langstring language="no">ETC Biological Diversity</langstring>
+      <langstring language="pl">ETC Biological Diversity</langstring>
+      <langstring language="pt">ETC Biological Diversity</langstring>
+      <langstring language="ro">ETC Biological Diversity</langstring>
+      <langstring language="ru">ETC Biological Diversity</langstring>
+      <langstring language="sh">ETC Biological Diversity</langstring>
+      <langstring language="sk">ETC Biological Diversity</langstring>
+      <langstring language="sl">ETC Biological Diversity</langstring>
+      <langstring language="sq">ETC Biological Diversity</langstring>
+      <langstring language="sr">ETC Biological Diversity</langstring>
+      <langstring language="sv">ETC Biological Diversity</langstring>
+      <langstring language="tr">ETC Biological Diversity</langstring>
+      <langstring language="zh">ETC Biological Diversity</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/DI</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Data integration and digitalisation</langstring>
+      <langstring language="bg">ETC Data integration and digitalisation</langstring>
+      <langstring language="bs">ETC Data integration and digitalisation</langstring>
+      <langstring language="cs">ETC Data integration and digitalisation</langstring>
+      <langstring language="da">ETC Data integration and digitalisation</langstring>
+      <langstring language="de">ETC Data integration and digitalisation</langstring>
+      <langstring language="el">ETC Data integration and digitalisation</langstring>
       <langstring language="en">ETC Data integration and digitalisation</langstring>
+      <langstring language="es">ETC Data integration and digitalisation</langstring>
+      <langstring language="et">ETC Data integration and digitalisation</langstring>
+      <langstring language="fi">ETC Data integration and digitalisation</langstring>
+      <langstring language="fr">ETC Data integration and digitalisation</langstring>
+      <langstring language="ga">ETC Data integration and digitalisation</langstring>
+      <langstring language="hr">ETC Data integration and digitalisation</langstring>
+      <langstring language="hu">ETC Data integration and digitalisation</langstring>
+      <langstring language="is">ETC Data integration and digitalisation</langstring>
+      <langstring language="it">ETC Data integration and digitalisation</langstring>
+      <langstring language="lt">ETC Data integration and digitalisation</langstring>
+      <langstring language="lv">ETC Data integration and digitalisation</langstring>
+      <langstring language="mk">ETC Data integration and digitalisation</langstring>
+      <langstring language="mt">ETC Data integration and digitalisation</langstring>
+      <langstring language="nl">ETC Data integration and digitalisation</langstring>
+      <langstring language="no">ETC Data integration and digitalisation</langstring>
+      <langstring language="pl">ETC Data integration and digitalisation</langstring>
+      <langstring language="pt">ETC Data integration and digitalisation</langstring>
+      <langstring language="ro">ETC Data integration and digitalisation</langstring>
+      <langstring language="ru">ETC Data integration and digitalisation</langstring>
+      <langstring language="sh">ETC Data integration and digitalisation</langstring>
+      <langstring language="sk">ETC Data integration and digitalisation</langstring>
+      <langstring language="sl">ETC Data integration and digitalisation</langstring>
+      <langstring language="sq">ETC Data integration and digitalisation</langstring>
+      <langstring language="sr">ETC Data integration and digitalisation</langstring>
+      <langstring language="sv">ETC Data integration and digitalisation</langstring>
+      <langstring language="tr">ETC Data integration and digitalisation</langstring>
+      <langstring language="zh">ETC Data integration and digitalisation</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/CE</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Circular economy and resource use</langstring>
+      <langstring language="bg">ETC Circular economy and resource use</langstring>
+      <langstring language="bs">ETC Circular economy and resource use</langstring>
+      <langstring language="cs">ETC Circular economy and resource use</langstring>
+      <langstring language="da">ETC Circular economy and resource use</langstring>
+      <langstring language="de">ETC Circular economy and resource use</langstring>
+      <langstring language="el">ETC Circular economy and resource use</langstring>
       <langstring language="en">ETC Circular economy and resource use</langstring>
+      <langstring language="es">ETC Circular economy and resource use</langstring>
+      <langstring language="et">ETC Circular economy and resource use</langstring>
+      <langstring language="fi">ETC Circular economy and resource use</langstring>
+      <langstring language="fr">ETC Circular economy and resource use</langstring>
+      <langstring language="ga">ETC Circular economy and resource use</langstring>
+      <langstring language="hr">ETC Circular economy and resource use</langstring>
+      <langstring language="hu">ETC Circular economy and resource use</langstring>
+      <langstring language="is">ETC Circular economy and resource use</langstring>
+      <langstring language="it">ETC Circular economy and resource use</langstring>
+      <langstring language="lt">ETC Circular economy and resource use</langstring>
+      <langstring language="lv">ETC Circular economy and resource use</langstring>
+      <langstring language="mk">ETC Circular economy and resource use</langstring>
+      <langstring language="mt">ETC Circular economy and resource use</langstring>
+      <langstring language="nl">ETC Circular economy and resource use</langstring>
+      <langstring language="no">ETC Circular economy and resource use</langstring>
+      <langstring language="pl">ETC Circular economy and resource use</langstring>
+      <langstring language="pt">ETC Circular economy and resource use</langstring>
+      <langstring language="ro">ETC Circular economy and resource use</langstring>
+      <langstring language="ru">ETC Circular economy and resource use</langstring>
+      <langstring language="sh">ETC Circular economy and resource use</langstring>
+      <langstring language="sk">ETC Circular economy and resource use</langstring>
+      <langstring language="sl">ETC Circular economy and resource use</langstring>
+      <langstring language="sq">ETC Circular economy and resource use</langstring>
+      <langstring language="sr">ETC Circular economy and resource use</langstring>
+      <langstring language="sv">ETC Circular economy and resource use</langstring>
+      <langstring language="tr">ETC Circular economy and resource use</langstring>
+      <langstring language="zh">ETC Circular economy and resource use</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/CA</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="bg">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="bs">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="cs">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="da">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="de">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="el">ETC Climate change adaptation and LULUCF</langstring>
       <langstring language="en">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="es">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="et">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="fi">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="fr">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="ga">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="hr">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="hu">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="is">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="it">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="lt">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="lv">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="mk">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="mt">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="nl">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="no">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="pl">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="pt">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="ro">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="ru">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sh">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sk">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sl">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sq">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sr">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="sv">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="tr">ETC Climate change adaptation and LULUCF</langstring>
+      <langstring language="zh">ETC Climate change adaptation and LULUCF</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/CM</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Climate change mitigation</langstring>
+      <langstring language="bg">ETC Climate change mitigation</langstring>
+      <langstring language="bs">ETC Climate change mitigation</langstring>
+      <langstring language="cs">ETC Climate change mitigation</langstring>
+      <langstring language="da">ETC Climate change mitigation</langstring>
+      <langstring language="de">ETC Climate change mitigation</langstring>
+      <langstring language="el">ETC Climate change mitigation</langstring>
       <langstring language="en">ETC Climate change mitigation</langstring>
+      <langstring language="es">ETC Climate change mitigation</langstring>
+      <langstring language="et">ETC Climate change mitigation</langstring>
+      <langstring language="fi">ETC Climate change mitigation</langstring>
+      <langstring language="fr">ETC Climate change mitigation</langstring>
+      <langstring language="ga">ETC Climate change mitigation</langstring>
+      <langstring language="hr">ETC Climate change mitigation</langstring>
+      <langstring language="hu">ETC Climate change mitigation</langstring>
+      <langstring language="is">ETC Climate change mitigation</langstring>
+      <langstring language="it">ETC Climate change mitigation</langstring>
+      <langstring language="lt">ETC Climate change mitigation</langstring>
+      <langstring language="lv">ETC Climate change mitigation</langstring>
+      <langstring language="mk">ETC Climate change mitigation</langstring>
+      <langstring language="mt">ETC Climate change mitigation</langstring>
+      <langstring language="nl">ETC Climate change mitigation</langstring>
+      <langstring language="no">ETC Climate change mitigation</langstring>
+      <langstring language="pl">ETC Climate change mitigation</langstring>
+      <langstring language="pt">ETC Climate change mitigation</langstring>
+      <langstring language="ro">ETC Climate change mitigation</langstring>
+      <langstring language="ru">ETC Climate change mitigation</langstring>
+      <langstring language="sh">ETC Climate change mitigation</langstring>
+      <langstring language="sk">ETC Climate change mitigation</langstring>
+      <langstring language="sl">ETC Climate change mitigation</langstring>
+      <langstring language="sq">ETC Climate change mitigation</langstring>
+      <langstring language="sr">ETC Climate change mitigation</langstring>
+      <langstring language="sv">ETC Climate change mitigation</langstring>
+      <langstring language="tr">ETC Climate change mitigation</langstring>
+      <langstring language="zh">ETC Climate change mitigation</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/HE</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Human health and the environment</langstring>
+      <langstring language="bg">ETC Human health and the environment</langstring>
+      <langstring language="bs">ETC Human health and the environment</langstring>
+      <langstring language="cs">ETC Human health and the environment</langstring>
+      <langstring language="da">ETC Human health and the environment</langstring>
+      <langstring language="de">ETC Human health and the environment</langstring>
+      <langstring language="el">ETC Human health and the environment</langstring>
       <langstring language="en">ETC Human health and the environment</langstring>
+      <langstring language="es">ETC Human health and the environment</langstring>
+      <langstring language="et">ETC Human health and the environment</langstring>
+      <langstring language="fi">ETC Human health and the environment</langstring>
+      <langstring language="fr">ETC Human health and the environment</langstring>
+      <langstring language="ga">ETC Human health and the environment</langstring>
+      <langstring language="hr">ETC Human health and the environment</langstring>
+      <langstring language="hu">ETC Human health and the environment</langstring>
+      <langstring language="is">ETC Human health and the environment</langstring>
+      <langstring language="it">ETC Human health and the environment</langstring>
+      <langstring language="lt">ETC Human health and the environment</langstring>
+      <langstring language="lv">ETC Human health and the environment</langstring>
+      <langstring language="mk">ETC Human health and the environment</langstring>
+      <langstring language="mt">ETC Human health and the environment</langstring>
+      <langstring language="nl">ETC Human health and the environment</langstring>
+      <langstring language="no">ETC Human health and the environment</langstring>
+      <langstring language="pl">ETC Human health and the environment</langstring>
+      <langstring language="pt">ETC Human health and the environment</langstring>
+      <langstring language="ro">ETC Human health and the environment</langstring>
+      <langstring language="ru">ETC Human health and the environment</langstring>
+      <langstring language="sh">ETC Human health and the environment</langstring>
+      <langstring language="sk">ETC Human health and the environment</langstring>
+      <langstring language="sl">ETC Human health and the environment</langstring>
+      <langstring language="sq">ETC Human health and the environment</langstring>
+      <langstring language="sr">ETC Human health and the environment</langstring>
+      <langstring language="sv">ETC Human health and the environment</langstring>
+      <langstring language="tr">ETC Human health and the environment</langstring>
+      <langstring language="zh">ETC Human health and the environment</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>ETC/ST</termIdentifier>
     <caption>
+      <langstring language="ar">ETC Sustainability Transitions</langstring>
+      <langstring language="bg">ETC Sustainability Transitions</langstring>
+      <langstring language="bs">ETC Sustainability Transitions</langstring>
+      <langstring language="cs">ETC Sustainability Transitions</langstring>
+      <langstring language="da">ETC Sustainability Transitions</langstring>
+      <langstring language="de">ETC Sustainability Transitions</langstring>
+      <langstring language="el">ETC Sustainability Transitions</langstring>
       <langstring language="en">ETC Sustainability Transitions</langstring>
+      <langstring language="es">ETC Sustainability Transitions</langstring>
+      <langstring language="et">ETC Sustainability Transitions</langstring>
+      <langstring language="fi">ETC Sustainability Transitions</langstring>
+      <langstring language="fr">ETC Sustainability Transitions</langstring>
+      <langstring language="ga">ETC Sustainability Transitions</langstring>
+      <langstring language="hr">ETC Sustainability Transitions</langstring>
+      <langstring language="hu">ETC Sustainability Transitions</langstring>
+      <langstring language="is">ETC Sustainability Transitions</langstring>
+      <langstring language="it">ETC Sustainability Transitions</langstring>
+      <langstring language="lt">ETC Sustainability Transitions</langstring>
+      <langstring language="lv">ETC Sustainability Transitions</langstring>
+      <langstring language="mk">ETC Sustainability Transitions</langstring>
+      <langstring language="mt">ETC Sustainability Transitions</langstring>
+      <langstring language="nl">ETC Sustainability Transitions</langstring>
+      <langstring language="no">ETC Sustainability Transitions</langstring>
+      <langstring language="pl">ETC Sustainability Transitions</langstring>
+      <langstring language="pt">ETC Sustainability Transitions</langstring>
+      <langstring language="ro">ETC Sustainability Transitions</langstring>
+      <langstring language="ru">ETC Sustainability Transitions</langstring>
+      <langstring language="sh">ETC Sustainability Transitions</langstring>
+      <langstring language="sk">ETC Sustainability Transitions</langstring>
+      <langstring language="sl">ETC Sustainability Transitions</langstring>
+      <langstring language="sq">ETC Sustainability Transitions</langstring>
+      <langstring language="sr">ETC Sustainability Transitions</langstring>
+      <langstring language="sv">ETC Sustainability Transitions</langstring>
+      <langstring language="tr">ETC Sustainability Transitions</langstring>
+      <langstring language="zh">ETC Sustainability Transitions</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>OSPAR</termIdentifier>
     <caption>
+      <langstring language="ar">OSPAR Commission Secretariat</langstring>
+      <langstring language="bg">OSPAR Commission Secretariat</langstring>
+      <langstring language="bs">OSPAR Commission Secretariat</langstring>
+      <langstring language="cs">OSPAR Commission Secretariat</langstring>
+      <langstring language="da">OSPAR Commission Secretariat</langstring>
+      <langstring language="de">OSPAR Commission Secretariat</langstring>
+      <langstring language="el">OSPAR Commission Secretariat</langstring>
       <langstring language="en">OSPAR Commission Secretariat</langstring>
+      <langstring language="es">OSPAR Commission Secretariat</langstring>
+      <langstring language="et">OSPAR Commission Secretariat</langstring>
+      <langstring language="fi">OSPAR Commission Secretariat</langstring>
+      <langstring language="fr">OSPAR Commission Secretariat</langstring>
+      <langstring language="ga">OSPAR Commission Secretariat</langstring>
+      <langstring language="hr">OSPAR Commission Secretariat</langstring>
+      <langstring language="hu">OSPAR Commission Secretariat</langstring>
+      <langstring language="is">OSPAR Commission Secretariat</langstring>
+      <langstring language="it">OSPAR Commission Secretariat</langstring>
+      <langstring language="lt">OSPAR Commission Secretariat</langstring>
+      <langstring language="lv">OSPAR Commission Secretariat</langstring>
+      <langstring language="mk">OSPAR Commission Secretariat</langstring>
+      <langstring language="mt">OSPAR Commission Secretariat</langstring>
+      <langstring language="nl">OSPAR Commission Secretariat</langstring>
+      <langstring language="no">OSPAR Commission Secretariat</langstring>
+      <langstring language="pl">OSPAR Commission Secretariat</langstring>
+      <langstring language="pt">OSPAR Commission Secretariat</langstring>
+      <langstring language="ro">OSPAR Commission Secretariat</langstring>
+      <langstring language="ru">OSPAR Commission Secretariat</langstring>
+      <langstring language="sh">OSPAR Commission Secretariat</langstring>
+      <langstring language="sk">OSPAR Commission Secretariat</langstring>
+      <langstring language="sl">OSPAR Commission Secretariat</langstring>
+      <langstring language="sq">OSPAR Commission Secretariat</langstring>
+      <langstring language="sr">OSPAR Commission Secretariat</langstring>
+      <langstring language="sv">OSPAR Commission Secretariat</langstring>
+      <langstring language="tr">OSPAR Commission Secretariat</langstring>
+      <langstring language="zh">OSPAR Commission Secretariat</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>UNEP/MAP</termIdentifier>
     <caption>
+      <langstring language="ar">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="bg">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="bs">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="cs">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="da">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="de">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="el">UN Environment Programme / Mediterranean Action Plan</langstring>
       <langstring language="en">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="es">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="et">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="fi">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="fr">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="ga">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="hr">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="hu">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="is">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="it">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="lt">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="lv">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="mk">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="mt">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="nl">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="no">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="pl">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="pt">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="ro">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="ru">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sh">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sk">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sl">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sq">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sr">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="sv">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="tr">UN Environment Programme / Mediterranean Action Plan</langstring>
+      <langstring language="zh">UN Environment Programme / Mediterranean Action Plan</langstring>
     </caption>
   </term>
-
-
   <term>
     <termIdentifier>EMA</termIdentifier>
     <caption>
+      <langstring language="ar">European Medicines Agency</langstring>
+      <langstring language="bg">European Medicines Agency</langstring>
+      <langstring language="bs">European Medicines Agency</langstring>
+      <langstring language="cs">European Medicines Agency</langstring>
+      <langstring language="da">European Medicines Agency</langstring>
+      <langstring language="de">European Medicines Agency</langstring>
+      <langstring language="el">European Medicines Agency</langstring>
       <langstring language="en">European Medicines Agency</langstring>
+      <langstring language="es">European Medicines Agency</langstring>
+      <langstring language="et">European Medicines Agency</langstring>
+      <langstring language="fi">European Medicines Agency</langstring>
+      <langstring language="fr">European Medicines Agency</langstring>
+      <langstring language="ga">European Medicines Agency</langstring>
+      <langstring language="hr">European Medicines Agency</langstring>
+      <langstring language="hu">European Medicines Agency</langstring>
+      <langstring language="is">European Medicines Agency</langstring>
+      <langstring language="it">European Medicines Agency</langstring>
+      <langstring language="lt">European Medicines Agency</langstring>
+      <langstring language="lv">European Medicines Agency</langstring>
+      <langstring language="mk">European Medicines Agency</langstring>
+      <langstring language="mt">European Medicines Agency</langstring>
+      <langstring language="nl">European Medicines Agency</langstring>
+      <langstring language="no">European Medicines Agency</langstring>
+      <langstring language="pl">European Medicines Agency</langstring>
+      <langstring language="pt">European Medicines Agency</langstring>
+      <langstring language="ro">European Medicines Agency</langstring>
+      <langstring language="ru">European Medicines Agency</langstring>
+      <langstring language="sh">European Medicines Agency</langstring>
+      <langstring language="sk">European Medicines Agency</langstring>
+      <langstring language="sl">European Medicines Agency</langstring>
+      <langstring language="sq">European Medicines Agency</langstring>
+      <langstring language="sr">European Medicines Agency</langstring>
+      <langstring language="sv">European Medicines Agency</langstring>
+      <langstring language="tr">European Medicines Agency</langstring>
+      <langstring language="zh">European Medicines Agency</langstring>
     </caption>
   </term>
-
 </vdex>
