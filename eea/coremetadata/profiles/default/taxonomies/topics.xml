@@ -3,279 +3,1565 @@
   <vocabName>
     <langstring language="en">EEA Topics Taxonomy</langstring>
   </vocabName>
-  <vocabIdentifier>eea.topics.taxonomy</vocabIdentifier>
-
+  <vocabIdentifier>eeatopicstaxonomy</vocabIdentifier>
   <term>
     <termIdentifier>term1</termIdentifier>
     <caption>
+      <langstring language="ar">Agriculture and food</langstring>
+      <langstring language="bg">Agriculture and food</langstring>
+      <langstring language="bs">Agriculture and food</langstring>
+      <langstring language="cs">Agriculture and food</langstring>
+      <langstring language="da">Agriculture and food</langstring>
+      <langstring language="de">Agriculture and food</langstring>
+      <langstring language="el">Agriculture and food</langstring>
       <langstring language="en">Agriculture and food</langstring>
+      <langstring language="es">Agriculture and food</langstring>
+      <langstring language="et">Agriculture and food</langstring>
+      <langstring language="fi">Agriculture and food</langstring>
+      <langstring language="fr">Agriculture and food</langstring>
+      <langstring language="ga">Agriculture and food</langstring>
+      <langstring language="hr">Agriculture and food</langstring>
+      <langstring language="hu">Agriculture and food</langstring>
+      <langstring language="is">Agriculture and food</langstring>
+      <langstring language="it">Agriculture and food</langstring>
+      <langstring language="lt">Agriculture and food</langstring>
+      <langstring language="lv">Agriculture and food</langstring>
+      <langstring language="mk">Agriculture and food</langstring>
+      <langstring language="mt">Agriculture and food</langstring>
+      <langstring language="nl">Agriculture and food</langstring>
+      <langstring language="no">Agriculture and food</langstring>
+      <langstring language="pl">Agriculture and food</langstring>
+      <langstring language="pt">Agriculture and food</langstring>
+      <langstring language="ro">Agriculture and food</langstring>
+      <langstring language="ru">Agriculture and food</langstring>
+      <langstring language="sh">Agriculture and food</langstring>
+      <langstring language="sk">Agriculture and food</langstring>
+      <langstring language="sl">Agriculture and food</langstring>
+      <langstring language="sq">Agriculture and food</langstring>
+      <langstring language="sr">Agriculture and food</langstring>
+      <langstring language="sv">Agriculture and food</langstring>
+      <langstring language="tr">Agriculture and food</langstring>
+      <langstring language="zh">Agriculture and food</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term2</termIdentifier>
     <caption>
+      <langstring language="ar">Air pollution</langstring>
+      <langstring language="bg">Air pollution</langstring>
+      <langstring language="bs">Air pollution</langstring>
+      <langstring language="cs">Air pollution</langstring>
+      <langstring language="da">Air pollution</langstring>
+      <langstring language="de">Air pollution</langstring>
+      <langstring language="el">Air pollution</langstring>
       <langstring language="en">Air pollution</langstring>
+      <langstring language="es">Air pollution</langstring>
+      <langstring language="et">Air pollution</langstring>
+      <langstring language="fi">Air pollution</langstring>
+      <langstring language="fr">Air pollution</langstring>
+      <langstring language="ga">Air pollution</langstring>
+      <langstring language="hr">Air pollution</langstring>
+      <langstring language="hu">Air pollution</langstring>
+      <langstring language="is">Air pollution</langstring>
+      <langstring language="it">Air pollution</langstring>
+      <langstring language="lt">Air pollution</langstring>
+      <langstring language="lv">Air pollution</langstring>
+      <langstring language="mk">Air pollution</langstring>
+      <langstring language="mt">Air pollution</langstring>
+      <langstring language="nl">Air pollution</langstring>
+      <langstring language="no">Air pollution</langstring>
+      <langstring language="pl">Air pollution</langstring>
+      <langstring language="pt">Air pollution</langstring>
+      <langstring language="ro">Air pollution</langstring>
+      <langstring language="ru">Air pollution</langstring>
+      <langstring language="sh">Air pollution</langstring>
+      <langstring language="sk">Air pollution</langstring>
+      <langstring language="sl">Air pollution</langstring>
+      <langstring language="sq">Air pollution</langstring>
+      <langstring language="sr">Air pollution</langstring>
+      <langstring language="sv">Air pollution</langstring>
+      <langstring language="tr">Air pollution</langstring>
+      <langstring language="zh">Air pollution</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term3</termIdentifier>
     <caption>
+      <langstring language="ar">Bathing water quality</langstring>
+      <langstring language="bg">Bathing water quality</langstring>
+      <langstring language="bs">Bathing water quality</langstring>
+      <langstring language="cs">Bathing water quality</langstring>
+      <langstring language="da">Bathing water quality</langstring>
+      <langstring language="de">Bathing water quality</langstring>
+      <langstring language="el">Bathing water quality</langstring>
       <langstring language="en">Bathing water quality</langstring>
+      <langstring language="es">Bathing water quality</langstring>
+      <langstring language="et">Bathing water quality</langstring>
+      <langstring language="fi">Bathing water quality</langstring>
+      <langstring language="fr">Bathing water quality</langstring>
+      <langstring language="ga">Bathing water quality</langstring>
+      <langstring language="hr">Bathing water quality</langstring>
+      <langstring language="hu">Bathing water quality</langstring>
+      <langstring language="is">Bathing water quality</langstring>
+      <langstring language="it">Bathing water quality</langstring>
+      <langstring language="lt">Bathing water quality</langstring>
+      <langstring language="lv">Bathing water quality</langstring>
+      <langstring language="mk">Bathing water quality</langstring>
+      <langstring language="mt">Bathing water quality</langstring>
+      <langstring language="nl">Bathing water quality</langstring>
+      <langstring language="no">Bathing water quality</langstring>
+      <langstring language="pl">Bathing water quality</langstring>
+      <langstring language="pt">Bathing water quality</langstring>
+      <langstring language="ro">Bathing water quality</langstring>
+      <langstring language="ru">Bathing water quality</langstring>
+      <langstring language="sh">Bathing water quality</langstring>
+      <langstring language="sk">Bathing water quality</langstring>
+      <langstring language="sl">Bathing water quality</langstring>
+      <langstring language="sq">Bathing water quality</langstring>
+      <langstring language="sr">Bathing water quality</langstring>
+      <langstring language="sv">Bathing water quality</langstring>
+      <langstring language="tr">Bathing water quality</langstring>
+      <langstring language="zh">Bathing water quality</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term4</termIdentifier>
     <caption>
+      <langstring language="ar">Biodiversity</langstring>
+      <langstring language="bg">Biodiversity</langstring>
+      <langstring language="bs">Biodiversity</langstring>
+      <langstring language="cs">Biodiversity</langstring>
+      <langstring language="da">Biodiversity</langstring>
+      <langstring language="de">Biodiversity</langstring>
+      <langstring language="el">Biodiversity</langstring>
       <langstring language="en">Biodiversity</langstring>
+      <langstring language="es">Biodiversity</langstring>
+      <langstring language="et">Biodiversity</langstring>
+      <langstring language="fi">Biodiversity</langstring>
+      <langstring language="fr">Biodiversity</langstring>
+      <langstring language="ga">Biodiversity</langstring>
+      <langstring language="hr">Biodiversity</langstring>
+      <langstring language="hu">Biodiversity</langstring>
+      <langstring language="is">Biodiversity</langstring>
+      <langstring language="it">Biodiversity</langstring>
+      <langstring language="lt">Biodiversity</langstring>
+      <langstring language="lv">Biodiversity</langstring>
+      <langstring language="mk">Biodiversity</langstring>
+      <langstring language="mt">Biodiversity</langstring>
+      <langstring language="nl">Biodiversity</langstring>
+      <langstring language="no">Biodiversity</langstring>
+      <langstring language="pl">Biodiversity</langstring>
+      <langstring language="pt">Biodiversity</langstring>
+      <langstring language="ro">Biodiversity</langstring>
+      <langstring language="ru">Biodiversity</langstring>
+      <langstring language="sh">Biodiversity</langstring>
+      <langstring language="sk">Biodiversity</langstring>
+      <langstring language="sl">Biodiversity</langstring>
+      <langstring language="sq">Biodiversity</langstring>
+      <langstring language="sr">Biodiversity</langstring>
+      <langstring language="sv">Biodiversity</langstring>
+      <langstring language="tr">Biodiversity</langstring>
+      <langstring language="zh">Biodiversity</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term5</termIdentifier>
     <caption>
+      <langstring language="ar">Bioeconomy</langstring>
+      <langstring language="bg">Bioeconomy</langstring>
+      <langstring language="bs">Bioeconomy</langstring>
+      <langstring language="cs">Bioeconomy</langstring>
+      <langstring language="da">Bioeconomy</langstring>
+      <langstring language="de">Bioeconomy</langstring>
+      <langstring language="el">Bioeconomy</langstring>
       <langstring language="en">Bioeconomy</langstring>
+      <langstring language="es">Bioeconomy</langstring>
+      <langstring language="et">Bioeconomy</langstring>
+      <langstring language="fi">Bioeconomy</langstring>
+      <langstring language="fr">Bioeconomy</langstring>
+      <langstring language="ga">Bioeconomy</langstring>
+      <langstring language="hr">Bioeconomy</langstring>
+      <langstring language="hu">Bioeconomy</langstring>
+      <langstring language="is">Bioeconomy</langstring>
+      <langstring language="it">Bioeconomy</langstring>
+      <langstring language="lt">Bioeconomy</langstring>
+      <langstring language="lv">Bioeconomy</langstring>
+      <langstring language="mk">Bioeconomy</langstring>
+      <langstring language="mt">Bioeconomy</langstring>
+      <langstring language="nl">Bioeconomy</langstring>
+      <langstring language="no">Bioeconomy</langstring>
+      <langstring language="pl">Bioeconomy</langstring>
+      <langstring language="pt">Bioeconomy</langstring>
+      <langstring language="ro">Bioeconomy</langstring>
+      <langstring language="ru">Bioeconomy</langstring>
+      <langstring language="sh">Bioeconomy</langstring>
+      <langstring language="sk">Bioeconomy</langstring>
+      <langstring language="sl">Bioeconomy</langstring>
+      <langstring language="sq">Bioeconomy</langstring>
+      <langstring language="sr">Bioeconomy</langstring>
+      <langstring language="sv">Bioeconomy</langstring>
+      <langstring language="tr">Bioeconomy</langstring>
+      <langstring language="zh">Bioeconomy</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term6</termIdentifier>
     <caption>
+      <langstring language="ar">Buildings and construction</langstring>
+      <langstring language="bg">Buildings and construction</langstring>
+      <langstring language="bs">Buildings and construction</langstring>
+      <langstring language="cs">Buildings and construction</langstring>
+      <langstring language="da">Buildings and construction</langstring>
+      <langstring language="de">Buildings and construction</langstring>
+      <langstring language="el">Buildings and construction</langstring>
       <langstring language="en">Buildings and construction</langstring>
+      <langstring language="es">Buildings and construction</langstring>
+      <langstring language="et">Buildings and construction</langstring>
+      <langstring language="fi">Buildings and construction</langstring>
+      <langstring language="fr">Buildings and construction</langstring>
+      <langstring language="ga">Buildings and construction</langstring>
+      <langstring language="hr">Buildings and construction</langstring>
+      <langstring language="hu">Buildings and construction</langstring>
+      <langstring language="is">Buildings and construction</langstring>
+      <langstring language="it">Buildings and construction</langstring>
+      <langstring language="lt">Buildings and construction</langstring>
+      <langstring language="lv">Buildings and construction</langstring>
+      <langstring language="mk">Buildings and construction</langstring>
+      <langstring language="mt">Buildings and construction</langstring>
+      <langstring language="nl">Buildings and construction</langstring>
+      <langstring language="no">Buildings and construction</langstring>
+      <langstring language="pl">Buildings and construction</langstring>
+      <langstring language="pt">Buildings and construction</langstring>
+      <langstring language="ro">Buildings and construction</langstring>
+      <langstring language="ru">Buildings and construction</langstring>
+      <langstring language="sh">Buildings and construction</langstring>
+      <langstring language="sk">Buildings and construction</langstring>
+      <langstring language="sl">Buildings and construction</langstring>
+      <langstring language="sq">Buildings and construction</langstring>
+      <langstring language="sr">Buildings and construction</langstring>
+      <langstring language="sv">Buildings and construction</langstring>
+      <langstring language="tr">Buildings and construction</langstring>
+      <langstring language="zh">Buildings and construction</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term7</termIdentifier>
     <caption>
+      <langstring language="ar">Chemicals</langstring>
+      <langstring language="bg">Chemicals</langstring>
+      <langstring language="bs">Chemicals</langstring>
+      <langstring language="cs">Chemicals</langstring>
+      <langstring language="da">Chemicals</langstring>
+      <langstring language="de">Chemicals</langstring>
+      <langstring language="el">Chemicals</langstring>
       <langstring language="en">Chemicals</langstring>
+      <langstring language="es">Chemicals</langstring>
+      <langstring language="et">Chemicals</langstring>
+      <langstring language="fi">Chemicals</langstring>
+      <langstring language="fr">Chemicals</langstring>
+      <langstring language="ga">Chemicals</langstring>
+      <langstring language="hr">Chemicals</langstring>
+      <langstring language="hu">Chemicals</langstring>
+      <langstring language="is">Chemicals</langstring>
+      <langstring language="it">Chemicals</langstring>
+      <langstring language="lt">Chemicals</langstring>
+      <langstring language="lv">Chemicals</langstring>
+      <langstring language="mk">Chemicals</langstring>
+      <langstring language="mt">Chemicals</langstring>
+      <langstring language="nl">Chemicals</langstring>
+      <langstring language="no">Chemicals</langstring>
+      <langstring language="pl">Chemicals</langstring>
+      <langstring language="pt">Chemicals</langstring>
+      <langstring language="ro">Chemicals</langstring>
+      <langstring language="ru">Chemicals</langstring>
+      <langstring language="sh">Chemicals</langstring>
+      <langstring language="sk">Chemicals</langstring>
+      <langstring language="sl">Chemicals</langstring>
+      <langstring language="sq">Chemicals</langstring>
+      <langstring language="sr">Chemicals</langstring>
+      <langstring language="sv">Chemicals</langstring>
+      <langstring language="tr">Chemicals</langstring>
+      <langstring language="zh">Chemicals</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term8</termIdentifier>
     <caption>
+      <langstring language="ar">Circular economy</langstring>
+      <langstring language="bg">Circular economy</langstring>
+      <langstring language="bs">Circular economy</langstring>
+      <langstring language="cs">Circular economy</langstring>
+      <langstring language="da">Circular economy</langstring>
+      <langstring language="de">Circular economy</langstring>
+      <langstring language="el">Circular economy</langstring>
       <langstring language="en">Circular economy</langstring>
+      <langstring language="es">Circular economy</langstring>
+      <langstring language="et">Circular economy</langstring>
+      <langstring language="fi">Circular economy</langstring>
+      <langstring language="fr">Circular economy</langstring>
+      <langstring language="ga">Circular economy</langstring>
+      <langstring language="hr">Circular economy</langstring>
+      <langstring language="hu">Circular economy</langstring>
+      <langstring language="is">Circular economy</langstring>
+      <langstring language="it">Circular economy</langstring>
+      <langstring language="lt">Circular economy</langstring>
+      <langstring language="lv">Circular economy</langstring>
+      <langstring language="mk">Circular economy</langstring>
+      <langstring language="mt">Circular economy</langstring>
+      <langstring language="nl">Circular economy</langstring>
+      <langstring language="no">Circular economy</langstring>
+      <langstring language="pl">Circular economy</langstring>
+      <langstring language="pt">Circular economy</langstring>
+      <langstring language="ro">Circular economy</langstring>
+      <langstring language="ru">Circular economy</langstring>
+      <langstring language="sh">Circular economy</langstring>
+      <langstring language="sk">Circular economy</langstring>
+      <langstring language="sl">Circular economy</langstring>
+      <langstring language="sq">Circular economy</langstring>
+      <langstring language="sr">Circular economy</langstring>
+      <langstring language="sv">Circular economy</langstring>
+      <langstring language="tr">Circular economy</langstring>
+      <langstring language="zh">Circular economy</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term10</termIdentifier>
     <caption>
+      <langstring language="ar">Climate change adaptation</langstring>
+      <langstring language="bg">Climate change adaptation</langstring>
+      <langstring language="bs">Climate change adaptation</langstring>
+      <langstring language="cs">Climate change adaptation</langstring>
+      <langstring language="da">Climate change adaptation</langstring>
+      <langstring language="de">Climate change adaptation</langstring>
+      <langstring language="el">Climate change adaptation</langstring>
       <langstring language="en">Climate change adaptation</langstring>
+      <langstring language="es">Climate change adaptation</langstring>
+      <langstring language="et">Climate change adaptation</langstring>
+      <langstring language="fi">Climate change adaptation</langstring>
+      <langstring language="fr">Climate change adaptation</langstring>
+      <langstring language="ga">Climate change adaptation</langstring>
+      <langstring language="hr">Climate change adaptation</langstring>
+      <langstring language="hu">Climate change adaptation</langstring>
+      <langstring language="is">Climate change adaptation</langstring>
+      <langstring language="it">Climate change adaptation</langstring>
+      <langstring language="lt">Climate change adaptation</langstring>
+      <langstring language="lv">Climate change adaptation</langstring>
+      <langstring language="mk">Climate change adaptation</langstring>
+      <langstring language="mt">Climate change adaptation</langstring>
+      <langstring language="nl">Climate change adaptation</langstring>
+      <langstring language="no">Climate change adaptation</langstring>
+      <langstring language="pl">Climate change adaptation</langstring>
+      <langstring language="pt">Climate change adaptation</langstring>
+      <langstring language="ro">Climate change adaptation</langstring>
+      <langstring language="ru">Climate change adaptation</langstring>
+      <langstring language="sh">Climate change adaptation</langstring>
+      <langstring language="sk">Climate change adaptation</langstring>
+      <langstring language="sl">Climate change adaptation</langstring>
+      <langstring language="sq">Climate change adaptation</langstring>
+      <langstring language="sr">Climate change adaptation</langstring>
+      <langstring language="sv">Climate change adaptation</langstring>
+      <langstring language="tr">Climate change adaptation</langstring>
+      <langstring language="zh">Climate change adaptation</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term11</termIdentifier>
     <caption>
+      <langstring language="ar">Climate change mitigation</langstring>
+      <langstring language="bg">Climate change mitigation</langstring>
+      <langstring language="bs">Climate change mitigation</langstring>
+      <langstring language="cs">Climate change mitigation</langstring>
+      <langstring language="da">Climate change mitigation</langstring>
+      <langstring language="de">Climate change mitigation</langstring>
+      <langstring language="el">Climate change mitigation</langstring>
       <langstring language="en">Climate change mitigation</langstring>
+      <langstring language="es">Climate change mitigation</langstring>
+      <langstring language="et">Climate change mitigation</langstring>
+      <langstring language="fi">Climate change mitigation</langstring>
+      <langstring language="fr">Climate change mitigation</langstring>
+      <langstring language="ga">Climate change mitigation</langstring>
+      <langstring language="hr">Climate change mitigation</langstring>
+      <langstring language="hu">Climate change mitigation</langstring>
+      <langstring language="is">Climate change mitigation</langstring>
+      <langstring language="it">Climate change mitigation</langstring>
+      <langstring language="lt">Climate change mitigation</langstring>
+      <langstring language="lv">Climate change mitigation</langstring>
+      <langstring language="mk">Climate change mitigation</langstring>
+      <langstring language="mt">Climate change mitigation</langstring>
+      <langstring language="nl">Climate change mitigation</langstring>
+      <langstring language="no">Climate change mitigation</langstring>
+      <langstring language="pl">Climate change mitigation</langstring>
+      <langstring language="pt">Climate change mitigation</langstring>
+      <langstring language="ro">Climate change mitigation</langstring>
+      <langstring language="ru">Climate change mitigation</langstring>
+      <langstring language="sh">Climate change mitigation</langstring>
+      <langstring language="sk">Climate change mitigation</langstring>
+      <langstring language="sl">Climate change mitigation</langstring>
+      <langstring language="sq">Climate change mitigation</langstring>
+      <langstring language="sr">Climate change mitigation</langstring>
+      <langstring language="sv">Climate change mitigation</langstring>
+      <langstring language="tr">Climate change mitigation</langstring>
+      <langstring language="zh">Climate change mitigation</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term13</termIdentifier>
     <caption>
+      <langstring language="ar">Electric vehicles</langstring>
+      <langstring language="bg">Electric vehicles</langstring>
+      <langstring language="bs">Electric vehicles</langstring>
+      <langstring language="cs">Electric vehicles</langstring>
+      <langstring language="da">Electric vehicles</langstring>
+      <langstring language="de">Electric vehicles</langstring>
+      <langstring language="el">Electric vehicles</langstring>
       <langstring language="en">Electric vehicles</langstring>
+      <langstring language="es">Electric vehicles</langstring>
+      <langstring language="et">Electric vehicles</langstring>
+      <langstring language="fi">Electric vehicles</langstring>
+      <langstring language="fr">Electric vehicles</langstring>
+      <langstring language="ga">Electric vehicles</langstring>
+      <langstring language="hr">Electric vehicles</langstring>
+      <langstring language="hu">Electric vehicles</langstring>
+      <langstring language="is">Electric vehicles</langstring>
+      <langstring language="it">Electric vehicles</langstring>
+      <langstring language="lt">Electric vehicles</langstring>
+      <langstring language="lv">Electric vehicles</langstring>
+      <langstring language="mk">Electric vehicles</langstring>
+      <langstring language="mt">Electric vehicles</langstring>
+      <langstring language="nl">Electric vehicles</langstring>
+      <langstring language="no">Electric vehicles</langstring>
+      <langstring language="pl">Electric vehicles</langstring>
+      <langstring language="pt">Electric vehicles</langstring>
+      <langstring language="ro">Electric vehicles</langstring>
+      <langstring language="ru">Electric vehicles</langstring>
+      <langstring language="sh">Electric vehicles</langstring>
+      <langstring language="sk">Electric vehicles</langstring>
+      <langstring language="sl">Electric vehicles</langstring>
+      <langstring language="sq">Electric vehicles</langstring>
+      <langstring language="sr">Electric vehicles</langstring>
+      <langstring language="sv">Electric vehicles</langstring>
+      <langstring language="tr">Electric vehicles</langstring>
+      <langstring language="zh">Electric vehicles</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term14</termIdentifier>
     <caption>
+      <langstring language="ar">Energy</langstring>
+      <langstring language="bg">Energy</langstring>
+      <langstring language="bs">Energy</langstring>
+      <langstring language="cs">Energy</langstring>
+      <langstring language="da">Energy</langstring>
+      <langstring language="de">Energy</langstring>
+      <langstring language="el">Energy</langstring>
       <langstring language="en">Energy</langstring>
+      <langstring language="es">Energy</langstring>
+      <langstring language="et">Energy</langstring>
+      <langstring language="fi">Energy</langstring>
+      <langstring language="fr">Energy</langstring>
+      <langstring language="ga">Energy</langstring>
+      <langstring language="hr">Energy</langstring>
+      <langstring language="hu">Energy</langstring>
+      <langstring language="is">Energy</langstring>
+      <langstring language="it">Energy</langstring>
+      <langstring language="lt">Energy</langstring>
+      <langstring language="lv">Energy</langstring>
+      <langstring language="mk">Energy</langstring>
+      <langstring language="mt">Energy</langstring>
+      <langstring language="nl">Energy</langstring>
+      <langstring language="no">Energy</langstring>
+      <langstring language="pl">Energy</langstring>
+      <langstring language="pt">Energy</langstring>
+      <langstring language="ro">Energy</langstring>
+      <langstring language="ru">Energy</langstring>
+      <langstring language="sh">Energy</langstring>
+      <langstring language="sk">Energy</langstring>
+      <langstring language="sl">Energy</langstring>
+      <langstring language="sq">Energy</langstring>
+      <langstring language="sr">Energy</langstring>
+      <langstring language="sv">Energy</langstring>
+      <langstring language="tr">Energy</langstring>
+      <langstring language="zh">Energy</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term15</termIdentifier>
     <caption>
+      <langstring language="ar">Energy efficiency</langstring>
+      <langstring language="bg">Energy efficiency</langstring>
+      <langstring language="bs">Energy efficiency</langstring>
+      <langstring language="cs">Energy efficiency</langstring>
+      <langstring language="da">Energy efficiency</langstring>
+      <langstring language="de">Energy efficiency</langstring>
+      <langstring language="el">Energy efficiency</langstring>
       <langstring language="en">Energy efficiency</langstring>
+      <langstring language="es">Energy efficiency</langstring>
+      <langstring language="et">Energy efficiency</langstring>
+      <langstring language="fi">Energy efficiency</langstring>
+      <langstring language="fr">Energy efficiency</langstring>
+      <langstring language="ga">Energy efficiency</langstring>
+      <langstring language="hr">Energy efficiency</langstring>
+      <langstring language="hu">Energy efficiency</langstring>
+      <langstring language="is">Energy efficiency</langstring>
+      <langstring language="it">Energy efficiency</langstring>
+      <langstring language="lt">Energy efficiency</langstring>
+      <langstring language="lv">Energy efficiency</langstring>
+      <langstring language="mk">Energy efficiency</langstring>
+      <langstring language="mt">Energy efficiency</langstring>
+      <langstring language="nl">Energy efficiency</langstring>
+      <langstring language="no">Energy efficiency</langstring>
+      <langstring language="pl">Energy efficiency</langstring>
+      <langstring language="pt">Energy efficiency</langstring>
+      <langstring language="ro">Energy efficiency</langstring>
+      <langstring language="ru">Energy efficiency</langstring>
+      <langstring language="sh">Energy efficiency</langstring>
+      <langstring language="sk">Energy efficiency</langstring>
+      <langstring language="sl">Energy efficiency</langstring>
+      <langstring language="sq">Energy efficiency</langstring>
+      <langstring language="sr">Energy efficiency</langstring>
+      <langstring language="sv">Energy efficiency</langstring>
+      <langstring language="tr">Energy efficiency</langstring>
+      <langstring language="zh">Energy efficiency</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term16</termIdentifier>
     <caption>
+      <langstring language="ar">Environmental health impacts</langstring>
+      <langstring language="bg">Environmental health impacts</langstring>
+      <langstring language="bs">Environmental health impacts</langstring>
+      <langstring language="cs">Environmental health impacts</langstring>
+      <langstring language="da">Environmental health impacts</langstring>
+      <langstring language="de">Environmental health impacts</langstring>
+      <langstring language="el">Environmental health impacts</langstring>
       <langstring language="en">Environmental health impacts</langstring>
+      <langstring language="es">Environmental health impacts</langstring>
+      <langstring language="et">Environmental health impacts</langstring>
+      <langstring language="fi">Environmental health impacts</langstring>
+      <langstring language="fr">Environmental health impacts</langstring>
+      <langstring language="ga">Environmental health impacts</langstring>
+      <langstring language="hr">Environmental health impacts</langstring>
+      <langstring language="hu">Environmental health impacts</langstring>
+      <langstring language="is">Environmental health impacts</langstring>
+      <langstring language="it">Environmental health impacts</langstring>
+      <langstring language="lt">Environmental health impacts</langstring>
+      <langstring language="lv">Environmental health impacts</langstring>
+      <langstring language="mk">Environmental health impacts</langstring>
+      <langstring language="mt">Environmental health impacts</langstring>
+      <langstring language="nl">Environmental health impacts</langstring>
+      <langstring language="no">Environmental health impacts</langstring>
+      <langstring language="pl">Environmental health impacts</langstring>
+      <langstring language="pt">Environmental health impacts</langstring>
+      <langstring language="ro">Environmental health impacts</langstring>
+      <langstring language="ru">Environmental health impacts</langstring>
+      <langstring language="sh">Environmental health impacts</langstring>
+      <langstring language="sk">Environmental health impacts</langstring>
+      <langstring language="sl">Environmental health impacts</langstring>
+      <langstring language="sq">Environmental health impacts</langstring>
+      <langstring language="sr">Environmental health impacts</langstring>
+      <langstring language="sv">Environmental health impacts</langstring>
+      <langstring language="tr">Environmental health impacts</langstring>
+      <langstring language="zh">Environmental health impacts</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term17</termIdentifier>
     <caption>
+      <langstring language="ar">Environmental inequalities</langstring>
+      <langstring language="bg">Environmental inequalities</langstring>
+      <langstring language="bs">Environmental inequalities</langstring>
+      <langstring language="cs">Environmental inequalities</langstring>
+      <langstring language="da">Environmental inequalities</langstring>
+      <langstring language="de">Environmental inequalities</langstring>
+      <langstring language="el">Environmental inequalities</langstring>
       <langstring language="en">Environmental inequalities</langstring>
+      <langstring language="es">Environmental inequalities</langstring>
+      <langstring language="et">Environmental inequalities</langstring>
+      <langstring language="fi">Environmental inequalities</langstring>
+      <langstring language="fr">Environmental inequalities</langstring>
+      <langstring language="ga">Environmental inequalities</langstring>
+      <langstring language="hr">Environmental inequalities</langstring>
+      <langstring language="hu">Environmental inequalities</langstring>
+      <langstring language="is">Environmental inequalities</langstring>
+      <langstring language="it">Environmental inequalities</langstring>
+      <langstring language="lt">Environmental inequalities</langstring>
+      <langstring language="lv">Environmental inequalities</langstring>
+      <langstring language="mk">Environmental inequalities</langstring>
+      <langstring language="mt">Environmental inequalities</langstring>
+      <langstring language="nl">Environmental inequalities</langstring>
+      <langstring language="no">Environmental inequalities</langstring>
+      <langstring language="pl">Environmental inequalities</langstring>
+      <langstring language="pt">Environmental inequalities</langstring>
+      <langstring language="ro">Environmental inequalities</langstring>
+      <langstring language="ru">Environmental inequalities</langstring>
+      <langstring language="sh">Environmental inequalities</langstring>
+      <langstring language="sk">Environmental inequalities</langstring>
+      <langstring language="sl">Environmental inequalities</langstring>
+      <langstring language="sq">Environmental inequalities</langstring>
+      <langstring language="sr">Environmental inequalities</langstring>
+      <langstring language="sv">Environmental inequalities</langstring>
+      <langstring language="tr">Environmental inequalities</langstring>
+      <langstring language="zh">Environmental inequalities</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term18</termIdentifier>
     <caption>
+      <langstring language="ar">Extreme weather</langstring>
+      <langstring language="bg">Extreme weather</langstring>
+      <langstring language="bs">Extreme weather</langstring>
+      <langstring language="cs">Extreme weather</langstring>
+      <langstring language="da">Extreme weather</langstring>
+      <langstring language="de">Extreme weather</langstring>
+      <langstring language="el">Extreme weather</langstring>
       <langstring language="en">Extreme weather</langstring>
+      <langstring language="es">Extreme weather</langstring>
+      <langstring language="et">Extreme weather</langstring>
+      <langstring language="fi">Extreme weather</langstring>
+      <langstring language="fr">Extreme weather</langstring>
+      <langstring language="ga">Extreme weather</langstring>
+      <langstring language="hr">Extreme weather</langstring>
+      <langstring language="hu">Extreme weather</langstring>
+      <langstring language="is">Extreme weather</langstring>
+      <langstring language="it">Extreme weather</langstring>
+      <langstring language="lt">Extreme weather</langstring>
+      <langstring language="lv">Extreme weather</langstring>
+      <langstring language="mk">Extreme weather</langstring>
+      <langstring language="mt">Extreme weather</langstring>
+      <langstring language="nl">Extreme weather</langstring>
+      <langstring language="no">Extreme weather</langstring>
+      <langstring language="pl">Extreme weather</langstring>
+      <langstring language="pt">Extreme weather</langstring>
+      <langstring language="ro">Extreme weather</langstring>
+      <langstring language="ru">Extreme weather</langstring>
+      <langstring language="sh">Extreme weather</langstring>
+      <langstring language="sk">Extreme weather</langstring>
+      <langstring language="sl">Extreme weather</langstring>
+      <langstring language="sq">Extreme weather</langstring>
+      <langstring language="sr">Extreme weather</langstring>
+      <langstring language="sv">Extreme weather</langstring>
+      <langstring language="tr">Extreme weather</langstring>
+      <langstring language="zh">Extreme weather</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term19</termIdentifier>
     <caption>
+      <langstring language="ar">Fisheries and aquaculture</langstring>
+      <langstring language="bg">Fisheries and aquaculture</langstring>
+      <langstring language="bs">Fisheries and aquaculture</langstring>
+      <langstring language="cs">Fisheries and aquaculture</langstring>
+      <langstring language="da">Fisheries and aquaculture</langstring>
+      <langstring language="de">Fisheries and aquaculture</langstring>
+      <langstring language="el">Fisheries and aquaculture</langstring>
       <langstring language="en">Fisheries and aquaculture</langstring>
+      <langstring language="es">Fisheries and aquaculture</langstring>
+      <langstring language="et">Fisheries and aquaculture</langstring>
+      <langstring language="fi">Fisheries and aquaculture</langstring>
+      <langstring language="fr">Fisheries and aquaculture</langstring>
+      <langstring language="ga">Fisheries and aquaculture</langstring>
+      <langstring language="hr">Fisheries and aquaculture</langstring>
+      <langstring language="hu">Fisheries and aquaculture</langstring>
+      <langstring language="is">Fisheries and aquaculture</langstring>
+      <langstring language="it">Fisheries and aquaculture</langstring>
+      <langstring language="lt">Fisheries and aquaculture</langstring>
+      <langstring language="lv">Fisheries and aquaculture</langstring>
+      <langstring language="mk">Fisheries and aquaculture</langstring>
+      <langstring language="mt">Fisheries and aquaculture</langstring>
+      <langstring language="nl">Fisheries and aquaculture</langstring>
+      <langstring language="no">Fisheries and aquaculture</langstring>
+      <langstring language="pl">Fisheries and aquaculture</langstring>
+      <langstring language="pt">Fisheries and aquaculture</langstring>
+      <langstring language="ro">Fisheries and aquaculture</langstring>
+      <langstring language="ru">Fisheries and aquaculture</langstring>
+      <langstring language="sh">Fisheries and aquaculture</langstring>
+      <langstring language="sk">Fisheries and aquaculture</langstring>
+      <langstring language="sl">Fisheries and aquaculture</langstring>
+      <langstring language="sq">Fisheries and aquaculture</langstring>
+      <langstring language="sr">Fisheries and aquaculture</langstring>
+      <langstring language="sv">Fisheries and aquaculture</langstring>
+      <langstring language="tr">Fisheries and aquaculture</langstring>
+      <langstring language="zh">Fisheries and aquaculture</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term20</termIdentifier>
     <caption>
+      <langstring language="ar">Forests and forestry</langstring>
+      <langstring language="bg">Forests and forestry</langstring>
+      <langstring language="bs">Forests and forestry</langstring>
+      <langstring language="cs">Forests and forestry</langstring>
+      <langstring language="da">Forests and forestry</langstring>
+      <langstring language="de">Forests and forestry</langstring>
+      <langstring language="el">Forests and forestry</langstring>
       <langstring language="en">Forests and forestry</langstring>
+      <langstring language="es">Forests and forestry</langstring>
+      <langstring language="et">Forests and forestry</langstring>
+      <langstring language="fi">Forests and forestry</langstring>
+      <langstring language="fr">Forests and forestry</langstring>
+      <langstring language="ga">Forests and forestry</langstring>
+      <langstring language="hr">Forests and forestry</langstring>
+      <langstring language="hu">Forests and forestry</langstring>
+      <langstring language="is">Forests and forestry</langstring>
+      <langstring language="it">Forests and forestry</langstring>
+      <langstring language="lt">Forests and forestry</langstring>
+      <langstring language="lv">Forests and forestry</langstring>
+      <langstring language="mk">Forests and forestry</langstring>
+      <langstring language="mt">Forests and forestry</langstring>
+      <langstring language="nl">Forests and forestry</langstring>
+      <langstring language="no">Forests and forestry</langstring>
+      <langstring language="pl">Forests and forestry</langstring>
+      <langstring language="pt">Forests and forestry</langstring>
+      <langstring language="ro">Forests and forestry</langstring>
+      <langstring language="ru">Forests and forestry</langstring>
+      <langstring language="sh">Forests and forestry</langstring>
+      <langstring language="sk">Forests and forestry</langstring>
+      <langstring language="sl">Forests and forestry</langstring>
+      <langstring language="sq">Forests and forestry</langstring>
+      <langstring language="sr">Forests and forestry</langstring>
+      <langstring language="sv">Forests and forestry</langstring>
+      <langstring language="tr">Forests and forestry</langstring>
+      <langstring language="zh">Forests and forestry</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term22</termIdentifier>
     <caption>
+      <langstring language="ar">Industry</langstring>
+      <langstring language="bg">Industry</langstring>
+      <langstring language="bs">Industry</langstring>
+      <langstring language="cs">Industry</langstring>
+      <langstring language="da">Industry</langstring>
+      <langstring language="de">Industry</langstring>
+      <langstring language="el">Industry</langstring>
       <langstring language="en">Industry</langstring>
+      <langstring language="es">Industry</langstring>
+      <langstring language="et">Industry</langstring>
+      <langstring language="fi">Industry</langstring>
+      <langstring language="fr">Industry</langstring>
+      <langstring language="ga">Industry</langstring>
+      <langstring language="hr">Industry</langstring>
+      <langstring language="hu">Industry</langstring>
+      <langstring language="is">Industry</langstring>
+      <langstring language="it">Industry</langstring>
+      <langstring language="lt">Industry</langstring>
+      <langstring language="lv">Industry</langstring>
+      <langstring language="mk">Industry</langstring>
+      <langstring language="mt">Industry</langstring>
+      <langstring language="nl">Industry</langstring>
+      <langstring language="no">Industry</langstring>
+      <langstring language="pl">Industry</langstring>
+      <langstring language="pt">Industry</langstring>
+      <langstring language="ro">Industry</langstring>
+      <langstring language="ru">Industry</langstring>
+      <langstring language="sh">Industry</langstring>
+      <langstring language="sk">Industry</langstring>
+      <langstring language="sl">Industry</langstring>
+      <langstring language="sq">Industry</langstring>
+      <langstring language="sr">Industry</langstring>
+      <langstring language="sv">Industry</langstring>
+      <langstring language="tr">Industry</langstring>
+      <langstring language="zh">Industry</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term23</termIdentifier>
     <caption>
+      <langstring language="ar">Land use</langstring>
+      <langstring language="bg">Land use</langstring>
+      <langstring language="bs">Land use</langstring>
+      <langstring language="cs">Land use</langstring>
+      <langstring language="da">Land use</langstring>
+      <langstring language="de">Land use</langstring>
+      <langstring language="el">Land use</langstring>
       <langstring language="en">Land use</langstring>
+      <langstring language="es">Land use</langstring>
+      <langstring language="et">Land use</langstring>
+      <langstring language="fi">Land use</langstring>
+      <langstring language="fr">Land use</langstring>
+      <langstring language="ga">Land use</langstring>
+      <langstring language="hr">Land use</langstring>
+      <langstring language="hu">Land use</langstring>
+      <langstring language="is">Land use</langstring>
+      <langstring language="it">Land use</langstring>
+      <langstring language="lt">Land use</langstring>
+      <langstring language="lv">Land use</langstring>
+      <langstring language="mk">Land use</langstring>
+      <langstring language="mt">Land use</langstring>
+      <langstring language="nl">Land use</langstring>
+      <langstring language="no">Land use</langstring>
+      <langstring language="pl">Land use</langstring>
+      <langstring language="pt">Land use</langstring>
+      <langstring language="ro">Land use</langstring>
+      <langstring language="ru">Land use</langstring>
+      <langstring language="sh">Land use</langstring>
+      <langstring language="sk">Land use</langstring>
+      <langstring language="sl">Land use</langstring>
+      <langstring language="sq">Land use</langstring>
+      <langstring language="sr">Land use</langstring>
+      <langstring language="sv">Land use</langstring>
+      <langstring language="tr">Land use</langstring>
+      <langstring language="zh">Land use</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term25</termIdentifier>
     <caption>
+      <langstring language="ar">Nature protection and restoration</langstring>
+      <langstring language="bg">Nature protection and restoration</langstring>
+      <langstring language="bs">Nature protection and restoration</langstring>
+      <langstring language="cs">Nature protection and restoration</langstring>
+      <langstring language="da">Nature protection and restoration</langstring>
+      <langstring language="de">Nature protection and restoration</langstring>
+      <langstring language="el">Nature protection and restoration</langstring>
       <langstring language="en">Nature protection and restoration</langstring>
+      <langstring language="es">Nature protection and restoration</langstring>
+      <langstring language="et">Nature protection and restoration</langstring>
+      <langstring language="fi">Nature protection and restoration</langstring>
+      <langstring language="fr">Nature protection and restoration</langstring>
+      <langstring language="ga">Nature protection and restoration</langstring>
+      <langstring language="hr">Nature protection and restoration</langstring>
+      <langstring language="hu">Nature protection and restoration</langstring>
+      <langstring language="is">Nature protection and restoration</langstring>
+      <langstring language="it">Nature protection and restoration</langstring>
+      <langstring language="lt">Nature protection and restoration</langstring>
+      <langstring language="lv">Nature protection and restoration</langstring>
+      <langstring language="mk">Nature protection and restoration</langstring>
+      <langstring language="mt">Nature protection and restoration</langstring>
+      <langstring language="nl">Nature protection and restoration</langstring>
+      <langstring language="no">Nature protection and restoration</langstring>
+      <langstring language="pl">Nature protection and restoration</langstring>
+      <langstring language="pt">Nature protection and restoration</langstring>
+      <langstring language="ro">Nature protection and restoration</langstring>
+      <langstring language="ru">Nature protection and restoration</langstring>
+      <langstring language="sh">Nature protection and restoration</langstring>
+      <langstring language="sk">Nature protection and restoration</langstring>
+      <langstring language="sl">Nature protection and restoration</langstring>
+      <langstring language="sq">Nature protection and restoration</langstring>
+      <langstring language="sr">Nature protection and restoration</langstring>
+      <langstring language="sv">Nature protection and restoration</langstring>
+      <langstring language="tr">Nature protection and restoration</langstring>
+      <langstring language="zh">Nature protection and restoration</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term26</termIdentifier>
     <caption>
+      <langstring language="ar">Nature-based solutions</langstring>
+      <langstring language="bg">Nature-based solutions</langstring>
+      <langstring language="bs">Nature-based solutions</langstring>
+      <langstring language="cs">Nature-based solutions</langstring>
+      <langstring language="da">Nature-based solutions</langstring>
+      <langstring language="de">Nature-based solutions</langstring>
+      <langstring language="el">Nature-based solutions</langstring>
       <langstring language="en">Nature-based solutions</langstring>
+      <langstring language="es">Nature-based solutions</langstring>
+      <langstring language="et">Nature-based solutions</langstring>
+      <langstring language="fi">Nature-based solutions</langstring>
+      <langstring language="fr">Nature-based solutions</langstring>
+      <langstring language="ga">Nature-based solutions</langstring>
+      <langstring language="hr">Nature-based solutions</langstring>
+      <langstring language="hu">Nature-based solutions</langstring>
+      <langstring language="is">Nature-based solutions</langstring>
+      <langstring language="it">Nature-based solutions</langstring>
+      <langstring language="lt">Nature-based solutions</langstring>
+      <langstring language="lv">Nature-based solutions</langstring>
+      <langstring language="mk">Nature-based solutions</langstring>
+      <langstring language="mt">Nature-based solutions</langstring>
+      <langstring language="nl">Nature-based solutions</langstring>
+      <langstring language="no">Nature-based solutions</langstring>
+      <langstring language="pl">Nature-based solutions</langstring>
+      <langstring language="pt">Nature-based solutions</langstring>
+      <langstring language="ro">Nature-based solutions</langstring>
+      <langstring language="ru">Nature-based solutions</langstring>
+      <langstring language="sh">Nature-based solutions</langstring>
+      <langstring language="sk">Nature-based solutions</langstring>
+      <langstring language="sl">Nature-based solutions</langstring>
+      <langstring language="sq">Nature-based solutions</langstring>
+      <langstring language="sr">Nature-based solutions</langstring>
+      <langstring language="sv">Nature-based solutions</langstring>
+      <langstring language="tr">Nature-based solutions</langstring>
+      <langstring language="zh">Nature-based solutions</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term27</termIdentifier>
     <caption>
+      <langstring language="ar">Noise</langstring>
+      <langstring language="bg">Noise</langstring>
+      <langstring language="bs">Noise</langstring>
+      <langstring language="cs">Noise</langstring>
+      <langstring language="da">Noise</langstring>
+      <langstring language="de">Noise</langstring>
+      <langstring language="el">Noise</langstring>
       <langstring language="en">Noise</langstring>
+      <langstring language="es">Noise</langstring>
+      <langstring language="et">Noise</langstring>
+      <langstring language="fi">Noise</langstring>
+      <langstring language="fr">Noise</langstring>
+      <langstring language="ga">Noise</langstring>
+      <langstring language="hr">Noise</langstring>
+      <langstring language="hu">Noise</langstring>
+      <langstring language="is">Noise</langstring>
+      <langstring language="it">Noise</langstring>
+      <langstring language="lt">Noise</langstring>
+      <langstring language="lv">Noise</langstring>
+      <langstring language="mk">Noise</langstring>
+      <langstring language="mt">Noise</langstring>
+      <langstring language="nl">Noise</langstring>
+      <langstring language="no">Noise</langstring>
+      <langstring language="pl">Noise</langstring>
+      <langstring language="pt">Noise</langstring>
+      <langstring language="ro">Noise</langstring>
+      <langstring language="ru">Noise</langstring>
+      <langstring language="sh">Noise</langstring>
+      <langstring language="sk">Noise</langstring>
+      <langstring language="sl">Noise</langstring>
+      <langstring language="sq">Noise</langstring>
+      <langstring language="sr">Noise</langstring>
+      <langstring language="sv">Noise</langstring>
+      <langstring language="tr">Noise</langstring>
+      <langstring language="zh">Noise</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term28</termIdentifier>
     <caption>
+      <langstring language="ar">Plastics</langstring>
+      <langstring language="bg">Plastics</langstring>
+      <langstring language="bs">Plastics</langstring>
+      <langstring language="cs">Plastics</langstring>
+      <langstring language="da">Plastics</langstring>
+      <langstring language="de">Plastics</langstring>
+      <langstring language="el">Plastics</langstring>
       <langstring language="en">Plastics</langstring>
+      <langstring language="es">Plastics</langstring>
+      <langstring language="et">Plastics</langstring>
+      <langstring language="fi">Plastics</langstring>
+      <langstring language="fr">Plastics</langstring>
+      <langstring language="ga">Plastics</langstring>
+      <langstring language="hr">Plastics</langstring>
+      <langstring language="hu">Plastics</langstring>
+      <langstring language="is">Plastics</langstring>
+      <langstring language="it">Plastics</langstring>
+      <langstring language="lt">Plastics</langstring>
+      <langstring language="lv">Plastics</langstring>
+      <langstring language="mk">Plastics</langstring>
+      <langstring language="mt">Plastics</langstring>
+      <langstring language="nl">Plastics</langstring>
+      <langstring language="no">Plastics</langstring>
+      <langstring language="pl">Plastics</langstring>
+      <langstring language="pt">Plastics</langstring>
+      <langstring language="ro">Plastics</langstring>
+      <langstring language="ru">Plastics</langstring>
+      <langstring language="sh">Plastics</langstring>
+      <langstring language="sk">Plastics</langstring>
+      <langstring language="sl">Plastics</langstring>
+      <langstring language="sq">Plastics</langstring>
+      <langstring language="sr">Plastics</langstring>
+      <langstring language="sv">Plastics</langstring>
+      <langstring language="tr">Plastics</langstring>
+      <langstring language="zh">Plastics</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term29</termIdentifier>
     <caption>
+      <langstring language="ar">Pollution</langstring>
+      <langstring language="bg">Pollution</langstring>
+      <langstring language="bs">Pollution</langstring>
+      <langstring language="cs">Pollution</langstring>
+      <langstring language="da">Pollution</langstring>
+      <langstring language="de">Pollution</langstring>
+      <langstring language="el">Pollution</langstring>
       <langstring language="en">Pollution</langstring>
+      <langstring language="es">Pollution</langstring>
+      <langstring language="et">Pollution</langstring>
+      <langstring language="fi">Pollution</langstring>
+      <langstring language="fr">Pollution</langstring>
+      <langstring language="ga">Pollution</langstring>
+      <langstring language="hr">Pollution</langstring>
+      <langstring language="hu">Pollution</langstring>
+      <langstring language="is">Pollution</langstring>
+      <langstring language="it">Pollution</langstring>
+      <langstring language="lt">Pollution</langstring>
+      <langstring language="lv">Pollution</langstring>
+      <langstring language="mk">Pollution</langstring>
+      <langstring language="mt">Pollution</langstring>
+      <langstring language="nl">Pollution</langstring>
+      <langstring language="no">Pollution</langstring>
+      <langstring language="pl">Pollution</langstring>
+      <langstring language="pt">Pollution</langstring>
+      <langstring language="ro">Pollution</langstring>
+      <langstring language="ru">Pollution</langstring>
+      <langstring language="sh">Pollution</langstring>
+      <langstring language="sk">Pollution</langstring>
+      <langstring language="sl">Pollution</langstring>
+      <langstring language="sq">Pollution</langstring>
+      <langstring language="sr">Pollution</langstring>
+      <langstring language="sv">Pollution</langstring>
+      <langstring language="tr">Pollution</langstring>
+      <langstring language="zh">Pollution</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term30</termIdentifier>
     <caption>
+      <langstring language="ar">Production and consumption</langstring>
+      <langstring language="bg">Production and consumption</langstring>
+      <langstring language="bs">Production and consumption</langstring>
+      <langstring language="cs">Production and consumption</langstring>
+      <langstring language="da">Production and consumption</langstring>
+      <langstring language="de">Production and consumption</langstring>
+      <langstring language="el">Production and consumption</langstring>
       <langstring language="en">Production and consumption</langstring>
+      <langstring language="es">Production and consumption</langstring>
+      <langstring language="et">Production and consumption</langstring>
+      <langstring language="fi">Production and consumption</langstring>
+      <langstring language="fr">Production and consumption</langstring>
+      <langstring language="ga">Production and consumption</langstring>
+      <langstring language="hr">Production and consumption</langstring>
+      <langstring language="hu">Production and consumption</langstring>
+      <langstring language="is">Production and consumption</langstring>
+      <langstring language="it">Production and consumption</langstring>
+      <langstring language="lt">Production and consumption</langstring>
+      <langstring language="lv">Production and consumption</langstring>
+      <langstring language="mk">Production and consumption</langstring>
+      <langstring language="mt">Production and consumption</langstring>
+      <langstring language="nl">Production and consumption</langstring>
+      <langstring language="no">Production and consumption</langstring>
+      <langstring language="pl">Production and consumption</langstring>
+      <langstring language="pt">Production and consumption</langstring>
+      <langstring language="ro">Production and consumption</langstring>
+      <langstring language="ru">Production and consumption</langstring>
+      <langstring language="sh">Production and consumption</langstring>
+      <langstring language="sk">Production and consumption</langstring>
+      <langstring language="sl">Production and consumption</langstring>
+      <langstring language="sq">Production and consumption</langstring>
+      <langstring language="sr">Production and consumption</langstring>
+      <langstring language="sv">Production and consumption</langstring>
+      <langstring language="tr">Production and consumption</langstring>
+      <langstring language="zh">Production and consumption</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term31</termIdentifier>
     <caption>
+      <langstring language="ar">Renewable energy</langstring>
+      <langstring language="bg">Renewable energy</langstring>
+      <langstring language="bs">Renewable energy</langstring>
+      <langstring language="cs">Renewable energy</langstring>
+      <langstring language="da">Renewable energy</langstring>
+      <langstring language="de">Renewable energy</langstring>
+      <langstring language="el">Renewable energy</langstring>
       <langstring language="en">Renewable energy</langstring>
+      <langstring language="es">Renewable energy</langstring>
+      <langstring language="et">Renewable energy</langstring>
+      <langstring language="fi">Renewable energy</langstring>
+      <langstring language="fr">Renewable energy</langstring>
+      <langstring language="ga">Renewable energy</langstring>
+      <langstring language="hr">Renewable energy</langstring>
+      <langstring language="hu">Renewable energy</langstring>
+      <langstring language="is">Renewable energy</langstring>
+      <langstring language="it">Renewable energy</langstring>
+      <langstring language="lt">Renewable energy</langstring>
+      <langstring language="lv">Renewable energy</langstring>
+      <langstring language="mk">Renewable energy</langstring>
+      <langstring language="mt">Renewable energy</langstring>
+      <langstring language="nl">Renewable energy</langstring>
+      <langstring language="no">Renewable energy</langstring>
+      <langstring language="pl">Renewable energy</langstring>
+      <langstring language="pt">Renewable energy</langstring>
+      <langstring language="ro">Renewable energy</langstring>
+      <langstring language="ru">Renewable energy</langstring>
+      <langstring language="sh">Renewable energy</langstring>
+      <langstring language="sk">Renewable energy</langstring>
+      <langstring language="sl">Renewable energy</langstring>
+      <langstring language="sq">Renewable energy</langstring>
+      <langstring language="sr">Renewable energy</langstring>
+      <langstring language="sv">Renewable energy</langstring>
+      <langstring language="tr">Renewable energy</langstring>
+      <langstring language="zh">Renewable energy</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term32</termIdentifier>
     <caption>
+      <langstring language="ar">Resource use and materials</langstring>
+      <langstring language="bg">Resource use and materials</langstring>
+      <langstring language="bs">Resource use and materials</langstring>
+      <langstring language="cs">Resource use and materials</langstring>
+      <langstring language="da">Resource use and materials</langstring>
+      <langstring language="de">Resource use and materials</langstring>
+      <langstring language="el">Resource use and materials</langstring>
       <langstring language="en">Resource use and materials</langstring>
+      <langstring language="es">Resource use and materials</langstring>
+      <langstring language="et">Resource use and materials</langstring>
+      <langstring language="fi">Resource use and materials</langstring>
+      <langstring language="fr">Resource use and materials</langstring>
+      <langstring language="ga">Resource use and materials</langstring>
+      <langstring language="hr">Resource use and materials</langstring>
+      <langstring language="hu">Resource use and materials</langstring>
+      <langstring language="is">Resource use and materials</langstring>
+      <langstring language="it">Resource use and materials</langstring>
+      <langstring language="lt">Resource use and materials</langstring>
+      <langstring language="lv">Resource use and materials</langstring>
+      <langstring language="mk">Resource use and materials</langstring>
+      <langstring language="mt">Resource use and materials</langstring>
+      <langstring language="nl">Resource use and materials</langstring>
+      <langstring language="no">Resource use and materials</langstring>
+      <langstring language="pl">Resource use and materials</langstring>
+      <langstring language="pt">Resource use and materials</langstring>
+      <langstring language="ro">Resource use and materials</langstring>
+      <langstring language="ru">Resource use and materials</langstring>
+      <langstring language="sh">Resource use and materials</langstring>
+      <langstring language="sk">Resource use and materials</langstring>
+      <langstring language="sl">Resource use and materials</langstring>
+      <langstring language="sq">Resource use and materials</langstring>
+      <langstring language="sr">Resource use and materials</langstring>
+      <langstring language="sv">Resource use and materials</langstring>
+      <langstring language="tr">Resource use and materials</langstring>
+      <langstring language="zh">Resource use and materials</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term33</termIdentifier>
     <caption>
+      <langstring language="ar">Road transport</langstring>
+      <langstring language="bg">Road transport</langstring>
+      <langstring language="bs">Road transport</langstring>
+      <langstring language="cs">Road transport</langstring>
+      <langstring language="da">Road transport</langstring>
+      <langstring language="de">Road transport</langstring>
+      <langstring language="el">Road transport</langstring>
       <langstring language="en">Road transport</langstring>
+      <langstring language="es">Road transport</langstring>
+      <langstring language="et">Road transport</langstring>
+      <langstring language="fi">Road transport</langstring>
+      <langstring language="fr">Road transport</langstring>
+      <langstring language="ga">Road transport</langstring>
+      <langstring language="hr">Road transport</langstring>
+      <langstring language="hu">Road transport</langstring>
+      <langstring language="is">Road transport</langstring>
+      <langstring language="it">Road transport</langstring>
+      <langstring language="lt">Road transport</langstring>
+      <langstring language="lv">Road transport</langstring>
+      <langstring language="mk">Road transport</langstring>
+      <langstring language="mt">Road transport</langstring>
+      <langstring language="nl">Road transport</langstring>
+      <langstring language="no">Road transport</langstring>
+      <langstring language="pl">Road transport</langstring>
+      <langstring language="pt">Road transport</langstring>
+      <langstring language="ro">Road transport</langstring>
+      <langstring language="ru">Road transport</langstring>
+      <langstring language="sh">Road transport</langstring>
+      <langstring language="sk">Road transport</langstring>
+      <langstring language="sl">Road transport</langstring>
+      <langstring language="sq">Road transport</langstring>
+      <langstring language="sr">Road transport</langstring>
+      <langstring language="sv">Road transport</langstring>
+      <langstring language="tr">Road transport</langstring>
+      <langstring language="zh">Road transport</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term34</termIdentifier>
     <caption>
+      <langstring language="ar">Seas and coasts</langstring>
+      <langstring language="bg">Seas and coasts</langstring>
+      <langstring language="bs">Seas and coasts</langstring>
+      <langstring language="cs">Seas and coasts</langstring>
+      <langstring language="da">Seas and coasts</langstring>
+      <langstring language="de">Seas and coasts</langstring>
+      <langstring language="el">Seas and coasts</langstring>
       <langstring language="en">Seas and coasts</langstring>
+      <langstring language="es">Seas and coasts</langstring>
+      <langstring language="et">Seas and coasts</langstring>
+      <langstring language="fi">Seas and coasts</langstring>
+      <langstring language="fr">Seas and coasts</langstring>
+      <langstring language="ga">Seas and coasts</langstring>
+      <langstring language="hr">Seas and coasts</langstring>
+      <langstring language="hu">Seas and coasts</langstring>
+      <langstring language="is">Seas and coasts</langstring>
+      <langstring language="it">Seas and coasts</langstring>
+      <langstring language="lt">Seas and coasts</langstring>
+      <langstring language="lv">Seas and coasts</langstring>
+      <langstring language="mk">Seas and coasts</langstring>
+      <langstring language="mt">Seas and coasts</langstring>
+      <langstring language="nl">Seas and coasts</langstring>
+      <langstring language="no">Seas and coasts</langstring>
+      <langstring language="pl">Seas and coasts</langstring>
+      <langstring language="pt">Seas and coasts</langstring>
+      <langstring language="ro">Seas and coasts</langstring>
+      <langstring language="ru">Seas and coasts</langstring>
+      <langstring language="sh">Seas and coasts</langstring>
+      <langstring language="sk">Seas and coasts</langstring>
+      <langstring language="sl">Seas and coasts</langstring>
+      <langstring language="sq">Seas and coasts</langstring>
+      <langstring language="sr">Seas and coasts</langstring>
+      <langstring language="sv">Seas and coasts</langstring>
+      <langstring language="tr">Seas and coasts</langstring>
+      <langstring language="zh">Seas and coasts</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term35</termIdentifier>
     <caption>
+      <langstring language="ar">Soil</langstring>
+      <langstring language="bg">Soil</langstring>
+      <langstring language="bs">Soil</langstring>
+      <langstring language="cs">Soil</langstring>
+      <langstring language="da">Soil</langstring>
+      <langstring language="de">Soil</langstring>
+      <langstring language="el">Soil</langstring>
       <langstring language="en">Soil</langstring>
+      <langstring language="es">Soil</langstring>
+      <langstring language="et">Soil</langstring>
+      <langstring language="fi">Soil</langstring>
+      <langstring language="fr">Soil</langstring>
+      <langstring language="ga">Soil</langstring>
+      <langstring language="hr">Soil</langstring>
+      <langstring language="hu">Soil</langstring>
+      <langstring language="is">Soil</langstring>
+      <langstring language="it">Soil</langstring>
+      <langstring language="lt">Soil</langstring>
+      <langstring language="lv">Soil</langstring>
+      <langstring language="mk">Soil</langstring>
+      <langstring language="mt">Soil</langstring>
+      <langstring language="nl">Soil</langstring>
+      <langstring language="no">Soil</langstring>
+      <langstring language="pl">Soil</langstring>
+      <langstring language="pt">Soil</langstring>
+      <langstring language="ro">Soil</langstring>
+      <langstring language="ru">Soil</langstring>
+      <langstring language="sh">Soil</langstring>
+      <langstring language="sk">Soil</langstring>
+      <langstring language="sl">Soil</langstring>
+      <langstring language="sq">Soil</langstring>
+      <langstring language="sr">Soil</langstring>
+      <langstring language="sv">Soil</langstring>
+      <langstring language="tr">Soil</langstring>
+      <langstring language="zh">Soil</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term38</termIdentifier>
     <caption>
+      <langstring language="ar">Sustainability challenges</langstring>
+      <langstring language="bg">Sustainability challenges</langstring>
+      <langstring language="bs">Sustainability challenges</langstring>
+      <langstring language="cs">Sustainability challenges</langstring>
+      <langstring language="da">Sustainability challenges</langstring>
+      <langstring language="de">Sustainability challenges</langstring>
+      <langstring language="el">Sustainability challenges</langstring>
       <langstring language="en">Sustainability challenges</langstring>
+      <langstring language="es">Sustainability challenges</langstring>
+      <langstring language="et">Sustainability challenges</langstring>
+      <langstring language="fi">Sustainability challenges</langstring>
+      <langstring language="fr">Sustainability challenges</langstring>
+      <langstring language="ga">Sustainability challenges</langstring>
+      <langstring language="hr">Sustainability challenges</langstring>
+      <langstring language="hu">Sustainability challenges</langstring>
+      <langstring language="is">Sustainability challenges</langstring>
+      <langstring language="it">Sustainability challenges</langstring>
+      <langstring language="lt">Sustainability challenges</langstring>
+      <langstring language="lv">Sustainability challenges</langstring>
+      <langstring language="mk">Sustainability challenges</langstring>
+      <langstring language="mt">Sustainability challenges</langstring>
+      <langstring language="nl">Sustainability challenges</langstring>
+      <langstring language="no">Sustainability challenges</langstring>
+      <langstring language="pl">Sustainability challenges</langstring>
+      <langstring language="pt">Sustainability challenges</langstring>
+      <langstring language="ro">Sustainability challenges</langstring>
+      <langstring language="ru">Sustainability challenges</langstring>
+      <langstring language="sh">Sustainability challenges</langstring>
+      <langstring language="sk">Sustainability challenges</langstring>
+      <langstring language="sl">Sustainability challenges</langstring>
+      <langstring language="sq">Sustainability challenges</langstring>
+      <langstring language="sr">Sustainability challenges</langstring>
+      <langstring language="sv">Sustainability challenges</langstring>
+      <langstring language="tr">Sustainability challenges</langstring>
+      <langstring language="zh">Sustainability challenges</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term39</termIdentifier>
     <caption>
+      <langstring language="ar">Sustainability solutions</langstring>
+      <langstring language="bg">Sustainability solutions</langstring>
+      <langstring language="bs">Sustainability solutions</langstring>
+      <langstring language="cs">Sustainability solutions</langstring>
+      <langstring language="da">Sustainability solutions</langstring>
+      <langstring language="de">Sustainability solutions</langstring>
+      <langstring language="el">Sustainability solutions</langstring>
       <langstring language="en">Sustainability solutions</langstring>
+      <langstring language="es">Sustainability solutions</langstring>
+      <langstring language="et">Sustainability solutions</langstring>
+      <langstring language="fi">Sustainability solutions</langstring>
+      <langstring language="fr">Sustainability solutions</langstring>
+      <langstring language="ga">Sustainability solutions</langstring>
+      <langstring language="hr">Sustainability solutions</langstring>
+      <langstring language="hu">Sustainability solutions</langstring>
+      <langstring language="is">Sustainability solutions</langstring>
+      <langstring language="it">Sustainability solutions</langstring>
+      <langstring language="lt">Sustainability solutions</langstring>
+      <langstring language="lv">Sustainability solutions</langstring>
+      <langstring language="mk">Sustainability solutions</langstring>
+      <langstring language="mt">Sustainability solutions</langstring>
+      <langstring language="nl">Sustainability solutions</langstring>
+      <langstring language="no">Sustainability solutions</langstring>
+      <langstring language="pl">Sustainability solutions</langstring>
+      <langstring language="pt">Sustainability solutions</langstring>
+      <langstring language="ro">Sustainability solutions</langstring>
+      <langstring language="ru">Sustainability solutions</langstring>
+      <langstring language="sh">Sustainability solutions</langstring>
+      <langstring language="sk">Sustainability solutions</langstring>
+      <langstring language="sl">Sustainability solutions</langstring>
+      <langstring language="sq">Sustainability solutions</langstring>
+      <langstring language="sr">Sustainability solutions</langstring>
+      <langstring language="sv">Sustainability solutions</langstring>
+      <langstring language="tr">Sustainability solutions</langstring>
+      <langstring language="zh">Sustainability solutions</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term40</termIdentifier>
     <caption>
+      <langstring language="ar">Sustainable finance</langstring>
+      <langstring language="bg">Sustainable finance</langstring>
+      <langstring language="bs">Sustainable finance</langstring>
+      <langstring language="cs">Sustainable finance</langstring>
+      <langstring language="da">Sustainable finance</langstring>
+      <langstring language="de">Sustainable finance</langstring>
+      <langstring language="el">Sustainable finance</langstring>
       <langstring language="en">Sustainable finance</langstring>
+      <langstring language="es">Sustainable finance</langstring>
+      <langstring language="et">Sustainable finance</langstring>
+      <langstring language="fi">Sustainable finance</langstring>
+      <langstring language="fr">Sustainable finance</langstring>
+      <langstring language="ga">Sustainable finance</langstring>
+      <langstring language="hr">Sustainable finance</langstring>
+      <langstring language="hu">Sustainable finance</langstring>
+      <langstring language="is">Sustainable finance</langstring>
+      <langstring language="it">Sustainable finance</langstring>
+      <langstring language="lt">Sustainable finance</langstring>
+      <langstring language="lv">Sustainable finance</langstring>
+      <langstring language="mk">Sustainable finance</langstring>
+      <langstring language="mt">Sustainable finance</langstring>
+      <langstring language="nl">Sustainable finance</langstring>
+      <langstring language="no">Sustainable finance</langstring>
+      <langstring language="pl">Sustainable finance</langstring>
+      <langstring language="pt">Sustainable finance</langstring>
+      <langstring language="ro">Sustainable finance</langstring>
+      <langstring language="ru">Sustainable finance</langstring>
+      <langstring language="sh">Sustainable finance</langstring>
+      <langstring language="sk">Sustainable finance</langstring>
+      <langstring language="sl">Sustainable finance</langstring>
+      <langstring language="sq">Sustainable finance</langstring>
+      <langstring language="sr">Sustainable finance</langstring>
+      <langstring language="sv">Sustainable finance</langstring>
+      <langstring language="tr">Sustainable finance</langstring>
+      <langstring language="zh">Sustainable finance</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term41</termIdentifier>
     <caption>
+      <langstring language="ar">Textiles</langstring>
+      <langstring language="bg">Textiles</langstring>
+      <langstring language="bs">Textiles</langstring>
+      <langstring language="cs">Textiles</langstring>
+      <langstring language="da">Textiles</langstring>
+      <langstring language="de">Textiles</langstring>
+      <langstring language="el">Textiles</langstring>
       <langstring language="en">Textiles</langstring>
+      <langstring language="es">Textiles</langstring>
+      <langstring language="et">Textiles</langstring>
+      <langstring language="fi">Textiles</langstring>
+      <langstring language="fr">Textiles</langstring>
+      <langstring language="ga">Textiles</langstring>
+      <langstring language="hr">Textiles</langstring>
+      <langstring language="hu">Textiles</langstring>
+      <langstring language="is">Textiles</langstring>
+      <langstring language="it">Textiles</langstring>
+      <langstring language="lt">Textiles</langstring>
+      <langstring language="lv">Textiles</langstring>
+      <langstring language="mk">Textiles</langstring>
+      <langstring language="mt">Textiles</langstring>
+      <langstring language="nl">Textiles</langstring>
+      <langstring language="no">Textiles</langstring>
+      <langstring language="pl">Textiles</langstring>
+      <langstring language="pt">Textiles</langstring>
+      <langstring language="ro">Textiles</langstring>
+      <langstring language="ru">Textiles</langstring>
+      <langstring language="sh">Textiles</langstring>
+      <langstring language="sk">Textiles</langstring>
+      <langstring language="sl">Textiles</langstring>
+      <langstring language="sq">Textiles</langstring>
+      <langstring language="sr">Textiles</langstring>
+      <langstring language="sv">Textiles</langstring>
+      <langstring language="tr">Textiles</langstring>
+      <langstring language="zh">Textiles</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term42</termIdentifier>
     <caption>
+      <langstring language="ar">Transport and mobility</langstring>
+      <langstring language="bg">Transport and mobility</langstring>
+      <langstring language="bs">Transport and mobility</langstring>
+      <langstring language="cs">Transport and mobility</langstring>
+      <langstring language="da">Transport and mobility</langstring>
+      <langstring language="de">Transport and mobility</langstring>
+      <langstring language="el">Transport and mobility</langstring>
       <langstring language="en">Transport and mobility</langstring>
+      <langstring language="es">Transport and mobility</langstring>
+      <langstring language="et">Transport and mobility</langstring>
+      <langstring language="fi">Transport and mobility</langstring>
+      <langstring language="fr">Transport and mobility</langstring>
+      <langstring language="ga">Transport and mobility</langstring>
+      <langstring language="hr">Transport and mobility</langstring>
+      <langstring language="hu">Transport and mobility</langstring>
+      <langstring language="is">Transport and mobility</langstring>
+      <langstring language="it">Transport and mobility</langstring>
+      <langstring language="lt">Transport and mobility</langstring>
+      <langstring language="lv">Transport and mobility</langstring>
+      <langstring language="mk">Transport and mobility</langstring>
+      <langstring language="mt">Transport and mobility</langstring>
+      <langstring language="nl">Transport and mobility</langstring>
+      <langstring language="no">Transport and mobility</langstring>
+      <langstring language="pl">Transport and mobility</langstring>
+      <langstring language="pt">Transport and mobility</langstring>
+      <langstring language="ro">Transport and mobility</langstring>
+      <langstring language="ru">Transport and mobility</langstring>
+      <langstring language="sh">Transport and mobility</langstring>
+      <langstring language="sk">Transport and mobility</langstring>
+      <langstring language="sl">Transport and mobility</langstring>
+      <langstring language="sq">Transport and mobility</langstring>
+      <langstring language="sr">Transport and mobility</langstring>
+      <langstring language="sv">Transport and mobility</langstring>
+      <langstring language="tr">Transport and mobility</langstring>
+      <langstring language="zh">Transport and mobility</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term43</termIdentifier>
     <caption>
+      <langstring language="ar">Urban sustainability</langstring>
+      <langstring language="bg">Urban sustainability</langstring>
+      <langstring language="bs">Urban sustainability</langstring>
+      <langstring language="cs">Urban sustainability</langstring>
+      <langstring language="da">Urban sustainability</langstring>
+      <langstring language="de">Urban sustainability</langstring>
+      <langstring language="el">Urban sustainability</langstring>
       <langstring language="en">Urban sustainability</langstring>
+      <langstring language="es">Urban sustainability</langstring>
+      <langstring language="et">Urban sustainability</langstring>
+      <langstring language="fi">Urban sustainability</langstring>
+      <langstring language="fr">Urban sustainability</langstring>
+      <langstring language="ga">Urban sustainability</langstring>
+      <langstring language="hr">Urban sustainability</langstring>
+      <langstring language="hu">Urban sustainability</langstring>
+      <langstring language="is">Urban sustainability</langstring>
+      <langstring language="it">Urban sustainability</langstring>
+      <langstring language="lt">Urban sustainability</langstring>
+      <langstring language="lv">Urban sustainability</langstring>
+      <langstring language="mk">Urban sustainability</langstring>
+      <langstring language="mt">Urban sustainability</langstring>
+      <langstring language="nl">Urban sustainability</langstring>
+      <langstring language="no">Urban sustainability</langstring>
+      <langstring language="pl">Urban sustainability</langstring>
+      <langstring language="pt">Urban sustainability</langstring>
+      <langstring language="ro">Urban sustainability</langstring>
+      <langstring language="ru">Urban sustainability</langstring>
+      <langstring language="sh">Urban sustainability</langstring>
+      <langstring language="sk">Urban sustainability</langstring>
+      <langstring language="sl">Urban sustainability</langstring>
+      <langstring language="sq">Urban sustainability</langstring>
+      <langstring language="sr">Urban sustainability</langstring>
+      <langstring language="sv">Urban sustainability</langstring>
+      <langstring language="tr">Urban sustainability</langstring>
+      <langstring language="zh">Urban sustainability</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term44</termIdentifier>
     <caption>
+      <langstring language="ar">Waste and recycling</langstring>
+      <langstring language="bg">Waste and recycling</langstring>
+      <langstring language="bs">Waste and recycling</langstring>
+      <langstring language="cs">Waste and recycling</langstring>
+      <langstring language="da">Waste and recycling</langstring>
+      <langstring language="de">Waste and recycling</langstring>
+      <langstring language="el">Waste and recycling</langstring>
       <langstring language="en">Waste and recycling</langstring>
+      <langstring language="es">Waste and recycling</langstring>
+      <langstring language="et">Waste and recycling</langstring>
+      <langstring language="fi">Waste and recycling</langstring>
+      <langstring language="fr">Waste and recycling</langstring>
+      <langstring language="ga">Waste and recycling</langstring>
+      <langstring language="hr">Waste and recycling</langstring>
+      <langstring language="hu">Waste and recycling</langstring>
+      <langstring language="is">Waste and recycling</langstring>
+      <langstring language="it">Waste and recycling</langstring>
+      <langstring language="lt">Waste and recycling</langstring>
+      <langstring language="lv">Waste and recycling</langstring>
+      <langstring language="mk">Waste and recycling</langstring>
+      <langstring language="mt">Waste and recycling</langstring>
+      <langstring language="nl">Waste and recycling</langstring>
+      <langstring language="no">Waste and recycling</langstring>
+      <langstring language="pl">Waste and recycling</langstring>
+      <langstring language="pt">Waste and recycling</langstring>
+      <langstring language="ro">Waste and recycling</langstring>
+      <langstring language="ru">Waste and recycling</langstring>
+      <langstring language="sh">Waste and recycling</langstring>
+      <langstring language="sk">Waste and recycling</langstring>
+      <langstring language="sl">Waste and recycling</langstring>
+      <langstring language="sq">Waste and recycling</langstring>
+      <langstring language="sr">Waste and recycling</langstring>
+      <langstring language="sv">Waste and recycling</langstring>
+      <langstring language="tr">Waste and recycling</langstring>
+      <langstring language="zh">Waste and recycling</langstring>
     </caption>
   </term>
-
   <term>
     <termIdentifier>term45</termIdentifier>
     <caption>
+      <langstring language="ar">Water</langstring>
+      <langstring language="bg">Water</langstring>
+      <langstring language="bs">Water</langstring>
+      <langstring language="cs">Water</langstring>
+      <langstring language="da">Water</langstring>
+      <langstring language="de">Water</langstring>
+      <langstring language="el">Water</langstring>
       <langstring language="en">Water</langstring>
+      <langstring language="es">Water</langstring>
+      <langstring language="et">Water</langstring>
+      <langstring language="fi">Water</langstring>
+      <langstring language="fr">Water</langstring>
+      <langstring language="ga">Water</langstring>
+      <langstring language="hr">Water</langstring>
+      <langstring language="hu">Water</langstring>
+      <langstring language="is">Water</langstring>
+      <langstring language="it">Water</langstring>
+      <langstring language="lt">Water</langstring>
+      <langstring language="lv">Water</langstring>
+      <langstring language="mk">Water</langstring>
+      <langstring language="mt">Water</langstring>
+      <langstring language="nl">Water</langstring>
+      <langstring language="no">Water</langstring>
+      <langstring language="pl">Water</langstring>
+      <langstring language="pt">Water</langstring>
+      <langstring language="ro">Water</langstring>
+      <langstring language="ru">Water</langstring>
+      <langstring language="sh">Water</langstring>
+      <langstring language="sk">Water</langstring>
+      <langstring language="sl">Water</langstring>
+      <langstring language="sq">Water</langstring>
+      <langstring language="sr">Water</langstring>
+      <langstring language="sv">Water</langstring>
+      <langstring language="tr">Water</langstring>
+      <langstring language="zh">Water</langstring>
     </caption>
   </term>
-
 </vdex>
