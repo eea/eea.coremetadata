@@ -8,6 +8,19 @@ from plone.app.dexterity.behaviors.metadata import (
 )
 from eea.coremetadata.metadata import ICoreMetadata
 from zope.component.hooks import getSite
+from zope.schema.interfaces import ITuple
+from plone.dexterity.interfaces import IDexterityContent
+from plone.restapi.serializer.converters import json_compatible
+from plone.restapi.serializer.dxfields import DefaultFieldSerializer
+from zope.interface import Interface
+from zope.component.hooks import getSite
+from zope.component import adapter
+from zope.interface import implementer
+from plone import api
+from plone.dexterity.interfaces import IDexterityContent
+from plone.restapi.interfaces import IFieldSerializer
+import copy
+from plone import api
 
 
 class CoreMetadata(MetadataBase):
@@ -95,3 +108,32 @@ class CoreMetadata(MetadataBase):
     def other_organisations(self, value):
         """other_organisations setter"""
         setattr(self.context, "other_organisations", value)
+
+@implementer(IFieldSerializer)
+@adapter(ITuple, IDexterityContent, Interface)
+class CreatorsFieldSerializer(DefaultFieldSerializer):
+    """Creators and Contributors field serializer"""
+
+    def __call__(self):
+        value = copy.deepcopy(self.get_value())
+
+        if self.field is ICoreMetadata["creators_fullname"]:
+            print('creators true')
+            user_ids = getattr(self.context, "creators", [])
+        elif self.field is ICoreMetadata["contributors_fullname"]:
+            print('contributors true')
+            user_ids = getattr(self.context, "contributors", [])
+        else:
+            return json_compatible(value)
+
+        fullnames = []
+        for userid in user_ids:
+            user = api.user.get(userid)
+            if user:
+                fullname = user.getProperty("fullname", "")
+                fullnames.append(fullname if fullname else userid)
+            else:
+                fullnames.append(userid)
+
+        return json_compatible(fullnames)
+

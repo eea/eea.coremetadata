@@ -253,6 +253,31 @@ class ICoreMetadata(model.Schema):
         default={},
     )
 
+    creators_fullname = Tuple(
+        title=_("Creators fullname"),
+        description=_(
+            "help_creators",
+            default="Persons responsible for creating the content of "
+            "this item",
+        ),
+        value_type=TextLine(),
+        required=False,
+        # readonly=True,
+        missing_value=tuple(),
+    )
+
+    contributors_fullname = Tuple(
+        title=_("Contributors fullname"),
+        description=_(
+            "help_contributors",
+            default="Persons responsible for the content of this item",
+        ),
+        value_type=TextLine(),
+        required=False,
+        readonly=True,
+        missing_value=tuple(),
+    )
+
     @invariant
     def validate_start_end(data):
         if data.effective and data.expires and data.effective > data.expires:
