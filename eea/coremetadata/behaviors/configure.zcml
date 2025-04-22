@@ -5,8 +5,6 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="eea">
 
-    <adapter factory=".metadata.CreatorsFieldSerializer"/> 
-
     <include package="plone.behavior" file="meta.zcml"/>
 
     <plone:behavior
