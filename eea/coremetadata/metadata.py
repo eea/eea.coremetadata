@@ -262,7 +262,7 @@ class ICoreMetadata(model.Schema):
         ),
         value_type=TextLine(),
         required=False,
-        # readonly=True,
+        readonly=True,
         missing_value=tuple(),
     )
 
