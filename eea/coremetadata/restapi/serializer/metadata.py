@@ -38,4 +38,3 @@ class CreatorsFieldSerializer(DefaultFieldSerializer):
                 fullnames.append(userid)
 
         return json_compatible(fullnames)
-    
