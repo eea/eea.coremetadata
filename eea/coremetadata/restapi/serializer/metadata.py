@@ -1,17 +1,18 @@
 """ Adapter for creators_fullname and contributors_fullname
 """
 
+import copy
 from eea.coremetadata.metadata import ICoreMetadata
 from zope.schema.interfaces import ITuple
+from zope.interface import Interface
+from zope.component import adapter
+from zope.interface import implementer
 from plone.restapi.serializer.converters import json_compatible
 from plone.restapi.serializer.dxfields import DefaultFieldSerializer
 from plone.restapi.interfaces import IFieldSerializer
 from plone.dexterity.interfaces import IDexterityContent
-from zope.interface import Interface
-from zope.component import adapter
-from zope.interface import implementer
-import copy
 from plone import api
+
 
 @implementer(IFieldSerializer)
 @adapter(ITuple, IDexterityContent, Interface)
@@ -37,3 +38,4 @@ class CreatorsFieldSerializer(DefaultFieldSerializer):
                 fullnames.append(userid)
 
         return json_compatible(fullnames)
+    

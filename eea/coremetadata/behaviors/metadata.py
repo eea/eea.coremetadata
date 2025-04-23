@@ -95,4 +95,3 @@ class CoreMetadata(MetadataBase):
     def other_organisations(self, value):
         """other_organisations setter"""
         setattr(self.context, "other_organisations", value)
-
