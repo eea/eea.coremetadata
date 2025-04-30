@@ -1,6 +1,11 @@
 Changelog
 =========
 
+5.3 - (2025-04-30)
+---------------------------
+* Bug fix: Fix creators_fullname and contributors_fullname metadata
+  [avoinea - refs #284007]
+
 5.2 - (2025-04-30)
 ---------------------------
 * Feature: Expose creators_fullname and contributors_fullname as read-only metadata
