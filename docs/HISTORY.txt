@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.3-dev0 - (unreleased)
+---------------------------
+
 5.2 - (2025-04-30)
 ---------------------------
 * Feature: Expose creators_fullname and contributors_fullname as read-only metadata
