@@ -2,6 +2,7 @@
 """
 # pylint: disable=line-too-long, E0102, C0111
 import os
+from plone import api
 from plone.app.dexterity.behaviors.metadata import (
     DCFieldProperty,
     MetadataBase,
@@ -95,3 +96,21 @@ class CoreMetadata(MetadataBase):
     def other_organisations(self, value):
         """other_organisations setter"""
         setattr(self.context, "other_organisations", value)
+
+    def _full_names(self, users):
+        """Get fullnames from user ids"""
+        for uid in users:
+            user = api.user.get(uid)
+            yield user.getProperty("fullname", uid) if user else uid
+
+    @property
+    def contributors_fullname(self):
+        """contributors_fullname getter"""
+        contributors = getattr(self.context, "contributors", [])
+        return list(self._full_names(contributors))
+
+    @property
+    def creators_fullname(self):
+        """creators_fullname getter"""
+        creators = getattr(self.context, "creators", [])
+        return list(self._full_names(creators))
