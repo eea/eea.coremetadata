@@ -1,6 +1,11 @@
 Changelog
 =========
 
+5.2 - (2025-04-30)
+---------------------------
+* Feature: Expose creators_fullname and contributors_fullname as read-only metadata
+  [tedw87 - refs #284007]
+
 5.1 - (2024-10-17)
 ---------------------------
 * Fix: disable other_organisations behavior on all content types
