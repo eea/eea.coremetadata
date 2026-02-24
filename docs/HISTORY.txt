@@ -3,8 +3,8 @@ Changelog
 
 5.4 - (2026-02-24)
 ---------------------------
-* Change: Lang support for taxonomies - refs #282886
-  [avoinea]
+* Bug fix: Lang support for taxonomies
+  [dobri1408 - refs #282886]
 
 5.3 - (2025-04-30)
 ---------------------------
