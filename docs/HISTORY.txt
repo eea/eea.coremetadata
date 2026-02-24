@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.5-dev0 - (unreleased)
+---------------------------
+
 5.4 - (2026-02-24)
 ---------------------------
 * Bug fix: Lang support for taxonomies
