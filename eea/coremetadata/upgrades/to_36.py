@@ -1,6 +1,7 @@
 # pylint: disable=W1201, C0301, C0111, W0640, W1202
 # -*- coding: utf-8 -*-
-""" Upgrade to 3.6 """
+"""Upgrade to 3.6"""
+
 import logging
 
 from Products.CMFCore.utils import getToolByName
@@ -33,7 +34,7 @@ def to_36(context):
             )  # noqa: E501
         )
 
-    types = getToolByName(context, 'portal_types').listTypeInfo()
+    types = getToolByName(context, "portal_types").listTypeInfo()
     migrated_types = []
 
     for _type in types:
@@ -44,8 +45,9 @@ def to_36(context):
 
     vocabulary = get_vocabulary(context, VOCAB_NAME)
 
-    org_translated = {key: val if ord(
-        val[0]) < 255 else val[1:] for val, key in vocabulary}
+    org_translated = {
+        key: val if ord(val[0]) < 255 else val[1:] for val, key in vocabulary
+    }
     brains = api.content.find(portal_type=migrated_types)
 
     for brain in brains:
@@ -55,20 +57,22 @@ def to_36(context):
             logging.info("{0} was not found".format(brain.getURL(1)))
             continue
         obj = aq_self(obj)
-        orgs = getattr(obj, 'other_organisations', None)
-        logger.info("Check for (%s) - %s",
-                    brain.getURL(), obj.other_organisations)
+        orgs = getattr(obj, "other_organisations", None)
+        logger.info("Check for (%s) - %s", brain.getURL(), obj.other_organisations)
 
         if orgs:
-            translated = tuple([
-                org_translated[key] if key in org_translated else key
-                for key in orgs
-            ])
+            translated = tuple(
+                [org_translated[key] if key in org_translated else key for key in orgs]
+            )
             obj.other_organisations = translated
             obj._p_changed = True
             obj.reindexObject()
-            logger.info("Migrated organisations for obj (%s) - %s -> %s",
-                        brain.getURL(), orgs, obj.other_organisations)
+            logger.info(
+                "Migrated organisations for obj (%s) - %s -> %s",
+                brain.getURL(),
+                orgs,
+                obj.other_organisations,
+            )
 
     catalog.reindexIndex(INDEX_NAME, idx_object)
     try:

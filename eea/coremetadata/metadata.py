@@ -1,5 +1,6 @@
 # pylint: disable=C0412, C0301, C0111, W0622, W0102, C0321, W0110, R1706
 """Metadata schema"""
+
 import os
 import six
 from AccessControl.class_init import InitializeClass
@@ -174,19 +175,19 @@ class ICoreMetadata(model.Schema):
     directives.no_omit(IEditForm, "effective", "expires")
     directives.no_omit(IAddForm, "effective", "expires")
 
-    directives.widget("other_organisations",
-                      vocabulary="eea.coremetadata.other_organisations")
+    directives.widget(
+        "other_organisations", vocabulary="eea.coremetadata.other_organisations"
+    )
 
     other_organisations = Tuple(
         title=_("Other organisations involved"),
         description=_(
-            "Select other organisations involved in the production"
-            "of this item"
+            "Select other organisations involved in the productionof this item"
         ),  # noqa
         required=False,
         value_type=TextLine(),
         missing_value=(),
-        default=tuple()
+        default=tuple(),
     )
     directives.widget("topics", SelectFieldWidget)
     topics = Tuple(
@@ -207,9 +208,7 @@ class ICoreMetadata(model.Schema):
 
     geo_coverage = JSONField(
         title=_("Geographical coverage"),
-        description=_(
-            "Use the search to add more granular geographic coverage tags"
-        ),
+        description=_("Use the search to add more granular geographic coverage tags"),
         required=False,
         widget="geolocation",
         default={},
@@ -257,8 +256,7 @@ class ICoreMetadata(model.Schema):
         title=_("Creators fullname"),
         description=_(
             "help_creators",
-            default="Persons responsible for creating the content of "
-            "this item",
+            default="Persons responsible for creating the content of this item",
         ),
         value_type=TextLine(),
         required=False,
@@ -291,7 +289,6 @@ class ICoreMetadata(model.Schema):
 
 @implementer(ICM, ICatalogCoreMetadata, IMutableCoreMetadata)
 class DefaultCoreMetadataImpl(PropertyManager):
-
     """Mix-in class which provides eea core metadata methods."""
 
     security = ClassSecurityInfo()
@@ -521,12 +518,8 @@ class DefaultCoreMetadataImpl(PropertyManager):
 
     def isEffective(self, date):
         # Is the date within the resource's effective range?
-        pastEffective = (
-            self.effective_date is None or self.effective_date <= date
-        )
-        beforeExpiration = (
-            self.expiration_date is None or self.expiration_date >= date
-        )
+        pastEffective = self.effective_date is None or self.effective_date <= date
+        beforeExpiration = self.expiration_date is None or self.expiration_date >= date
         return pastEffective and beforeExpiration
 
     #
@@ -736,9 +729,9 @@ class DefaultCoreMetadataImpl(PropertyManager):
             rights,
         )
         REQUEST["RESPONSE"].redirect(
-            self.absolute_url() +
-            "/manage_metadata" +
-            "?manage_tabs_message=Metadata+updated."
+            self.absolute_url()
+            + "/manage_metadata"
+            + "?manage_tabs_message=Metadata+updated."
         )
 
     security.declareProtected(ModifyPortalContent, "editMetadata")

@@ -1,5 +1,5 @@
-""" Custom behavior that adds core metadata fields
-"""
+"""Custom behavior that adds core metadata fields"""
+
 # pylint: disable=line-too-long, E0102, C0111
 import os
 from plone import api
@@ -22,12 +22,8 @@ class CoreMetadata(MetadataBase):
 
     topics = DCFieldProperty(ICoreMetadata["topics"])
 
-    effective = DCFieldProperty(
-        ICoreMetadata["effective"], get_name="effective_date"
-    )
-    expires = DCFieldProperty(
-        ICoreMetadata["expires"], get_name="expiration_date"
-    )
+    effective = DCFieldProperty(ICoreMetadata["effective"], get_name="effective_date")
+    expires = DCFieldProperty(ICoreMetadata["expires"], get_name="expiration_date")
 
     temporal_coverage = DCFieldProperty(ICoreMetadata["temporal_coverage"])
 
@@ -77,9 +73,7 @@ class CoreMetadata(MetadataBase):
             DEFAULT_ORGANISATIONS = os.environ.get(organisations_env, [])
 
             if len(DEFAULT_ORGANISATIONS) < 1:
-                DEFAULT_ORGANISATIONS = os.environ.get(
-                    "DEFAULT_ORGANISATIONS", []
-                )  # noqa
+                DEFAULT_ORGANISATIONS = os.environ.get("DEFAULT_ORGANISATIONS", [])  # noqa
 
             if isinstance(DEFAULT_ORGANISATIONS, str):
                 if "," in DEFAULT_ORGANISATIONS:
