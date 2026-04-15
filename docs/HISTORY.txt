@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.6-dev0 - (unreleased)
+---------------------------
+
 5.5 - (2026-04-15)
 ---------------------------
 * Change: Add unit tests for seq_strip and tuplize functions
