@@ -1,4 +1,5 @@
 """vocabularies"""
+
 from plone.app.vocabularies.catalog import KeywordsVocabulary as BKV
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
@@ -12,5 +13,4 @@ class OtherOrganisationKeywords(BKV):
         self.keyword_index = index
 
 
-OtherOrganisationsVocabularyFactory = OtherOrganisationKeywords(
-    "other_organisations")
+OtherOrganisationsVocabularyFactory = OtherOrganisationKeywords("other_organisations")
