@@ -1,4 +1,5 @@
-""" indexer.py """
+"""indexer.py"""
+
 from plone.indexer import indexer
 from Products.CMFCore.interfaces import IContentish
 
@@ -28,7 +29,7 @@ def data_provenance_indexer(obj):
         return None
 
     data = {}
-    for val in data_provenance.get('data', []):
+    for val in data_provenance.get("data", []):
         organisation = val.get("organisation", "")
         if organisation:
             data[organisation] = organisation

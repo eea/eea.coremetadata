@@ -1,6 +1,7 @@
 # pylint: disable=W1201
 # -*- coding: utf-8 -*-
-""" Upgrade to 2.1 """
+"""Upgrade to 2.1"""
+
 import logging
 from zope.i18n.interfaces import ITranslationDomain
 from zope.schema.interfaces import IVocabularyFactory
@@ -10,7 +11,7 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 
 
 def to_20(context):
-    """ Remove topics taxonomy """
+    """Remove topics taxonomy"""
     item = "collective.taxonomy.eeatopicstaxonomy"
     logger.info("Deleting taxonomy: %s" % item)
 

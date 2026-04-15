@@ -1,5 +1,6 @@
 # pylint: disable=W0702
-""" vocabulary.py """
+"""vocabulary.py"""
+
 from collective.taxonomy.interfaces import ITaxonomy
 from zope.interface import provider  # alsoProvides,
 from zope.component import queryUtility
@@ -33,9 +34,8 @@ def get_catalog_values(context, index):
 def eea_other_organisations(context):
     """other_organisations index data"""
     catalog = getToolByName(context, "portal_catalog")
-    idx_object = catalog.Indexes['other_organisations']
-    terms = [SimpleTerm(item[0], item[0], item[0])
-             for item in idx_object.items()]
+    idx_object = catalog.Indexes["other_organisations"]
+    terms = [SimpleTerm(item[0], item[0], item[0]) for item in idx_object.items()]
     return SimpleVocabulary(terms)
 
 
@@ -57,9 +57,7 @@ def index_organisations_vocabulary(context):
 def publisher_vocabulary(context):
     """publisher_vocabulary"""
 
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeapublishertaxonomy"
-    )
+    vocabulary = get_vocabulary(context, "collective.taxonomy.eeapublishertaxonomy")
 
     terms = [
         SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
@@ -74,20 +72,14 @@ def publisher_vocabulary(context):
 def index_publisher_vocabulary(context):
     """index_publisher_vocabulary"""
 
-    catalog_values = get_catalog_values(
-        context, "taxonomy_eeapublishertaxonomy"
-    )
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeapublishertaxonomy"
-    )
+    catalog_values = get_catalog_values(context, "taxonomy_eeapublishertaxonomy")
+    vocabulary = get_vocabulary(context, "collective.taxonomy.eeapublishertaxonomy")
     terms = []
 
     for val, key in vocabulary:
         if key in catalog_values:
             terms.append(
-                SimpleTerm(
-                    key, key, val.encode("ascii", "ignore").decode("ascii")
-                )
+                SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
             )
 
     terms.sort(key=lambda t: t.title)
@@ -121,17 +113,13 @@ def index_topics_vocabulary(context):
     """index_topics_vocabulary"""
 
     catalog_values = get_catalog_values(context, "taxonomy_eeatopicstaxonomy")
-    vocabulary = get_vocabulary(
-        context, "collective.taxonomy.eeatopicstaxonomy"
-    )
+    vocabulary = get_vocabulary(context, "collective.taxonomy.eeatopicstaxonomy")
     terms = []
 
     for val, key in vocabulary:
         if key in catalog_values:
             terms.append(
-                SimpleTerm(
-                    key, key, val.encode("ascii", "ignore").decode("ascii")
-                )
+                SimpleTerm(key, key, val.encode("ascii", "ignore").decode("ascii"))
             )
 
     terms.sort(key=lambda t: t.title)
