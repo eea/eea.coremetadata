@@ -11,6 +11,7 @@ from App.special_dtml import DTMLFile
 from DateTime.DateTime import DateTime
 from eea.coremetadata.interfaces import ICatalogCoreMetadata
 from eea.coremetadata.interfaces import ICoreMetadata as ICM
+from eea.coremetadata.interfaces import IGeoCoverageField
 from eea.coremetadata.interfaces import IMutableCoreMetadata
 from OFS.PropertyManager import PropertyManager
 from plone.app.z3cform.widget import DatetimeFieldWidget
@@ -23,7 +24,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import WWW_DIR
 from z3c.form.interfaces import IAddForm, IEditForm
 from zope.component.hooks import getSite
-from zope.interface import Invalid, implementer, invariant, provider
+from zope.interface import Invalid, implementer, invariant, provider, directlyProvides
 from zope.schema import Choice, Datetime, Text, TextLine, Tuple
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
@@ -213,6 +214,7 @@ class ICoreMetadata(model.Schema):
         widget="geolocation",
         default={},
     )
+    directlyProvides(geo_coverage, IGeoCoverageField)
 
     rights = TextLine(
         title=_("label_copyrights", default="Rights"),
