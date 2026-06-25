@@ -1,12 +1,17 @@
 # pylint: disable=W0622
 """Module where all interfaces, events and exceptions live."""
 
+from plone.schema import IJSONField
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
 class IEeaCoremetadataLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
+
+
+class IGeoCoverageField(IJSONField):
+    """Marker interface for the geo_coverage JSON field."""
 
 
 class IMinimalCoreMetadata(Interface):
