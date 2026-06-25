@@ -1,8 +1,11 @@
 Changelog
 =========
 
-5.6-dev0 - (unreleased)
+6.0-dev0 - (unreleased)
 ---------------------------
+* Feature: Add IGeoCoverageField marker interface on geo_coverage field
+  for scoped serializer adapter registration in eea.volto.policy
+  [avoinea - refs #296992]
 
 5.5 - (2026-04-15)
 ---------------------------
