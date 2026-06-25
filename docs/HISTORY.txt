@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.1-dev0 - (unreleased)
+---------------------------
+
 6.0 - (2026-06-25)
 ---------------------------
 * Feature: Add IGeoCoverageField marker interface on geo_coverage field
