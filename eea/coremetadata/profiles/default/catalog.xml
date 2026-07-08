@@ -13,6 +13,10 @@
         <indexed_attr value="topics"/>
     </index>
 
+    <index name="taxonomy_eeapublicationtypetaxonomy" meta_type="KeywordIndex">
+        <indexed_attr value="publication_type"/>
+    </index>
+
     <index name="temporal_coverage" meta_type="KeywordIndex">
         <indexed_attr value="temporal_coverage"/>
     </index>
@@ -24,6 +28,7 @@
     <column value="other_organisations" />
     <column value="taxonomy_eeapublishertaxonomy" />
     <column value="taxonomy_eeatopicstaxonomy" />
+    <column value="taxonomy_eeapublicationtypetaxonomy" />
     <column value="temporal_coverage" />
     <column value="data_provenance" />
     <column value="rights" />

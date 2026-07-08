@@ -125,6 +125,7 @@ class ICoreMetadata(model.Schema):
         label=_("label_schema_default", default="EEA core metadata"),
         fields=[
             "topics",
+            "publication_type",
             "temporal_coverage",
             "geo_coverage",
             "publisher",
@@ -197,6 +198,14 @@ class ICoreMetadata(model.Schema):
         required=False,
         value_type=Choice(vocabulary="topics_vocabulary"),
         default=(),
+    )
+
+    directives.widget("publication_type", SelectFieldWidget)
+    publication_type = Choice(
+        title=_("Publication type"),
+        description=_("Select the publication type."),
+        required=False,
+        vocabulary="publication_type_vocabulary",
     )
 
     temporal_coverage = JSONField(

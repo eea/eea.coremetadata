@@ -114,4 +114,20 @@
     profile="eea.coremetadata:default"
     />
 
+  <genericsetup:upgradeSteps
+    source="5.1"
+    destination="6.1"
+    profile="eea.coremetadata:default"
+  >
+    <genericsetup:upgradeDepends
+      title="Register Publication type taxonomy and search configuration"
+      import_steps="collective.taxonomy plone.app.registry catalog"
+    />
+
+    <genericsetup:upgradeStep
+      title="Reindex Publication type"
+      handler=".to_61.to_61"
+    />
+  </genericsetup:upgradeSteps>
+
 </configure>
