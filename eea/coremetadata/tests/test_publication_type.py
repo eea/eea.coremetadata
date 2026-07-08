@@ -70,9 +70,7 @@ class TestPublicationType(unittest.TestCase):
         self.assertEqual(document.publication_type, "report")
 
     def test_publication_type_vocabulary_returns_taxonomy_terms(self):
-        factory = queryUtility(
-            IVocabularyFactory, name="publication_type_vocabulary"
-        )
+        factory = queryUtility(IVocabularyFactory, name="publication_type_vocabulary")
 
         self.assertIsNotNone(factory)
         self.assertEqual(term_pairs(factory(self.portal)), EXPECTED_TERMS)
