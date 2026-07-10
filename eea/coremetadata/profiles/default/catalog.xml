@@ -14,7 +14,7 @@
     </index>
 
     <index name="taxonomy_eeapublicationtypetaxonomy" meta_type="KeywordIndex">
-        <indexed_attr value="publication_type"/>
+        <indexed_attr value="taxonomy_eeapublicationtypetaxonomy"/>
     </index>
 
     <index name="temporal_coverage" meta_type="KeywordIndex">

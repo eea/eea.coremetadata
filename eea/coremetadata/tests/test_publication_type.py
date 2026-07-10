@@ -4,20 +4,27 @@ import unittest
 
 from collective.taxonomy import PATH_SEPARATOR
 from collective.taxonomy.interfaces import ITaxonomy
-from eea.coremetadata.behaviors.metadata import CoreMetadata
 from eea.coremetadata.metadata import ICoreMetadata
+from eea.coremetadata.setuphandlers import enable_publication_type_behavior
+from eea.coremetadata.setuphandlers import PUBLICATION_CONTENT_TYPES
+from eea.coremetadata.setuphandlers import PUBLICATION_TYPE_BEHAVIOR
 from eea.coremetadata.tests.base import FUNCTIONAL_TESTING
+from eea.coremetadata.upgrades.to_62 import to_62
 from plone.app.querystring.interfaces import IQueryField
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.behavior.interfaces import IBehavior
+from plone.dexterity.fti import DexterityFTI
 from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from zope.component import queryUtility
+from zope.schema import getFields
 from zope.schema.interfaces import IVocabularyFactory
 
 
 INDEX_NAME = "taxonomy_eeapublicationtypetaxonomy"
 TAXONOMY_NAME = "collective.taxonomy.eeapublicationtypetaxonomy"
+TAXONOMY_BEHAVIOR_NAME = PUBLICATION_TYPE_BEHAVIOR
 EXPECTED_TERMS = [
     ("briefing", "Briefing"),
     ("report", "Report"),
@@ -41,6 +48,17 @@ class TestPublicationType(unittest.TestCase):
         self.portal = self.layer["portal"]
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
 
+    def add_type(self, portal_type, with_publication_type=True):
+        """Add a minimal Dexterity type for taxonomy integration tests."""
+        fti = DexterityFTI(portal_type)
+        self.portal.portal_types._setObject(portal_type, fti)
+        fti.klass = "plone.dexterity.content.Item"
+        behaviors = ["plone.basic"]
+        if with_publication_type:
+            behaviors.append(TAXONOMY_BEHAVIOR_NAME)
+        fti.behaviors = tuple(behaviors)
+        return fti
+
     def test_taxonomy_is_registered_with_expected_terms(self):
         taxonomy = queryUtility(ITaxonomy, name=TAXONOMY_NAME)
 
@@ -52,39 +70,52 @@ class TestPublicationType(unittest.TestCase):
         ]
         self.assertEqual(entries, EXPECTED_TERMS)
 
-    def test_core_metadata_schema_exposes_publication_type_field(self):
-        field = ICoreMetadata["publication_type"]
+        behavior = queryUtility(IBehavior, name=TAXONOMY_BEHAVIOR_NAME)
+        self.assertIsNotNone(behavior)
+        self.assertTrue(behavior.is_required)
+        self.assertTrue(behavior.interface[INDEX_NAME].required)
 
-        self.assertFalse(field.required)
-        self.assertEqual(field.title, "Publication type")
-        self.assertEqual(field.vocabularyName, "publication_type_vocabulary")
+    def test_core_metadata_does_not_duplicate_taxonomy_field(self):
+        self.assertNotIn("publication_type", getFields(ICoreMetadata))
 
-    def test_publication_type_behavior_stores_value_on_context(self):
-        self.portal.invokeFactory("Document", "publication-type-behavior")
-        document = self.portal["publication-type-behavior"]
-        behavior = CoreMetadata(document)
+    def test_upgrade_enables_behavior_on_publication_content_types(self):
+        for portal_type in PUBLICATION_CONTENT_TYPES:
+            self.add_type(portal_type, with_publication_type=False)
 
-        behavior.publication_type = "report"
+        to_62(self.portal.portal_setup)
+        to_62(self.portal.portal_setup)
 
-        self.assertEqual(behavior.publication_type, "report")
-        self.assertEqual(document.publication_type, "report")
-
-    def test_publication_type_vocabulary_returns_taxonomy_terms(self):
-        factory = queryUtility(
-            IVocabularyFactory, name="publication_type_vocabulary"
+        self.assertEqual(
+            enable_publication_type_behavior(self.portal), []
         )
 
-        self.assertIsNotNone(factory)
-        self.assertEqual(term_pairs(factory(self.portal)), EXPECTED_TERMS)
+        for portal_type in PUBLICATION_CONTENT_TYPES:
+            fti = self.portal.portal_types[portal_type]
+            self.assertEqual(fti.behaviors.count(TAXONOMY_BEHAVIOR_NAME), 1)
+
+    def test_upgrade_from_61_to_62_is_registered(self):
+        setup = self.portal.portal_setup
+        profile_id = "eea.coremetadata:default"
+        setup.setLastVersionForProfile(profile_id, "6.1")
+
+        groups = setup.listUpgrades(profile_id)
+        steps = []
+        for group in groups:
+            steps.extend(group if isinstance(group, list) else [group])
+
+        self.assertTrue(
+            any(step["ssource"] == "6.1" and step["sdest"] == "6.2" for step in steps)
+        )
 
     def test_publication_type_catalog_index_indexes_field_value(self):
         catalog = getToolByName(self.portal, "portal_catalog")
         self.assertIn(INDEX_NAME, catalog.indexes())
         self.assertIn(INDEX_NAME, catalog.schema())
 
-        self.portal.invokeFactory("Document", "publication-type-catalog")
+        self.add_type("briefing")
+        self.portal.invokeFactory("briefing", "publication-type-catalog")
         document = self.portal["publication-type-catalog"]
-        document.publication_type = "briefing"
+        setattr(document, INDEX_NAME, "briefing")
         document.reindexObject()
 
         brains = catalog({INDEX_NAME: "briefing"})
@@ -94,9 +125,10 @@ class TestPublicationType(unittest.TestCase):
 
     def test_index_vocabulary_returns_catalog_used_terms_only(self):
         catalog = getToolByName(self.portal, "portal_catalog")
-        self.portal.invokeFactory("Document", "publication-type-index-vocab")
+        self.add_type("web_report")
+        self.portal.invokeFactory("web_report", "publication-type-index-vocab")
         document = self.portal["publication-type-index-vocab"]
-        document.publication_type = "technical-paper"
+        setattr(document, INDEX_NAME, "technical-paper")
         document.reindexObject()
 
         self.assertEqual(
