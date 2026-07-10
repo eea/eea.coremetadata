@@ -83,9 +83,7 @@ def classify_publication(obj):
     phrase_match = bool(CORPORATE_REPORT_PATTERN.search(text))
     issn_match = bool(CORPORATE_ISSN_PATTERN.search(text))
     if phrase_match and issn_match:
-        reason = (
-            'Report (PDF) contains "EEA corporate report" and ISSN 3094-5976'
-        )
+        reason = 'Report (PDF) contains "EEA corporate report" and ISSN 3094-5976'
         return "corporate-report", reason
     if phrase_match:
         return (
@@ -100,10 +98,7 @@ def classify_publication(obj):
 def supports_publication_type(obj):
     """Check that the generated taxonomy behavior is enabled for the type."""
     try:
-        return any(
-            FIELD_NAME in getFields(schema)
-            for schema in iterSchemata(obj)
-        )
+        return any(FIELD_NAME in getFields(schema) for schema in iterSchemata(obj))
     except TypeError:
         return False
 
@@ -154,9 +149,7 @@ class PublicationTypeMigrationView(BrowserView):
                     row["status"] = "unclassified"
                 elif not supports_publication_type(obj):
                     row["status"] = "missing-behavior"
-                    row["error"] = (
-                        "Publication type taxonomy behavior is not enabled"
-                    )
+                    row["error"] = "Publication type taxonomy behavior is not enabled"
                 else:
                     current = getattr(aq_base(obj), FIELD_NAME, None)
                     row["previous_publication_type"] = report_value(current)

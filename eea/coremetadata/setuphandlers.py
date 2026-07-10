@@ -16,9 +16,7 @@ from zope.lifecycleevent import modified
 logger = logging.getLogger(__name__)
 
 PUBLICATION_CONTENT_TYPES = ("briefing", "report_pdf", "web_report")
-PUBLICATION_TYPE_BEHAVIOR = (
-    "collective.taxonomy.generated.eeapublicationtypetaxonomy"
-)
+PUBLICATION_TYPE_BEHAVIOR = "collective.taxonomy.generated.eeapublicationtypetaxonomy"
 
 
 PUBLICATION_TYPE_QUERYSTRING_PREFIX = (

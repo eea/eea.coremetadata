@@ -15,9 +15,7 @@ from plone.app.testing import setRoles
 from plone.dexterity.fti import DexterityFTI
 
 
-TAXONOMY_BEHAVIOR = (
-    "collective.taxonomy.generated.eeapublicationtypetaxonomy"
-)
+TAXONOMY_BEHAVIOR = "collective.taxonomy.generated.eeapublicationtypetaxonomy"
 
 
 class MigrationViewWithoutCommits(PublicationTypeMigrationView):
@@ -82,9 +80,7 @@ class TestPublicationTypeMigration(unittest.TestCase):
             "corporate-to-migrate",
             {"one": {"plaintext": "EEA corporate report"}},
         )
-        manually_classified = self.add_content(
-            "report_pdf", "manual-classification"
-        )
+        manually_classified = self.add_content("report_pdf", "manual-classification")
         setattr(manually_classified, FIELD_NAME, "joint-report")
         manually_classified.reindexObject()
 
@@ -94,12 +90,8 @@ class TestPublicationTypeMigration(unittest.TestCase):
 
         self.assertEqual(getattr(briefing, FIELD_NAME), "briefing")
         self.assertEqual(getattr(report, FIELD_NAME), "corporate-report")
-        self.assertEqual(
-            getattr(manually_classified, FIELD_NAME), "joint-report"
-        )
-        self.assertEqual(
-            by_path["/plone/briefing-to-migrate"]["status"], "updated"
-        )
+        self.assertEqual(getattr(manually_classified, FIELD_NAME), "joint-report")
+        self.assertEqual(by_path["/plone/briefing-to-migrate"]["status"], "updated")
         self.assertEqual(
             by_path["/plone/corporate-to-migrate"]["content_type"],
             "report_pdf",

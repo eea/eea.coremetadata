@@ -85,9 +85,7 @@ class TestPublicationType(unittest.TestCase):
         to_62(self.portal.portal_setup)
         to_62(self.portal.portal_setup)
 
-        self.assertEqual(
-            enable_publication_type_behavior(self.portal), []
-        )
+        self.assertEqual(enable_publication_type_behavior(self.portal), [])
 
         for portal_type in PUBLICATION_CONTENT_TYPES:
             fti = self.portal.portal_types[portal_type]
