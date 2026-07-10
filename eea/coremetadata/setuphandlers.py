@@ -43,9 +43,7 @@ def configure_publication_type_querystring():
     registry = getUtility(IRegistry)
     prefix = PUBLICATION_TYPE_QUERYSTRING_PREFIX
 
-    registry.records[prefix + ".title"] = Record(
-        field.TextLine(), "Publication type"
-    )
+    registry.records[prefix + ".title"] = Record(field.TextLine(), "Publication type")
     registry.records[prefix + ".description"] = Record(field.Text(), "")
     registry.records[prefix + ".enabled"] = Record(field.Bool(), True)
     registry.records[prefix + ".sortable"] = Record(field.Bool(), True)
