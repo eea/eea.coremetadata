@@ -47,6 +47,11 @@
     />
 
     <utility
+        name="index_publication_type_vocabulary"
+        component=".vocabulary.index_publication_type_vocabulary"
+    />
+
+    <utility
         name="temporal_coverage_vocabulary"
         component=".vocabulary.temporal_coverage_vocabulary"
     />
