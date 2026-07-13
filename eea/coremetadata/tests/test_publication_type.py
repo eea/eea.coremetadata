@@ -144,8 +144,16 @@ class TestTaxonomyTermTitle(unittest.TestCase):
 class StubObject:
     """Minimal stand-in for a Plone content object."""
 
-    def __init__(self, portal_type, text="", title="", description="",
-                 blocks=None, body=None, text_field=None):
+    def __init__(
+        self,
+        portal_type,
+        text="",
+        title="",
+        description="",
+        blocks=None,
+        body=None,
+        text_field=None,
+    ):
         self.portal_type = portal_type
         self.title = title
         self.description = description
