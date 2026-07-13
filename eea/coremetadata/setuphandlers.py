@@ -91,12 +91,6 @@ def enable_publication_type_behavior(portal=None):
     return enabled
 
 
-def post_install(context):
-    """Post install script"""
-    configure_publication_type_querystring()
-    enable_publication_type_behavior(context.aq_parent)
-
-
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.

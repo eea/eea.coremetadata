@@ -12,8 +12,8 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 INDEX_NAME = "taxonomy_eeapublicationtypetaxonomy"
 
 
-def upgrade_publication_type(context):
-    """Configure Publication type behavior, search and catalog data."""
+def to_61(context):
+    """Install Publication type on sites upgrading from profile 5.1."""
 
     configure_publication_type_querystring()
 
@@ -24,9 +24,3 @@ def upgrade_publication_type(context):
     if INDEX_NAME in catalog.indexes():
         catalog.reindexIndex(INDEX_NAME, None)
         logger.info("Reindexed %s", INDEX_NAME)
-
-
-def to_61(context):
-    """Install Publication type on sites upgrading from profile 5.1."""
-
-    upgrade_publication_type(context)
