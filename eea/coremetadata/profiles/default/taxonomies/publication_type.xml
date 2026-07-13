@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="en">
+  <vocabName>
+    <langstring language="en">EEA Publication Type Taxonomy</langstring>
+  </vocabName>
+  <vocabIdentifier>eeapublicationtypetaxonomy</vocabIdentifier>
+  <term>
+    <termIdentifier>briefing</termIdentifier>
+    <caption>
+      <langstring language="en">Briefing</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>report</termIdentifier>
+    <caption>
+      <langstring language="en">Report</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>corporate-report</termIdentifier>
+    <caption>
+      <langstring language="en">Corporate report</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>joint-report</termIdentifier>
+    <caption>
+      <langstring language="en">Joint report</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>technical-paper</termIdentifier>
+    <caption>
+      <langstring language="en">Technical paper</langstring>
+    </caption>
+  </term>
+</vdex>

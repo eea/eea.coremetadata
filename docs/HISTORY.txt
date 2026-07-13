@@ -1,6 +1,12 @@
 Changelog
 =========
 
+6.1 - (2026-07-12)
+---------------------------
+* Feature: Add the Publication type taxonomy, search configuration,
+  content-type behavior activation and CSV content migration report.
+  [refs #305522]
+
 6.0 - (2026-06-25)
 ---------------------------
 * Feature: Add IGeoCoverageField marker interface on geo_coverage field

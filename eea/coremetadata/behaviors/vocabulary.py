@@ -1,6 +1,7 @@
 # pylint: disable=W0702
 """vocabulary.py"""
 
+from collective.taxonomy import PATH_SEPARATOR
 from collective.taxonomy.interfaces import ITaxonomy
 from zope.interface import provider  # alsoProvides,
 from zope.component import queryUtility
@@ -29,6 +30,12 @@ def get_catalog_values(context, index):
     catalog = getToolByName(context, "portal_catalog")
 
     return catalog.uniqueValuesFor(index)
+
+
+def taxonomy_term_title(path):
+    """Return the display title for a taxonomy path."""
+
+    return path.split(PATH_SEPARATOR)[-1].encode("ascii", "ignore").decode("ascii")
 
 
 def eea_other_organisations(context):
@@ -123,6 +130,25 @@ def index_topics_vocabulary(context):
             )
 
     terms.sort(key=lambda t: t.title)
+
+    return SimpleVocabulary(terms)
+
+
+@provider(IVocabularyFactory)
+def index_publication_type_vocabulary(context):
+    """index_publication_type_vocabulary"""
+
+    catalog_values = set(
+        get_catalog_values(context, "taxonomy_eeapublicationtypetaxonomy")
+    )
+    vocabulary = get_vocabulary(
+        context, "collective.taxonomy.eeapublicationtypetaxonomy"
+    )
+    terms = []
+
+    for val, key in vocabulary:
+        if key in catalog_values:
+            terms.append(SimpleTerm(key, key, taxonomy_term_title(val)))
 
     return SimpleVocabulary(terms)
 

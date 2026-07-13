@@ -3,4 +3,12 @@
   xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="eea">
 
+  <browser:page
+    name="migrate-publication-types"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    layer="eea.coremetadata.interfaces.IEeaCoremetadataLayer"
+    class=".publication_type_migration.PublicationTypeMigrationView"
+    permission="cmf.ManagePortal"
+    />
+
 </configure>
