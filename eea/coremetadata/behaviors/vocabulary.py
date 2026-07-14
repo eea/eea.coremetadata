@@ -135,12 +135,23 @@ def index_topics_vocabulary(context):
 
 
 @provider(IVocabularyFactory)
+def publication_type_vocabulary(context):
+    """Return all terms from the managed Publication type taxonomy."""
+
+    vocabulary = get_vocabulary(
+        context, "collective.taxonomy.eeapublicationtypetaxonomy"
+    )
+    terms = [
+        SimpleTerm(key, key, taxonomy_term_title(val)) for val, key in vocabulary
+    ]
+    return SimpleVocabulary(terms)
+
+
+@provider(IVocabularyFactory)
 def index_publication_type_vocabulary(context):
     """index_publication_type_vocabulary"""
 
-    catalog_values = set(
-        get_catalog_values(context, "taxonomy_eeapublicationtypetaxonomy")
-    )
+    catalog_values = set(get_catalog_values(context, "publication_type"))
     vocabulary = get_vocabulary(
         context, "collective.taxonomy.eeapublicationtypetaxonomy"
     )

@@ -1,4 +1,4 @@
-"""Upgrade to 6.1."""
+"""Upgrade to 6.2."""
 
 import logging
 
@@ -13,8 +13,8 @@ logger = logging.getLogger("eea.coremetadata.upgrade")
 INDEX_NAME = "publication_type"
 
 
-def to_61(context):
-    """Install Publication type on sites upgrading from profile 5.1."""
+def to_62(context):
+    """Replace the generated taxonomy field with the dedicated behavior."""
 
     configure_publication_type_querystring()
 
