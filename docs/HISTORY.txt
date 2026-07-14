@@ -1,7 +1,7 @@
 Changelog
 =========
 
-6.2-dev0 - (unreleased)
+6.2 - (2026-07-14)
 ---------------------------
 
 Hello future GitHubber! I bet you're here to remove those nasty inline styles,
