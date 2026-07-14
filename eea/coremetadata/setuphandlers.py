@@ -3,12 +3,14 @@
 import logging
 
 from plone import api
+from plone.behavior.interfaces import IBehavior
 from plone.dexterity.fti import DexterityFTIModificationDescription
 from plone.registry import Record
 from plone.registry import field
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.component import getUtility
+from zope.component import queryUtility
 from zope.interface import implementer
 from zope.lifecycleevent import modified
 
@@ -16,12 +18,14 @@ from zope.lifecycleevent import modified
 logger = logging.getLogger(__name__)
 
 PUBLICATION_CONTENT_TYPES = ("briefing", "report_pdf", "web_report")
-PUBLICATION_TYPE_BEHAVIOR = "collective.taxonomy.generated.eeapublicationtypetaxonomy"
-
-
-PUBLICATION_TYPE_QUERYSTRING_PREFIX = (
-    "plone.app.querystring.field.taxonomy_eeapublicationtypetaxonomy"
+PUBLICATION_TYPE_BEHAVIOR = "eea.coremetadata.publication_type"
+GENERATED_PUBLICATION_TYPE_BEHAVIOR = (
+    "collective.taxonomy.generated.eeapublicationtypetaxonomy"
 )
+GENERATED_PUBLICATION_TYPE_FIELD = "taxonomy_eeapublicationtypetaxonomy"
+
+
+PUBLICATION_TYPE_QUERYSTRING_PREFIX = "plone.app.querystring.field.publication_type"
 
 
 @implementer(INonInstallable)
@@ -57,7 +61,7 @@ def configure_publication_type_querystring():
 
 
 def enable_publication_type_behavior(portal=None):
-    """Enable the generated taxonomy behavior on publication content types."""
+    """Enable the dedicated behavior on publication content types."""
 
     portal = portal or api.portal.get()
     portal_types = portal["portal_types"]
@@ -72,23 +76,62 @@ def enable_publication_type_behavior(portal=None):
             )
             continue
 
-        behaviors = list(fti.behaviors or ())
-        if PUBLICATION_TYPE_BEHAVIOR in behaviors:
+        behaviors = [
+            behavior
+            for behavior in (fti.behaviors or ())
+            if behavior != GENERATED_PUBLICATION_TYPE_BEHAVIOR
+        ]
+        if PUBLICATION_TYPE_BEHAVIOR not in behaviors:
+            behaviors.append(PUBLICATION_TYPE_BEHAVIOR)
+            enabled.append(portal_type)
+
+        if tuple(behaviors) == tuple(fti.behaviors or ()):
             continue
 
-        behaviors.append(PUBLICATION_TYPE_BEHAVIOR)
         fti.behaviors = tuple(behaviors)
         modified(
             fti,
             DexterityFTIModificationDescription("behaviors", ""),
         )
-        enabled.append(portal_type)
         logger.info(
             "Enabled Publication type behavior on %s",
             portal_type,
         )
 
     return enabled
+
+
+def disable_generated_publication_type(portal=None):
+    """Remove the generated behavior and its search configuration."""
+
+    portal = portal or api.portal.get()
+    for fti in portal["portal_types"].objectValues():
+        behaviors = getattr(fti, "behaviors", None)
+        if not behaviors or GENERATED_PUBLICATION_TYPE_BEHAVIOR not in behaviors:
+            continue
+
+        fti.behaviors = tuple(
+            behavior
+            for behavior in behaviors
+            if behavior != GENERATED_PUBLICATION_TYPE_BEHAVIOR
+        )
+        modified(
+            fti,
+            DexterityFTIModificationDescription("behaviors", ""),
+        )
+        logger.info(
+            "Disabled generated Publication type behavior on %s",
+            fti.getId(),
+        )
+
+    behavior = queryUtility(IBehavior, name=GENERATED_PUBLICATION_TYPE_BEHAVIOR)
+    if behavior is not None:
+        behavior.removeIndex()
+        behavior.deactivateSearchable()
+
+    catalog = portal["portal_catalog"]
+    if GENERATED_PUBLICATION_TYPE_FIELD in catalog.schema():
+        catalog.delColumn(GENERATED_PUBLICATION_TYPE_FIELD)
 
 
 def uninstall(context):

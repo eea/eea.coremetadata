@@ -16,6 +16,13 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
+    <plone:behavior
+        name="eea.coremetadata.publication_type"
+        title="EEA Publication type"
+        description="Adds the managed Publication type field"
+        provides=".publication_type.IPublicationType"
+    />
+
     <utility
         name="organisations_vocabulary"
         component=".vocabulary.organisations_vocabulary"
@@ -44,6 +51,11 @@
     <utility
         name="index_topics_vocabulary"
         component=".vocabulary.index_topics_vocabulary"
+    />
+
+    <utility
+        name="publication_type_vocabulary"
+        component=".vocabulary.publication_type_vocabulary"
     />
 
     <utility

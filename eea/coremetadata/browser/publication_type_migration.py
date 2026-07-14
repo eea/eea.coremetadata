@@ -21,7 +21,7 @@ from zope.schema import getFields
 
 logger = logging.getLogger(__name__)
 
-FIELD_NAME = "taxonomy_eeapublicationtypetaxonomy"
+FIELD_NAME = "publication_type"
 PORTAL_TYPES = ("briefing", "report_pdf", "web_report")
 BATCH_SIZE = 50
 
@@ -149,7 +149,7 @@ class PublicationTypeMigrationView(BrowserView):
                     row["status"] = "unclassified"
                 elif not supports_publication_type(obj):
                     row["status"] = "missing-behavior"
-                    row["error"] = "Publication type taxonomy behavior is not enabled"
+                    row["error"] = "Publication type behavior is not enabled"
                 else:
                     current = getattr(aq_base(obj), FIELD_NAME, None)
                     row["previous_publication_type"] = report_value(current)
