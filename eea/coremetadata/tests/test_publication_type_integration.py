@@ -116,10 +116,7 @@ class TestPublicationTypeIntegration(unittest.TestCase):
             steps.extend(group if isinstance(group, list) else [group])
 
         self.assertTrue(
-            any(
-                step["ssource"] == "6.1" and step["sdest"] == "6.2"
-                for step in steps
-            )
+            any(step["ssource"] == "6.1" and step["sdest"] == "6.2" for step in steps)
         )
 
     def test_upgrade_enables_behavior_only_on_publication_types(self):

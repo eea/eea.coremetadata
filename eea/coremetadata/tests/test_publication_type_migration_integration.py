@@ -219,9 +219,7 @@ class TestPublicationTypeMigrationIntegration(unittest.TestCase):
 
     def test_object_error_is_reported_and_migration_continues(self):
         view = MigrationViewWithBrains(self.portal, self.request)
-        view.brains = (
-            BrokenBrain(ValueError("Cannot load publication")),
-        )
+        view.brains = (BrokenBrain(ValueError("Cannot load publication")),)
 
         rows = view.migrate()
 

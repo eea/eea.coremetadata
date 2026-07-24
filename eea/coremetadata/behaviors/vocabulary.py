@@ -141,9 +141,7 @@ def publication_type_vocabulary(context):
     vocabulary = get_vocabulary(
         context, "collective.taxonomy.eeapublicationtypetaxonomy"
     )
-    terms = [
-        SimpleTerm(key, key, taxonomy_term_title(val)) for val, key in vocabulary
-    ]
+    terms = [SimpleTerm(key, key, taxonomy_term_title(val)) for val, key in vocabulary]
     return SimpleVocabulary(terms)
 
 
