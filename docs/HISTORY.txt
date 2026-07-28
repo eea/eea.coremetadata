@@ -1,8 +1,10 @@
 Changelog
 =========
 
-6.3-dev0 - (unreleased)
+6.3 - (2026-07-28)
 ---------------------------
+* Change: Fix publication_type taxonomy vocabulary - refs #305522
+  [avoinea]
 
 6.2 - (2026-07-14)
 ---------------------------
