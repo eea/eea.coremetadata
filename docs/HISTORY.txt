@@ -1,6 +1,11 @@
 Changelog
 =========
 
+6.3 - (2026-07-28)
+---------------------------
+* Change: Fix publication_type taxonomy vocabulary - refs #305522
+  [avoinea]
+
 6.2 - (2026-07-14)
 ---------------------------
 * Change: Replace the generated Publication type taxonomy field with the
