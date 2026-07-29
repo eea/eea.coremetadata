@@ -3,6 +3,9 @@ Changelog
 
 6.4-dev0 - (unreleased)
 ---------------------------
+* Change: Overwrite existing Publication type values during migration, record
+  every migrated item in content history and refresh its modification date
+  for global search indexing.
 
 6.3 - (2026-07-28)
 ---------------------------

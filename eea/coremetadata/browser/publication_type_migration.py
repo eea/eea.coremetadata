@@ -16,8 +16,12 @@ from plone.app.textfield.value import RichTextValue
 from plone.dexterity.utils import iterSchemata
 from Products.Five import BrowserView
 from ZODB.POSException import ConflictError
+from zope.event import notify
+from zope.lifecycleevent import Attributes
+from zope.lifecycleevent import ObjectModifiedEvent
 from zope.schema import getFields
 
+from eea.coremetadata.behaviors.publication_type import IPublicationType
 
 logger = logging.getLogger(__name__)
 
@@ -132,7 +136,7 @@ class PublicationTypeMigrationView(BrowserView):
         return sorted(brains, key=lambda brain: brain.getPath())
 
     def migrate(self, dry_run=False):
-        """Classify candidates, preserving values already set by editors."""
+        """Apply the calculated classification to every candidate."""
         rows = []
         for index, brain in enumerate(self.catalog_brains(), start=1):
             row = self.base_report_row(brain, dry_run)
@@ -154,17 +158,23 @@ class PublicationTypeMigrationView(BrowserView):
                     current = getattr(aq_base(obj), FIELD_NAME, None)
                     row["previous_publication_type"] = report_value(current)
                     row["final_publication_type"] = report_value(current)
-                    if current == target:
-                        row["status"] = "already-classified"
-                    elif current:
-                        row["status"] = "skipped-existing-classification"
-                        row["reason"] += "; existing value preserved"
-                    elif dry_run:
+                    if dry_run:
                         row["status"] = "would-update"
                     else:
                         savepoint = transaction.savepoint(optimistic=True)
                         setattr(obj, FIELD_NAME, target)
-                        obj.reindexObject()
+                        notify(
+                            ObjectModifiedEvent(
+                                obj,
+                                Attributes(
+                                    IPublicationType,
+                                    "{}.{}".format(
+                                        IPublicationType.__name__,
+                                        FIELD_NAME,
+                                    ),
+                                ),
+                            )
+                        )
                         row["final_publication_type"] = target
                         row["status"] = "updated"
             except ConflictError:

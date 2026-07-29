@@ -4,6 +4,8 @@ import csv
 import io
 import unittest
 
+from AccessControl import getSecurityManager
+from DateTime import DateTime
 from eea.coremetadata.browser.publication_type_migration import FIELD_NAME
 from eea.coremetadata.browser.publication_type_migration import REPORT_FIELDS
 from eea.coremetadata.browser.publication_type_migration import (
@@ -19,7 +21,6 @@ from plone.dexterity.fti import DexterityFTIModificationDescription
 from plone.dexterity.fti import DexterityFTI
 from ZODB.POSException import ConflictError
 from zope.lifecycleevent import modified
-
 
 LEGACY_FIELD_NAME = "taxonomy_eeapublicationtypetaxonomy"
 
@@ -145,22 +146,66 @@ class TestPublicationTypeMigrationIntegration(unittest.TestCase):
         )
         self.assertIn("ISSN", by_id["corporate-issn"]["reason"])
 
-    def test_existing_new_field_value_is_preserved(self):
+    def test_migration_updates_modification_date(self):
+        item = self.add_content("briefing", "modified-briefing")
+        old_modified = DateTime("2000/01/01")
+        item.setModificationDate(old_modified)
+        item.reindexObject(idxs=["modified"])
+        view = MigrationViewWithoutCommits(self.portal, self.request)
+
+        view.migrate()
+
+        self.assertGreater(item.modified(), old_modified)
+        brain = self.portal.portal_catalog(UID=item.UID())[0]
+        self.assertEqual(brain.modified, item.modified())
+
+    def test_migration_records_authenticated_user_in_editing_history(self):
+        fti = self.portal.portal_types["briefing"]
+        fti.behaviors = tuple(fti.behaviors) + ("plone.versioning",)
+        modified(
+            fti,
+            DexterityFTIModificationDescription("behaviors", ""),
+        )
+        repository = self.portal.portal_repository
+        repository.setVersionableContentTypes(
+            list(repository.getVersionableContentTypes()) + ["briefing"]
+        )
+        repository.addPolicyForContentType(
+            "briefing",
+            "at_edit_autoversion",
+        )
+        item = self.add_content("briefing", "versioned-briefing")
+        item.publication_type = "briefing"
+        view = MigrationViewWithoutCommits(self.portal, self.request)
+        authenticated_user = getSecurityManager().getUser().getUserName()
+
+        view.migrate()
+
+        version = repository.retrieve(item)
+        history = repository.getHistoryMetadata(item)
+        metadata = history.retrieve(version.version_id)["metadata"]["sys_metadata"]
+        self.assertEqual(version.version_id, 1)
+        self.assertEqual(version.object.publication_type, "briefing")
+        self.assertEqual(metadata["principal"], authenticated_user)
+
+    def test_existing_new_field_value_is_overwritten(self):
         item = self.add_content("report_pdf", "manual-classification")
         item.publication_type = "joint-report"
         item.reindexObject()
         view = MigrationViewWithoutCommits(self.portal, self.request)
 
+        dry_run_row = self.rows_by_id(view.migrate(dry_run=True))[
+            "manual-classification"
+        ]
+        self.assertEqual(item.publication_type, "joint-report")
+        self.assertEqual(dry_run_row["status"], "would-update")
+
         row = self.rows_by_id(view.migrate())["manual-classification"]
 
-        self.assertEqual(item.publication_type, "joint-report")
-        self.assertEqual(
-            row["status"],
-            "skipped-existing-classification",
-        )
+        self.assertEqual(item.publication_type, "report")
+        self.assertEqual(row["status"], "updated")
         self.assertEqual(row["previous_publication_type"], "joint-report")
-        self.assertEqual(row["final_publication_type"], "joint-report")
-        self.assertIn("existing value preserved", row["reason"])
+        self.assertEqual(row["final_publication_type"], "report")
 
     def test_legacy_generated_field_is_ignored(self):
         item = self.add_content("report_pdf", "legacy-classification")
@@ -178,16 +223,20 @@ class TestPublicationTypeMigrationIntegration(unittest.TestCase):
         self.assertEqual(row["status"], "updated")
         self.assertIn("Remaining Report", row["reason"])
 
-    def test_second_run_reports_already_classified(self):
+    def test_second_run_refreshes_already_classified_content(self):
         item = self.add_content("web_report", "idempotent-report")
         view = MigrationViewWithoutCommits(self.portal, self.request)
 
         first = self.rows_by_id(view.migrate())["idempotent-report"]
+        old_modified = DateTime("2000/01/01")
+        item.setModificationDate(old_modified)
+        item.reindexObject(idxs=["modified"])
         second = self.rows_by_id(view.migrate())["idempotent-report"]
 
         self.assertEqual(item.publication_type, "report")
         self.assertEqual(first["status"], "updated")
-        self.assertEqual(second["status"], "already-classified")
+        self.assertEqual(second["status"], "updated")
+        self.assertGreater(item.modified(), old_modified)
 
     def test_missing_behavior_is_reported_without_writing(self):
         item = self.add_content("briefing", "missing-behavior")
