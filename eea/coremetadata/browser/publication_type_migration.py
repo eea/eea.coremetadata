@@ -136,7 +136,7 @@ class PublicationTypeMigrationView(BrowserView):
         return sorted(brains, key=lambda brain: brain.getPath())
 
     def migrate(self, dry_run=False):
-        """Apply the calculated classification to every candidate."""
+        """Classify candidates, preserving values already set by editors."""
         rows = []
         for index, brain in enumerate(self.catalog_brains(), start=1):
             row = self.base_report_row(brain, dry_run)
@@ -158,7 +158,12 @@ class PublicationTypeMigrationView(BrowserView):
                     current = getattr(aq_base(obj), FIELD_NAME, None)
                     row["previous_publication_type"] = report_value(current)
                     row["final_publication_type"] = report_value(current)
-                    if dry_run:
+                    if current == target:
+                        row["status"] = "already-classified"
+                    elif current:
+                        row["status"] = "skipped-existing-classification"
+                        row["reason"] += "; existing value preserved"
+                    elif dry_run:
                         row["status"] = "would-update"
                     else:
                         savepoint = transaction.savepoint(optimistic=True)
