@@ -16,8 +16,12 @@ from plone.app.textfield.value import RichTextValue
 from plone.dexterity.utils import iterSchemata
 from Products.Five import BrowserView
 from ZODB.POSException import ConflictError
+from zope.event import notify
+from zope.lifecycleevent import Attributes
+from zope.lifecycleevent import ObjectModifiedEvent
 from zope.schema import getFields
 
+from eea.coremetadata.behaviors.publication_type import IPublicationType
 
 logger = logging.getLogger(__name__)
 
@@ -164,7 +168,18 @@ class PublicationTypeMigrationView(BrowserView):
                     else:
                         savepoint = transaction.savepoint(optimistic=True)
                         setattr(obj, FIELD_NAME, target)
-                        obj.reindexObject()
+                        notify(
+                            ObjectModifiedEvent(
+                                obj,
+                                Attributes(
+                                    IPublicationType,
+                                    "{}.{}".format(
+                                        IPublicationType.__name__,
+                                        FIELD_NAME,
+                                    ),
+                                ),
+                            )
+                        )
                         row["final_publication_type"] = target
                         row["status"] = "updated"
             except ConflictError:

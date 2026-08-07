@@ -1,6 +1,11 @@
 Changelog
 =========
 
+6.4 - (2026-08-06)
+---------------------------
+* Change: Release
+  [dobri1408]
+
 6.3 - (2026-07-28)
 ---------------------------
 * Change: Fix publication_type taxonomy vocabulary - refs #305522
