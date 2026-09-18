@@ -1,7 +1,7 @@
 Changelog
 =========
 
-6.5-dev0 - (unreleased)
+6.5 - (2026-09-18)
 ---------------------------
 * Fix: Load Publication type values in listing block selection criteria.
   Include an upgrade step to enable vocabulary fetching on existing sites.
