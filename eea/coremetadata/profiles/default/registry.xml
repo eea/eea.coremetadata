@@ -51,7 +51,7 @@
     </value>
     <value key="group" i18n:translate="">Taxonomy</value>
     <value key="vocabulary">index_publication_type_vocabulary</value>
-    <value key="fetch_vocabulary">False</value>
+    <value key="fetch_vocabulary">True</value>
   </records>
 
   <records interface="plone.app.querystring.interfaces.IQueryField"

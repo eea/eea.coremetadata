@@ -57,7 +57,7 @@ def configure_publication_type_querystring():
     registry.records[prefix + ".vocabulary"] = Record(
         field.TextLine(), "index_publication_type_vocabulary"
     )
-    registry.records[prefix + ".fetch_vocabulary"] = Record(field.Bool(), False)
+    registry.records[prefix + ".fetch_vocabulary"] = Record(field.Bool(), True)
 
 
 def enable_publication_type_behavior(portal=None):

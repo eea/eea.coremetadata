@@ -16,12 +16,14 @@ from eea.coremetadata.setuphandlers import PUBLICATION_TYPE_BEHAVIOR
 from eea.coremetadata.setuphandlers import enable_publication_type_behavior
 from eea.coremetadata.tests.base import INTEGRATION_TESTING
 from eea.coremetadata.upgrades.to_62 import to_62
+from eea.coremetadata.upgrades.to_65 import to_65
 from plone.app.querystring.interfaces import IQueryField
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.behavior.interfaces import IBehavior
 from plone.dexterity.fti import DexterityFTI
 from plone.registry.interfaces import IRegistry
+from plone.restapi.services.querystring.get import QuerystringGet
 from Products.CMFCore.utils import getToolByName
 from Products.PluginIndexes.KeywordIndex.KeywordIndex import KeywordIndex
 from zope.component import queryUtility
@@ -212,10 +214,68 @@ class TestPublicationTypeIntegration(unittest.TestCase):
             records.vocabulary,
             "index_publication_type_vocabulary",
         )
-        self.assertFalse(records.fetch_vocabulary)
+        self.assertTrue(records.fetch_vocabulary)
         self.assertEqual(
             records.operations,
             ["plone.app.querystring.operation.selection.is"],
+        )
+
+    def publication_type_querystring(self):
+        """Return the same field configuration consumed by Volto Listing."""
+        service = QuerystringGet()
+        service.context = self.portal
+        service.request = self.layer["request"]
+        return service.reply()["indexes"][INDEX_NAME]
+
+    def add_technical_paper(self):
+        """Create a catalog value for the index-backed vocabulary."""
+        self.add_publication_types()
+        to_62(self.portal.portal_setup)
+        self.portal.invokeFactory(
+            "web_report", "technical-paper", title="Technical paper"
+        )
+        item = self.portal["technical-paper"]
+        item.publication_type = "technical-paper"
+        item.reindexObject()
+        self.assertEqual(len(self.catalog(publication_type="technical-paper")), 1)
+
+    def test_querystring_response_includes_listing_options(self):
+        self.add_technical_paper()
+
+        config = self.publication_type_querystring()
+
+        self.assertEqual(
+            config["values"]["technical-paper"]["title"], "Technical paper"
+        )
+        operator = config["operators"]["plone.app.querystring.operation.selection.is"]
+        self.assertEqual(operator["widget"], "MultipleSelectionWidget")
+
+    def test_upgrade_restores_listing_options_without_overwriting_settings(self):
+        self.add_technical_paper()
+        registry = queryUtility(IRegistry)
+        registry[QUERYSTRING_PREFIX + ".fetch_vocabulary"] = False
+        registry[QUERYSTRING_PREFIX + ".title"] = "Custom publication type"
+        self.assertEqual(self.publication_type_querystring()["values"], {})
+
+        to_65(self.portal.portal_setup)
+        to_65(self.portal.portal_setup)
+
+        config = self.publication_type_querystring()
+        self.assertEqual(
+            config["values"]["technical-paper"]["title"], "Technical paper"
+        )
+        self.assertEqual(config["title"], "Custom publication type")
+
+    def test_listing_upgrade_is_registered_from_62_to_65(self):
+        setup = self.portal.portal_setup
+        profile_id = "eea.coremetadata:default"
+        setup.setLastVersionForProfile(profile_id, "6.2")
+        steps = []
+        for group in setup.listUpgrades(profile_id):
+            steps.extend(group if isinstance(group, list) else [group])
+
+        self.assertTrue(
+            any(step["ssource"] == "6.2" and step["sdest"] == "6.5" for step in steps)
         )
 
     def test_catalog_indexes_simple_field(self):

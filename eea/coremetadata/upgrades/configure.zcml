@@ -146,4 +146,12 @@
     />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeStep
+    title="Load Publication type values for listing criteria"
+    source="6.2"
+    destination="6.5"
+    handler=".to_65.to_65"
+    profile="eea.coremetadata:default"
+    />
+
 </configure>
