@@ -46,7 +46,7 @@ setup(
         "collective.taxonomy",
     ],
     extras_require={
-        "test": ["plone.app.testing"],
+        "test": ["plone.app.testing", "plone.restapi"],
     },
     entry_points="""
     [z3c.autoinclude.plugin]
